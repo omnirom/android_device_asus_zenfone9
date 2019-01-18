@@ -103,6 +103,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+TARGET_SCREEN_DENSITY := 440
 SOONG_CONFIG_qtidisplay_displayconfig_enabled := true
 SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
 
