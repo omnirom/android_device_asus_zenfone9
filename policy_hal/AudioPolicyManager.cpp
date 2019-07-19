@@ -1707,6 +1707,13 @@ audio_io_handle_t AudioPolicyManagerCustom::getOutputForDevices(
         goto non_direct_output;
     }
 
+    if (property_get_bool("vendor.audio.pcm.direct.disable", false /* default_value */) &&
+                audio_is_linear_pcm(config->format)) {
+        ALOGD(":%s Force route mch pcm to deep buffer", __func__);
+        forced_deep = true;
+        goto non_direct_output;
+    }
+
     // Do not allow offloading if one non offloadable effect is enabled or MasterMono is enabled.
     // This prevents creating an offloaded track and tearing it down immediately after start
     // when audioflinger detects there is an active non offloadable effect.
