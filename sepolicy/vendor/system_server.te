@@ -1,4 +1,6 @@
 allow system_server vendor_proc_graphics:file rw_file_perms;
+allow system_server vendor_sysfs_proximity:file { getattr rw_file_perms };
+
 allow system_server app_zygote:process getpgid;
 
 get_prop(system_server, vendor_asus_prop)

@@ -40,6 +40,7 @@
 # Fingerprint
 /data/vendor/goodix/gf_data(/.*)?                                                              u:object_r:vendor_goodix_data_file:s0
 /dev/goodix_fp                                                                                 u:object_r:fingerprintd_device:s0
+/sys/devices/platform/soc/soc:goodix_gf3626@0/proximity_state                                  u:object_r:vendor_sysfs_proximity:s0
 /(vendor|system/vendor)/bin/cali_check                                                         u:object_r:asus_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/cali_shipping_check                                                u:object_r:asus_fingerprint_exec:s0
 /(vendor|system/vendor)/bin/fp_cali_mv                                                         u:object_r:asus_fingerprint_exec:s0

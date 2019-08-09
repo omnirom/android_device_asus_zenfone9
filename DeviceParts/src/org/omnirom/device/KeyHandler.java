@@ -103,6 +103,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int POCKET_MIN_DELTA_MS = 5000;
 
     private static final String DT2W_CONTROL_PATH = "/proc/driver/dclick";
+    private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodix_gf3626@0/proximity_state";
 
     private static final String CLIENT_PACKAGE_NAME = "com.asus.camera";
     private static final String CLIENT_PACKAGE_PATH = "/data/misc/omni/client_package_name";
@@ -180,6 +181,12 @@ public class KeyHandler implements DeviceKeyHandler {
                 }
                 mProxySensorTimestamp = SystemClock.elapsedRealtime();
                 mProxyWasNear = mProxyIsNear;
+            }
+            if (mUseProxiCheck) {
+                if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
+                    Utils.writeValue(GOODIX_CONTROL_PATH, mProxyIsNear ? "1" : "0");
+                    if (DEBUG_SENSOR) Log.i(TAG, " mProxyIsNear = " + mProxyIsNear);
+                }
             }
         }
 
@@ -432,6 +439,7 @@ public class KeyHandler implements DeviceKeyHandler {
         if (enableProxiSensor()) {
             if (DEBUG_SENSOR) Log.i(TAG, "Unregister proxi sensor");
             mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
+            enableGoodix();
         }
         if (mUseTiltCheck) {
             if (DEBUG_SENSOR) Log.i(TAG, "Unregister tilt sensor");
@@ -667,6 +675,12 @@ public class KeyHandler implements DeviceKeyHandler {
                 Log.d(TAG, "client_package" + file + " and " + pkgName);
                 SystemProperties.set(VENDOR_PROPERTY_USINGNAME, pkgName);
             }
+        }
+    }
+
+    private void enableGoodix() {
+        if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
+            Utils.writeValue(GOODIX_CONTROL_PATH, "0");
         }
     }
 }
