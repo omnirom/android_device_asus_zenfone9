@@ -1,3 +1,7 @@
+on boot
+    chown system system /sys/devices/platform/soc/soc:goodix_gf3626@0/proximity_state
+    chmod 0660 /sys/devices/platform/soc/soc:goodix_gf3626@0/proximity_state
+
 service vendor.media.omx /vendor/bin/hw/android.hardware.media.omx@1.0-service
     override
     class main
