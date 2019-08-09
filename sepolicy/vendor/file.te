@@ -16,6 +16,7 @@ type demoapp_file, file_type;
 type log_file, file_type;
 
 # Fingerprint
+type vendor_sysfs_proximity, fs_type, sysfs_type;
 type vendor_goodix_data_file, file_type, data_file_type;
 
 # Thermal
