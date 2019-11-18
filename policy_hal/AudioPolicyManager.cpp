@@ -993,7 +993,8 @@ void AudioPolicyManagerCustom::setForceUse(audio_policy_force_use_t usage,
     for (size_t i = mOutputs.size(); i > 0; i--) {
         sp<SwAudioOutputDescriptor> outputDesc = mOutputs.valueAt(i-1);
         DeviceVector newDevices = getNewOutputDevices(outputDesc, true /*fromCache*/);
-        if ((mEngine->getPhoneState() != AUDIO_MODE_IN_CALL) || (outputDesc != mPrimaryOutput)) {
+        if (outputDesc->isActive() && ((mEngine->getPhoneState() != AUDIO_MODE_IN_CALL) ||
+            (outputDesc != mPrimaryOutput))) {
             waitMs = setOutputDevices(outputDesc, newDevices, !newDevices.isEmpty(),
                                      delayMs);
 
