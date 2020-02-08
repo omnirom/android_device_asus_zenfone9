@@ -44,15 +44,11 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String KEY_SETTINGS_PREFIX = "device_setting_";
     public static final String KEY_GLOVE_SWITCH = "glove";
-    public static final String KEY_SMART_SWITCH = "smart_switch";
     public static final String KEY_GLOVE_PATH = "/proc/driver/glove";
-    public static final String KEY_SMART_PATH = "/sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable";
     public static final String SETTINGS_GLOVE_KEY = KEY_SETTINGS_PREFIX + KEY_GLOVE_SWITCH;
-    public static final String SETTINGS_SMART_KEY = KEY_SETTINGS_PREFIX + KEY_SMART_SWITCH;
 
     private static final String KEY_CATEGORY_SCREEN = "screen";
     private static TwoStatePreference mGloveModeSwitch;
-    private static TwoStatePreference mSmartKeySwitch;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -62,10 +58,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mGloveModeSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
         KEY_GLOVE_SWITCH, 0) == 1);
 
-        mSmartKeySwitch = (TwoStatePreference) findPreference(KEY_SMART_SWITCH);
-        mSmartKeySwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
-        KEY_SMART_SWITCH, 0) == 1);
-
     }
 
     @Override
@@ -73,11 +65,6 @@ public class DeviceSettings extends PreferenceFragment implements
         if (preference == mGloveModeSwitch) {
             Settings.System.putInt(getContext().getContentResolver(), KEY_GLOVE_SWITCH, mGloveModeSwitch.isChecked() ? 1 : 0);
             Utils.writeValue(getFile(), mGloveModeSwitch.isChecked() ? "1" : "0");
-            return true;
-        }
-        if (preference == mSmartKeySwitch) {
-            Settings.System.putInt(getContext().getContentResolver(), KEY_SMART_SWITCH, mSmartKeySwitch.isChecked() ? 1 : 0);
-            Utils.writeValue(getFile(), mSmartKeySwitch.isChecked() ? "1" : "0");
             return true;
         }
         return super.onPreferenceTreeClick(preference);
@@ -92,9 +79,6 @@ public class DeviceSettings extends PreferenceFragment implements
         if (Utils.fileWritable(KEY_GLOVE_PATH)) {
             return KEY_GLOVE_PATH;
         }
-        if (Utils.fileWritable(KEY_SMART_PATH)) {
-            return KEY_SMART_PATH;
-        }
         return null;
     }
 
@@ -102,8 +86,6 @@ public class DeviceSettings extends PreferenceFragment implements
         switch(key) {
             case KEY_GLOVE_PATH:
                 return "/proc/driver/glove";
-            case KEY_SMART_PATH:
-                return "/sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable";
         }
         return null;
     }

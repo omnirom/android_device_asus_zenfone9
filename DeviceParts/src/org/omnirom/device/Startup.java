@@ -91,6 +91,10 @@ public class Startup extends BroadcastReceiver {
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_Z_APP), enabled);
 
+        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_7);
+        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
+        restore(getGestureFile(GestureSettings.KEY_GOOGLE_APP), enabled);
+
         value = Settings.System.getString(context.getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         if (TextUtils.isEmpty(value)) {
             return;
@@ -99,9 +103,6 @@ public class Startup extends BroadcastReceiver {
         }
 
         enabled = Settings.System.getInt(context.getContentResolver(), DeviceSettings.SETTINGS_GLOVE_KEY, 0) != 0;
-        restore(DeviceSettings.getFile(), enabled);
-
-        enabled = Settings.System.getInt(context.getContentResolver(), DeviceSettings.SETTINGS_SMART_KEY, 0) != 0;
         restore(DeviceSettings.getFile(), enabled);
 
         enabled = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;

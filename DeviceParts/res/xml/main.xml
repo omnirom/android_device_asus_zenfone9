@@ -44,14 +44,4 @@
             android:persistent="false" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="smartkey"
-        android:title="@string/smart_google">
-        <SwitchPreference
-            android:key="smart_switch"
-            android:summary="@string/smart_key_summary"
-            android:title="@string/smart_key_title"
-            android:persistent="false" />
-    </PreferenceCategory>
-
 </PreferenceScreen>

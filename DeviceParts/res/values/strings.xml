@@ -29,8 +29,7 @@
     <string name="proxi_summary_head">Check proximity sensor for handling fingerprint sensor</string>
     <string name="proxi_title_head">Proximity check</string>
     <string name="smart_google">Smart key</string>
-    <string name="smart_key_title">Google Assistant</string>
-    <string name="smart_key_summary">Call Google Assistant</string>
+    <string name="smart_key_title">Choose  your App or Action</string>
 
     <string name="choose_app">Choose app</string>
     <string name="offscreen_gesture_title">Offscreen gestures</string>
