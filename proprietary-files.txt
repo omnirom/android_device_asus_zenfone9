@@ -15,16 +15,6 @@ product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 # Camera
 lib/DataSet/ispDB/ASUS_UNDI.bin
 lib/DataSet/ispDB/ASUS_UNDI_ZOOM.bin
-lib64/DataSet/arch/DIT_List.cfg
-lib64/DataSet/ditSCidGen/msgchk.db
-lib64/DataSet/ispDB/ParameterDB.db
-lib64/libxditk_DIT_MSMv1.so
-lib64/libxditk_DIT_Manager.so
-lib64/libxditk_ISP.so
-lib64/libxditk_arch.so
-lib64/libxditk_ditArchLIB.so
-lib64/libxditk_ditBSP.so
-lib64/libxditk_ditBSP_JNI.so
 -priv-app/AsusCamera/AsusCamera.apk;PRESIGNED
 priv-app/AsusCamera/lib/arm64/libasus_camera_panorama.so
 priv-app/AsusCamera/lib/arm64/libasus_camera_panorama.so
