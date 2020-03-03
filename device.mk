@@ -24,9 +24,6 @@ $(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
 # fusefs / disable sdcardfs usage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Include GSI keys
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
