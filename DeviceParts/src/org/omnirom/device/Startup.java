@@ -49,7 +49,7 @@ public class Startup extends BroadcastReceiver {
         if (!imported) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             boolean enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GLOVE_SWITCH, false);
-            Settings.System.putInt(context.getContentResolver(), DeviceSettings.KEY_GLOVE_SWITCH, enabled ? 1 : 0);
+            Settings.System.putInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
 
             Settings.System.putInt(context.getContentResolver(), "omni_device_setting_imported", 1);
         }
@@ -102,8 +102,10 @@ public class Startup extends BroadcastReceiver {
         restore(getGestureFile(GestureSettings.GESTURE_CONTROL_PATH), value);
         }
 
-        enabled = Settings.System.getInt(context.getContentResolver(), DeviceSettings.SETTINGS_GLOVE_KEY, 0) != 0;
-        restore(DeviceSettings.getFile(), enabled);
+        enabled = Settings.System.getInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, 0) != 0;
+        if (enabled) {
+            restore(GloveModeSwitch.getFile(), enabled);
+        }
 
         enabled = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
         restore(GestureSettings.getFile(), enabled);

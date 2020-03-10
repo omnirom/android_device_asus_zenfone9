@@ -20,13 +20,14 @@ package org.omnirom.device;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
 
 @TargetApi(24)
 public class GloveModeTileService extends TileService {
-    public static final String KEY_GLOVE_PATH = "/proc/driver/glove";
+    private boolean enabled = false;
 
     @Override
     public void onDestroy() {
@@ -46,6 +47,10 @@ public class GloveModeTileService extends TileService {
     @Override
     public void onStartListening() {
         super.onStartListening();
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        enabled = GloveModeSwitch.isCurrentlyEnabled(this);
+        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        getQsTile().updateTile();
     }
 
     @Override
@@ -57,8 +62,10 @@ public class GloveModeTileService extends TileService {
     public void onClick() {
         super.onClick();
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        final boolean enabled = DeviceSettings.isCurrentlyEnabled();
-        Utils.writeValue(DeviceSettings.getFile(), enabled ? "1" : "0");
-        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_GLOVE_SWITCH, enabled ? true : false).commit();
+        enabled = GloveModeSwitch.isCurrentlyEnabled(this);
+        Utils.writeValue(GloveModeSwitch.getFile(), enabled ? "0" : "1");
+        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_GLOVE_SWITCH, enabled ? false : true).commit();
+        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
+        getQsTile().updateTile();
     }
 }
