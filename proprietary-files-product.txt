@@ -68,8 +68,26 @@ product/lib64/vendor.display.config@1.7.so
 product/lib64/vendor.display.postproc@1.0.so
 product/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
+# QTI Telephony
+-product/app/embms/embms.apk
+-product/priv-app/QAS_DVC_MSP/QAS_DVC_MSP.apk
+product/etc/permissions/embms.xml
+product/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
+-product/framework/embmslibrary.jar
+-product/framework/qti-telephony-common.jar|a8806ba5a7759b7d5fd97707a6a436d6c432e441
+product/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
+product/lib/vendor.qti.hardware.radio.qtiradio@2.0.so
+product/lib/vendor.qti.hardware.radio.qtiradio@2.1.so
+product/lib/vendor.qti.hardware.radio.qtiradio@2.2.so
+product/lib/vendor.qti.hardware.radio.qtiradio@2.3.so
+product/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
+product/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
+product/lib64/vendor.qti.hardware.radio.qtiradio@2.1.so
+product/lib64/vendor.qti.hardware.radio.qtiradio@2.2.so
+product/lib64/vendor.qti.hardware.radio.qtiradio@2.3.so
+
 # IMS
--product/priv-app/ims/ims.apk|993e75757565d87b8eac95644b789463a667598e
+-product/priv-app/ims/ims.apk|56fd010d307b28bbe05db570a510679108283628
 lib/libdiag_system.so
 lib64/libdiag_system.so
 -product/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
