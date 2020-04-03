@@ -2452,6 +2452,7 @@
 
     <path name="handset">
         <ctl name="TFA_Selector Receiver" value="1" />
+        <ctl name="TFA_Selector Speaker" value="0" />
         <ctl name="DK Profile" value="receiver" />
     </path>
 
