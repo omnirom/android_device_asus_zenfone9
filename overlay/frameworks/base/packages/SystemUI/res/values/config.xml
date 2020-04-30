@@ -30,4 +30,6 @@
     <!-- Color of the FOD view -->
     <color name="config_fodColor">#FFFFFFE6</color>
 
+    <bool name="keyguard_security_container_force_bottom_margin">true</bool>
+
 </resources>
