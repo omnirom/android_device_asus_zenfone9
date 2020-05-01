@@ -7,8 +7,25 @@
 product/lib/com.qualcomm.qti.ant@1.0.so
 product/lib64/com.qualcomm.qti.ant@1.0.so
 
-# Bluetooth (aptX)
+# Audio
+etc/cdma_call_conf.xml
+lib/libadsprpc_system.so
+lib/libcdsprpc_system.so
+lib/libmdsprpc_system.so
+lib/libsdsprpc_system.so
+lib64/libadsprpc_system.so
+lib64/libcdsprpc_system.so
+lib64/libmdsprpc_system.so
+lib64/libsdsprpc_system.so
+
+# Bluetooth
 -app/aptxals/aptxals.apk
+etc/bluetooth/bt_profile.conf
+etc/bluetooth/interop_database.conf
+etc/permissions/audiosphere.xml
+-framework/audiosphere.jar
+lib/libbluetooth_qti.so
+lib64/libbluetooth_qti.so
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
@@ -153,6 +170,18 @@ product/lib64/vendor.qti.gnss@3.0.so
 -product/priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk;PRESIGNED
 -product/priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk;PRESIGNED
 
+# MirarCast
+bin/sigma_miracasthalservice
+etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
+lib/libmiracastsystem.so
+lib/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+lib/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+lib64/libmiracastsystem.so
+lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
+lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
+product/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+product/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
+
 # NFC
 #-app/NQNfcNci/NQNfcNci.apk
 #-framework/com.nxp.nfc.nq.jar
@@ -166,6 +195,25 @@ product/lib64/vendor.qti.gnss@3.0.so
 #lib/libnqnfc-nci.so
 #lib64/libnqnfc-nci.so
 #lib64/libnqnfc_nci_jni.so
+
+# QVR
+bin/qvrservice
+etc/qvr/qvrservice_config.txt
+lib/libqvrcamera_client.qti.so
+lib/libqvrservice.so
+lib/libqvrservice_client.qti.so
+lib/rfsa/adsp/libdsp_streamer_qvrcam_receiver.so
+lib/rfsa/adsp/libeye_tracking_dsp_sample_skel.so
+lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
+lib/rfsa/adsp/libqvr_dsp_driver_skel.so
+lib/rfsa/adsp/libsns_device_mode_skel.so
+lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+lib/rfsa/adsp/libtracker_6dof_skel.so
+lib/libqvr_cam_cdsp_driver_stub.so
+lib/libqvr_eyetracking_plugin.so
+lib/libqvr_cdsp_driver_stub.so
+lib64/libqvrcamera_client.qti.so
+lib64/libqvrservice_client.qti.so
 
 # Sensors
 etc/sensors/proto/nanopb.proto
@@ -261,6 +309,58 @@ product/etc/permissions/telephonyservice.xml
 -product/framework/qcrilhook.jar
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
+# Wfd
+bin/wfdservice
+etc/init/wfdservice.rc
+etc/wfdconfigsink.xml
+-framework/WfdCommon.jar
+-priv-app/WfdService/WfdService.apk
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib/libFileMux.so
+lib/libmmparser_lite.so
+lib/libmmosal.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
+lib/libOmxMux.so
+lib/libwfdaac.so
+lib/libwfdavenhancements.so
+lib/libwfdcommonutils.so
+lib/libwfdconfigutils.so
+lib/libwfdclient.so
+lib/libwfdmminterface.so
+lib/libwfdmmsink.so
+lib/libwfdrtsp.so
+lib/libwfdservice.so
+lib/libwfdsm.so
+lib/libwfdsinksm.so
+lib/libwfduibcinterface.so
+lib/libwfduibcsink.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsrc.so
+lib/libwfduibcsrcinterface.so
+lib/libwfdmmsrc_system.so
+lib64/libFileMux.so
+lib64/libmmparser_lite.so
+lib64/libmmrtpdecoder.so
+lib64/libmmrtpencoder.so
+lib64/libmmosal.so
+lib64/libwfdclient.so
+lib64/libwfdcommonutils.so
+lib64/libwfdconfigutils.so
+lib64/libwfdmminterface.so
+lib64/libwfdmmsink.so
+lib64/libwfdnative.so
+lib64/libwfdrtsp.so
+lib64/libwfdsinksm.so
+lib64/libwfdsm.so
+lib64/libwfduibcinterface.so
+lib64/libwfduibcsinkinterface.so
+lib64/libwfduibcsink.so
+lib64/libwfduibcsrcinterface.so
+lib64/libwfduibcsrc.so
+product/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+product/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 
 # Wlan
 -product/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
