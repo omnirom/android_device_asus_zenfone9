@@ -93,7 +93,7 @@ public class Startup extends BroadcastReceiver {
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_7);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_GOOGLE_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_SMART_KEY), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         if (TextUtils.isEmpty(value)) {

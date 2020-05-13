@@ -45,6 +45,7 @@ import android.widget.ListView;
 import android.util.Log;
 import static android.provider.Settings.Secure.SYSTEM_NAVIGATION_KEYS_ENABLED;
 import android.os.UserHandle;
+import com.android.internal.util.omni.OmniUtils;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -72,7 +73,9 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String KEY_V_APP = "v_gesture_app";
     public static final String KEY_W_APP = "w_gesture_app";
     public static final String KEY_Z_APP = "z_gesture_app";
-    public static final String KEY_GOOGLE_APP = "smart_switch";
+    public static final String KEY_SMART_SIMPLE = "smart_simple";
+    public static final String KEY_SMART_LONG = "smart_long";
+    public static final String KEY_SMART_KEY = "smart_key";
 
     public static final String KEY_FP_GESTURE_CATEGORY = "key_fp_gesture_category";
     public static final String KEY_FP_GESTURE_DEFAULT_CATEGORY = "gesture_settings";
@@ -87,8 +90,10 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String DEVICE_GESTURE_MAPPING_5 = "device_gesture_mapping_5_0";
     public static final String DEVICE_GESTURE_MAPPING_6 = "device_gesture_mapping_6_0";
     public static final String DEVICE_GESTURE_MAPPING_7 = "device_gesture_mapping_7_0";
+    public static final String DEVICE_GESTURE_MAPPING_8 = "device_gesture_mapping_8_0";
 
     private TwoStatePreference mProxiSwitch;
+    private TwoStatePreference mSmartKeySwitch;
     private TwoStatePreference mSwipeUpSwitch;
     private AppSelectListPreference mFPLongPressApp;
     private AppSelectListPreference mLetterCGesture;
@@ -97,7 +102,8 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mLetterVGesture;
     private AppSelectListPreference mLetterWGesture;
     private AppSelectListPreference mLetterZGesture;
-    private AppSelectListPreference mSmartKeySwitch;
+    private AppSelectListPreference mSmartKeyLong;
+    private AppSelectListPreference mSmartKeySimple;
 
     public static final String GESTURE_CONTROL_PATH = "/proc/driver/gesture_type";
     private static final String SWIPEUP_PATH = "/proc/driver/swipeup";
@@ -115,6 +121,10 @@ public class GestureSettings extends PreferenceFragment implements
         mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
         mProxiSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED, 1) != 0);
+
+        mSmartKeySwitch = (TwoStatePreference) findPreference(KEY_SMART_KEY);
+        mSmartKeySwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+                KEY_SMART_KEY, 0) != 0);
 
         mFPLongPressApp = (AppSelectListPreference) findPreference(FP_GESTURE_LONG_PRESS_APP);
         mFPLongPressApp.setEnabled(true);
@@ -158,11 +168,15 @@ public class GestureSettings extends PreferenceFragment implements
         mLetterZGesture.setValue(value);
         mLetterZGesture.setOnPreferenceChangeListener(this);
 
-        mSmartKeySwitch = (AppSelectListPreference) findPreference(KEY_GOOGLE_APP);
-        mSmartKeySwitch.setEnabled(isGestureSupported(KEY_GOOGLE_APP));
+        mSmartKeySimple = (AppSelectListPreference) findPreference(KEY_SMART_SIMPLE);
         value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7);
-        mSmartKeySwitch.setValue(value);
-        mSmartKeySwitch.setOnPreferenceChangeListener(this);
+        mSmartKeySimple.setValue(value);
+        mSmartKeySimple.setOnPreferenceChangeListener(this);
+
+        mSmartKeyLong = (AppSelectListPreference) findPreference(KEY_SMART_LONG);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_8);
+        mSmartKeyLong.setValue(value);
+        mSmartKeyLong.setOnPreferenceChangeListener(this);
 
         mSwipeUpSwitch = (TwoStatePreference) findPreference(KEY_SWIPEUP_SWITCH);
         mSwipeUpSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
@@ -181,6 +195,11 @@ public class GestureSettings extends PreferenceFragment implements
         if (preference == mProxiSwitch) {
             Settings.System.putInt(getContext().getContentResolver(),
                     Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED, mProxiSwitch.isChecked() ? 1 : 0);
+            return true;
+        }
+        if (preference == mSmartKeySwitch) {
+            Settings.System.putInt(getContext().getContentResolver(), KEY_SMART_KEY, mSmartKeySwitch.isChecked() ? 1 : 0);
+            Utils.writeValue((getGestureFile(KEY_SMART_KEY)), mSmartKeySwitch.isChecked() ? "1" : "0");
             return true;
         }
         if (preference == mSwipeUpSwitch) {
@@ -226,11 +245,12 @@ public class GestureSettings extends PreferenceFragment implements
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_Z_ID, !gestureDisabled);
             Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_6, value);
-        } else if (preference == mSmartKeySwitch) {
+        } else if (preference == mSmartKeySimple) {
             String value = (String) newValue;
-            boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
-            setGestureEnabledGoogle(KEY_GOOGLE_APP, !gestureDisabled);
             Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7, value);
+        } else if (preference == mSmartKeyLong) {
+            String value = (String) newValue;
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_8, value);
         }
         return true;
     }
@@ -246,7 +266,7 @@ public class GestureSettings extends PreferenceFragment implements
         switch(key) {
             case GESTURE_CONTROL_PATH:
                 return "/proc/driver/gesture_type";
-            case KEY_GOOGLE_APP:
+            case KEY_SMART_KEY:
                 return "/sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable";
             case SWIPEUP_PATH:
                 return "/proc/driver/swipeup";
@@ -288,10 +308,6 @@ public class GestureSettings extends PreferenceFragment implements
 
     private boolean isGestureSupported(String key) {
         return Utils.fileWritable(getGestureFile(key));
-    }
-
-    private void setGestureEnabledGoogle(String key, boolean enabled) {
-        Utils.writeValue(getGestureFile(key), enabled ? "1" : "0");
     }
 
     @Override
@@ -348,7 +364,8 @@ public class GestureSettings extends PreferenceFragment implements
             mLetterVGesture.setPackageList(mInstalledPackages);
             mLetterWGesture.setPackageList(mInstalledPackages);
             mLetterZGesture.setPackageList(mInstalledPackages);
-            mSmartKeySwitch.setPackageList(mInstalledPackages);
+            mSmartKeyLong.setPackageList(mInstalledPackages);
+            mSmartKeySimple.setPackageList(mInstalledPackages);
         }
     }
 }

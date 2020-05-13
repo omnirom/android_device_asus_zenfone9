@@ -94,6 +94,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
+    private static final long SMARTKEY_DELAY_MILLIS = 300;
 
 
     private static final String DT2W_CONTROL_PATH = "/proc/driver/dclick";
@@ -281,8 +282,9 @@ public class KeyHandler implements DeviceKeyHandler {
 
         if (DEBUG) Log.i(TAG, "nav_code= " + event.getScanCode());
         int fpcode = event.getScanCode();
+        long eventTime = event.getDownTime();
         mFPcheck = canHandleKeyEvent(event);
-        String value = getGestureValueForFPScanCode(fpcode);
+        String value = getGestureValueForFPScanCode(fpcode, eventTime);
         if (mFPcheck && mDispOn && !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY)){
             isFpgesture = true;
             if (!launchSpecialActions(value) && !isCameraLaunchEvent(event)) {
@@ -313,11 +315,13 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public boolean isCameraLaunchEvent(KeyEvent event) {
+        int fpcode = event.getScanCode();
+        long eventTime = event.getDownTime();
         if (event.getAction() != KeyEvent.ACTION_UP) {
             return false;
         }
         if (mFPcheck) {
-            String value = getGestureValueForFPScanCode(event.getScanCode());
+            String value = getGestureValueForFPScanCode(fpcode, eventTime);
             return !TextUtils.isEmpty(value) && value.equals(AppSelectListPreference.CAMERA_ENTRY);
         } else {
             String value = getGestureValueForScanCode(event.getScanCode());
@@ -327,13 +331,15 @@ public class KeyHandler implements DeviceKeyHandler {
 
     @Override
     public boolean isWakeEvent(KeyEvent event){
+        int fpcode = event.getScanCode();
+        long eventTime = event.getDownTime();
         if (event.getAction() != KeyEvent.ACTION_UP) {
             return false;
         }
         if (event.getScanCode() == KEY_SWIPEUP_GESTURE) {
             return true;
         }
-        String SmartKey = getGestureValueForFPScanCode(event.getScanCode());
+        String SmartKey = getGestureValueForFPScanCode(fpcode, eventTime);
         if (event.getScanCode() == KEY_GOOGLE_APP && SmartKey.equals(AppSelectListPreference.WAKE_ENTRY)) {
             return true;
         }
@@ -531,14 +537,20 @@ public class KeyHandler implements DeviceKeyHandler {
         return null;
     }
 
-    private String getGestureValueForFPScanCode(int scanCode) {
+    private String getGestureValueForFPScanCode(int scanCode, long eventTime) {
+        long now = SystemClock.uptimeMillis();
         if (FP_GESTURE_LONG_PRESS == scanCode) {
             return Settings.System.getStringForUser(mContext.getContentResolver(),
                    GestureSettings.DEVICE_GESTURE_MAPPING_0, UserHandle.USER_CURRENT);
         }
         if (KEY_GOOGLE_APP == scanCode) {
-            return Settings.System.getStringForUser(mContext.getContentResolver(),
+            if (now <= eventTime + SMARTKEY_DELAY_MILLIS) {
+                return Settings.System.getStringForUser(mContext.getContentResolver(),
                    GestureSettings.DEVICE_GESTURE_MAPPING_7, UserHandle.USER_CURRENT);
+            } else {
+                return Settings.System.getStringForUser(mContext.getContentResolver(),
+                   GestureSettings.DEVICE_GESTURE_MAPPING_8, UserHandle.USER_CURRENT);
+            }
         }
         return null;
     }
