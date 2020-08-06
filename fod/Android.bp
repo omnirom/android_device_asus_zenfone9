@@ -28,5 +28,6 @@ cc_binary {
         "liblog",
         "libutils",
         "vendor.omni.biometrics.fingerprint.inscreen@1.0",
+        "//device/asus/zenfone8:vendor.goodix.hardware.biometrics.fingerprint@2.1",
     ],
 }
