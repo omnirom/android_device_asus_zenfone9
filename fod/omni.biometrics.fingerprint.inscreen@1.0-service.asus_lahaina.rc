@@ -1,0 +1,6 @@
+service fingerprint-inscreen-1-0 /system_ext/bin/hw/omni.biometrics.fingerprint.inscreen@1.0-service.asus_lahaina
+    interface vendor.omni.biometrics.fingerprint.inscreen@1.0::IFingerprintInscreen default
+    class hal
+    user system
+    group system
+    shutdown critical

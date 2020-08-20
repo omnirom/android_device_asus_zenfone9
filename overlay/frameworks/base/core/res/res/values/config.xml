@@ -591,4 +591,7 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">M 0.0,0.0 h 168 v 114 h -168 Z @left</string>
 
+    <!-- Show a custom view for FOD -->
+    <bool name="config_usesFOD">true</bool>
+
 </resources>

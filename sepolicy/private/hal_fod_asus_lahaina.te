@@ -1,0 +1,5 @@
+type hal_fod_asus_lahaina, coredomain, domain;
+hal_server_domain(hal_fod_asus_lahaina, hal_omni_fod)
+
+type hal_fod_asus_lahaina_exec, system_file_type, exec_type, file_type;
+init_daemon_domain(hal_fod_asus_lahaina)
