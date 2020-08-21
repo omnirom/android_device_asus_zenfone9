@@ -195,6 +195,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # WiFi
 PRODUCT_PACKAGES += \
     libnl \
+    TetheringOverlay \
     WifiOverlay
 
 include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk
