@@ -4,6 +4,9 @@ hal_server_domain(hal_fod_asus_lahaina, hal_omni_fod)
 type hal_fod_asus_lahaina_exec, system_file_type, exec_type, file_type;
 init_daemon_domain(hal_fod_asus_lahaina)
 
+# Allow hal_fod_asus_lahaina to read and write to asus_display_proc_exec
+allow hal_fod_asus_lahaina asus_display_proc_exec:file w_file_perms;
+
 # Allow access to the HALs
 hal_client_domain(hal_fod_asus_lahaina, hal_fingerprint)
 

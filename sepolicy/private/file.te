@@ -6,6 +6,9 @@ type demoapp_file, file_type;
 type firmware_file, fs_type, contextmount_type;
 type persist_file, file_type;
 
+# Asus proc
+type asus_display_proc_exec, proc_type, fs_type;
+
 # Files in userdata
 type vendor_qmipriod_data_file, file_type, data_file_type;
 

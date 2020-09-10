@@ -2,3 +2,4 @@ genfscon proc /driver/dclick            u:object_r:sysfs_touchscreen:s0
 genfscon proc /driver/swipeup           u:object_r:sysfs_touchscreen:s0
 genfscon proc /driver/gesture_type      u:object_r:sysfs_touchscreen:s0
 genfscon proc /driver/glove             u:object_r:sysfs_touchscreen:s0
+genfscon proc /globalHbm                u:object_r:asus_display_proc_exec:s0
