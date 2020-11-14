@@ -162,15 +162,8 @@ TARGET_USES_MKE2FS := true
 
 # Sepolicy
 include vendor/omni/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/public \
-    device/qcom/sepolicy/qva/public
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy/generic/private \
-    device/qcom/sepolicy/qva/private
 
 # Treble
 BOARD_VNDK_VERSION := current
