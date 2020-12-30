@@ -165,6 +165,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Systemhelper
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.systemhelper@1.0
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
