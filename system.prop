@@ -39,9 +39,9 @@ media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
-#13631487 is decimal sum of supported codecs in AAL
-#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV AIFF APE DSD XVID
-vendor.mm.enable.qcom_parser=47185919
+#16777215 is decimal sum of supported codecs in AAL
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MHAS
+vendor.mm.enable.qcom_parser=12582911
 persist.mm.enable.prefetch=true
 
 #Netflix custom property
@@ -64,9 +64,6 @@ persist.timed.enable=true
 # 196610 is decimal for 0x30002 to report version 3.2
 ro.opengles.version=196610
 
-# system property for maximum number of HFP client connections
-bt.max.hfpclient.connections=1
-
 #
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
@@ -76,40 +73,13 @@ telephony.lteOnCdmaDevice=1
 #
 persist.fuse_sdcard=true
 
-#system prop for Bluetooth SOC type
-vendor.bluetooth.soc=cherokee
+#System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
-persist.vendor.btstack.enable.splita2dp=true
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.btstack.aac_frm_ctl.enabled=true
-persist.vendor.btstack.enable.twsplus=true
 persist.bluetooth.avrcpversion=avrcp16
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
 
-#system prop for wipower support
-ro.bluetooth.emb_wp_mode=false
-ro.bluetooth.wipower=false
-
-#
-#snapdragon value add features
-#
-ro.qc.sdk.audio.ssr=false
-
-##fluencetype can be "fluence" or "fluencepro" or "none"
-ro.qc.sdk.audio.fluencetype=none
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
-
-
-#enable offload audio video playback by default
-audio.offload.video=true
-#
-##enable music through deep buffer
-audio.deep_buffer.media=true
-#
-##set AudioFlinger client heap size
-ro.af.client_heap_size_kbyte=7168
-#
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
@@ -136,20 +106,11 @@ debug.sf.latch_unsignaled=1
 # enable tunnel encoding for amrwb
 tunnel.audio.encode = true
 
-#Buffer size in kbytes for compress offload playback
-audio.offload.buffer.size.kb=32
-
-#Enable offload audio video playback by default
-av.offload.enable=true
-
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
 
 # system prop for NFC DT
 ro.nfc.port=I2C
-
-#enable dsp gapless mode by default
-audio.offload.gapless.enabled=true
 
 #initialize QCA1530 detection
 sys.qca1530=detect
@@ -198,21 +159,16 @@ persist.vendor.sensors.enable.mag_filter=true
 #Partition source order for Product/Build properties pickup.
 #ro.product.property_source_order=odm,vendor,product,product_services,system
 
-#Property to enable logcat service
-ro.logd.kernel=1
-persist.asus.logcat.filenum=20
-persist.logd.size=1048576
-
-# Property to tar ASUSEvtLog
-persist.asus.tarevtlog=0
-
 #Property to enable Codec2 for audio and OMX for Video
 debug.stagefright.ccodec=1
+
+#Property to set native recorder's maximum base layer fps
+ro.media.recorder-max-base-layer-fps = 60
 
 #Touch Property
 persist.vendor.systemui.skiptouch=false
 
-# [ASUS BSP] Hammer: add for vibration intensity
+# [ASUS BSP] add for vibration intensity
 ro.asus.vibration_intensity=1
 
 # [ASUS BSP] Deka
@@ -261,6 +217,7 @@ vendor.camera.expTimeMax=0
 ro.asus.wcg=1
 ro.asus.hdr=1
 
+vendor.camera.asus.system=1
 # [ASUS BSP] for Poweroff Alarm Support
 ro.asus.poweroffalarm_support=1
 
@@ -268,9 +225,22 @@ ro.asus.poweroffalarm_support=1
 ro.asus.scale_very_low_max_amp=1
 ro.asus.scale_low_max_amp=128
 
-# Disable IOP
+# Disable UXE
 vendor.iop.enable_uxe=0
-vendor.perf.iop_v3.enable=false
+
+# [ASUS BSP] Debug
+ro.logd.kernel=1
+persist.vendor.asus.logcat.filenum=20
+persist.logd.size=1048576
+ro.vendor.asus.logcat=1
+persist.vendor.asus.startlog=0
+# [ASUS BSP] Debug
+
+#Battery Property
+ro.charger.enable_suspend = 1
+
+#Enable Qualcomm mdp rotator
+vendor.display.enable_rotator_ui = 1
 
 # Extra Asus
 ro.build.asus.sku=WW
