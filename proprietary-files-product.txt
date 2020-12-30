@@ -5,12 +5,8 @@ product/lib64/vendor.qti.hardware.alarm@1.0.so
 product/lib/vendor.qti.hardware.alarm@1.0.so
 
 # Bluetooth
-product/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib64/vendor.qti.hardware.audiohalext@1.0.so
-product/lib64/vendor.qti.hardware.btconfigstore@1.0.so
-product/lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 product/lib/vendor.qti.hardware.audiohalext@1.0.so
-product/lib/vendor.qti.hardware.btconfigstore@1.0.so
 
 # Camera
 -product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar

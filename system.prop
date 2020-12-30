@@ -78,7 +78,7 @@ persist.fuse_sdcard=true
 
 #system prop for Bluetooth SOC type
 vendor.bluetooth.soc=cherokee
-#ro.bluetooth.library_name=libbluetooth_qti.so
+ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.enable.splita2dp=true
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 persist.vendor.btstack.aac_frm_ctl.enabled=true
