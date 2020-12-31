@@ -8,10 +8,6 @@ type persist_file, file_type;
 type voucher_file, file_type;
 type xrom_file, file_type;
 
-# Lights
-type sysfs_rg_led, sysfs_type, fs_type;
-type sysfs_graphics, sysfs_type, fs_type;
-
 # Offscreen Gestures
 type sysfs_gesture, sysfs_type, fs_type;
 type proc_touchscreen, proc_type, sysfs_type, fs_type;
