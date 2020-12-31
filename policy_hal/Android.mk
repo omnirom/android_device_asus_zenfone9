@@ -18,14 +18,17 @@ LOCAL_C_INCLUDES := $(TOPDIR)frameworks/av/services \
                     $(call include-path-for, avextension) \
 
 LOCAL_HEADER_LIBRARIES := \
+        libaudioclient_headers \
+        libaudiofoundation_headers \
         libbase_headers \
+        libmedia_headers \
         libstagefright_foundation_headers
 
 LOCAL_SHARED_LIBRARIES := \
     libcutils \
     libutils \
     liblog \
-    libsoundtrigger \
+    libaudiofoundation \
     libaudiopolicymanagerdefault
 
 LOCAL_STATIC_LIBRARIES := \
@@ -69,7 +72,6 @@ endif
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_AHAL_EXT)), true)
     LOCAL_CFLAGS += -DAHAL_EXT_ENABLED
     LOCAL_SHARED_LIBRARIES += libhidlbase
-    LOCAL_SHARED_LIBRARIES += libhidltransport
     LOCAL_SHARED_LIBRARIES += vendor.qti.hardware.audiohalext@1.0
     LOCAL_SHARED_LIBRARIES += vendor.qti.hardware.audiohalext-utils
 endif

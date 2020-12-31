@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2019 The Linux Foundation. All rights reserved.
+ * Copyright (c) 2013-2020 The Linux Foundation. All rights reserved.
  * Not a contribution.
  *
  * Copyright (C) 2009 The Android Open Source Project
@@ -19,7 +19,6 @@
 
 
 #include <audiopolicy/managerdefault/AudioPolicyManager.h>
-#include <audio_policy_conf.h>
 #include <Volume.h>
 #include "APMConfigHelper.h"
 
@@ -113,6 +112,7 @@ public:
         // indicates to the audio policy manager that the input stops being used.
         virtual status_t stopInput(audio_port_handle_t portId);
 
+        status_t dump(int fd) override;
         static sp<APMConfigHelper> mApmConfigs;
 
 protected:
@@ -120,7 +120,7 @@ protected:
         virtual status_t checkAndSetVolume(IVolumeCurves &curves,
                                            VolumeSource volumeSource, int index,
                                            const sp<AudioOutputDescriptor>& outputDesc,
-                                           audio_devices_t device,
+                                           DeviceTypeSet deviceTypes,
                                            int delayMs = 0, bool force = false);
 
         // avoid invalidation for active music stream on  previous outputs
@@ -171,7 +171,8 @@ private:
                 audio_output_flags_t *flags,
                 audio_port_handle_t *selectedDeviceId,
                 audio_port_handle_t *portId,
-                std::vector<audio_io_handle_t> *secondaryOutputs);
+                std::vector<audio_io_handle_t> *secondaryOutputs,
+                output_type_t *outputType);
 
 
 

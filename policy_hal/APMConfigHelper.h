@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -31,6 +31,7 @@
 #define _APM_CONFIG_HELPER_H_
 
 #include <string>
+#include <utils/String8.h>
 #include <media/stagefright/foundation/ABase.h>
 #include <utils/RefBase.h>
 
@@ -109,7 +110,7 @@ public:
     bool isVoiceConcEnabled();
     bool isRecPlayConcEnabled();
     bool useXMLAudioPolicyConf();
-
+    void dump(String8 *dst) const;
 private:
     inline void retrieveConfigs();
 

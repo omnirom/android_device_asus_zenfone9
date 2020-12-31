@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -36,6 +36,36 @@
 #include <stdlib.h>
 
 namespace android {
+
+void APMConfigHelper::dump(String8 *dst) const
+{
+    // apmconfig struct dump
+    dst->appendFormat("\nAudioPolicyManagerCustom Dump: %p\n", this);
+    dst->appendFormat("audio_offload_video: %d \n", mConfigs.audio_offload_video);
+    dst->appendFormat("audio_offload_disable: %d \n", mConfigs.audio_offload_disable);
+    dst->appendFormat("audio_deepbuffer_media: %d \n", mConfigs.audio_deepbuffer_media);
+    dst->appendFormat("audio_av_streaming_offload_enable: %d \n", mConfigs.audio_av_streaming_offload_enable);
+    dst->appendFormat("audio_offload_track_enable: %d \n", mConfigs.audio_offload_track_enable);
+    dst->appendFormat("audio_offload_multiple_enabled: %d \n", mConfigs.audio_offload_multiple_enabled);
+    dst->appendFormat("voice_dsd_playback_conc_disabled: %d \n", mConfigs.voice_dsd_playback_conc_disabled);
+    dst->appendFormat("audio_sva_conc_enabled: %d \n", mConfigs.audio_sva_conc_enabled);
+    dst->appendFormat("audio_va_concurrency_enabled: %d \n", mConfigs.audio_va_concurrency_enabled);
+    dst->appendFormat("audio_rec_playback_conc_disabled: %d \n", mConfigs.audio_rec_playback_conc_disabled);
+    dst->appendFormat("voice_path_for_pcm_voip: %d \n", mConfigs.voice_path_for_pcm_voip);
+    dst->appendFormat("voice_playback_conc_disabled: %d \n", mConfigs.voice_playback_conc_disabled);
+    dst->appendFormat("voice_record_conc_disabled: %d \n", mConfigs.voice_record_conc_disabled);
+    dst->appendFormat("voice_voip_conc_disabled: %d \n", mConfigs.voice_voip_conc_disabled);
+    dst->appendFormat("audio_offload_min_duration_secs: %u \n", mConfigs.audio_offload_min_duration_secs);
+    dst->appendFormat("voice_conc_fallbackpath: %s \n", mConfigs.voice_conc_fallbackpath.c_str());
+    dst->appendFormat("audio_extn_hdmi_spk_enabled: %d \n", mConfigs.audio_extn_hdmi_spk_enabled);
+    dst->appendFormat("audio_extn_formats_enabled: %d \n", mConfigs.audio_extn_formats_enabled);
+    dst->appendFormat("audio_extn_afe_proxy_enabled: %d \n", mConfigs.audio_extn_afe_proxy_enabled);
+    dst->appendFormat("compress_voip_enabled: %d \n", mConfigs.compress_voip_enabled);
+    dst->appendFormat("fm_power_opt: %d \n", mConfigs.fm_power_opt);
+    dst->appendFormat("voice_concurrency: %d \n", mConfigs.voice_concurrency);
+    dst->appendFormat("record_play_concurrency: %d \n", mConfigs.record_play_concurrency);
+    dst->appendFormat("use_xml_audio_policy_conf: %d \n", mConfigs.use_xml_audio_policy_conf);
+}
 
 void APMConfigHelper::retrieveConfigs()
 {
