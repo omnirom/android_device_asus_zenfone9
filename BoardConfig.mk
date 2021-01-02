@@ -141,7 +141,7 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_PRODUCTIMAGE := true
 TARGET_COPY_OUT_VENDOR := vendor
 
-BOARD_ROOT_EXTRA_FOLDERS := ADF APD asdf batinfo voucher xrom
+BOARD_ROOT_EXTRA_FOLDERS := ADF APD asdf batinfo xrom
 
 # Platform
 TARGET_BOARD_PLATFORM := msmnile
@@ -160,6 +160,7 @@ TARGET_USES_MKE2FS := true
 include vendor/omni/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
 # Treble
 BOARD_VNDK_VERSION := current
