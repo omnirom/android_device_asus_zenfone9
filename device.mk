@@ -141,7 +141,7 @@ PRODUCT_PACKAGES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/asus/zenfone6/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/zenfone6/prebuilt/root,root)
+    $(call find-copy-subdir-files,*,device/asus/zenfone6/prebuilt/recovery,recovery/root)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
