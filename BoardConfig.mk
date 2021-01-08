@@ -186,9 +186,10 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Sepolicy
 include vendor/omni/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/SEPolicy.mk
+include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private \
+                                   $(DEVICE_PATH)/sepolicy/qva/private
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
 # Treble
