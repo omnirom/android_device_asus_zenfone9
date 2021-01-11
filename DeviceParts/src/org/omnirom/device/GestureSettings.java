@@ -60,12 +60,12 @@ public class GestureSettings extends PreferenceFragment implements
 
     public static final String SETTINGS_GESTURE_KEY = KEY_SETTINGS_SWIPEUP_PREFIX + KEY_SWIPEUP_SWITCH;
 
-    public static final int KEY_C_ID = 0;
-    public static final int KEY_E_ID = 1;
-    public static final int KEY_S_ID = 2;
-    public static final int KEY_V_ID = 3;
-    public static final int KEY_W_ID = 4;
-    public static final int KEY_Z_ID = 5;
+    public static final int KEY_W_ID = 0;
+    public static final int KEY_S_ID = 1;
+    public static final int KEY_E_ID = 2;
+    public static final int KEY_C_ID = 3;
+    public static final int KEY_Z_ID = 4;
+    public static final int KEY_V_ID = 5;
     public static final String KEY_C_APP = "c_gesture_app";
     public static final String KEY_E_APP = "e_gesture_app";
     public static final String KEY_S_APP = "s_gesture_app";
@@ -254,14 +254,14 @@ public class GestureSettings extends PreferenceFragment implements
         return null;
     }
 
-    private static final int KEY_MASK_GESTURE_CONTROL = 0x40;
+    private static final int KEY_MASK_GESTURE_CONTROL = 1 << 0;
     private static final int[] ALL_GESTURE_MASKS = {
-        0x04, // c gesture mask
-        0x08, // e gesture mask
-        0x10, // s gesture mask
-        0x01, // v gesture mask
-        0x20, // w gesture mask
-        0x02, // z gesture mask
+        1 << 1,  // W gesture mask
+        1 << 2,  // S gesture mask
+        1 << 3,  // e gesture mask
+        1 << 4,  // c gesture mask
+        1 << 5,  // Z gesture mask
+        1 << 6,  // V gesture mask
     };
 
     private void setGestureEnabled(int id, boolean enabled) {
