@@ -1,6 +1,3 @@
-# Android Auto
--product/priv-app/AndroidAutoStub/AndroidAutoStub.apk;PRESIGNED
-
 # ANT+
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
@@ -20,7 +17,7 @@ system_ext/etc/permissions/audiosphere.xml
 lib/DataSet/ispDB/ASUS_UNDI.bin
 lib/DataSet/ispDB/ASUS_UNDI_ZOOM.bin
 lib/DataSet/ispDB/ParameterDB.db
--priv-app/AsusCamera/AsusCamera.apk;PRESIGNED
+-priv-app/AsusCamera/AsusCamera.apk
 priv-app/AsusCamera/lib/arm64/libarcsoft_distortion_correction.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_burstcapture.so
@@ -33,12 +30,12 @@ priv-app/AsusCamera/lib/arm64/libmpbase.so
 priv-app/AsusCamera/lib/arm64/libtensorflowlite_jni.so
 priv-app/AsusCamera/lib/arm64/libUndistort.so
 priv-app/AsusCamera/lib/arm64/libyuv_util.so
--priv-app/MotorService/MotorService.apk;PRESIGNED
+-priv-app/MotorService/MotorService.apk
 priv-app/MotorService/lib/arm64/libAsusLaserSensorHAL.so
 priv-app/MotorService/lib/arm64/libAsusMotorDriverHAL.so
 priv-app/MotorService/lib/arm64/libjni_laser.so
 priv-app/MotorService/lib/arm64/libjni_motor.so
--priv-app/MotorK/MotorK.apk;PRESIGNED
+-priv-app/MotorK/MotorK.apk
 
 # CNE
 -system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
@@ -78,7 +75,7 @@ system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 
 # Gallery
--priv-app/AsusGallery/AsusGallery.apk;PRESIGNED
+-priv-app/AsusGallery/AsusGallery.apk
 priv-app/AsusGallery/lib/arm64/libarcsoft_beautyshot.so
 priv-app/AsusGallery/lib/arm64/libarcsoft_undistort.so
 priv-app/AsusGallery/lib/arm64/libblur.so
@@ -107,7 +104,7 @@ priv-app/AsusGallery/lib/arm64/libtensorflowlite_jni.so
 priv-app/AsusGallery/lib/arm64/libtensorflow_inference.so
 
 # GalleryBurst
--priv-app/AsusGalleryBurst/AsusGalleryBurst.apk;PRESIGNED
+-priv-app/AsusGalleryBurst/AsusGalleryBurst.apk
 priv-app/AsusGalleryBurst/lib/arm/libgifencoder.so
 
 # GalleryBurst Video Editor
@@ -192,6 +189,9 @@ system_ext/lib/libqvr_eyetracking_plugin.so
 system_ext/lib/libqvr_cdsp_driver_stub.so
 system_ext/lib64/libqvrcamera_client.qti.so
 system_ext/lib64/libqvrservice_client.qti.so
+system_ext/lib64/libqvrservice_ov7251_hvx_tuning.so
+system_ext/lib64/libqvrservice_ov9282_hvx_tuning.so
+system_ext/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so
 
 # Telephony
 system_ext/etc/permissions/qti_libpermissions.xml
