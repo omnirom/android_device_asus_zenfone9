@@ -509,6 +509,12 @@ public class KeyHandler implements DeviceKeyHandler {
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
             OmniUtils.sendKeycode(KeyEvent.KEYCODE_APP_SWITCH);
             return true;
+        } else if (value.equals(AppSelectListPreference.CAMERA_MOTOR_ENTRY)) {
+            Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
+            intent.setPackage("com.asus.motorservice");
+            mContext.sendBroadcast(intent);
+            OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+            return true;
         }
         return false;
     }
