@@ -2,7 +2,8 @@
 SEPOLICY_PATH:= device/qcom/sepolicy
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/generic/public
+    $(SEPOLICY_PATH)/generic/public \
+    $(SEPOLICY_PATH)/generic/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
@@ -10,7 +11,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/qva/public
+    $(SEPOLICY_PATH)/qva/public \
+    $(SEPOLICY_PATH)/qva/public/attribute
 
 #once all the services are moved to Product /ODM above lines will be removed.
 # sepolicy rules for product images
