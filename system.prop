@@ -246,4 +246,3 @@ vendor.display.enable_rotator_ui = 1
 ro.build.asus.sku=WW
 ro.vendor.qti.va_aosp.support=1
 persist.google.assistant.enable=1
-persist.sys.fflag.override.settings_network_and_internet_v2=true
