@@ -113,6 +113,11 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 PRODUCT_PACKAGES += \
     FrameworksResOverlay
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhwbinder
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
@@ -194,8 +199,15 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # WiFi
 PRODUCT_PACKAGES += \
-    libnl \
     TetheringOverlay \
     WifiOverlay
+
+# Wifi Display
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libnl \
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk

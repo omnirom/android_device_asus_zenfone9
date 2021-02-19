@@ -1,4 +1,5 @@
 # ANT+
+-system_ext/app/AntHalService-Soong/AntHalService-Soong.apk
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
@@ -164,6 +165,9 @@ system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # QVR
 system_ext/bin/qvrservice
+system_ext/etc/init/qvrd_ext.rc
+system_ext/etc/seccomp_policy/qvr@2.0.policy
+system_ext/etc/qvr/qvr_hid_device_list.txt
 system_ext/etc/qvr/qvrservice_config.txt
 system_ext/etc/qvr/cfg/339/0/65536/mtp855.txt
 system_ext/etc/qvr/cfg/339/0/65536/mtp855_6dof_config.xml
@@ -178,6 +182,7 @@ system_ext/etc/qvr/cfg/415/0/65536/mtplahaina.txt
 system_ext/etc/qvr/cfg/415/0/65536/mtplahaina_6dof_config.xml
 system_ext/lib/libqvrcamera_client.qti.so
 system_ext/lib/libqvrservice.so
+system_ext/lib/libScenescape.so
 system_ext/lib/rfsa/adsp/libdsp_streamer_qvrcam_receiver.so
 system_ext/lib/rfsa/adsp/libeye_tracking_dsp_sample_skel.so
 system_ext/lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
@@ -194,6 +199,7 @@ system_ext/lib64/libqvrservice_ov9282_hvx_tuning.so
 system_ext/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so
 
 # Telephony
+product/etc/permissions/telephony_product_privapp-permissions-qti.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
@@ -210,19 +216,22 @@ system_ext/bin/wfdservice
 system_ext/etc/init/wfdservice.rc
 system_ext/etc/wfdconfigsink.xml
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
+system_ext/etc/seccomp_policy/wfdservice.policy
 -system_ext/priv-app/WfdService/WfdService.apk
 system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-system_ext/lib/libmmparser_lite.so
 system_ext/lib/libmmosal.so
+system_ext/lib/libmmparser_lite.so
 system_ext/lib/libmmrtpdecoder.so
 system_ext/lib/libmmrtpencoder.so
 system_ext/lib/libwfdaac.so
 system_ext/lib/libwfdavenhancements.so
+system_ext/lib/libwfdclient.so
 system_ext/lib/libwfdcommonutils.so
 system_ext/lib/libwfdconfigutils.so
-system_ext/lib/libwfdclient.so
+system_ext/lib/libwfddisplayconfig.so
 system_ext/lib/libwfdmminterface.so
 system_ext/lib/libwfdmmsink.so
+system_ext/lib/libwfdmmsrc_system.so
 system_ext/lib/libwfdrtsp.so
 system_ext/lib/libwfdservice.so
 system_ext/lib/libwfdsinksm.so
@@ -231,14 +240,15 @@ system_ext/lib/libwfduibcsink.so
 system_ext/lib/libwfduibcsinkinterface.so
 system_ext/lib/libwfduibcsrc.so
 system_ext/lib/libwfduibcsrcinterface.so
-system_ext/lib/libwfdmmsrc_system.so
+system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
-system_ext/lib64/libmmosal.so
 system_ext/lib64/libwfdclient.so
 system_ext/lib64/libwfdcommonutils.so
 system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfddisplayconfig.so
 system_ext/lib64/libwfdmminterface.so
 system_ext/lib64/libwfdmmsink.so
 system_ext/lib64/libwfdnative.so
@@ -247,9 +257,8 @@ system_ext/lib64/libwfdsinksm.so
 system_ext/lib64/libwfduibcinterface.so
 system_ext/lib64/libwfduibcsinkinterface.so
 system_ext/lib64/libwfduibcsink.so
-system_ext/lib64/libwfduibcsrcinterface.so
 system_ext/lib64/libwfduibcsrc.so
-system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/libwfduibcsrcinterface.so
 system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 
 # Wlan
