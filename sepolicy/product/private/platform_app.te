@@ -1,0 +1,1 @@
+allow platform_app vendor_display_notch_prop:file { read };

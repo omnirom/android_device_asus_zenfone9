@@ -6,3 +6,7 @@ gsm.sim2.present u:object_r:exported_system_prop:s0
 ro.camera.res.fmq.size u:object_r:exported_system_prop:s0 exact int
 ro.camera.req.fmq.size u:object_r:exported_system_prop:s0 exact int
 ro.product.system.manufacturer u:object_r:exported_system_prop:s0 exact int
+
+persist.vendor.sys.cta.security   u:object_r:system_prop:s0
+persist.vendor.sys.cta.os   u:object_r:system_prop:s0
+
