@@ -29,4 +29,34 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),zenfone6))
 
+include $(CLEAR_VARS)
+HELPER_LIBS := libsystemhelper_jni.so
+HELPER_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT_APPS)/com.qualcomm.qti.services.systemhelper/lib/arm64/,$(notdir $(HELPER_LIBS)))
+$(HELPER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "SystemHelper lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system_ext/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(HELPER_SYMLINKS)
+
+IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT_APPS_PRIVILEGED)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+$(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "IMS lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system_ext/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
+
+WFD_LIB := libwfdnative.so
+WFD_SYMLINKS := $(addprefix $(TARGET_OUT_SYSTEM_EXT_APPS_PRIVILEGED)/WfdService/lib/arm64/,$(notdir $(WFD_LIB)))
+$(WFD_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "WFD lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system_ext/lib64/$(notdir $@) $@
+ALL_DEFAULT_INSTALLED_MODULES += $(WFD_SYMLINKS)
+
 endif
