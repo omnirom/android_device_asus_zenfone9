@@ -14,10 +14,10 @@
     limitations under the License.
 -->
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
-        <item name="preferenceTheme">@style/PreferenceTheme</item>
+    <style name="Theme.AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="preferenceTheme">@style/Theme.AppTheme.PreferenceTheme</item>
     </style>
 
-    <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.SettingsBase">
+    <style name="Theme.AppTheme.PreferenceTheme" parent="@style/PreferenceThemeOverlay.SettingsBase">
     </style>
 </resources>

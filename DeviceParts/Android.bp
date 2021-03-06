@@ -1,0 +1,30 @@
+android_app {
+    name: "DeviceParts",
+
+    defaults: [
+        "SettingsLibDefaults",
+    ],
+
+    static_libs: [
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "OmniLib",
+    ],
+
+    srcs: [
+        "src/**/*.java",
+    ],
+    certificate: "platform",
+    privileged: true,
+    platform_apis: true,
+    resource_dirs: ["res"],
+
+    libs: ["telephony-common"],
+
+    optimize: {
+        enabled: false,
+    },
+    dex_preopt: {
+        enabled: false,
+    },
+}

@@ -17,7 +17,7 @@
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/advanced_settings"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.AppTheme"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         tools:replace="android:appComponentFactory"
         android:supportsRtl="true" >
