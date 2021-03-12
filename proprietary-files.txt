@@ -149,20 +149,6 @@ system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
 system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
-# NFC
-#-app/NQNfcNci/NQNfcNci.apk
-#-framework/com.nxp.nfc.nq.jar
-#-framework/com.gsma.services.nfc.jar
-#etc/permissions/com.nxp.nfc.nq.xml
-#etc/permissions/com.gsma.services.nfc.xml
-#etc/nqnfcee_access.xml
-#etc/nqnfcse_access.xml
-#lib/vendor.nxp.hardware.nfc@1.0.so
-#lib64/vendor.nxp.hardware.nfc@1.0.so
-#lib/libnqnfc-nci.so
-#lib64/libnqnfc-nci.so
-#lib64/libnqnfc_nci_jni.so
-
 # QVR
 system_ext/bin/qvrservice
 system_ext/etc/init/qvrd_ext.rc

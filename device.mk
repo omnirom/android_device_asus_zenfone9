@@ -133,14 +133,12 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
-# NFC - NQ (NXP)
-#PRODUCT_PACKAGES += \
+# NFC
+PRODUCT_PACKAGES += \
+    NfcNci \
     Tag \
+    SecureElement \
     com.android.nfc_extras
-
-#PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.1 \
-    android.hardware.nfc@1.0
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
