@@ -34,6 +34,7 @@
     <string name="smart_key_off">Disable</string>
     <string name="smart_simple_title">Choose  your App or Action on single press</string>
     <string name="smart_long_title">App or Action when your long press</string>
+    <string name="screenshot_key">Screenshot</string>
 
     <string name="choose_app">Choose app</string>
     <string name="offscreen_gesture_title">Offscreen gestures</string>

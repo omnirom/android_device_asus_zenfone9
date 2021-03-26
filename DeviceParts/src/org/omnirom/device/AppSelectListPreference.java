@@ -67,6 +67,7 @@ public class AppSelectListPreference extends CustomDialogPreference {
     public static final String NAVIGATE_BACK_ENTRY = "navigate_back";
     public static final String NAVIGATE_HOME_ENTRY = "navigate_home";
     public static final String NAVIGATE_RECENT_ENTRY = "navigate_recent";
+    public static final String SCREENSHOT_ENTRY = "screenshoot";
 
     private AppSelectListAdapter mAdapter;
     private Drawable mAppIconDrawable;
@@ -273,6 +274,10 @@ public class AppSelectListPreference extends CustomDialogPreference {
         PackageItem disabledItem = new PackageItem(getContext().getResources().getString(R.string.disabled_entry),
                 R.drawable.ic_disabled, DISABLED_ENTRY);
         mInstalledPackages.add(0, disabledItem);
+
+        PackageItem screenshotItem = new PackageItem(getContext().getResources().getString(R.string.screenshot_key),
+                R.drawable.ic_screenshot, SCREENSHOT_ENTRY);
+        mInstalledPackages.add(0, screenshotItem);
     }
 
     @Override
@@ -373,7 +378,10 @@ public class AppSelectListPreference extends CustomDialogPreference {
             } else if (name.equals(NAVIGATE_RECENT_ENTRY)) {
                 mTitle = getContext().getResources().getString(R.string.navigate_recent);
                 mAppIconResourceId = R.drawable.recent;
-            } else {
+            } else if (name.equals(SCREENSHOT_ENTRY)) {
+                mTitle = getContext().getResources().getString(R.string.screenshot_key);
+                mAppIconResourceId = R.drawable.ic_screenshot;
+            }else {
                 ComponentName componentName = ComponentName.unflattenFromString(name);
                 PackageItem item = mAdapter.resolveApplication(componentName);
                 if (item != null) {

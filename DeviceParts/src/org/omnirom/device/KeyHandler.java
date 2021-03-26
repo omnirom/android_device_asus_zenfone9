@@ -17,6 +17,8 @@
 */
 package org.omnirom.device;
 
+import static android.view.WindowManager.TAKE_SCREENSHOT_FULLSCREEN;
+
 import android.app.ActivityManagerNative;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -63,6 +65,7 @@ import com.android.internal.util.omni.DeviceKeyHandler;
 import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.omni.OmniUtils;
+import com.android.internal.util.ScreenshotHelper;
 import org.omnirom.omnilib.utils.OmniVibe;
 import com.android.internal.statusbar.IStatusBarService;
 
@@ -513,6 +516,13 @@ public class KeyHandler implements DeviceKeyHandler {
             Intent intent = new Intent("com.asus.motorservice.action.WIDGET_BTN_CLICKED");
             intent.setPackage("com.asus.motorservice");
             mContext.sendBroadcast(intent);
+            OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+            return true;
+        } else if (value.equals(AppSelectListPreference.SCREENSHOT_ENTRY)) {
+            final ScreenshotHelper screenshotHelper = new ScreenshotHelper(mContext);
+            mHandler.postDelayed(() -> {
+                screenshotHelper.takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, true, true, mHandler, null);
+            }, 1000);
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
             return true;
         }
