@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Zenfone 6</string>
+    <string name="category_gestures_title">Cihaz hareketleri</string>
+    <string name="fp_gesture_title">Parmak izi tarayıcısı hareketleri</string>
+    <string name="category_fp_up_swipe_gesture">Parmak izini yukarıya kaydırma</string>
+    <string name="category_fp_right_swipe_gesture">Parmak izini sağa kaydırma</string>
+    <string name="category_fp_left_swipe_gesture">Parmak izini sola kaydırma</string>
+    <string name="category_fp_long_press_gesture">Parmak izi ile uzun basma</string>
+    <string name="fp_swipe_down_switch_summary_head">Bildirimleri genişletmek için kaydırma hareketini kullanın</string>
+    <string name="fp_swipe_down_switch_title_head">Bildirimler için parmak izinizi kaydırın</string>
+    <string name="doze_category_title">Ortam ekranı</string>
+    <string name="doze_category_summary">Bildirim aldığınızda ekranı uyandırır</string>
+    <string name="wave_check_summary">Bildirimleri el sallandığı zaman gösterir</string>
+    <string name="wave_check_title">El sallama</string>
+    <string name="tilt_check_summary">Bildirimleri cihaz ele alındığı zaman gösterir</string>
+    <string name="tilt_check_title">Ele alma</string>
+    <string name="pocket_check_summary">Bildirimleri cihaz cepten çıkarıldığı zaman gösterir</string>
+    <string name="pocket_check_title">Cep</string>
+    <string name="ambient_display_enable">Ekran ayarlarındaki ortam ekranı devreye sokulmalıdır</string>
+    <string name="wake_entry">Uyanma</string>
+    <string name="swipe_up_to_wake_up_title">Uyandırmak için yukarıya kaydırın</string>
+    <string name="swipe_up_to_wake_up_summary">Cihazınızı bekleme modundan çıkarmak için ekran üzerinde yukarıya doğru kaydırın</string>
+    <!-- Volume panel QS tile -->
+    <string name="volume_mode">Ses</string>
+    <string name="vibrate_mode">Titreşim</string>
+    <string name="mute_mode">Sessiz</string>
+</resources>
