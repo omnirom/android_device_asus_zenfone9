@@ -88,6 +88,11 @@
     <string name="swipe_up_to_wake_up_title">Swipe up to wake up</string>
     <string name="swipe_up_to_wake_up_summary">Swipe up on the screen to wake up your device from idle mode</string>
 
+    <!-- Display Manager -->
+    <string name="display_title">Display</string>
+    <string name="display_manager">Display colors</string>
+    <string name="display_calibration_summary">Calibrate display colours</string>
+
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Sound</string>
     <string name="vibrate_mode">Vibrate</string>
