@@ -89,8 +89,8 @@ public class IColorServiceImpl {
     public native int native_setSVI(int i, int i2);
 
     public IColorServiceImpl() {
-        System.loadLibrary("sdm-disp-apis");
-        System.loadLibrary("sd_sdk_display");
+        System.loadLibrary("sdm-disp-apis.qti");
+        System.loadLibrary("sd_sdk_display.qti");
     }
 
 }
