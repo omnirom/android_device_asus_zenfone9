@@ -141,5 +141,14 @@ public class Startup extends BroadcastReceiver {
 
         enabled = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
         restore(GestureSettings.getFile(), enabled);
+
+        value = Settings.System.getString(context.getContentResolver(), DeviceSettings.FPS);
+        if (TextUtils.isEmpty(value)) {
+            value = DeviceSettings.DEFAULT_FPS_VALUE;
+            Settings.System.putString(context.getContentResolver(), DeviceSettings.FPS, value);
+            DeviceSettings.changeFps(context, Integer.valueOf(value));
+        } else {
+            DeviceSettings.changeFps(context, Integer.valueOf(value));
+        }
     }
 }

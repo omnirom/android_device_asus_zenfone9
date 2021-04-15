@@ -81,6 +81,9 @@
     <string name="wake_entry">Wakeup</string>
     <string name="swipe_up_to_wake_up_title">Swipe up to wake up</string>
     <string name="swipe_up_to_wake_up_summary">Swipe up on the screen to wake up your device from idle mode</string>
+    <string name="category_frame_rate">FPS of the screen</string>
+    <string name="refresh_rate_title">Refresh rate</string>
+    <string name="summary_placeholder"> </string>
 
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Sound</string>
