@@ -1,0 +1,13 @@
+on fs
+    # Haptics
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/vmax
+    chown system system /sys/class/leds/vibrator/gain
+    chown system system /sys/class/leds/vibrator/seq
+    chown system system /sys/class/leds/vibrator/loop
+    chown system system /sys/class/leds/vibrator/brightness
+
+service vendor.qti.vibrator /vendor/bin/hw/vendor.qti.hardware.vibrator.service.sake
+    class hal
+    user system
+    group system input
