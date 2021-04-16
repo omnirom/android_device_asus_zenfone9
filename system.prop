@@ -136,7 +136,7 @@ persist.vendor.service.bt.iotinfo.report.enable=true
 # ASUS_BSP "Enable IOT logging"---
 
 #Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.qualcomm.saltproject2,com.asus.camera
+vendor.camera.aux.packagelist=org.omnirom.snap,com.googlecamera.wichaya,com.asus.camera
 persist.vendor.camera.privapp.list=com.asus.camera
 
 #enable IZat OptInApp overlay
