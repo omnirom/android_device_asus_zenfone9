@@ -27,6 +27,8 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#define LOG_TAG "bootcontrolhal"
+
 #include <libboot_control_qti.h>
 
 #include <map>
@@ -34,7 +36,6 @@
 #include <string>
 #include <vector>
 #include <errno.h>
-#define LOG_TAG "bootcontrolhal"
 #include <cutils/log.h>
 #include <stdio.h>
 #include <string.h>
@@ -52,6 +53,8 @@
 #define BOOT_IMG_PTN_NAME "boot"
 #define LUN_NAME_END_LOC 14
 #define BOOT_SLOT_PROP "ro.boot.slot_suffix"
+#define BOARD_PLATFORM_PROP  "ro.build.product"
+#define GVMQ_PLATFORM        "msmnile_gvmq"
 
 #define SLOT_ACTIVE 1
 #define SLOT_INACTIVE 2
@@ -419,11 +422,18 @@ error:
 
 bool bootcontrol_init()
 {
+	char platform[256];
+	property_get(BOARD_PLATFORM_PROP , platform, "");
+	if (!strncmp(platform, GVMQ_PLATFORM, strlen(GVMQ_PLATFORM)))
+		mPlatform = true;
 	return InitMiscVirtualAbMessageIfNeeded();
 }
 
 unsigned get_number_slots()
 {
+	if(mPlatform)
+		return 2;
+
 	struct dirent *de = NULL;
 	DIR *dir_bootdev = NULL;
 	unsigned slot_count = 0;
