@@ -85,6 +85,10 @@
     <string name="wake_entry">Uyanma</string>
     <string name="swipe_up_to_wake_up_title">Uyandırmak için yukarıya kaydırın</string>
     <string name="swipe_up_to_wake_up_summary">Cihazınızı bekleme modundan çıkarmak için ekran üzerinde yukarıya doğru kaydırın</string>
+    <!-- Display Manager -->
+    <string name="display_title">Ekran</string>
+    <string name="display_manager">Ekran renkleri</string>
+    <string name="display_calibration_summary">Ekran renklerini kalibre edin</string>
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Ses</string>
     <string name="vibrate_mode">Titreşim</string>

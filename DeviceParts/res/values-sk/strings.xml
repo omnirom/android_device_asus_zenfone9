@@ -85,6 +85,10 @@
     <string name="wake_entry">Prebudenie</string>
     <string name="swipe_up_to_wake_up_title">Potiahnutím nahor prebudiť</string>
     <string name="swipe_up_to_wake_up_summary">Potiahnite prstom po obrazovke nahor pre prebudenie zariadenia z režimu nečinnosti</string>
+    <!-- Display Manager -->
+    <string name="display_title">Displej</string>
+    <string name="display_manager">Farby displeja</string>
+    <string name="display_calibration_summary">Kalibrovať farby displeja</string>
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Zvuk</string>
     <string name="vibrate_mode">Vibrovanie</string>
