@@ -1,7 +1,4 @@
-# Audio
-ro.config.media_vol_steps=25
-ro.config.vc_call_vol_steps=7
-
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 #rild.libargs=-d /dev/smd0
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
@@ -14,7 +11,8 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=RUIM,RUIM
 DEVICE_PROVISIONED=1
-# Set network mode to (T/L/G/W/1X/EVDO, T/L/G/W/1X/EVDO) for 7+7 mode device on DSDS mode
+# Set network mode to (NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA, NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA) for 8+8 mode device on DSDS mode
+#ro.telephony.default_network=33,33
 
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
@@ -22,6 +20,7 @@ dev.pm.dyn_samplingrate=1
 #ro.hdmi.enable=true
 #persist.speaker.prot.enable=false
 qcom.hw.aac.encoder=true
+
 #
 # system props for the cne module
 #
@@ -35,17 +34,14 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
-mm.enable.smoothstreaming=true
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #16777215 is decimal sum of supported codecs in AAL
-#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MHAS
-vendor.mm.enable.qcom_parser=12582911
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV MHAS
+vendor.mm.enable.qcom_parser=12582910
 persist.mm.enable.prefetch=true
 
-#Netflix custom property
-ro.netflix.bsp_rev=Q855-16947-1
 
 #
 # system props for the data modules
@@ -55,14 +51,6 @@ persist.vendor.data.mode=concurrent
 
 #system props for time-services
 persist.timed.enable=true
-
-#
-# system prop for opengles version
-#
-# 196608 is decimal for 0x30000 to report version 3
-# 196609 is decimal for 0x30001 to report version 3.1
-# 196610 is decimal for 0x30002 to report version 3.2
-ro.opengles.version=196610
 
 #
 # System props for telephony
@@ -79,6 +67,10 @@ persist.vendor.btstack.aac_frm_ctl.enabled=true
 persist.bluetooth.avrcpversion=avrcp16
 persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.enable.twsplussho=true
+
+# ASUS BSP Bluetooth: disable SWB
+persist.vendor.qcom.bluetooth.enable.swb=false
+persist.vendor.qcom.bluetooth.enable.swbpm=false
 
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
@@ -157,7 +149,7 @@ persist.backup.ntpServer="0.pool.ntp.org"
 persist.vendor.sensors.enable.mag_filter=true
 
 #Partition source order for Product/Build properties pickup.
-#ro.product.property_source_order=odm,vendor,product,product_services,system
+#ro.product.property_source_order=odm,vendor,product,system_ext,system
 
 #Property to enable Codec2 for audio and OMX for Video
 debug.stagefright.ccodec=1
@@ -165,85 +157,91 @@ debug.stagefright.ccodec=1
 #Property to set native recorder's maximum base layer fps
 ro.media.recorder-max-base-layer-fps = 60
 
-#Touch Property
-persist.vendor.systemui.skiptouch=false
-
-# [ASUS BSP] add for vibration intensity
-ro.asus.vibration_intensity=1
-
-# [ASUS BSP] Deka
-ro.asus.camera.preview_beauty=0:1;1:1;2:1;3:1;4:1;5:1
-ro.asus.camera.cam0.video_fps=HD@60,FHD@60,4K@60
-ro.asus.camera.cam1.video_fps=HD@60,FHD@60,4K@60
-ro.asus.camera.cam2.video_fps=HD@60,FHD@60,4K@30
-ro.asus.camera.cam3.video_fps=HD@60,FHD@60,4K@30
-ro.asus.camera.dual_bokeh=0:0;1:0;2:0;3:0;4:1;5:1
-ro.asus.camera.lens_type=0:standard;1:standard;2:wide-angle;3:wide-angle;4:virtual;5:virtual
-ro.asus.camera.use_frame_processor=0
-ro.asus.camera.ai_scene_mode=0:1;1:1;2:1;3:1
-ro.asus.camera.undistortion.preview=0:0;1:0;2:1;3:1
-ro.asus.camera.undistortion.video=0:0;1:0;2:0;3:0
-persist.camera.capture.hdrplus.dump=0
-ro.asus.camera.cam0.preview_fps_range=8,45
-ro.asus.camera.cam1.preview_fps_range=8,45
-ro.asus.camera.capture.override_max_digital_zoom=0:8;1:8
-
-# [ASUS BSP] Wayne
-ro.asus.camera.cam0.stream_list=1P/2Y/1J
-ro.asus.camera.cam1.stream_list=1P/2Y/1J
-ro.asus.camera.cam0.exposure_time_range=312500,32000000000
-ro.asus.camera.cam1.exposure_time_range=312500,32000000000
-ro.asus.camera.cam2.exposure_time_range=100000,16000000000
-ro.asus.camera.cam3.exposure_time_range=100000,16000000000
-# [ASUS BSP] Mike
-ro.asus.camera.cam0.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30
-ro.asus.camera.cam1.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30
-ro.asus.camera.cam2.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30
-ro.asus.camera.cam3.eis.sup_list=4K@60,4K@30,FHD@60,FHD@30,HD@30,TV@30
-# [ASUS BSP] Mike
-
-# [ASUS BSP] Mike
-ro.asus.camera.fovc=0:1;1:1;2:0;3:0
-# [ASUS BSP] Mike
-# [ASUS BSP] Byron for camera night mode use
-ro.asus.camera.night=0:1;1:1;2:1;3:1
-# [ASUS BSP] Byron for camera night mode use
-
-# [ASUS BSP] for camera long exposure
-vendor.camera.expTimeMax=0
-# [ASUS BSP] for camera long exposure
-
-# Only enable WCG and HDR in Asus system image
-ro.asus.wcg=1
-ro.asus.hdr=1
-
-vendor.camera.asus.system=1
-# [ASUS BSP] for Poweroff Alarm Support
-ro.asus.poweroffalarm_support=1
-
-# ASUS BSP: for Q vibrator HAL 50% 75% vmax
-ro.asus.scale_very_low_max_amp=1
-ro.asus.scale_low_max_amp=128
-
-# Disable UXE
-vendor.iop.enable_uxe=0
-
-# [ASUS BSP] Debug
-ro.logd.kernel=1
-persist.vendor.asus.logcat.filenum=20
-persist.logd.size=1048576
-ro.vendor.asus.logcat=1
-persist.vendor.asus.startlog=0
-# [ASUS BSP] Debug
-
 #Battery Property
 ro.charger.enable_suspend = 1
 
-#Enable Qualcomm mdp rotator
-vendor.display.enable_rotator_ui = 1
+# ASUS_BSP +++
+persist.vendor.asus.logcat.filenum=20
+# property for csclogtool
+logtool.package=com.asus.csclogtool
+logtool.class=com.asus.csclogtool.LogService
+ro.asus.rog=1
+# ASUS_BSP ---
+# jack for default log flag
+
+persist.vendor.asus.startlog=0
+persist.vendor.sys.downloadmode.enable=0
+# ASUS_BSP ---
+
+# ASUS_BSP "Enable IOT logging"+++
+persist.vendor.service.bt.iotinfo.report.enable=true
+# ASUS_BSP "Enable IOT logging"---
+
+# ASUS_BSP AustinT "FP wakeup property"+++
+persist.vendor.asus.fp.wakeup_support=true
+persist.vendor.asus.fp.wakeup=false
+# ASUS_BSP AustinT "FP wakeup property"---
+
+# ASUS_BSP AustinC Dirac +++
+ro.vendor.dirac.acs.controller=gef
+ro.vendor.dirac.acs.storeSettings=1
+ro.vendor.dirac.acs.ignore_error=0
+ro.vendor.dirac.gef.int.did=0xF,0x313,0x2C4
+ro.vendor.dirac.gef.ext.did=0xA,0x2D,0x14,0x2C7,0x2C9,0x1F7
+ro.vendor.dirac.gef.int.tid=0x10012D00
+ro.vendor.dirac.gef.int.mid=0x10012DE0
+ro.vendor.dirac.gef.ext.mid=0x10012DE1
+ro.vendor.dirac.gef.system_sound=1
+ro.vendor.dirac.gef.ins.tid=0x10012D02
+ro.vendor.dirac.gef.ins.mid=0x10012DE2
+ro.vendor.dirac.gef.ins.did=0xF,0x313,0x2C4
+ro.vendor.dirac.gef.ins.appt=0x00011131
+ro.vendor.dirac.config=16
+ro.vendor.dirac.acs.rotation=true
+# ASUS_BSP AustinC Dirac ---
+
+# ASUS_BSP AustinC +++
+log.tag.APM_AudioPolicyManager=V
+# ASUS_BSP AustinC ---
+
+vendor.asus.accy_gen=5
+#ASUS_BSP : Anakin use ACCY generation 5
+
+ro.vendor.build.asus.sku=WW
+vendor.camera.expTimeMax=0
+vendor.camera.cam5.crop_region=2:0,0,4032,3024;3:728,546,3304,2478
+vendor.camera.preview_beauty=4:1;1:1;2:1;3:1;5:1
+vendor.camera.preview_portrait=4:0;1:1;2:0;3:0
+vendor.camera.cam3.video_fps=HD@60,FHD@60,4K@60,8K@30
+vendor.camera.cam1.video_fps=HD@30,FHD@60,4K@30
+vendor.camera.cam2.video_fps=HD@30,FHD@60,4K@60
+vendor.camera.cam5.video_fps=HD@30,FHD@60,4K@60,8K@30
+vendor.camera.dual_bokeh=4:1;1:0;2:0;3:0;5:0
+vendor.camera.lens_type=1:std;2:wid;3:std;4:vir;5:sat
+vendor.camera.use_frame_processor=0
+vendor.camera.ai_scene_mode=4:0;1:1;2:1;3:1;5:1
+vendor.camera.undistortion.preview=4:0;1:0;2:1;3:0;5:1
+vendor.camera.undistortion.video=4:0;1:0;2:0;3:0;5:0
+vendor.camera.capture.override_max_digital_zoom=3:8
+vendor.camera.cam1.stream_list=1P/2Y/1J
+vendor.camera.cam2.stream_list=1P/2Y/1J
+vendor.camera.cam3.stream_list=1P/2Y/1J
+vendor.camera.cam3.exposure_time_range=100000,32000000000
+vendor.camera.cam1.exposure_time_range=100000,16000000000
+vendor.camera.cam2.exposure_time_range=100000,16000000000
+vendor.camera.cam3.eis.sup_list=HD@60,FHD@60,4K@60,8K@30
+vendor.camera.cam1.eis.sup_list=HD@30,FHD@60,4K@30
+vendor.camera.cam2.eis.sup_list=HD@30,FHD@60,4K@60
+vendor.camera.cam5.eis.sup_list=HD@30,FHD@60,4K@60,8K@30
+vendor.camera.fovc=0:0;1:1;2:1;3:1;4:0;5:0
+vendor.camera.night=2:1;3:1;5:1
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.systemui,android,com.netviv.photo.asusGimbal
+vendor.camera.atdtest=3:9;2:4;1:0
+vendor.camera.asus.system=1
+vendor.camera.eis_ois.sup_list=8K@24,4K@60,4K@30,FHD@60,FHD@30,HD@60,HD@30
+import /system/build_${ro.boot.country_code}.prop
 
 # Extra Asus
-ro.build.asus.sku=WW
 ro.vendor.qti.va_aosp.support=1
 persist.google.assistant.enable=1
 sys.vendor.qti.servicetracker.disable=true

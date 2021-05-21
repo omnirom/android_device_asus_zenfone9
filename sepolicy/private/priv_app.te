@@ -9,5 +9,4 @@ allow priv_app {
     postinstall_mnt_dir
     radio_data_file
     system_app_data_file
-    xrom_file
 }:dir getattr;

@@ -19,7 +19,7 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-$(call inherit-product, vendor/asus/zenfone6/zenfone6-vendor.mk)
+$(call inherit-product, vendor/asus/zenfone8/zenfone8-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -30,13 +30,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_TARGET_VNDK_VERSION := 30
 
 # A/B
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    system \
-    vbmeta
+ENABLE_VIRTUAL_AB := true
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -47,18 +41,24 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     omnipreopt_script
 
+# tell update_engine to not change dynamic partition table during updates
+# needed since our qti_dynamic_partitions does not include
+# vendor and odm and we also dont want to AB update them
+TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
 
 # Api
-PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 # audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_volumes_ZS630KL.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS630KL.xml
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_configuration_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/ZS590KS/audio_policy_volumes_ZS590KS.xml \
+    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes.xml
 
 # Bluetooth
 PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
@@ -72,8 +72,8 @@ PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl.recovery \
-    bootctrl.msmnile.recovery
+    android.hardware.boot@1.1-impl.recovery \
+    bootctrl.lahaina.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
@@ -86,8 +86,7 @@ PRODUCT_PACKAGES += \
 
 # DeviceParts
 PRODUCT_PACKAGES += \
-    DeviceParts \
-    OmniDisplayManager
+    DeviceParts
 
 # Display
 PRODUCT_PACKAGES += \
@@ -97,9 +96,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyalsa
 
-# Exclude vibrator from InputManager
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+# fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
 
 # FM
 PRODUCT_PACKAGES += \
@@ -122,9 +121,10 @@ PRODUCT_PACKAGES += \
 
 # Input
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/fts_ts.idc:system/usr/idc/fts_ts.idc \
+    $(LOCAL_PATH)/keylayout/fts_ts.kcm:system/usr/keychars/fts_ts.kcm \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
-    $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
-    $(LOCAL_PATH)/keylayout/googlekey_input.kl:system/usr/keylayout/googlekey_input.kl
+    $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -142,8 +142,10 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/asus/zenfone6/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/zenfone6/prebuilt/recovery,recovery/root)
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/product,product) \
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/root,recovery/root) \
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system,system) \
+    $(call find-copy-subdir-files,*,device/asus/zenfone8/prebuilt/system_ext,system_ext)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -158,6 +160,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vndk_package
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
@@ -193,6 +199,9 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # WiFi
 PRODUCT_PACKAGES += \

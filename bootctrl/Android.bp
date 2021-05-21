@@ -15,7 +15,7 @@
 //
 
 cc_library {
-    name: "bootctrl.msmnile",
+    name: "bootctrl.lahaina",
     defaults: ["bootctrl_hal_defaults"],
-    static_libs: ["libgptutils.asus_msmnile"],
+    static_libs: ["libgptutils.asus_lahaina"],
 }

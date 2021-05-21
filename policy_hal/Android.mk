@@ -1,4 +1,4 @@
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),zenfone6))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),zenfone8))
 ifneq ($(USE_LEGACY_AUDIO_POLICY), 1)
 ifeq ($(USE_CUSTOM_AUDIO_POLICY), 1)
 LOCAL_PATH := $(call my-dir)

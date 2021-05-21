@@ -1,2 +1,4 @@
-#type asus_prop, property_type;
+type asus_prop, property_type;
 type vendor_camera_prop, property_type;
+type vendor_asus_prop, property_type;
+type asus_dongle_prop, property_type;

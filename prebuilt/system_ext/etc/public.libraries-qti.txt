@@ -1,0 +1,5 @@
+libqvrservice_client.qti.so
+libqvrcamera_client.qti.so
+libupdateprof.qti.so
+libthermalclient.qti.so
+libsxrservice_client.qti.so

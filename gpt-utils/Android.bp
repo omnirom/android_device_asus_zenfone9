@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.asus_msmnile",
+    name: "libgptutils.asus_lahaina",
     vendor: true,
     recovery_available: true,
     shared_libs: [
