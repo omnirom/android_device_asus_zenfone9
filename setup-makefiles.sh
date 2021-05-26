@@ -23,7 +23,7 @@ set -e
 DEVICE=zenfone8
 VENDOR=asus
 
-INITIAL_COPYRIGHT_YEAR=2019
+INITIAL_COPYRIGHT_YEAR=2021
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

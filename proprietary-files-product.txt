@@ -6,22 +6,12 @@ system_ext/lib64/vendor.qti.hardware.alarm@1.0.so
 # Bluetooth
 system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
-# Device
--system_ext/app/DeviceInfo/DeviceInfo.apk
--system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
-
-# Display api
-product/etc/permissions/com.qti.snapdragon.sdk.display.xml
--product/framework/com.qti.snapdragon.sdk.display.jar
--system_ext/app/colorservice/colorservice.apk
-system_ext/lib64/libsdm-disp-apis.qti.so
-system_ext/lib64/libsd_sdk_display.qti.so
-system_ext/lib64/vendor.display.color@1.0.so
-system_ext/lib64/vendor.display.color@1.1.so
-system_ext/lib64/vendor.display.color@1.2.so
-system_ext/lib64/vendor.display.color@1.3.so
-system_ext/lib64/vendor.display.postproc@1.0.so
-system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+# Camera
+system_ext/lib64/libQSEEComAPI_system.so
+system_ext/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
+system_ext/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+system_ext/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
+system_ext/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # QTI Telephony
 -system_ext/app/datastatusnotification/datastatusnotification.apk
@@ -34,8 +24,10 @@ system_ext/etc/permissions/UimGbaManager.xml
 -system_ext/framework/embmslibrary.jar
 -system_ext/framework/uimgbalibrary.jar
 -system_ext/framework/uimgbamanagerlibrary.jar
-# https://git.rip/dumps/redmi/curtana/-/blob/qssi-user-11-RKQ1.200826.002-V12.0.1.0.RJWINXM-release-keys/system_ext/framework/qti-telephony-common.jar
--system_ext/framework/qti-telephony-common.jar|C4D8A8B797EBCC7C73384CE3A10BA9E94FB1B460
+# ROG 5
+-system_ext/framework/qti-telephony-common.jar|07B2B91F5D547C5B5E0752F0F5534321BC93A2C1
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
 -system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
 -system_ext/framework/vendor.qti.hardware.data.connection-V1.1-java.jar
 -system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
@@ -141,14 +133,6 @@ system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so
 system_ext/lib64/libcryptfs_hw.so
 
 # System Helper
--system_ext/app/com.qualcomm.qti.services.systemhelper/com.qualcomm.qti.services.systemhelper.apk
 system_ext/lib64/vendor.qti.hardware.embmssl@1.0.so
 system_ext/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so
 system_ext/lib64/libsystemhelper_jni.so
-
-# Wigig
--system_ext/framework/vendor.qti.hardware.wigig.netperftuner-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.wigig.supptunnel-V1.0-java.jar
--system_ext/framework/wigig-service.jar
-system_ext/lib64/vendor.qti.hardware.wigig.netperftuner@1.0.so
-system_ext/lib64/vendor.qti.hardware.wigig.supptunnel@1.0.so
