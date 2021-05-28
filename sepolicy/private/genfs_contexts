@@ -1,4 +1,3 @@
-genfscon sysfs /devices/platform/soc/soc:asustek_googlekey/googlekey_enable	u:object_r:sysfs_gesture:s0
 genfscon proc /driver/dclick            u:object_r:sysfs_touchscreen:s0
 genfscon proc /driver/swipeup           u:object_r:sysfs_touchscreen:s0
 genfscon proc /driver/gesture_type      u:object_r:sysfs_touchscreen:s0

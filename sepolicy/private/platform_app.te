@@ -1,6 +1,4 @@
-allow platform_app asus_prop:file { getattr map open read };
 #allow platform_app vendor_file:file { execute };
 allow platform_app app_data_file:file { execute };
 allow platform_app vendor_asus_prop:file { getattr map open read };
-allow platform_app asus_dongle_prop:file { getattr map open read };
 allow platform_app privapp_data_file:file { execute };
