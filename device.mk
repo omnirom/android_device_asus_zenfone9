@@ -31,6 +31,7 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 
 # A/B
 ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
