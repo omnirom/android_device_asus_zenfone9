@@ -19,6 +19,7 @@
 # product configuration (apps).
 #
 DEVICE_PATH := device/asus/zenfone8
+IMAGES_PATH := vendor/images/asus/zenfone8
 
 BOARD_VENDOR := asus
 
@@ -28,11 +29,13 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
+    odm \
     product \
     system \
     system_ext \
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor
 
 # Architecture
 TARGET_ARCH := arm64
@@ -142,6 +145,7 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_KERNEL_BINARIES := kernel kernel-gki
 BOARD_KERNEL-GKI_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
@@ -154,11 +158,15 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
+BOARD_PREBUILT_ODMIMAGE := $(IMAGES_PATH)/odm.img
+BOARD_PREBUILT_VENDORIMAGE := $(IMAGES_PATH)/vendor.img
 
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
     system \
     system_ext \
-    product
+    odm \
+    product \
+    vendor
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_SUPER_PARTITION_SIZE := 6442450944
