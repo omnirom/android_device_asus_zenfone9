@@ -62,36 +62,32 @@ public class Startup extends BroadcastReceiver {
     }
 
     public static void restoreAfterUserSwitch(Context context) {
-        // fp down swipe
+
         String value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_0);
         boolean enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.FP_GESTURE_LONG_PRESS_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_C_APP), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_1);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_C_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_E_APP), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_2);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_E_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_S_APP), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_3);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_S_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_V_APP), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_4);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_V_APP), enabled);
+        restore(getGestureFile(GestureSettings.KEY_W_APP), enabled);
 
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_5);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
-        restore(getGestureFile(GestureSettings.KEY_W_APP), enabled);
-
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_6);
-        enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_Z_APP), enabled);
 
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_7);
+        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_6);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_SMART_KEY), enabled);
 

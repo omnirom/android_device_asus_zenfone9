@@ -77,11 +77,6 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String KEY_SMART_LONG = "smart_long";
     public static final String KEY_SMART_KEY = "smart_key";
 
-    public static final String KEY_FP_GESTURE_CATEGORY = "key_fp_gesture_category";
-    public static final String KEY_FP_GESTURE_DEFAULT_CATEGORY = "gesture_settings";
-
-    public static final String FP_GESTURE_LONG_PRESS_APP = "fp_long_press_gesture_app";
-
     public static final String DEVICE_GESTURE_MAPPING_0 = "device_gesture_mapping_0_0";
     public static final String DEVICE_GESTURE_MAPPING_1 = "device_gesture_mapping_1_0";
     public static final String DEVICE_GESTURE_MAPPING_2 = "device_gesture_mapping_2_0";
@@ -90,12 +85,10 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String DEVICE_GESTURE_MAPPING_5 = "device_gesture_mapping_5_0";
     public static final String DEVICE_GESTURE_MAPPING_6 = "device_gesture_mapping_6_0";
     public static final String DEVICE_GESTURE_MAPPING_7 = "device_gesture_mapping_7_0";
-    public static final String DEVICE_GESTURE_MAPPING_8 = "device_gesture_mapping_8_0";
 
     private TwoStatePreference mProxiSwitch;
     private TwoStatePreference mSmartKeySwitch;
     private TwoStatePreference mSwipeUpSwitch;
-    private AppSelectListPreference mFPLongPressApp;
     private AppSelectListPreference mLetterCGesture;
     private AppSelectListPreference mLetterEGesture;
     private AppSelectListPreference mLetterSGesture;
@@ -126,55 +119,49 @@ public class GestureSettings extends PreferenceFragment implements
         mSmartKeySwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
                 KEY_SMART_KEY, 0) != 0);
 
-        mFPLongPressApp = (AppSelectListPreference) findPreference(FP_GESTURE_LONG_PRESS_APP);
-        mFPLongPressApp.setEnabled(true);
-        String value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0);
-        mFPLongPressApp.setValue(value);
-        mFPLongPressApp.setOnPreferenceChangeListener(this);
-
         mLetterCGesture = (AppSelectListPreference) findPreference(KEY_C_APP);
         mLetterCGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1);
+        String value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0);
         mLetterCGesture.setValue(value);
         mLetterCGesture.setOnPreferenceChangeListener(this);
 
         mLetterEGesture = (AppSelectListPreference) findPreference(KEY_E_APP);
         mLetterEGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_2);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1);
         mLetterEGesture.setValue(value);
         mLetterEGesture.setOnPreferenceChangeListener(this);
 
         mLetterSGesture = (AppSelectListPreference) findPreference(KEY_S_APP);
         mLetterSGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_3);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_2);
         mLetterSGesture.setValue(value);
         mLetterSGesture.setOnPreferenceChangeListener(this);
 
         mLetterVGesture = (AppSelectListPreference) findPreference(KEY_V_APP);
         mLetterVGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_4);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_3);
         mLetterVGesture.setValue(value);
         mLetterVGesture.setOnPreferenceChangeListener(this);
 
         mLetterWGesture = (AppSelectListPreference) findPreference(KEY_W_APP);
         mLetterWGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_5);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_4);
         mLetterWGesture.setValue(value);
         mLetterWGesture.setOnPreferenceChangeListener(this);
 
         mLetterZGesture = (AppSelectListPreference) findPreference(KEY_Z_APP);
         mLetterZGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_6);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_5);
         mLetterZGesture.setValue(value);
         mLetterZGesture.setOnPreferenceChangeListener(this);
 
         mSmartKeySimple = (AppSelectListPreference) findPreference(KEY_SMART_SIMPLE);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_6);
         mSmartKeySimple.setValue(value);
         mSmartKeySimple.setOnPreferenceChangeListener(this);
 
         mSmartKeyLong = (AppSelectListPreference) findPreference(KEY_SMART_LONG);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_8);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7);
         mSmartKeyLong.setValue(value);
         mSmartKeyLong.setOnPreferenceChangeListener(this);
 
@@ -212,45 +199,42 @@ public class GestureSettings extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mFPLongPressApp) {
-            String value = (String) newValue;
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0, value);
-        } else if (preference == mLetterCGesture) {
+        if (preference == mLetterCGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_C_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0, value);
         } else if (preference == mLetterEGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_E_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_2, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1, value);
         } else if (preference == mLetterSGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_S_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_3, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_2, value);
         } else if (preference == mLetterVGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_V_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_4, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_3, value);
         } else if (preference == mLetterWGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_W_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_5, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_4, value);
         } else if (preference == mLetterZGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_Z_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_6, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_5, value);
         } else if (preference == mSmartKeySimple) {
             String value = (String) newValue;
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_6, value);
         } else if (preference == mSmartKeyLong) {
             String value = (String) newValue;
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_8, value);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_7, value);
         }
         return true;
     }
@@ -357,7 +341,6 @@ public class GestureSettings extends PreferenceFragment implements
 
         @Override
         protected void onPostExecute(Void feed) {
-            mFPLongPressApp.setPackageList(mInstalledPackages);
             mLetterCGesture.setPackageList(mInstalledPackages);
             mLetterEGesture.setPackageList(mInstalledPackages);
             mLetterSGesture.setPackageList(mInstalledPackages);

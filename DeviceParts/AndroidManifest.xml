@@ -62,16 +62,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.android.settings.Settings$SwipeToNotificationSuggestionActivity"
-            android:exported="true"
-            android:label="@string/fp_swipe_down_switch_title_head"
-            android:launchMode="singleTask" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <receiver android:name="org.omnirom.device.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
