@@ -54,14 +54,20 @@
             android:summary="@string/swipe_up_to_wake_up_summary"
             android:persistent="false" />
 
-        <org.omnirom.device.AppSelectListPreference
-            android:key="c_gesture_app"
-            android:title="@string/category_c_gesture"
+        <SwitchPreference
+            android:key="music_gesture_app"
+            android:title="@string/music_control_title"
+            android:summary="@string/music_control_summary"
             android:persistent="false" />
 
         <org.omnirom.device.AppSelectListPreference
             android:key="e_gesture_app"
             android:title="@string/category_e_gesture"
+            android:persistent="false" />
+
+        <org.omnirom.device.AppSelectListPreference
+            android:key="m_gesture_app"
+            android:title="@string/category_m_gesture"
             android:persistent="false" />
 
         <org.omnirom.device.AppSelectListPreference

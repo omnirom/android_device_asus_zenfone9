@@ -45,7 +45,6 @@ import android.widget.ListView;
 import android.util.Log;
 import static android.provider.Settings.Secure.SYSTEM_NAVIGATION_KEYS_ENABLED;
 import android.os.UserHandle;
-import com.android.internal.util.omni.OmniUtils;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -64,15 +63,18 @@ public class GestureSettings extends PreferenceFragment implements
     public static final int KEY_W_ID = 0;
     public static final int KEY_S_ID = 1;
     public static final int KEY_E_ID = 2;
-    public static final int KEY_C_ID = 3;
+    public static final int KEY_M_ID = 3;
     public static final int KEY_Z_ID = 4;
     public static final int KEY_V_ID = 5;
-    public static final String KEY_C_APP = "c_gesture_app";
+    public static final int KEY_MUSIC_ID = 6;
+
     public static final String KEY_E_APP = "e_gesture_app";
+    public static final String KEY_M_APP = "m_gesture_app";
     public static final String KEY_S_APP = "s_gesture_app";
     public static final String KEY_V_APP = "v_gesture_app";
     public static final String KEY_W_APP = "w_gesture_app";
     public static final String KEY_Z_APP = "z_gesture_app";
+    public static final String KEY_MUSIC = "music_gesture_app";
     public static final String KEY_SMART_SIMPLE = "smart_simple";
     public static final String KEY_SMART_LONG = "smart_long";
     public static final String KEY_SMART_KEY = "smart_key";
@@ -86,11 +88,12 @@ public class GestureSettings extends PreferenceFragment implements
     public static final String DEVICE_GESTURE_MAPPING_6 = "device_gesture_mapping_6_0";
     public static final String DEVICE_GESTURE_MAPPING_7 = "device_gesture_mapping_7_0";
 
+    private TwoStatePreference mMusicSwitch;
     private TwoStatePreference mProxiSwitch;
     private TwoStatePreference mSmartKeySwitch;
     private TwoStatePreference mSwipeUpSwitch;
-    private AppSelectListPreference mLetterCGesture;
     private AppSelectListPreference mLetterEGesture;
+    private AppSelectListPreference mLetterMGesture;
     private AppSelectListPreference mLetterSGesture;
     private AppSelectListPreference mLetterVGesture;
     private AppSelectListPreference mLetterWGesture;
@@ -98,11 +101,9 @@ public class GestureSettings extends PreferenceFragment implements
     private AppSelectListPreference mSmartKeyLong;
     private AppSelectListPreference mSmartKeySimple;
 
-    public static final String GESTURE_CONTROL_PATH = "/proc/driver/gesture_type";
+    public static final String OFFSCREEN_PATH = "/proc/driver/gesture_type";
     private static final String SWIPEUP_PATH = "/proc/driver/swipeup";
 
-    private PreferenceCategory fpGestures;
-    private boolean mFpDownSwipe;
     private List<AppSelectListPreference.PackageItem> mInstalledPackages = new LinkedList<AppSelectListPreference.PackageItem>();
     private PackageManager mPm;
 
@@ -110,6 +111,10 @@ public class GestureSettings extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.gesture_settings, rootKey);
         mPm = getContext().getPackageManager();
+
+        mMusicSwitch = (TwoStatePreference) findPreference(KEY_MUSIC);
+        mMusicSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
+                KEY_MUSIC, 0) == 1);
 
         mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
         mProxiSwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
@@ -119,17 +124,17 @@ public class GestureSettings extends PreferenceFragment implements
         mSmartKeySwitch.setChecked(Settings.System.getInt(getContext().getContentResolver(),
                 KEY_SMART_KEY, 0) != 0);
 
-        mLetterCGesture = (AppSelectListPreference) findPreference(KEY_C_APP);
-        mLetterCGesture.setEnabled(true);
-        String value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0);
-        mLetterCGesture.setValue(value);
-        mLetterCGesture.setOnPreferenceChangeListener(this);
-
         mLetterEGesture = (AppSelectListPreference) findPreference(KEY_E_APP);
         mLetterEGesture.setEnabled(true);
-        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1);
+        String value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0);
         mLetterEGesture.setValue(value);
         mLetterEGesture.setOnPreferenceChangeListener(this);
+
+        mLetterMGesture = (AppSelectListPreference) findPreference(KEY_M_APP);
+        mLetterMGesture.setEnabled(true);
+        value = Settings.System.getString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1);
+        mLetterMGesture.setValue(value);
+        mLetterMGesture.setOnPreferenceChangeListener(this);
 
         mLetterSGesture = (AppSelectListPreference) findPreference(KEY_S_APP);
         mLetterSGesture.setEnabled(true);
@@ -184,6 +189,12 @@ public class GestureSettings extends PreferenceFragment implements
                     Settings.System.OMNI_DEVICE_PROXI_CHECK_ENABLED, mProxiSwitch.isChecked() ? 1 : 0);
             return true;
         }
+        if (preference == mMusicSwitch) {
+            Settings.System.putInt(getContext().getContentResolver(), KEY_MUSIC, mMusicSwitch.isChecked() ? 1 : 0);
+            boolean enabled = Settings.System.getInt(getContext().getContentResolver(), KEY_MUSIC, 0) != 0;
+            setGestureEnabled(KEY_MUSIC_ID, !enabled);
+            return true;
+        }
         if (preference == mSmartKeySwitch) {
             Settings.System.putInt(getContext().getContentResolver(), KEY_SMART_KEY, mSmartKeySwitch.isChecked() ? 1 : 0);
             Utils.writeValue((getGestureFile(KEY_SMART_KEY)), mSmartKeySwitch.isChecked() ? "1" : "0");
@@ -199,15 +210,15 @@ public class GestureSettings extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mLetterCGesture) {
-            String value = (String) newValue;
-            boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
-            setGestureEnabled(KEY_C_ID, !gestureDisabled);
-            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0, value);
-        } else if (preference == mLetterEGesture) {
+        if (preference == mLetterEGesture) {
             String value = (String) newValue;
             boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
             setGestureEnabled(KEY_E_ID, !gestureDisabled);
+            Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_0, value);
+        } else if (preference == mLetterMGesture) {
+            String value = (String) newValue;
+            boolean gestureDisabled = value.equals(AppSelectListPreference.DISABLED_ENTRY);
+            setGestureEnabled(KEY_M_ID, !gestureDisabled);
             Settings.System.putString(getContext().getContentResolver(), DEVICE_GESTURE_MAPPING_1, value);
         } else if (preference == mLetterSGesture) {
             String value = (String) newValue;
@@ -248,7 +259,7 @@ public class GestureSettings extends PreferenceFragment implements
 
     public static String getGestureFile(String key) {
         switch(key) {
-            case GESTURE_CONTROL_PATH:
+            case OFFSCREEN_PATH:
                 return "/proc/driver/gesture_type";
             case KEY_SMART_KEY:
                 return "/sys/devices/platform/soc/soc:asustek_googlekey/googlekey_enable";
@@ -263,14 +274,15 @@ public class GestureSettings extends PreferenceFragment implements
         1 << 1,  // W gesture mask
         1 << 2,  // S gesture mask
         1 << 3,  // e gesture mask
-        1 << 4,  // c gesture mask
+        1 << 4,  // M gesture mask
         1 << 5,  // Z gesture mask
         1 << 6,  // V gesture mask
+        1 << 7,  // Music control mask
     };
 
     private void setGestureEnabled(int id, boolean enabled) {
         Log.i("GestureSettings", "setGestureEnabled called with key=" +id+ ",enabled=" +enabled);
-        int gestureMode = Integer.parseInt(Utils.readLine(GESTURE_CONTROL_PATH));
+        int gestureMode = Integer.decode(Utils.readLine(OFFSCREEN_PATH).trim());
         int mask = ALL_GESTURE_MASKS[id];
 
         if (enabled)
@@ -284,14 +296,9 @@ public class GestureSettings extends PreferenceFragment implements
         String gestureType = String.format("%7s", Integer.toBinaryString(gestureMode)).replace(' ', '0');
         Log.i("GestureSettings", "gestureType=" +gestureType);
 
-        String gestureTypeMapping = Settings.System.getString(getContext().getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
         Settings.System.putString(getContext().getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING, gestureType);
 
-        Utils.writeLine(GESTURE_CONTROL_PATH, gestureType);
-    }
-
-    private boolean isGestureSupported(String key) {
-        return Utils.fileWritable(getGestureFile(key));
+        Utils.writeLine(OFFSCREEN_PATH, gestureType);
     }
 
     @Override
@@ -341,8 +348,8 @@ public class GestureSettings extends PreferenceFragment implements
 
         @Override
         protected void onPostExecute(Void feed) {
-            mLetterCGesture.setPackageList(mInstalledPackages);
             mLetterEGesture.setPackageList(mInstalledPackages);
+            mLetterMGesture.setPackageList(mInstalledPackages);
             mLetterSGesture.setPackageList(mInstalledPackages);
             mLetterVGesture.setPackageList(mInstalledPackages);
             mLetterWGesture.setPackageList(mInstalledPackages);

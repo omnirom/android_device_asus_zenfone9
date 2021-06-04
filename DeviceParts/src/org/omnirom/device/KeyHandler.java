@@ -83,8 +83,12 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int KEY_BACK = 158;
     private static final int KEY_RECENTS = 580;
 
-    private static final int KEY_GESTURE_C = 46;
+    private static final int KEY_GESTURE_PAUSE = 119;
+    private static final int KEY_GESTURE_FORWARD = 159;
+    private static final int KEY_GESTURE_REWIND  =168;
+
     private static final int KEY_GESTURE_E = 18;
+    private static final int KEY_GESTURE_M = 50;
     private static final int KEY_GESTURE_S = 31;
     private static final int KEY_GESTURE_V = 47;
     private static final int KEY_GESTURE_W = 17;
@@ -100,16 +104,33 @@ public class KeyHandler implements DeviceKeyHandler {
 
 
     private static final String DT2W_CONTROL_PATH = "/proc/driver/dclick";
-    private static final String GOODIX_CONTROL_PATH = "/sys/devices/platform/soc/soc:goodixfp/proximity_state";
 
     private static final int[] sSupportedGestures = new int[]{
         KEY_DOUBLE_TAP,
-        KEY_GOOGLE_APP
+        KEY_GOOGLE_APP,
+        KEY_GESTURE_E,
+        KEY_GESTURE_M,
+        KEY_GESTURE_S,
+        KEY_GESTURE_V,
+        KEY_GESTURE_W,
+        KEY_GESTURE_Z,
+        KEY_GESTURE_PAUSE,
+        KEY_GESTURE_FORWARD,
+        KEY_GESTURE_REWIND
     };
 
     private static final int[] sProxiCheckedGestures = new int[]{
         KEY_DOUBLE_TAP,
-        KEY_GOOGLE_APP
+        KEY_GOOGLE_APP,
+        KEY_GESTURE_E,
+        KEY_GESTURE_M,
+        KEY_GESTURE_S,
+        KEY_GESTURE_V,
+        KEY_GESTURE_W,
+        KEY_GESTURE_Z,
+        KEY_GESTURE_PAUSE,
+        KEY_GESTURE_FORWARD,
+        KEY_GESTURE_REWIND
     };
 
     protected final Context mContext;
@@ -142,12 +163,8 @@ public class KeyHandler implements DeviceKeyHandler {
         @Override
         public void onSensorChanged(SensorEvent event) {
             mProxyIsNear = event.values[0] == 1;
+
             if (DEBUG_SENSOR) Log.i(TAG, "mProxyIsNear = " + mProxyIsNear + " mProxyWasNear = " + mProxyWasNear);
-            if (mUseProxiCheck) {
-                if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
-                    Utils.writeValue(GOODIX_CONTROL_PATH, mProxyIsNear ? "1" : "0");
-                }
-            }
             if (mUseWaveCheck || mUsePocketCheck) {
                 if (mProxyWasNear && !mProxyIsNear) {
                     long delta = SystemClock.elapsedRealtime() - mProxySensorTimestamp;
@@ -406,16 +423,9 @@ public class KeyHandler implements DeviceKeyHandler {
         if (DEBUG) Log.i(TAG, "Display on");
         if (enableProxiSensor()) {
             mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
-            enableGoodix();
         }
         if (mUseTiltCheck) {
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
-        }
-    }
-
-    private void enableGoodix() {
-        if (Utils.fileWritable(GOODIX_CONTROL_PATH)) {
-            Utils.writeValue(GOODIX_CONTROL_PATH, "0");
         }
     }
 
@@ -529,24 +539,36 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private String getGestureValueForScanCode(int scanCode) {
         switch(scanCode) {
-            case KEY_GESTURE_C:
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_1, UserHandle.USER_CURRENT);
             case KEY_GESTURE_E:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_2, UserHandle.USER_CURRENT);
+                    GestureSettings.DEVICE_GESTURE_MAPPING_0, UserHandle.USER_CURRENT);
+            case KEY_GESTURE_M:
+                return Settings.System.getStringForUser(mContext.getContentResolver(),
+                    GestureSettings.DEVICE_GESTURE_MAPPING_1, UserHandle.USER_CURRENT);
             case KEY_GESTURE_S:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_3, UserHandle.USER_CURRENT);
+                    GestureSettings.DEVICE_GESTURE_MAPPING_2, UserHandle.USER_CURRENT);
             case KEY_GESTURE_V:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_4, UserHandle.USER_CURRENT);
+                    GestureSettings.DEVICE_GESTURE_MAPPING_3, UserHandle.USER_CURRENT);
             case KEY_GESTURE_W:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_5, UserHandle.USER_CURRENT);
+                    GestureSettings.DEVICE_GESTURE_MAPPING_4, UserHandle.USER_CURRENT);
             case KEY_GESTURE_Z:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
-                    GestureSettings.DEVICE_GESTURE_MAPPING_6, UserHandle.USER_CURRENT);
+                    GestureSettings.DEVICE_GESTURE_MAPPING_5, UserHandle.USER_CURRENT);
+            case  KEY_GESTURE_PAUSE:
+                if (DEBUG) Log.i(TAG, "Music Play/Pause");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
+                break;
+            case KEY_GESTURE_FORWARD:
+                if (DEBUG) Log.i(TAG, "Music Next");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_NEXT);
+                break;
+            case KEY_GESTURE_REWIND:
+                if (DEBUG) Log.i(TAG, "Music Previous");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
+                break;
         }
         return null;
     }

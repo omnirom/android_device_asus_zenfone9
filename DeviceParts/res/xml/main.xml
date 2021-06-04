@@ -34,15 +34,6 @@
                 android:targetClass="org.omnirom.device.DozeSettingsActivity" />
     </Preference>
 
-    <Preference
-        android:key="display_manager"
-        android:title="@string/display_manager"
-        android:summary="@string/display_calibration_summary" >
-        <intent
-             android:targetPackage="org.omnirom.omnidisplaymanager"
-             android:targetClass="org.omnirom.omnidisplaymanager.ColorSettingsActivity" />
-    </Preference>
-
     <PreferenceCategory
         android:key="screen"
         android:title="@string/screen_title">
