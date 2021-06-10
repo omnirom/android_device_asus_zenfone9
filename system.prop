@@ -235,11 +235,11 @@ vendor.camera.cam2.eis.sup_list=HD@30,FHD@60,4K@60
 vendor.camera.cam5.eis.sup_list=HD@30,FHD@60,4K@60,8K@30
 vendor.camera.fovc=0:0;1:1;2:1;3:1;4:0;5:0
 vendor.camera.night=2:1;3:1;5:1
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.systemui,android,com.netviv.photo.asusGimbal
+#vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.systemui,android,com.netviv.photo.asusGimbal
 vendor.camera.atdtest=3:9;2:4;1:0
 vendor.camera.asus.system=1
 vendor.camera.eis_ois.sup_list=8K@24,4K@60,4K@30,FHD@60,FHD@30,HD@60,HD@30
-import /system/build_${ro.boot.country_code}.prop
+#import /system/build_${ro.boot.country_code}.prop
 
 # Extra Asus
 ro.vendor.qti.va_aosp.support=1

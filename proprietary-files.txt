@@ -24,6 +24,24 @@ lib64/libxditk_arch.so
 lib64/libxditk_ditArchLIB.so
 lib64/libxditk_ditBSP.so
 lib64/libxditk_ditBSP_JNI.so
+-priv-app/AsusCamera/AsusCamera.apk
+priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
+priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_burstcapture.so
+priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_interval_capture.so
+priv-app/AsusCamera/lib/arm64/libarcsoft_portrait_distortion_correction_zf7.so
+priv-app/AsusCamera/lib/arm64/libasusundistort.so
+priv-app/AsusCamera/lib/arm64/libasus_camera_interval_panorama.so
+priv-app/AsusCamera/lib/arm64/libasus_camera_object_tracking.so
+priv-app/AsusCamera/lib/arm64/libasus_camera_panorama.so
+priv-app/AsusCamera/lib/arm64/libbitmap.so
+priv-app/AsusCamera/lib/arm64/libmainstone.so
+priv-app/AsusCamera/lib/arm64/libMNN.so
+priv-app/AsusCamera/lib/arm64/libmpbase.so
+priv-app/AsusCamera/lib/arm64/libscanner.so
+priv-app/AsusCamera/lib/arm64/libtensorflowlite_jni.so
+priv-app/AsusCamera/lib/arm64/libUndistort.so
+priv-app/AsusCamera/lib/arm64/libyuv_camera.so
+priv-app/AsusCamera/lib/arm64/libyuv_util.so
 
 # CNE
 -system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
