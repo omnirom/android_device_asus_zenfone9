@@ -88,7 +88,7 @@ PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
 
 # Boot control
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery \
+    android.hardware.boot@1.1-impl-qti.recovery \
     bootctrl.lahaina.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
