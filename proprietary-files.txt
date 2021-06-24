@@ -35,7 +35,6 @@ priv-app/AsusCamera/lib/arm64/libasus_camera_object_tracking.so
 priv-app/AsusCamera/lib/arm64/libasus_camera_panorama.so
 priv-app/AsusCamera/lib/arm64/libbitmap.so
 priv-app/AsusCamera/lib/arm64/libmainstone.so
-priv-app/AsusCamera/lib/arm64/libMNN.so
 priv-app/AsusCamera/lib/arm64/libmpbase.so
 priv-app/AsusCamera/lib/arm64/libscanner.so
 priv-app/AsusCamera/lib/arm64/libtensorflowlite_jni.so
