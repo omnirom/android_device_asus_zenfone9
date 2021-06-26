@@ -581,7 +581,13 @@
 
          @see https://www.w3.org/TR/SVG/paths.html#PathData
          -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M131,77m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0 @left</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">
+        M 131,77
+        m -36,0
+        a 36,36 0,1 1,72 0
+        a 36,36 0,1 1,-72 0
+        @left
+    </string>
 
     <!-- Like config_mainBuiltInDisplayCutout, but this path is used to report the
          one single bounding rect per device edge to the app via
@@ -589,7 +595,14 @@
          appearance of the cutout as much as possible, and may be smaller than
          config_mainBuiltInDisplayCutout
          -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">M 0.0,0.0 h 168 v 114 h -168 Z @left</string>
+    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
+        M 0.0,0.0
+        h 200
+        v 147
+        h -200
+        Z
+        @left
+    </string>
 
     <!-- Show a custom view for FOD -->
     <bool name="config_usesFOD">true</bool>
