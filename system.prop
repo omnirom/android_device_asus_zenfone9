@@ -179,7 +179,7 @@ persist.vendor.service.bt.iotinfo.report.enable=true
 
 # ASUS_BSP AustinT "FP wakeup property"+++
 persist.vendor.asus.fp.wakeup_support=true
-persist.vendor.asus.fp.wakeup=false
+#persist.vendor.asus.fp.wakeup=false
 # ASUS_BSP AustinT "FP wakeup property"---
 
 # ASUS_BSP AustinC Dirac +++

@@ -24,6 +24,10 @@
 #define GLOBAL_HBM_ON "1"
 #define GLOBAL_HBM_OFF "0"
 
+#define FOD_ENABLE_PATH "/proc/driver/fts_fp_mode"
+#define FOD_ENABLE_ON "1"
+#define FOD_ENABLE_OFF "0"
+
 #define FOD_TOUCHED_PATH "/sys/class/drm/fod_touched"
 #define FOD_TOUCHED_ON "1"
 #define FOD_TOUCHED_OFF "0"
@@ -66,12 +70,14 @@ Return<void> FingerprintInscreen::onRelease() {
 }
 
 Return<void> FingerprintInscreen::onShowFODView() {
+    android::base::WriteStringToFile(FOD_ENABLE_ON, FOD_ENABLE_PATH);
     return Void();
 }
 
 Return<void> FingerprintInscreen::onHideFODView() {
     android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
     android::base::WriteStringToFile(FOD_TOUCHED_OFF, FOD_TOUCHED_PATH);
+    android::base::WriteStringToFile(FOD_ENABLE_OFF, FOD_ENABLE_PATH);
     return Void();
 }
 
