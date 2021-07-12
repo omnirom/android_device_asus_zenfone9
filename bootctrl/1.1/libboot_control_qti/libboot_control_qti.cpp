@@ -55,7 +55,7 @@
 #define BOOT_IMG_PTN_NAME "boot"
 #define LUN_NAME_END_LOC 14
 #define BOOT_SLOT_PROP "ro.boot.slot_suffix"
-#define BOARD_PLATFORM_PROP  "ro.build.product"
+#define BOARD_PLATFORM_PROP  "ro.board.platform"
 #define GVMQ_PLATFORM        "msmnile_gvmq"
 
 #define SLOT_ACTIVE 1
