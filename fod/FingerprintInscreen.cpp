@@ -32,9 +32,6 @@
 #define FOD_TOUCHED_ON "1"
 #define FOD_TOUCHED_OFF "0"
 
-#define FOD_EVENT_PATH "/proc/driver/fod_event"
-#define FOD_WAKEUP_EVENT "33"
-
 namespace vendor {
 namespace omni {
 namespace biometrics {
@@ -58,7 +55,6 @@ Return<void> FingerprintInscreen::onFinishEnroll() {
 Return<void> FingerprintInscreen::onPress() {
     this->mGoodixFingerprintDaemon->sendCommand(200001, {},
                                                 [](int, const hidl_vec<signed char>&) {});
-    android::base::WriteStringToFile(FOD_WAKEUP_EVENT, FOD_EVENT_PATH);
     android::base::WriteStringToFile(FOD_TOUCHED_ON, FOD_TOUCHED_PATH);
     android::base::WriteStringToFile(GLOBAL_HBM_ON, GLOBAL_HBM_PATH);
     this->mGoodixFingerprintDaemon->sendCommand(200002, {},
