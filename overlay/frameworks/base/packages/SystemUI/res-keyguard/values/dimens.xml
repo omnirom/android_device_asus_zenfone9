@@ -17,6 +17,6 @@
 */
 -->
 <resources>
-    <dimen name="keyguard_fod_switch_bottom_margin">5dp</dimen>
+    <dimen name="keyguard_fod_switch_bottom_margin">37dp</dimen>
     <dimen name="keyguard_security_container_bottom_margin">22dp</dimen>
 </resources>
