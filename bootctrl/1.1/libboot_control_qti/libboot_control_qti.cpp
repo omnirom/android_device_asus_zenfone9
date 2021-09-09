@@ -55,8 +55,7 @@
 #define BOOT_IMG_PTN_NAME "boot"
 #define LUN_NAME_END_LOC 14
 #define BOOT_SLOT_PROP "ro.boot.slot_suffix"
-#define BOARD_PLATFORM_PROP  "ro.board.platform"
-#define GVMQ_PLATFORM        "msmnile_gvmq"
+#define VENDOR_BOOTCTRL_ENABLE  "ro.vendor.bootctrl.enable"
 
 #define SLOT_ACTIVE 1
 #define SLOT_INACTIVE 2
@@ -85,6 +84,8 @@ using ::android::bootable::GetMiscVirtualAbMergeStatus;
 using ::android::bootable::InitMiscVirtualAbMessageIfNeeded;
 using ::android::bootable::SetMiscVirtualAbMergeStatus;
 using ::android::hardware::boot::V1_1::MergeStatus;
+
+unsigned int kMaxNumSlots = 2;
 
 //Get the value of one of the attribute fields for a partition.
 static int get_partition_attribute(char *partname,
@@ -425,8 +426,8 @@ error:
 bool bootcontrol_init()
 {
 	char platform[256];
-	property_get(BOARD_PLATFORM_PROP , platform, "");
-	if (!strncmp(platform, GVMQ_PLATFORM, strlen(GVMQ_PLATFORM)))
+	property_get(VENDOR_BOOTCTRL_ENABLE , platform, "");
+	if (!strncmp(platform, "true", strlen("true")))
 		mGvmqPlatform = true;
 	return InitMiscVirtualAbMessageIfNeeded();
 }
@@ -663,6 +664,9 @@ error:
 }
 int is_slot_bootable(unsigned slot)
 {
+	if (mGvmqPlatform) {
+		return slot < kMaxNumSlots && slot < get_number_slots();
+	}
 	int attr = 0;
 	char bootPartition[MAX_GPT_NAME_SIZE + 1] = {0};
 
@@ -682,6 +686,23 @@ error:
 
 int is_slot_marked_successful(unsigned slot)
 {
+	if (mGvmqPlatform) {
+		std::string err;
+		std::string misc_blk_device = get_bootloader_message_blk_device(&err);
+		if (misc_blk_device.empty()) {
+			ALOGE("Could not find bootloader message block device: %s", err.c_str());
+			return -1;
+		}
+		bootloader_message boot_verify;
+		if (!read_bootloader_message_from(&boot_verify, misc_blk_device, &err)) {
+			ALOGE("Failed to read from %s due to %s ", misc_blk_device.c_str(), err.c_str());
+			return -1;
+		}
+		if ((boot_verify.reserved[2] == 'y') && (slot == get_current_slot())) {
+			return 1;
+		}
+		return -1;
+	}
 	int attr = 0;
 	char bootPartition[MAX_GPT_NAME_SIZE + 1] = {0};
 
