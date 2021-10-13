@@ -324,7 +324,6 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-ndk_platform.vendor \
     vendor.qti.hardware.vibrator.service.sake
 
 # Wifi
