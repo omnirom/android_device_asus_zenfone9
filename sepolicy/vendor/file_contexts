@@ -23,6 +23,9 @@
 /asdf(/.*)?                                                                                        u:object_r:log_file:s0
 /batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
 
+# Fingerprint
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.asus_lahaina       u:object_r:hal_fingerprint_default_exec:s0
+
 # Sensors
 /dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
 /dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0

@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 
 # Biometric
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina
 
 # Boot control
 PRODUCT_PACKAGES += \
