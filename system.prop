@@ -103,7 +103,7 @@ persist.sys.wfd.virtual=0
 #property to enable HWC for VDS
 debug.sf.enable_hwc_vds=0
 #property to latch unsignaled buffer
-debug.sf.latch_unsignaled=1
+debug.sf.latch_unsignaled=0
 # enable tunnel encoding for amrwb
 tunnel.audio.encode=true
 #enable voice path for PCM VoIP by default
