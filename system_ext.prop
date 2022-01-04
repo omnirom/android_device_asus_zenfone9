@@ -1,1 +1,7 @@
 persist.vendor.dpm.feature=11
+ro.telephony.sim_slots.count=2
+telephony.active_modems.max_count=2
+
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.omnirom.snap,com.googlecamera.wichaya,com.asus.camera
+persist.vendor.camera.privapp.list=com.asus.camera
