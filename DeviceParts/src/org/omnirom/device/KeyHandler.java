@@ -61,13 +61,14 @@ import android.view.KeyEvent;
 import android.view.HapticFeedbackConstants;
 import android.view.WindowManagerGlobal;
 
-import com.android.internal.util.omni.DeviceKeyHandler;
-import com.android.internal.util.omni.PackageUtils;
 import com.android.internal.util.ArrayUtils;
-import com.android.internal.util.omni.OmniUtils;
 import com.android.internal.util.ScreenshotHelper;
-import org.omnirom.omnilib.utils.OmniVibe;
 import com.android.internal.statusbar.IStatusBarService;
+
+import org.omnirom.omnilib.utils.DeviceKeyHandler;
+import org.omnirom.omnilib.utils.OmniUtils;
+import org.omnirom.omnilib.utils.OmniVibe;
+import org.omnirom.omnilib.utils.PackageUtils;
 
 public class KeyHandler implements DeviceKeyHandler {
 
@@ -466,7 +467,7 @@ public class KeyHandler implements DeviceKeyHandler {
             IStatusBarService service = getStatusBarService();
             if (service != null) {
                 try {
-                    service.toggleCameraFlash();
+                   service.toggleCameraFlash();
                     OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
                 } catch (RemoteException e) {
                     // do nothing.

@@ -123,32 +123,39 @@ public class Startup extends BroadcastReceiver {
         enabled = !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(GestureSettings.getGestureFile(GestureSettings.KEY_Z_APP), enabled);
 
-        value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_6);
+        mapping = GestureSettings.DEVICE_GESTURE_MAPPING_6;
+        value = Settings.System.getString(context.getContentResolver(), mapping);
+        if (TextUtils.isEmpty(value)) {
+            value = AppSelectListPreference.DISABLED_ENTRY;
+            Settings.System.putString(context.getContentResolver(), mapping, value);
+        }
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_SMART_KEY), enabled);
 
-        value = Settings.System.getString(context.getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
-        if (TextUtils.isEmpty(value)) {
-            return;
-        } else {
-        restore(getGestureFile(GestureSettings.OFFSCREEN_PATH), value);
-        }
-
-        enabled = Settings.System.getInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, 0) != 0;
-        if (enabled) {
-            restore(GloveModeSwitch.getFile(), enabled);
-        }
-
-        enabled = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
-        restore(GestureSettings.getFile(), enabled);
-
-        value = Settings.System.getString(context.getContentResolver(), DeviceSettings.FPS);
+        String fps = DeviceSettings.FPS;
+        value = Settings.System.getString(context.getContentResolver(), fps);
         if (TextUtils.isEmpty(value)) {
             value = DeviceSettings.DEFAULT_FPS_VALUE;
-            Settings.System.putString(context.getContentResolver(), DeviceSettings.FPS, value);
-            DeviceSettings.changeFps(context, Integer.valueOf(value));
+            Settings.System.putString(context.getContentResolver(), fps, value);
         } else {
             DeviceSettings.changeFps(context, Integer.valueOf(value));
+        }
+
+        String valueExtra = Settings.System.getString(context.getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
+        if (TextUtils.isEmpty(valueExtra)) {
+            return;
+        } else {
+        restore(getGestureFile(GestureSettings.OFFSCREEN_PATH), valueExtra);
+        }
+
+        boolean enabledGlove = Settings.System.getInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, 0) != 0;
+        if (enabledGlove) {
+            restore(GloveModeSwitch.getFile(), enabledGlove);
+        }
+
+        boolean enabledGesture = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
+        if (enabledGlove) {
+            restore(GestureSettings.getFile(), enabledGesture);
         }
     }
 }
