@@ -236,7 +236,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libnl \
 
-PRODUCT_BOOT_JARS += \
+#PRODUCT_BOOT_JARS += \
     WfdCommon
 
 include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
