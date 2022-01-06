@@ -8,22 +8,18 @@ system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 
 # Camera
 system_ext/lib64/libQSEEComAPI_system.so
-system_ext/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
-system_ext/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
-system_ext/lib64/vendor.qti.hardware.scve.panorama@1.0-adapter-helper.so
-system_ext/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # QTI Telephony
 -system_ext/app/datastatusnotification/datastatusnotification.apk
 -system_ext/app/DynamicDDSService/DynamicDDSService.apk
--system_ext/app/uimgbaservice/uimgbaservice.apk
+-product/app/uimgbaservice/uimgbaservice.apk
 system_ext/etc/permissions/embms.xml
 system_ext/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
-system_ext/etc/permissions/UimGba.xml
-system_ext/etc/permissions/UimGbaManager.xml
--system_ext/framework/embmslibrary.jar
--system_ext/framework/uimgbalibrary.jar
--system_ext/framework/uimgbamanagerlibrary.jar
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+-product/framework/uimgbalibrary.jar
+-product/framework/uimgbamanagerlibrary.jar
+
 # ROG 5
 -system_ext/framework/qti-telephony-common.jar|07B2B91F5D547C5B5E0752F0F5534321BC93A2C1
 product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
@@ -71,7 +67,7 @@ system_ext/lib64/libdiag_system.so
 -system_ext/framework/com.qualcomm.qti.uceservice-V2.0-java.jar
 -system_ext/framework/com.qualcomm.qti.uceservice-V2.1-java.jar
 -system_ext/framework/com.qualcomm.qti.uceservice-V2.2-java.jar
--system_ext/framework/uimservicelibrary.jar
+-product/framework/uimservicelibrary.jar
 -system_ext/framework/vendor.qti.ims.callcapability-V1.0-java.jar
 -system_ext/framework/vendor.qti.ims.callinfo-V1.0-java.jar
 -system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar
@@ -80,7 +76,7 @@ system_ext/lib64/libdiag_system.so
 -system_ext/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
 -system_ext/framework/vendor.qti.ims.rcsconfig-V2.0-java.jar
 -system_ext/framework/vendor.qti.ims.rcsconfig-V2.1-java.jar
-system_ext/etc/permissions/UimService.xml
+product/etc/permissions/UimService.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
