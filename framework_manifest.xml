@@ -6,8 +6,10 @@
         <interface>
             <name>Isigma_miracast</name>
             <instance>sigmahal</instance>
+            <instance>sigmahal64</instance>
         </interface>
         <fqname>@1.0::Isigma_miracast/sigmahal</fqname>
+        <fqname>@1.0::Isigma_miracast/sigmahal64</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.systemhelper</name>
@@ -23,5 +25,15 @@
         </interface>
         <fqname>@1.0::ISystemEvent/default</fqname>
         <fqname>@1.0::ISystemResource/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.asus.bspcam</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAsusBspCameraInterface</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IAsusBspCameraInterface/default</fqname>
     </hal>
 </manifest>
