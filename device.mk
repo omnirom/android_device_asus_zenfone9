@@ -239,4 +239,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-include vendor/qcom/opensource/display-commonsys-intf/config/display-product-system.mk
+include vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk
+include vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk
