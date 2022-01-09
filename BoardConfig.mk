@@ -215,7 +215,7 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 include vendor/omni/sepolicy/sepolicy.mk
 include $(DEVICE_PATH)/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private \
-                                   $(DEVICE_PATH)/sepolicy/qva/private
+                                   $(DEVICE_PATH)/sepolicy/generic/private
 
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/product/private
 
