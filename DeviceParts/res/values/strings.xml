@@ -51,7 +51,6 @@
     <string name="torch_entry">Flashlight</string>
     <string name="disabled_entry">Disabled</string>
     <string name="camera_entry">Camera</string>
-    <string name="camera_label">Rotate camera</string>
     <string name="music_play_entry">Play / pause music</string>
     <string name="music_prev_entry">Prev track</string>
     <string name="music_next_entry">Next track</string>

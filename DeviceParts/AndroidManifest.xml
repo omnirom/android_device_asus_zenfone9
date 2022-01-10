@@ -87,15 +87,6 @@
             </intent-filter>
         </service>
         <service
-            android:name="org.omnirom.device.CameraTile"
-            android:icon="@drawable/ic_camera_tile"
-            android:label="@string/camera_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-        <service
             android:name="org.omnirom.device.FrameRateTileService"
             android:icon="@drawable/ic_refresh_rate"
             android:label="@string/refresh_rate_title"
