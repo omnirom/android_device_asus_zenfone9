@@ -55,7 +55,6 @@ public class AppSelectListPreference extends CustomDialogPreference {
     public static final String TORCH_ENTRY = "torch";
     public static final String DISABLED_ENTRY = "disabled";
     public static final String CAMERA_ENTRY = "camera";
-    public static final String CAMERA_MOTOR_ENTRY = "camera_motor";
     public static final String MUSIC_PLAY_ENTRY = "music_play";
     public static final String MUSIC_PREV_ENTRY = "music_prev";
     public static final String MUSIC_NEXT_ENTRY = "music_next";
@@ -212,10 +211,6 @@ public class AppSelectListPreference extends CustomDialogPreference {
                 R.drawable.ic_camera, CAMERA_ENTRY);
         mInstalledPackages.add(0, cameraItem);
 
-        PackageItem cameraMotorItem = new PackageItem(getContext().getResources().getString(R.string.camera_label),
-                R.drawable.ic_camera_motor, CAMERA_MOTOR_ENTRY);
-        mInstalledPackages.add(0, cameraMotorItem);
-
         PackageItem torchItem = new PackageItem(getContext().getResources().getString(R.string.torch_entry),
                 R.drawable.ic_flashlight, TORCH_ENTRY);
         mInstalledPackages.add(0, torchItem);
@@ -342,9 +337,6 @@ public class AppSelectListPreference extends CustomDialogPreference {
             } else if (name.equals(CAMERA_ENTRY)) {
                 mTitle = getContext().getResources().getString(R.string.camera_entry);
                 mAppIconResourceId = R.drawable.ic_camera;
-            } else if (name.equals(CAMERA_MOTOR_ENTRY)) {
-                mTitle = getContext().getResources().getString(R.string.camera_label);
-                mAppIconResourceId = R.drawable.ic_camera_motor;
             } else if (name.equals(MUSIC_PLAY_ENTRY)) {
                 mTitle = getContext().getResources().getString(R.string.music_play_entry);
                 mAppIconResourceId = R.drawable.ic_music_play;
