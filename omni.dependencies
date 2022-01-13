@@ -13,8 +13,20 @@
   },
   {
      "remote": "omnirom",
+     "repository": "android_vendor_codeaurora_telephony",
+     "target_path": "vendor/codeaurora/telephony",
+     "revision": "android-12.0"
+   },
+  {
+     "remote": "omnirom",
      "repository": "android_vendor_qcom_opensource_fm-commonsys",
      "target_path": "vendor/qcom/opensource/fm-commonsys",
+     "revision": "android-12.0"
+   },
+   {
+     "remote": "omnirom",
+     "repository": "android_vendor_qcom_opensource_interfaces",
+     "target_path": "vendor/qcom/opensource/interfaces",
      "revision": "android-12.0"
    },
    {
