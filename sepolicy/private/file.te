@@ -6,14 +6,8 @@ type demoapp_file, file_type;
 type firmware_file, fs_type, contextmount_type;
 type persist_file, file_type;
 
-# Asus proc
-type asus_display_proc_exec, proc_type, fs_type;
-
 # Files in userdata
 type vendor_qmipriod_data_file, file_type, data_file_type;
-
-# FOD
-type vendor_sysfs_graphics, sysfs_type, fs_type;
 
 # Offscreen Gestures
 type sysfs_gesture, sysfs_type, fs_type;
