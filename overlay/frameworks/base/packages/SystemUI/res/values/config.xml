@@ -50,4 +50,14 @@
      card. -->
     <integer name="keyguard_max_notification_count">2</integer>
 
+    <color name="config_udfpsColor">#FFFFFFE6</color>
+
+    <!-- HBM type of UDFPS overlay.
+            0 - GLOBAL HBM
+            1 - LOCAL HBM
+    -->
+    <integer name="config_udfps_hbm_type">0</integer>
+
+    <!-- The radius of the enrollment progress bar, in dp -->
+    <integer name="config_udfpsEnrollProgressBar" translatable="false">115</integer>
 </resources>
