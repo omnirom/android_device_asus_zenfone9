@@ -1,0 +1,25 @@
+# ASUS partitions.
+/dev/block/platform/soc/1d84000\.ufshc/by-name/asusfw_[ab]                                         u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/xrom_[ab]                                           u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/ADF                                                 u:object_r:asus_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/APD                                                 u:object_r:asus_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/asdf                                                u:object_r:asdf_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/batinfo                                             u:object_r:asus_block_device:s0
+
+# Devices
+/dev/goodix_fp                                                                                     u:object_r:fingerprintd_device:s0
+
+# Display (Pixelworks)
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service           u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service    u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/irisConfig                                                       u:object_r:iris_config_exec:s0
+
+# Files in rootfs
+/ADF(/.*)?                                                                                         u:object_r:demoapp_file:s0
+/APD(/.*)?                                                                                         u:object_r:demoapp_file:s0
+/asdf(/.*)?                                                                                        u:object_r:log_file:s0
+/batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
+
+# Sensors
+/dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
+/dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0

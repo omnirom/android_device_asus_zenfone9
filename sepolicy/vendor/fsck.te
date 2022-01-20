@@ -1,0 +1,5 @@
+allow fsck {
+    vendor_custom_ab_block_device
+    asus_block_device
+    asdf_block_device
+}:blk_file rw_file_perms;

@@ -49,6 +49,8 @@ write_makefiles "$MY_DIR"/proprietary-files.txt
 
 write_makefiles "$MY_DIR"/proprietary-files-product.txt
 
+write_makefiles "$MY_DIR"/proprietary-files-vendor.txt
+
 cat << EOF >> "$ANDROIDMK"
 
 EOF

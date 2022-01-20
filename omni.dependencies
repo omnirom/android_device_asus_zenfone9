@@ -7,6 +7,18 @@
   },
   {
     "remote": "omnirom",
+    "repository": "android_device_qcom_sepolicy_vndr",
+    "target_path": "device/qcom/sepolicy_vndr",
+    "revision": "android-12.0"
+  },
+  {
+    "remote": "github",
+    "repository": "LineageOS/android_hardware_qcom_media",
+    "target_path": "hardware/qcom-caf/sm8350/media",
+    "revision": "lineage-19.0-caf-sm8350"
+  },
+  {
+    "remote": "omnirom",
     "repository": "android_kernel_asus_sm8350",
     "target_path": "kernel/asus/sm8350",
     "revision": "android-12.0"

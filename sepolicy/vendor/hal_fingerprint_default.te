@@ -1,0 +1,13 @@
+allow hal_fingerprint_default fingerprintd_device:chr_file rw_file_perms;
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+allow hal_fingerprint_default asus_display_proc_exec:file { read write getattr open };
+
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+allow hal_fingerprint_default input_device:dir r_dir_perms;
+allow hal_fingerprint_default input_device:chr_file rw_file_perms;
+
+allow hal_fingerprint_default vendor_sysfs_battery_supply:dir search;
+allow hal_fingerprint_default vendor_sysfs_battery_supply:file r_file_perms;
+
+set_prop(hal_fingerprint_default, vendor_gx_fpd_prop);

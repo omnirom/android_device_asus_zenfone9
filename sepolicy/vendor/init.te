@@ -1,0 +1,5 @@
+allow init {
+    demoapp_file
+    log_file
+    bat_file
+}:dir mounton;

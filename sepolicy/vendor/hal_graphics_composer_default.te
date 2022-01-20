@@ -1,0 +1,10 @@
+allow hal_graphics_composer_default asus_display_proc_exec:file { read write getattr open };
+
+allow hal_graphics_composer_default mnt_vendor_file:file { read getattr open };
+
+hal_client_domain(hal_graphics_composer_default, hal_display_iris)
+hal_server_domain(hal_graphics_composer_default, hal_display_iris)
+
+add_hwservice(hal_graphics_composer_default, hal_display_iris_hwservice)
+
+set_prop(hal_graphics_composer_default, vendor_display_prop)

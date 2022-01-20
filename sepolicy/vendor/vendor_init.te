@@ -1,0 +1,2 @@
+allow vendor_init cgroup:file getattr;
+allow vendor_init asus_display_proc_exec:file { read write getattr open };

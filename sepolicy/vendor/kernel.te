@@ -1,0 +1,6 @@
+allow kernel self:capability { chown };
+
+allow kernel bat_file:dir { read write add_name search };
+allow kernel bat_file:file { read write create open };
+allow kernel log_file:dir rw_dir_perms;
+allow kernel log_file:file create_file_perms;

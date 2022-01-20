@@ -1,1 +1,0 @@
-allow kernel asdf_file:dir { search };

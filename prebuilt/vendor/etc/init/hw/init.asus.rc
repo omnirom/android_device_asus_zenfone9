@@ -1,0 +1,488 @@
+#################################################################
+#								#
+#   	              ASUS USER RC				#
+#								#
+#################################################################
+
+#################################
+#
+#   	booting on trigger
+#
+# ****DO NOT insert any services***     
+#
+#################################
+
+import /vendor/etc/init/init.asus.storage.rc
+
+on boot
+    # ASUS_BSP Audio +++
+    mkdir /mnt/vendor/persist/audio 0770 root audio
+    # ASUS_BSP Audio ---
+
+# BT A2DP offload mode property
+    setprop persist.bluetooth.a2dp_offload.disabled false
+
+#+++ASUS_BSP : add for charger mode to access LEDs
+on charger
+    wait /dev/block/bootdevice/by-name/batinfo
+    exec /system/bin/e2fsck -p /dev/block/bootdevice/by-name/batinfo
+    mount ext4 /dev/block/bootdevice/by-name/batinfo /batinfo nosuid nodev noatime barrier=1
+    chown shell root /batinfo
+    chmod 0775 /batinfo
+    restorecon_recursive /batinfo
+
+# Changer LED path authority
+    chmod 0777 /sys/class/leds/red/brightness
+    chmod 0777 /sys/class/leds/green/brightness
+    chmod 0777 /sys/class/leds/red/delay_on
+    chmod 0777 /sys/class/leds/green/delay_on
+    chmod 0777 /sys/class/leds/red/delay_off
+    chmod 0777 /sys/class/leds/green/delay_off
+
+    chmod 0666 /proc/cmdline
+#---ASUS_BSP : add for charger mode to access LEDs
+
+on init
+
+on fs
+
+
+on post-fs
+
+    chmod 0755 /mnt/vendor/persist/adbkey.pub
+    chown root root /mnt/vendor/persist/adbkey.pub
+
+on post-fs-data
+
+# +++ ASUS_BSP : add for asus battery safety upgrade and health partition
+#mount batinfo
+    wait /dev/block/bootdevice/by-name/batinfo
+    exec /system/bin/e2fsck -p /dev/block/bootdevice/by-name/batinfo
+    mount ext4 /dev/block/bootdevice/by-name/batinfo /batinfo nosuid nodev noatime barrier=1
+    chown shell root /batinfo
+    chmod 0775 /batinfo
+    restorecon_recursive /batinfo
+# --- ASUS_BSP : add for asus battery safety upgrade and health partition
+
+# ASUS_BSP : add for trigger ftm mode
+    setprop ro.boot.ftm  ${ro.boot.pre-ftm}
+
+# +++ ASUS_BSP : adb enable property
+    setprop factory.adbon ${ro.boot.adb.enable}
+    setprop factory.adbon2 ${ro.boot.adb.enable}
+# --- ASUS_BSP : adb enable property
+
+# +++ ASUS_BSP : add persist.asus.serialno for CSCMMI
+#    setprop persist.asus.serialno ${ro.boot.serialno}
+# --- ASUS_BSP : add persist.asus.serialno for CSCMMI
+
+# ASUS_BSP "mediaflag" +++
+    start asus_mediaflag
+# ASUS_BSP "mediaflag" ---
+
+#ABSP++++ for asusrecord service
+    start asus_record
+#ABSP++
+
+# +++ ASUS_BSP : NFC
+    mkdir /data/vendor 0777 nfc nfc
+    mkdir /data/vendor/nfc 0777 nfc nfc
+    mkdir /data/vendor/nfc/param 0777 nfc nfc
+    chmod 0660 /dev/pn553
+    chown nfc nfc /dev/pn553
+# --- ASUS_BSP : NFC
+
+    # ASUS_BSP Audio +++
+    chown root audio /mnt/vendor/persist/audio/rcv_cal_val
+    chown root audio /mnt/vendor/persist/audio/spk_cal_val
+    chmod 0660 /mnt/vendor/persist/audio/rcv_cal_val
+    chmod 0660 /mnt/vendor/persist/audio/spk_cal_val
+    # ASUS_BSP Audio ---
+
+#ASUS_BSP 2nd G+G +++
+    chown system camera /dev/asus2ndAccelSensor
+    chmod 0660 /dev/asus2ndAccelSensor
+    chown system camera /dev/asus2ndGyroSensor
+    chmod 0660 /dev/asus2ndGyroSensor
+    chown system camera /sys/class/icm206xx/gyro2_poll_delay
+    chmod 0664 /sys/class/icm206xx/gyro2_poll_delay
+    chown system camera /sys/class/icm206xx/accel2_poll_delay
+    chmod 0664 /sys/class/icm206xx/accel2_poll_delay
+#ASUS_BSP 2nd G+G ---
+
+#ASUS_BSP Display +++
+    chmod 0666 /sys/class/drm/hdr_mode
+    chmod 0666 /sys/class/drm/fod_touched
+    chmod 0444 /sys/class/drm/ghbm_on_requested
+    chmod 0444 /sys/class/drm/ghbm_on_achieved
+    chmod 0444 /sys/class/drm/spot_on_achieved
+#ASUS_BSP Display ---
+#####################################################
+#####################################################
+#####################################################
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#        FTM Mode property trigger (start)
+#          ( trigger on ro.boot.ftm=1 )
+#
+#       ****DO NOT insert any services***     
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+on property:ro.boot.ftm=1
+    setprop ro.setupwizard.mode DISABLED
+
+###-----------------------------------------------###
+#         FTM Mode property trigger (end)
+#          ( trigger on ro.boot.ftm=1 )
+#
+#       ****DO NOT insert any services***     
+###-----------------------------------------------###
+
+
+#####################################################
+#####################################################
+#####################################################
+
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#               ALL ASUS service (start)
+#
+#         ****DO NOT insert any on property***
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+#ASUS_BSP 2nd G+G +++
+service rstg2k /vendor/bin/sh /vendor/etc/rstg2k.sh
+    user system
+    group system
+    seclabel u:r:asus_sensors:s0
+    oneshot
+    disabled
+
+service rstgy2k /vendor/bin/sh /vendor/etc/rstgy2k.sh
+    user system
+    group system
+    seclabel u:r:asus_sensors:s0
+    oneshot
+    disabled
+#ASUS_BSP 2nd G+G ---
+
+#ASUS_BSP +++ BT WIFI MAC, BT WIFI firmware version
+service qcfwver /vendor/bin/qcfwver
+    seclabel u:r:asus_bluetooth:s0
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+
+service wifimacsh /vendor/bin/sh /vendor/bin/WifiMac.sh
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+#ASUS_BSP --- BT WIFI MAC, BT WIFI firmware version
+
+#ASUS_BSP_WIFI +++ SAR Reduce wifi power
+service SARPower-sh /vendor/bin/sh /vendor/bin/WifiSARPower.sh
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+#ASUS_BSP_WIFI +++ SAR Reduce wifi power
+
+#ASUS_BSP NFC +++
+service nfcfelica /vendor/bin/sh /vendor/bin/NfcFelica.sh ${vendor.asus.nfc.felica}
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+#ASUS_BSP NFC ---
+
+# Sake BSP Touch +++
+service touch_ver /vendor/bin/sh  /vendor/bin/touch_ver.sh
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+# Sake BSP Touch ---
+
+# ASUS_BSP "mediaflag" +++
+service asus_mediaflag /vendor/bin/sh /vendor/bin/asus_mediaflag.sh
+    user root
+    group root
+    disabled
+    seclabel u:r:savelogmtp:s0
+    oneshot
+# ASUS_BSP "mediaflag" ---
+
+# BSP Power +++
+service battery_ver /vendor/bin/sh  /vendor/bin/firmware_version.sh
+    class core
+    user root
+    group root
+    oneshot
+    disabled
+# BSP Power ---
+
+###-----------------------------------------------###
+#                ALL ASUS service (end)
+# 
+#         ***DO NOT insert any on property***   
+###-----------------------------------------------###
+
+#####################################################
+#####################################################
+#####################################################
+
+
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+#               ALL ASUS on property  (start)
+# 
+#           ****DO NOT insert service***     
+###+++++++++++++++++++++++++++++++++++++++++++++++###
+
+on property:ro.boot.asus.authorized=1
+    setprop vendor.x-rr.debuggable 1
+    write /proc/asusevtlog  "ASUS start adr"
+    write /sys/fs/selinux/aps 1
+
+# Sake BSP Touch +++
+on property:persist.vendor.asus.fp.wakeup=true
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode 1
+on property:persist.vendor.asus.fp.wakeup=false
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode 0
+
+on property:vendor.asus.touch_control_fod=0
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 0
+on property:vendor.asus.touch_control_fod=1
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 1
+on property:vendor.asus.touch_control_fod=2
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_ctrl_mode 2
+
+on property:vendor.asus.touch_control_aod=0
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_aod_ctrl_mode 0
+on property:vendor.asus.touch_control_aod=1
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_aod_ctrl_mode 1
+
+on property:vendor.goodix.sensor.status=*
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fp_auth_status ${vendor.goodix.sensor.status}
+
+on property:vendor.audio.in_call=1
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_phone_state 1
+on property:vendor.audio.in_call=0
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_phone_state 0
+
+on property:vendor.asus.gamingtype=1
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_game_mode 1
+on property:vendor.asus.gamingtype=0
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_game_mode 0
+
+on property:vendor.screen.rotation=0
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_rotation_mode 0
+on property:vendor.screen.rotation=90
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_rotation_mode 1
+on property:vendor.screen.rotation=270
+   write /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_rotation_mode 2
+
+on property:sys.boot_completed=1
+   start touch_ver
+# Sake BSP Touch ---
+
+# BSP Power +++
+on property:sys.boot_completed=1
+    rm /data/data/EnterShipMode
+    symlink /vendor/bin/EnterShipMode /data/data/EnterShipMode
+    chmod 0777 /data/data/EnterShipMode
+    chown system shell /data/data/EnterShipMode
+    chmod 777 /sys/class/qcom-battery/ship_mode_en
+    chmod 777 /sys/class/asuslib/enter_ship_mode
+
+    start battery_ver
+
+    write /sys/class/asuslib/boot_completed 1
+
+# BSP Power ---
+
+#ASUS_BSP 2nd G+G +++
+on property:debug.vendor.asus.rstg2k=*
+    start rstg2k
+on property:debug.vendor.asus.rstgy2k=*
+    start rstgy2k
+#ASUS_BSP 2nd G+G ---
+
+# ASUS_BSP camera+++
+on property:vendor.camera.set.apk.usingname=*
+	setprop vendor.camera.apk.usingname   ${vendor.camera.set.apk.usingname}
+
+on property:vendor.camera.set.apk.activity=*
+	setprop vendor.camera.apk.activity   ${vendor.camera.set.apk.activity}
+
+on property:vendor.asus.dis_flash_light=1
+	write /proc/driver/asus_flash "2 1"
+
+on property:vendor.asus.dis_flash_light=0
+	write /proc/driver/asus_flash "2 0"
+
+on property:sys.boot_completed=1
+    chmod 0666 /mnt/vendor/persist/MediaFlag
+    chown shell shell /mnt/vendor/persist/MediaFlag
+
+on property:sys.boot_completed=1
+   chmod 0777 /data/vendor/camera/
+   chmod 644 /vendor/factory/dualcam_cali.bin	
+   copy /vendor/factory/dualcam_cali.bin /data/vendor/camera/dualcam_cali.bin
+   chmod 0755 /data/vendor/camera/dualcam_cali.bin
+
+   copy /proc/driver/dualcam_cali /data/vendor/camera/dualcam_cali	
+   chmod 0755 /data/vendor/camera/dualcam_cali
+# ASUS_BSP camera---
+
+# ASUS_BSP +++ BT WIFI MAC, BT WIFI firmware version
+on property:sys.boot_completed=1
+    start qcfwver
+
+on property:sys.boot_completed=1
+    start wifimacsh
+# ASUS_BSP ---BT WIFI MAC, BT WIFI firmware version
+
+#ASUS_BSP_WIFI +++ SAR Reduce wifi power
+on property:vendor.asus.operator.iso-country=*
+    restart SARPower-sh
+
+on property:wlan.driver.status=*
+    restart SARPower-sh
+
+on property:vendor.asus.sar.softap=*
+    restart SARPower-sh
+
+#ASUS_BSP_WIFI --- SAR Reduce wifi power
+
+on property:vendor.asus.wfd.config=1
+    setprop vendor.asus.wfd2.config 1
+
+on property:vendor.asus.wfd.config=3
+    setprop vendor.asus.wfd2.config 3
+
+on property:vendor.asus.wfd.config=0
+    setprop vendor.asus.wfd2.config 0
+
+on property:vendor.wlan.softap.driver.status=ok
+    setprop vendor.asus.sar.softap ok
+    write /proc/driver/UTSstatus 1
+
+on property:vendor.wlan.softap.driver.status=unloaded
+    setprop vendor.asus.sar.softap unloaded
+    write /proc/driver/UTSstatus 0
+
+# ASUS_BSP+++ for wlan miracast log
+on property:persist.vendor.asus.miracastlog=1
+    setprop debug.wfd.uibcevents 1
+    write /data/vendor/mmosal_logmask.cfg "LOGMASK = 6013:63\\nLOGMASK = 6015:63"
+
+on property:persist.vendor.asus.miracastlog=0
+    setprop debug.wfd.uibcevents 0
+    rm /data/vendor/mmosal_logmask.cfg
+# ASUS_BSP--- for wlan miracast log
+
+#Asus log tool switch usb +++
+on property:vendor.asus.usb.diag=1
+    setprop vendor.usb.diag 1
+
+on property:vendor.asus.usb.diag=0
+    setprop vendor.usb.diag 0
+#Asus log tool switch usb ---
+
+# ASUS_BSP NFC +++
+on property:vendor.asus.nfc.status=*
+    setprop persist.vendor.nfc.status ${vendor.asus.nfc.status}
+
+on property:vendor.asus.nfc.fw.version=*
+    setprop persist.vendor.nfc.fw.version ${vendor.asus.nfc.fw.version}
+
+on property:vendor.asus.nfc.felica=*
+    start nfcfelica
+# ASUS_BSP NFC ---
+
+#ABSP++++ for asusrecord service
+# for asusrecord service (falling)
+on property:persist.sys.asus.motorservice.fallingTrigger=1
+    start asus_record
+
+# for asusrecord service (rotation)
+on property:persist.sys.asus.motorservice.rotationTrigger=1
+    start asus_record
+
+# for asusrecord service (hit)
+on property:persist.sys.asus.motorservice.hitTrigger=1
+    start asus_record
+
+# for asusrecord service (dump record)
+on property:persist.sys.asus.motorservice.dumprecord=1
+    start asus_record
+
+on property:debug.update.asusrecord=1
+    start asus_record
+
+service asus_record /system/bin/asusrecord
+    user root
+    group root
+    disabled
+    oneshot
+#ABSP++
+
+# ASUS_BSP Charger : Add the inteface with ASUS userspace +++
+on property:persist.sys.enableAPD=1
+    write /sys/class/asuslib/demo_app_status 1
+on property:persist.sys.enableAPD=0
+    write /sys/class/asuslib/demo_app_status 0
+
+on property:persist.sys.ultrabatterylife=1
+    write /sys/class/asuslib/ultra_bat_life 1
+    write /asdf/CHGLimit 0
+on property:persist.sys.ultrabatterylife=0
+    write /sys/class/asuslib/ultra_bat_life 0
+
+on property:persist.sys.stopcharging=1
+    write /sys/class/asuslib/charging_suspend_en 1
+on property:persist.sys.stopcharging=0
+    write /sys/class/asuslib/charging_suspend_en 0
+
+on property:persist.sys.charginglimit=*
+    write /sys/class/asuslib/smartchg_slow_charging ${persist.sys.charginglimit}
+
+on property:persist.sys.enableLPD=1
+    write /sys/class/qcom-battery/moisture_detection_en 1
+on property:persist.sys.enableLPD=0
+    write /sys/class/qcom-battery/moisture_detection_en 0
+
+on property:vendor.asus.virtualtherm=*
+    write /sys/class/asuslib/virtual_thermal ${vendor.asus.virtualtherm}
+
+on property:vendor.audio.in_call=1
+   write /sys/class/asuslib/in_call 1
+on property:vendor.audio.in_call=0
+   write /sys/class/asuslib/in_call 0
+# ASUS_BSP Charger : Add the inteface with ASUS userspace ---
+
+# ASUS_BSP Psensor : Add phone/voip call property get +++
+on property:vendor.audio.in_call=*
+	write /sys/class/sensors/psensor/oil_flag ${vendor.audio.in_call}
+# ASUS_BSP Psensor : Add phone/voip call property get ---
+# ASUS_BSP Psensor : check pocket mode status +++
+on property:persist.vendor.asus.InadvertentTouch=*
+	write /sys/class/sensors/psensor/pocket_en ${persist.vendor.asus.InadvertentTouch}
+# ASUS_BSP Psensor : check pocket mode status ---
+
+on property:vendor.drm.keystatus=1
+    setprop vendor.debug.drm.keystatus 1
+on property:vendor.drm.keystatus=-1
+    setprop vendor.debug.drm.keystatus -1
+
+###-----------------------------------------------###
+#              ALL ASUS on property (end)
+# 
+#            ****DO NOT insert service***     
+###-----------------------------------------------###

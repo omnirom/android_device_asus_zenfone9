@@ -1,7 +1,0 @@
-# Allow init to chown/chmod on pseudo files in /sys
-allow init sysfs_gesture:file { rw_file_perms setattr };
-allow init proc_touchscreen:file { rw_file_perms setattr };
-allow init sysfs_touchscreen:file { rw_file_perms setattr };
-
-# Allow init to bind mount over vendor file
-allow init { system_file vendor_file }:file mounton;
