@@ -1313,7 +1313,11 @@ function presign() {
 function as_module() {
     sed -i "s|vendor/$1$|-vendor/$1|g" $_output_file
 }
+function add_on() {
+    sed -i "s|vendor/$1$|vendor/$1:vendor_dlkm/$1|g" $_output_file
+}
 
+add_on "lib/modules/modules.blocklist"
 presign "app/com.qualcomm.qti.gpudrivers.lahaina.api30/com.qualcomm.qti.gpudrivers.lahaina.api30.apk"
 as_module "etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml"
 as_module "etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml"

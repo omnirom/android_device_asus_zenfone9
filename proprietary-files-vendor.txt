@@ -2075,7 +2075,7 @@ vendor/lib/libxditk_ditBSP.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/modules/modules.blocklist
+vendor/lib/modules/modules.blocklist:vendor_dlkm/lib/modules/modules.blocklist
 vendor/lib/nfc_nci_nxp.so
 vendor/lib/qcrilMarshal.so
 vendor/lib/qcrild_libqcrilnrutils.so
