@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2017-2022 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
 #include <android-base/file.h>
+#include <android-base/properties.h>
 #include <hardware/hw_auth_token.h>
 
 #include <hardware/hardware.h>
@@ -242,11 +243,21 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
+const char* BiometricsFingerprint::getModuleId() {
+    auto stageId = android::base::GetIntProperty("ro.boot.id.stage", 0);
+
+    if (stageId == 52) {
+        return "fingerprint_er1";
+    }
+
+    return FINGERPRINT_HARDWARE_MODULE_ID;
+}
+
 fingerprint_device_t* BiometricsFingerprint::openHal() {
     int err;
     const hw_module_t *hw_mdl = nullptr;
     ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
+    if (0 != (err = hw_get_module(getModuleId(), &hw_mdl))) {
         ALOGE("Can't open fingerprint HW Module, error: %d", err);
         return nullptr;
     }
