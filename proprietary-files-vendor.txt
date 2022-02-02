@@ -124,7 +124,6 @@ vendor/bin/hallsensor_status
 vendor/bin/hang_guard
 vendor/bin/hdcp1prov
 vendor/bin/hdcp2p2prov
-vendor/bin/hostapd_cli
 vendor/bin/hvdcp_opti
 vendor/bin/hw/android.hardware.authsecret@1.0-service-qti
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -143,9 +142,7 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service
 vendor/bin/hw/android.hardware.sensors@2.0-service.multihal
 vendor/bin/hw/android.hardware.thermal@2.0-service.qti
 vendor/bin/hw/android.hardware.usb@1.2-service-qti
-vendor/bin/hw/android.hardware.wifi@1.0-service
 vendor/bin/hw/capabilityconfigstoretest
-vendor/bin/hw/hostapd
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/qcrilNrd
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -173,7 +170,6 @@ vendor/bin/hw/vendor.qti.hardware.vibrator.service
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.sla.service@1.0-service
 vendor/bin/hw/vendor.qti.spu@1.1-service
-vendor/bin/hw/wpa_supplicant
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
 vendor/bin/init.asus.thermal_conf.sh
@@ -412,9 +408,6 @@ vendor/etc/g2_gyro2_factory_init.sh
 vendor/etc/gnss_antenna_info.conf
 vendor/etc/gpfspath_oem_config.xml
 vendor/etc/gps.conf
-vendor/etc/hostapd/hostapd.accept
-vendor/etc/hostapd/hostapd.deny
-vendor/etc/hostapd/hostapd_default.conf
 vendor/etc/init.asus.nfc.JP.rc
 vendor/etc/init.qti.fm.sh
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
@@ -432,8 +425,6 @@ vendor/etc/init/android.hardware.secure_element@1.2-service.rc
 vendor/etc/init/android.hardware.sensors@2.0-service-multihal.rc
 vendor/etc/init/android.hardware.thermal@2.0-service.qti.rc
 vendor/etc/init/android.hardware.usb@1.2-service-qti.rc
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
 vendor/etc/init/cnd.rc
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/etc/init/dataadpl.rc
@@ -441,7 +432,6 @@ vendor/etc/init/dataqti.rc
 vendor/etc/init/diagcommd.rc
 vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/hang_guard.rc
-vendor/etc/init/hostapd.android.rc
 vendor/etc/init/hw/init.asus.usb.rc
 vendor/etc/init/hw/init.qcom.factory.rc
 vendor/etc/init/hw/init.qti.kernel.rc
@@ -1189,10 +1179,7 @@ vendor/etc/video_system_specs.json
 -vendor/etc/vintf/manifest/android.hardware.sensors@2.0-multihal.xml
 -vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml
 -vendor/etc/vintf/manifest/android.hardware.usb@1.2-service.xml
--vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
--vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
 -vendor/etc/vintf/manifest/c2_manifest_vendor.xml
--vendor/etc/vintf/manifest/manifest.xml
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 -vendor/etc/vintf/manifest/power.xml
 -vendor/etc/vintf/manifest/vendor.pixelworks.hardware.display.iris-service.xml
@@ -2152,18 +2139,13 @@ vendor/lib/libwfduibcsinkinterface_proprietary.so
 vendor/lib/libwfduibcsrc_proprietary.so
 vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
-vendor/lib/libwifi-hal-ctrl.so
-vendor/lib/libwifi-hal-qcom.so
 vendor/lib/libwms.so
-vendor/lib/libwpa_client.so
 vendor/lib/libwqe.so
 vendor/lib/libxditk_arch.so
 vendor/lib/libxditk_ditArchLIB.so
 vendor/lib/libxditk_ditBSP.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
-vendor/lib/libxtwifi_server_protocol.so
-vendor/lib/libxtwifi_server_protocol_uri_v3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/modules/modules.blocklist
 vendor/lib/nfc_nci_nxp.so
@@ -2827,8 +2809,6 @@ vendor/lib64/libjson.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
-vendor/lib64/libkeystore-engine-wifi-hidl.so
-vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/liblistensoundmodel2.so
@@ -3069,11 +3049,7 @@ vendor/lib64/libwapi_cert.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
 vendor/lib64/libwfddisplayconfig_proprietary.so
 vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwifi-hal-ctrl.so
-vendor/lib64/libwifi-hal-qcom.so
-vendor/lib64/libwifi-hal.so
 vendor/lib64/libwms.so
-vendor/lib64/libwpa_client.so
 vendor/lib64/libwqe.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/libxditk_DIT_Manager.so
@@ -3084,8 +3060,6 @@ vendor/lib64/libxditk_ditBSP.so
 vendor/lib64/libxditk_ditBSP_JNI.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_server_protocol.so
-vendor/lib64/libxtwifi_server_protocol_uri_v3.so
 vendor/lib64/ls_client.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/nfc_nci_nxp.so
@@ -3120,7 +3094,6 @@ vendor/lib64/unnhal-acc-gpu.so
 vendor/lib64/unnhal-acc-htp.so
 vendor/lib64/vendor.asus.bspcam@1.0-impl.so
 vendor/lib64/vendor.asus.bspcam@1.0.so
-vendor/lib64/vendor.asus.wifi.hostapd@1.0.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so

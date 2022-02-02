@@ -18,6 +18,13 @@
     "revision": "lineage-19.0-caf-sm8350"
   },
   {
+    "remote": "github",
+    "repository": "LineageOS/android_hardware_qcom_wlan",
+    "target_path": "hardware/qcom-caf/wlan",
+    "override": "platform/hardware/qcom/wlan",
+    "revision": "lineage-19.0-caf"
+  },
+  {
     "remote": "omnirom",
     "repository": "android_kernel_asus_sm8350",
     "target_path": "kernel/asus/sm8350",

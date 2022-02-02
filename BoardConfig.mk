@@ -194,7 +194,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     q6_dlkm.ko \
     q6_notifier_dlkm.ko \
     q6_pdr_dlkm.ko \
-    qca_cld3_wlan.ko \
+    wlan.ko \
     qcom_edac.ko \
     qm1d1b0004.ko \
     qm1d1c0042.ko \
@@ -241,8 +241,6 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     wsa_macro_dlkm.ko \
     xc4000.ko \
     xc5000.ko
-
-TARGET_MODULE_ALIASES += wlan.ko:qca_cld3_wlan.ko
 
 BOOT_KERNEL_MODULES := \
     msm_drm.ko
@@ -318,3 +316,18 @@ VENDOR_SECURITY_PATCH := 2021-11-05
 include vendor/omni/sepolicy/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
+# WiFi
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+PRODUCT_VENDOR_MOVE_ENABLED := true
+WIFI_DRIVER_DEFAULT := qca_cld3
+WIFI_DRIVER_STATE_CTRL_PARAM := "/dev/wlan"
+WIFI_DRIVER_STATE_OFF := "OFF"
+WIFI_DRIVER_STATE_ON := "ON"
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
