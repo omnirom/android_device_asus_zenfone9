@@ -1,0 +1,1 @@
+get_prop(hal_thermal_default, vendor_thermal_prop)

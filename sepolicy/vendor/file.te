@@ -1,5 +1,14 @@
+# Camera
+type vendor_proc_camera, fs_type, proc_type;
+
+# Display
+type vendor_proc_graphics, fs_type, proc_type;
+
+# EVT
+type vendor_proc_evt, fs_type, proc_type;
+
 # Files in proc
-type asus_display_proc_exec, proc_type;
+type asus_display_proc_exec, fs_type, proc_type;
 
 # Files in rootfs
 type bat_file, file_type;

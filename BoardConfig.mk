@@ -86,6 +86,7 @@ AUDIO_FEATURE_ENABLED_VOICE_CONCURRENCY := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true # For the selinux context
 
 # charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -316,6 +317,7 @@ VENDOR_SECURITY_PATCH := 2021-11-05
 include vendor/omni/sepolicy/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn

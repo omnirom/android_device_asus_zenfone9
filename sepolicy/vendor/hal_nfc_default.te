@@ -1,0 +1,5 @@
+allow hal_nfc_default hal_nfc_hwservice:hwservice_manager find;
+
+allow hal_nfc_default vendor_nfc_prop:file read;
+
+set_prop(hal_nfc_default, vendor_nfc_prop)
