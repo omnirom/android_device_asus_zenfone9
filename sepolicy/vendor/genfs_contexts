@@ -4,6 +4,7 @@ genfscon proc /driver/ois_af_state                                              
 genfscon proc /driver/ois_i2c_rw                                                                u:object_r:vendor_proc_camera:s0
 
 # Display
+genfscon proc /globalHbm                                                                        u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/swipeup                                                                   u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/gesture_type                                                              u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/glove                                                                     u:object_r:vendor_proc_graphics:s0
@@ -18,6 +19,9 @@ genfscon sysfs /class/drm/hdr_mode                                              
 
 # EVT
 genfscon proc /asusevtlog                                                                       u:object_r:vendor_proc_evt:s0
+
+# Fingerprint
+genfscon proc /driver/fp_xy                                                                     u:object_r:vendor_proc_fingerprint:s0
 
 # Thermal
 genfscon sysfs /class/asuslib/set_virtualthermal                                                u:object_r:sysfs_thermal:s0

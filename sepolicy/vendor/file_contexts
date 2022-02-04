@@ -9,9 +9,6 @@
 # Camera
 /(vendor|system/vendor)/lib(64)?/libipebpsstriping\.so                                             u:object_r:same_process_hal_file:s0
 
-# Devices
-/dev/goodix_fp                                                                                     u:object_r:fingerprintd_device:s0
-
 # Display (Pixelworks)
 /(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service           u:object_r:hal_graphics_composer_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service    u:object_r:hal_graphics_composer_default_exec:s0
@@ -25,6 +22,8 @@
 
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.asus_lahaina       u:object_r:hal_fingerprint_default_exec:s0
+/data/vendor/goodix/gf_data(/.*)?                                                                          u:object_r:vendor_goodix_data_file:s0
+/dev/goodix_fp                                                                                             u:object_r:fingerprintd_device:s0
 
 # Sensors
 /dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0

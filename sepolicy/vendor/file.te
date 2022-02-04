@@ -14,3 +14,7 @@ type asus_display_proc_exec, fs_type, proc_type;
 type bat_file, file_type;
 type demoapp_file, file_type;
 type log_file, file_type;
+
+# Fingerprint
+type vendor_goodix_data_file, file_type, data_file_type;
+type vendor_proc_fingerprint, fs_type, proc_type;
