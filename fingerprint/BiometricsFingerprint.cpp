@@ -17,6 +17,7 @@
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
 #include <android-base/properties.h>
+#include <android-base/logging.h>
 #include <hardware/hw_auth_token.h>
 
 #include <hardware/hardware.h>
@@ -24,6 +25,8 @@
 #include "BiometricsFingerprint.h"
 
 #include <inttypes.h>
+#include <poll.h>
+#include <thread>
 #include <unistd.h>
 
 #define CMD_FINGER_DOWN 200001
@@ -31,6 +34,8 @@
 #define CMD_LIGHT_AREA_CLOSE 200000
 #define CMD_LIGHT_AREA_STABLE 200002
 #define CMD_PARTIAL_FINGER_DETECTED 200004
+
+#define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
 
 namespace android {
 namespace hardware {
@@ -47,13 +52,59 @@ using RequestStatus =
 
 BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
+static bool readBool(int fd) {
+    char c;
+    int rc;
+
+    rc = lseek(fd, 0, SEEK_SET);
+    if (rc) {
+        LOG(ERROR) << "failed to seek fd, err: " << rc;
+        return false;
+    }
+
+    rc = read(fd, &c, sizeof(char));
+    if (rc != 1) {
+        LOG(ERROR) << "failed to read bool from fd, err: " << rc;
+        return false;
+    }
+
+    return c != '0';
+}
+
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
     mDevice = openHal();
     if (!mDevice) {
         ALOGE("Can't open HAL module");
     }
-    mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
+    this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
+
+    std::thread([this]() {
+        int fd = open(FOD_UI_PATH, O_RDONLY);
+        if (fd < 0) {
+            LOG(ERROR) << "failed to open fd, err: " << fd;
+            return;
+        }
+
+        struct pollfd fodUiPoll = {
+            .fd = fd,
+            .events = POLLERR | POLLPRI,
+            .revents = 0,
+        };
+
+        while (true) {
+            int rc = poll(&fodUiPoll, 1, -1);
+            if (rc < 0) {
+                LOG(ERROR) << "failed to poll fd, err: " << rc;
+                continue;
+            }
+
+            if (readBool(fd)) {
+                this->mGoodixFingerprintDaemon->sendCommand(CMD_LIGHT_AREA_STABLE, {},
+                                                            [](int, const hidl_vec<signed char>&) {});
+            }
+        }
+    }).detach();
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
@@ -77,8 +128,6 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
     mGoodixFingerprintDaemon->sendCommand(CMD_FINGER_DOWN, {},
-                                                [](int, const hidl_vec<signed char>&) {});
-    mGoodixFingerprintDaemon->sendCommand(CMD_LIGHT_AREA_STABLE, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
