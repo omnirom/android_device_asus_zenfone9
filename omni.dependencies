@@ -13,6 +13,13 @@
   },
   {
     "remote": "github",
+    "repository": "micky387/android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/sm8350/display",
+    "override": "platform/hardware/qcom/display",
+    "revision": "lineage-19.0-caf-sm8350"
+  },
+  {
+    "remote": "github",
     "repository": "LineageOS/android_hardware_qcom_media",
     "target_path": "hardware/qcom-caf/sm8350/media",
     "revision": "lineage-19.0-caf-sm8350"
@@ -46,6 +53,12 @@
      "remote": "omnirom",
      "repository": "android_vendor_qcom_opensource_interfaces",
      "target_path": "vendor/qcom/opensource/interfaces",
+     "revision": "android-12.0"
+   },
+   {
+     "remote": "gitlab",
+     "repository": "android_vendor_qcom_opensource_display",
+     "target_path": "vendor/qcom/opensource/display",
      "revision": "android-12.0"
    },
    {
