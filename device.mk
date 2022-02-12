@@ -132,6 +132,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_PACKAGES += \
     DeviceParts
 
+# Dirac
+PRODUCT_PACKAGES += \
+    ASUSDiracGef
+
 # Display
 PRODUCT_PACKAGES += \
     libion \
