@@ -8,5 +8,8 @@ allow hal_camera_default mnt_vendor_file:dir w_dir_perms;
 allow hal_camera_default mnt_vendor_file:file create_file_perms;
 allow hal_camera_default vendor_proc_camera:file rw_file_perms;
 
+allow hal_camera_default vendor_asus_camera_prop:file { getattr map open read };
+set_prop(hal_camera_default, vendor_asus_camera_prop)
+
 # for /vendor/lib64/DataSet/ispDB/ParameterDB.db
 allow hal_camera_default vendor_file:file lock;
