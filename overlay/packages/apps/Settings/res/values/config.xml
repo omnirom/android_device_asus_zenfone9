@@ -17,7 +17,4 @@
          have distinct intensity levels -->
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
-    <integer name="config_fingerprintSensorLocation">4</integer>
-    <dimen name="fingerprint_find_sensor_padding_top">0px</dimen>
-
 </resources>
