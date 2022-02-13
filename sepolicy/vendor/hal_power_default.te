@@ -1,1 +1,1 @@
-allow hal_power_default vendor_proc_evt:file { append };
+allow hal_power_default vendor_proc_evt:file { append open };
