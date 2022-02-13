@@ -1091,6 +1091,14 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/vendor.asus.vibrator.vibratorgovern@1.0.so"
     "lib/hw/vendor.asus.vibrator.vibratorgovern@1.0-impl.so"
     "lib64/hw/vendor.asus.vibrator.vibratorgovern@1.0-impl.so"
+    "bin/hw/vendor.qti.hardware.vibrator.service"
+    "etc/init/init.aw8697.rc"
+    "etc/init/vendor.qti.hardware.vibrator.service.rc"
+    "etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml"
+    "lib64/vendor.qti.hardware.vibrator.impl.so"
+    "lib64/libqtivibratoreffect.so"
+    "lib/hw/vibrator.default.so"
+    "lib64/hw/vibrator.default.so"
 
     # Wifi
     "bin/hw/android.hardware.wifi@1.0-service"
@@ -1166,5 +1174,4 @@ as_module "etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml"
 
