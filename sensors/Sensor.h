@@ -49,16 +49,16 @@ class Sensor {
     virtual ~Sensor();
 
     const SensorInfo& getSensorInfo() const;
-    void batch(int32_t samplingPeriodNs);
+    virtual void batch(int32_t samplingPeriodNs);
     virtual void activate(bool enable);
-    Result flush();
+    virtual Result flush();
 
-    void setOperationMode(OperationMode mode);
+    virtual void setOperationMode(OperationMode mode);
     bool supportsDataInjection() const;
     Result injectEvent(const Event& event);
 
   protected:
-    void run();
+    virtual void run();
     virtual std::vector<Event> readEvents();
     static void startThread(Sensor* sensor);
 
