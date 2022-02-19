@@ -16,7 +16,6 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
-#include <android-base/file.h>
 #include <android-base/properties.h>
 #include <hardware/hw_auth_token.h>
 
@@ -32,10 +31,6 @@
 #define CMD_LIGHT_AREA_CLOSE 200000
 #define CMD_LIGHT_AREA_STABLE 200002
 #define CMD_PARTIAL_FINGER_DETECTED 200004
-
-#define GLOBAL_HBM_PATH "/proc/globalHbm"
-#define GLOBAL_HBM_ON "1"
-#define GLOBAL_HBM_OFF "0"
 
 namespace android {
 namespace hardware {
@@ -83,14 +78,12 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
     mGoodixFingerprintDaemon->sendCommand(CMD_FINGER_DOWN, {},
                                                 [](int, const hidl_vec<signed char>&) {});
-    android::base::WriteStringToFile(GLOBAL_HBM_ON, GLOBAL_HBM_PATH);
     mGoodixFingerprintDaemon->sendCommand(CMD_LIGHT_AREA_STABLE, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
-    android::base::WriteStringToFile(GLOBAL_HBM_OFF, GLOBAL_HBM_PATH);
     mGoodixFingerprintDaemon->sendCommand(CMD_FINGER_UP, {},
                                                 [](int, const hidl_vec<signed char>&) {});
     return Void();
