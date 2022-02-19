@@ -1208,6 +1208,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "rfs/msm/slpi/readwrite"
     "rfs/msm/slpi/shared"
 
+    # Sensor
+    "etc/sensors/hals.conf"
+
     # Sepolicy
     "etc/selinux/vendor_file_contexts"
     "etc/selinux/vendor_service_contexts"
