@@ -206,6 +206,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib/libeffectsconfig.so"
     "lib64/libeffects.so"
     "lib64/libeffectsconfig.so"
+    "lib/libnbaio_mono.so"
+    "lib64/libnbaio_mono.so"
 
     # Binary
     "bin/acpi"

@@ -1924,7 +1924,6 @@ vendor/lib/libmmrtpencoder_proprietary.so
 vendor/lib/libmpbase.so
 vendor/lib/libmulawdec.so
 vendor/lib/libnative-api.so
-vendor/lib/libnbaio_mono.so
 vendor/lib/libnetmgr.so
 vendor/lib/libnetmgr_common.so
 vendor/lib/libnetmgr_nr_fusion.so
@@ -2848,7 +2847,6 @@ vendor/lib64/libmpbase.so
 vendor/lib64/libmulawdec.so
 vendor/lib64/libnanopb.so
 vendor/lib64/libnative-api.so
-vendor/lib64/libnbaio_mono.so
 vendor/lib64/libnetfilter_conntrack.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
