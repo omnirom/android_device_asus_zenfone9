@@ -163,7 +163,6 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/audio_platform_info_qrd.xml"
     "etc/audio_policy_configuration.xml"
     "etc/audio_policy_volumes.xml"
-    "etc/audio_tuning_mixer.txt"
     "etc/bluetooth_qti_audio_policy_configuration.xml"
     "etc/bluetooth_qti_hearing_aid_audio_policy_configuration.xml"
     # Use prebuilt audio.primary.lahaina
@@ -285,7 +284,6 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/iconv"
     "bin/id"
     "bin/ifconfig"
-    "bin/init.qti.display_boot.sh"
     "bin/inotifyd"
     "bin/insmod"
     "bin/install"
