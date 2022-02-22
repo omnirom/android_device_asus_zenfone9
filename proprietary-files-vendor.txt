@@ -330,11 +330,8 @@ vendor/etc/audio/sku_lahaina/audio_effects.xml
 vendor/etc/audio/sku_lahaina/audio_io_policy.conf
 vendor/etc/audio/sku_lahaina/audio_platform_info.xml
 vendor/etc/audio/sku_lahaina/audio_platform_info_hdk.xml
-vendor/etc/audio/sku_lahaina/audio_platform_info_intcodec.xml
 vendor/etc/audio/sku_lahaina/audio_platform_info_intcodec_ZS590KS.xml
 vendor/etc/audio/sku_lahaina/audio_platform_info_qrd.xml
-vendor/etc/audio/sku_lahaina/audio_policy_configuration.xml
-vendor/etc/audio/sku_lahaina/audio_policy_volumes.xml
 vendor/etc/audio/sku_lahaina/audio_tuning_mixer.txt
 vendor/etc/audio/sku_lahaina/default_volume_tables.xml
 vendor/etc/audio/sku_lahaina/mixer_paths.xml
@@ -343,12 +340,7 @@ vendor/etc/audio/sku_lahaina/mixer_paths_hdk.xml
 vendor/etc/audio/sku_lahaina/mixer_paths_hhg.xml
 vendor/etc/audio/sku_lahaina/mixer_paths_qrd.xml
 vendor/etc/audio/sku_lahaina/r_submix_audio_policy_configuration.xml
-vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths.xml
 vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths_ZS590KS.xml
-vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths_cdp.xml
-vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths_hdk.xml
-vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths_hhg.xml
-vendor/etc/audio/sku_lahaina/sound_trigger_mixer_paths_qrd.xml
 vendor/etc/audio/sku_lahaina/sound_trigger_platform_info.xml
 vendor/etc/audio_tuning_mixer.txt
 vendor/etc/camera/camxoverridesettings.txt
