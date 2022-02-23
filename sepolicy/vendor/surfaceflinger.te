@@ -1,1 +1,2 @@
 allow surfaceflinger asus_display_proc_exec:file { read write getattr open };
+allow surfaceflinger vendor_firmware_file:dir { read search };

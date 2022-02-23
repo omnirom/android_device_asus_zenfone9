@@ -3,4 +3,5 @@ vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon         
 vendor.pixelworks.hardware.display::IIris                                                          u:object_r:hal_display_iris_hwservice:s0
 vendor.pixelworks.hardware.feature::IIrisFeature                                                   u:object_r:hal_display_iris_hwservice:s0
 
+vendor.nxp.nxpnfc::INxpNfc                                                                         u:object_r:hal_nfc_hwservice:s0
 vendor.nxp.nxpnfclegacy::INxpNfcLegacy                                                             u:object_r:hal_nfc_hwservice:s0

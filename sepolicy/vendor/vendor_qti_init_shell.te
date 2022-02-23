@@ -1,2 +1,6 @@
 allow vendor_qti_init_shell kmsg_device:chr_file w_file_perms;
 allow vendor_qti_init_shell proc_cmdline:file r_file_perms;
+allow vendor_qti_init_shell proc_page_cluster:file w_file_perms;
+allow vendor_qti_init_shell vendor_file:file execute_no_trans;
+get_prop(vendor_qti_init_shell, vendor_asus_camera_prop)
+set_prop(vendor_qti_init_shell, ctl_start_prop)

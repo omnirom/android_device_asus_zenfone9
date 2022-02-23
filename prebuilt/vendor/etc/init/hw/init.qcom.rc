@@ -221,7 +221,7 @@ on boot
     mkdir /mnt/vendor/persist/display 0770 system graphics
     
     # ASUS_BSP +++ ClayWang "For checking support front RGB or not"
-    setprop ro.asus.screen.colortemp.enable 0
+    # setprop ro.asus.screen.colortemp.enable 0
     # ASUS_BSP --- 
     #ASUS_BSP +++ ClayWang "Proximity/Light sensor"
     chown system shell /sys/class/sensors/psensor/switch
