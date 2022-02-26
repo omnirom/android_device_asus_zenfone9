@@ -552,13 +552,8 @@ vendor/etc/media_codecs_vendor_audio.xml
 vendor/etc/media_diwali_v0/video_system_specs.json
 vendor/etc/media_diwali_v1/video_system_specs.json
 vendor/etc/media_diwali_v2/video_system_specs.json
-vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_cape.xml
-vendor/etc/media_profiles_diwali_v0.xml
-vendor/etc/media_profiles_diwali_v1.xml
-vendor/etc/media_profiles_diwali_v2.xml
-vendor/etc/media_profiles_taro.xml
 vendor/etc/media_taro/video_system_specs.json
 vendor/etc/microphone_characteristics.xml
 vendor/etc/models/acd/event.eai
