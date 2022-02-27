@@ -323,12 +323,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndservicemanager
 
-# Vibrator
-$(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
-
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.sake
-
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \

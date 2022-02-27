@@ -25,12 +25,6 @@
     "revision": "lineage-19.0-caf"
   },
   {
-    "remote": "github",
-    "repository": "LineageOS/android_vendor_qcom_opensource_vibrator",
-    "target_path": "vendor/qcom/opensource/vibrator",
-    "revision": "lineage-19.0"
-  },
-  {
     "remote": "omnirom",
     "repository": "android_kernel_asus_sm8350",
     "target_path": "kernel/asus/sm8350",
