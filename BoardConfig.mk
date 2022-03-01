@@ -199,7 +199,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     q6_dlkm.ko \
     q6_notifier_dlkm.ko \
     q6_pdr_dlkm.ko \
-    wlan.ko \
+    qca_cld3_wlan.ko \
     qcom_edac.ko \
     qm1d1b0004.ko \
     qm1d1c0042.ko \
@@ -246,6 +246,8 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     wsa_macro_dlkm.ko \
     xc4000.ko \
     xc5000.ko
+
+TARGET_MODULE_ALIASES += wlan.ko:qca_cld3_wlan.ko
 
 BOOT_KERNEL_MODULES := \
     msm_drm.ko
