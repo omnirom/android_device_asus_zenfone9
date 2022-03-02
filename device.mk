@@ -152,6 +152,7 @@ $(call inherit-product, hardware/qcom-caf/sm8350/display/config/display-product.
 $(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
+$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
 
 PRODUCT_PACKAGES += \
     libtinyalsa
