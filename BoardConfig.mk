@@ -103,6 +103,7 @@ endif
 # Display
 TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 440
+SOONG_CONFIG_qtidisplay_udfps := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
