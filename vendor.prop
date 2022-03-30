@@ -272,5 +272,8 @@ vendor.camera.light_art=0:1;1:0;2:1;3:1
 persist.vendor.fingerprint.sensor_location=1080|1070|125|local:4630947220766978689
 persist.vendor.fingerprint.type=side
 
+# Media
+vendor.media.omx=0
+
 # USB
 vendor.usb.product_string=Zenfone 9
