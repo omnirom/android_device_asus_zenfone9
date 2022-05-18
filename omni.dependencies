@@ -16,7 +16,7 @@
     "repository": "micky387/android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8350/display",
     "override": "platform/hardware/qcom/display",
-    "revision": "lineage-19.0-caf-sm8350"
+    "revision": "android-12.1"
   },
   {
     "remote": "github",
