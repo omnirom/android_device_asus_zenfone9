@@ -26,6 +26,9 @@
 /data/vendor/goodix/gf_data(/.*)?                                                                          u:object_r:vendor_goodix_data_file:s0
 /dev/goodix_fp                                                                                             u:object_r:fingerprintd_device:s0
 
+# NFC
+/dev/pn553                                                                                         u:object_r:nfc_device:s0
+
 # Sensors
 /dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
 /dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0
