@@ -1105,6 +1105,8 @@ VENDOR_SKIP_FILES_COMMON=(
     # Wifi
     "bin/hw/android.hardware.wifi@1.0-service"
     "etc/init/android.hardware.wifi@1.0-service.rc"
+    "etc/permissions/android.hardware.wifi.aware.xml"
+    "etc/permissions/android.hardware.wifi.rtt.xml"
     "etc/vintf/manifest/android.hardware.wifi@1.0-service.xml"
     "bin/wifistresstest.sh"
     "etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc"

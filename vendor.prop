@@ -41,7 +41,6 @@ ro.vendor.beluga.p=0x3
 ro.vendor.beluga.c=0x4800
 ro.vendor.beluga.s=0x900
 ro.vendor.beluga.t=0x240
-wifi.aware.interface=wifi-aware0
 ro.incremental.enable=yes
 persist.vendor.qfp=true
 ro.vendor.qspm.enable=true
