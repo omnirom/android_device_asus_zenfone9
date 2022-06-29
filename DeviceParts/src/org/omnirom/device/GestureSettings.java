@@ -192,7 +192,7 @@ public class GestureSettings extends PreferenceFragment implements
         if (preference == mMusicSwitch) {
             Settings.System.putInt(getContext().getContentResolver(), KEY_MUSIC, mMusicSwitch.isChecked() ? 1 : 0);
             boolean enabled = Settings.System.getInt(getContext().getContentResolver(), KEY_MUSIC, 0) != 0;
-            setGestureEnabled(KEY_MUSIC_ID, !enabled);
+            setGestureEnabled(KEY_MUSIC_ID, enabled);
             return true;
         }
         if (preference == mSmartKeySwitch) {
