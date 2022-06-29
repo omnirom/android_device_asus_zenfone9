@@ -111,7 +111,7 @@ on post-fs-data
 #ASUS_BSP 2nd G+G ---
 
     # FOD
-    chown system system /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fod_mode
+    chown system system /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fp_mode
     chown system system /sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/fts_fod_pressed
 
 #ASUS_BSP Display +++

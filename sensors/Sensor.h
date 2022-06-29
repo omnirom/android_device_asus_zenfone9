@@ -123,7 +123,7 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
 
 const std::string kFtsPath = "/sys/devices/platform/soc/990000.i2c/i2c-1/1-0038/";
 const std::string kFodPressedPath = kFtsPath + "fts_fod_pressed";
-const std::string kFodModePath = kFtsPath + "fts_fod_mode";
+const std::string kFodModePath = kFtsPath + "fts_fp_mode";
 
 class UdfpsSensor : public SysfsPollingOneShotSensor {
   public:

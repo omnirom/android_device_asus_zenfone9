@@ -16,6 +16,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 #define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.asus_lahaina"
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 #include <hardware/hw_auth_token.h>
@@ -36,6 +37,10 @@
 #define CMD_PARTIAL_FINGER_DETECTED 200004
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
+
+#define UDFPS_PROPERTY "persist.vendor.asus.fp.wakeup"
+#define UDFPS_PROPERTY_FALSE "false"
+#define UDFPS_PROPERTY_TRUE "true"
 
 namespace android {
 namespace hardware {
@@ -78,6 +83,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
         ALOGE("Can't open HAL module");
     }
     this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
+    android::base::SetProperty(UDFPS_PROPERTY, UDFPS_PROPERTY_TRUE);
 
     std::thread([this]() {
         unsigned int cmd;
@@ -254,6 +260,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    android::base::SetProperty(UDFPS_PROPERTY, UDFPS_PROPERTY_FALSE);
     return ErrorFilter(mDevice->cancel(mDevice));
 }
 
@@ -262,6 +269,7 @@ Return<RequestStatus> BiometricsFingerprint::enumerate()  {
 }
 
 Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) {
+    android::base::SetProperty(UDFPS_PROPERTY, UDFPS_PROPERTY_FALSE);
     return ErrorFilter(mDevice->remove(mDevice, gid, fid));
 }
 
