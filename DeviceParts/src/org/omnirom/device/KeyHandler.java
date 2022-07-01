@@ -94,21 +94,17 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int KEY_GESTURE_V = 47;
     private static final int KEY_GESTURE_W = 17;
     private static final int KEY_GESTURE_Z = 44;
-    private static final int KEY_GOOGLE_APP = 0x248;
     private static final int KEY_SWIPEUP_GESTURE = 103;
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
     private static final int HANDWAVE_MAX_DELTA_MS = 1000;
     private static final int POCKET_MIN_DELTA_MS = 5000;
-    private static final long SMARTKEY_DELAY_MILLIS = 300;
-
 
     private static final String DT2W_CONTROL_PATH = "/proc/driver/dclick";
 
     private static final int[] sSupportedGestures = new int[]{
         KEY_DOUBLE_TAP,
-        KEY_GOOGLE_APP,
         KEY_GESTURE_E,
         KEY_GESTURE_M,
         KEY_GESTURE_S,
@@ -122,7 +118,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final int[] sProxiCheckedGestures = new int[]{
         KEY_DOUBLE_TAP,
-        KEY_GOOGLE_APP,
         KEY_GESTURE_E,
         KEY_GESTURE_M,
         KEY_GESTURE_S,
@@ -358,10 +353,6 @@ public class KeyHandler implements DeviceKeyHandler {
         if (event.getScanCode() == KEY_SWIPEUP_GESTURE) {
             return true;
         }
-        String SmartKey = getGestureValueForFPScanCode(fpcode, eventTime);
-        if (event.getScanCode() == KEY_GOOGLE_APP && SmartKey.equals(AppSelectListPreference.WAKE_ENTRY)) {
-            return true;
-        }
          String value = getGestureValueForScanCode(event.getScanCode());
         if (!TextUtils.isEmpty(value) && value.equals(AppSelectListPreference.WAKE_ENTRY)) {
             if (DEBUG) Log.i(TAG, "isWakeEvent " + event.getScanCode() + value);
@@ -569,16 +560,6 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     private String getGestureValueForFPScanCode(int scanCode, long eventTime) {
-        long now = SystemClock.uptimeMillis();
-        if (KEY_GOOGLE_APP == scanCode) {
-            if (now <= eventTime + SMARTKEY_DELAY_MILLIS) {
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                   GestureSettings.DEVICE_GESTURE_MAPPING_6, UserHandle.USER_CURRENT);
-            } else {
-                return Settings.System.getStringForUser(mContext.getContentResolver(),
-                   GestureSettings.DEVICE_GESTURE_MAPPING_7, UserHandle.USER_CURRENT);
-            }
-        }
         return null;
     }
 

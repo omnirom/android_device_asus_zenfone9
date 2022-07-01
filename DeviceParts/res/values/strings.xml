@@ -27,12 +27,6 @@
     <string name="glove_mode_title">Glove mode</string>
     <string name="proxi_summary_head">Check proximity sensor for handling fingerprint sensor</string>
     <string name="proxi_title_head">Proximity check</string>
-    <string name="smart_google">Smart key</string>
-    <string name="smart_google_tile">Enable or not the Smart Key</string>
-    <string name="smart_key_on">Enable</string>
-    <string name="smart_key_off">Disable</string>
-    <string name="smart_simple_title">Choose  your App or Action on single press</string>
-    <string name="smart_long_title">App or Action when your long press</string>
     <string name="screenshot_key">Screenshot</string>
 
     <string name="choose_app">Choose app</string>

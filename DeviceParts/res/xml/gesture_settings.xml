@@ -23,29 +23,6 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
-        android:title="@string/smart_google">
-
-        <SwitchPreference
-            android:key="smart_key"
-            android:title="@string/smart_google_tile"
-            android:summaryOn="@string/smart_key_on"
-            android:summaryOff="@string/smart_key_off"/>
-
-        <org.omnirom.device.AppSelectListPreference
-            android:key="smart_simple"
-            android:title="@string/smart_simple_title"
-            android:dependency="smart_key"
-            android:persistent="false"/>
-
-        <org.omnirom.device.AppSelectListPreference
-            android:key="smart_long"
-            android:title="@string/smart_long_title"
-            android:dependency="smart_key"
-            android:persistent="false"/>
-
-     </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/offscreen_gesture_title">
 
         <SwitchPreference
