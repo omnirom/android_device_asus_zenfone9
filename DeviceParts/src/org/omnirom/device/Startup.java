@@ -132,7 +132,7 @@ public class Startup extends BroadcastReceiver {
             DeviceSettings.changeFps(context, Integer.valueOf(value));
         }
 
-        String valueExtra = Settings.System.getString(context.getContentResolver(), Settings.System.OMNI_BUTTON_EXTRA_KEY_MAPPING);
+        String valueExtra = Settings.System.getString(context.getContentResolver(), GestureSettings.SETTINGS_ZENMOTION_KEY);
         if (TextUtils.isEmpty(valueExtra)) {
             return;
         } else {
@@ -145,7 +145,7 @@ public class Startup extends BroadcastReceiver {
         }
 
         boolean enabledGesture = Settings.System.getInt(context.getContentResolver(), GestureSettings.SETTINGS_GESTURE_KEY, 0) != 0;
-        if (enabledGlove) {
+        if (enabledGesture) {
             restore(GestureSettings.getFile(), enabledGesture);
         }
     }
