@@ -38,6 +38,11 @@
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
 
+#define AOD_ENABLED "doze_always_on"
+#define AOD_PROPERTY "vendor.asus.touch_control_aod"
+#define AOD_PROPERTY_FALSE "0"
+#define AOD_PROPERTY_TRUE "1"
+
 #define UDFPS_PROPERTY "persist.vendor.asus.fp.wakeup"
 #define UDFPS_PROPERTY_FALSE "false"
 #define UDFPS_PROPERTY_TRUE "true"
@@ -54,6 +59,7 @@ static const uint16_t kVersion = HARDWARE_MODULE_API_VERSION(2, 1);
 
 using RequestStatus =
         android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
+using android::base::GetProperty;
 
 BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
@@ -84,6 +90,13 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
     }
     this->mGoodixFingerprintDaemon = IGoodixFingerprintDaemon::getService();
     android::base::SetProperty(UDFPS_PROPERTY, UDFPS_PROPERTY_TRUE);
+
+    std::string valueAod = GetProperty(AOD_ENABLED, "");
+    if (valueAod == "0") {
+        android::base::SetProperty(AOD_PROPERTY, AOD_PROPERTY_FALSE);
+    } else {
+        android::base::SetProperty(AOD_PROPERTY, AOD_PROPERTY_TRUE);
+    }
 
     std::thread([this]() {
         unsigned int cmd;
