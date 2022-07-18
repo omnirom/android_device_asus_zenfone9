@@ -8,3 +8,6 @@ get_prop(system_app, vendor_asus_prop)
 
 get_prop(system_app, vendor_asus_usb_prop)
 allow system_app vendor_asus_usb_prop:property_service set;
+
+get_prop(system_app, vendor_set_camera_prop)
+set_prop(system_app, vendor_set_camera_prop)

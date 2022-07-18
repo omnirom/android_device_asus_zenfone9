@@ -1,0 +1,2 @@
+get_prop(cameraserver, vendor_set_camera_prop)
+set_prop(cameraserver, vendor_set_camera_prop)

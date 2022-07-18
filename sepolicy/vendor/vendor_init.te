@@ -18,3 +18,5 @@ get_prop(vendor_init, vendor_asus_usb_prop)
 
 get_prop(vendor_init, vendor_asus_storage_prop_2)
 set_prop(vendor_init, vendor_asus_storage_prop_2)
+
+get_prop(vendor_init, vendor_set_camera_prop)

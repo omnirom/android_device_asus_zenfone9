@@ -1,0 +1,2 @@
+# Camera
+allow system_server omni_data_file:file r_file_perms;
