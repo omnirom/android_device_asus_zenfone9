@@ -62,6 +62,10 @@ function blob_fixup() {
     system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
         sed -i 's|product|system_ext|g' "${2}"
         sed -i 's|xml version="2.0"|xml version="1.0"|g' "${2}"
+        ;&
+    vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so)
+        "${PATCHELF}" --remove-needed "libhidlbase.so" "${2}"
+        sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
         ;;
     esac
 }
