@@ -65,10 +65,10 @@ import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.ScreenshotHelper;
 import com.android.internal.statusbar.IStatusBarService;
 
-import org.omnirom.omnilib.utils.DeviceKeyHandler;
-import org.omnirom.omnilib.utils.OmniUtils;
-import org.omnirom.omnilib.utils.OmniVibe;
-import org.omnirom.omnilib.utils.PackageUtils;
+import org.omnirom.omnilibcore.utils.DeviceKeyHandler;
+import org.omnirom.omnilibcore.utils.OmniUtils;
+import org.omnirom.omnilibcore.utils.OmniVibe;
+import org.omnirom.omnilibcore.utils.PackageUtils;
 
 public class KeyHandler implements DeviceKeyHandler {
 
