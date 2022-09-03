@@ -39,7 +39,7 @@ PRODUCT_PACKAGES += \
     SettingsProviderOverlay \
     SystemUIOverlay \
     TeleServiceOverlay \
-    TetheringOverlay \
+    TetheringConfigOverlay \
     WifiOverlay
 
 # A/B
