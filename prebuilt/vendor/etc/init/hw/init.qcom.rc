@@ -560,7 +560,7 @@ on property:persist.vendor.ssr.enable_ramdumps=0
     stop vendor.ss_ramdump
 
 # yujoe tcpdump_warp service to save tcpdump to /sdcard
-service tcpdump-warp /system/bin/netlog.sh
+service tcpdump-warp /system/bin/netlog -i any -p -s 0 -Z root -C ${sys.tcpdump.size:-50} -W ${sys.tcpdump.num:-10} -w /data/logcat_log/capture.pcap
     class late_start
     user root
     group system
