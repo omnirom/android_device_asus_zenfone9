@@ -255,7 +255,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
-    android.hardware.power-V1-ndk_platform.vendor
+    android.hardware.power-service-qti
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
