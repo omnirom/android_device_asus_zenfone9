@@ -1158,6 +1158,11 @@ VENDOR_SKIP_FILES_COMMON=(
     "overlay/WifiResTarget.apk"
     "overlay/aptxalsOverlay.apk"
 
+    # Power
+    "bin/hw/android.hardware.power-service"
+    "etc/init/android.hardware.power-service.rc"
+    "etc/vintf/manifest/power.xml"
+
     # Rfs
     "rfs/apq/gnss/hlos"
     "rfs/apq/gnss/ramdumps"
@@ -1317,7 +1322,6 @@ as_module "etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml"
 as_module "etc/vintf/manifest/android.hardware.usb@1.2-service.xml"
 as_module "etc/vintf/manifest/c2_manifest_vendor.xml"
 as_module "etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml"
-as_module "etc/vintf/manifest/power.xml"
 as_module "etc/vintf/manifest/vendor.pixelworks.hardware.display.iris-service.xml"
 as_module "etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.diag.hal.service.xml"
