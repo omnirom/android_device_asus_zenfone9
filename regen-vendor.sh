@@ -644,6 +644,11 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/WW/ASUS/Launcher/default_workspace/default_allapp.xml"
     "etc/WW/ASUS/Launcher/default_workspace/phone_workspace.xml"
 
+    # Light
+    "bin/hw/android.hardware.lights-service.qti"
+    "etc/init/android.hardware.lights-qti.rc"
+    "etc/vintf/manifest/android.hardware.lights-qti.xml"
+    
     # Logs
     "bin/init.asus.checkdatalog.sh"
     "bin/init.asus.checklogsize.sh"
@@ -1306,7 +1311,6 @@ function as_module() {
 
 presign "app/com.qualcomm.qti.gpudrivers.lahaina.api30/com.qualcomm.qti.gpudrivers.lahaina.api30.apk"
 as_module "etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml"
-as_module "etc/vintf/manifest/android.hardware.lights-qti.xml"
 as_module "etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml"
 as_module "etc/vintf/manifest/android.hardware.sensors@2.0-multihal.xml"
 as_module "etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml"
