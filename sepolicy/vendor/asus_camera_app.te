@@ -39,6 +39,7 @@ allow asus_camera_app telecom_service:service_manager find;
 allow asus_camera_app tethering_service:service_manager find;
 allow asus_camera_app thermal_service:service_manager find;
 allow asus_camera_app trust_service:service_manager find;
+allow asus_camera_app device_state_service:service_manager find;
 
 binder_call(asus_camera_app, gpuservice)
 binder_call(asus_camera_app, vendor_hal_qspmhal_default)
