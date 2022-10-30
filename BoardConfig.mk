@@ -123,11 +123,11 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
 
 #HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml \
-                                              $(DEVICE_PATH)/asus_framework_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_lahaina.xml
-DEVICE_MATRIX_FILE += $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/manifest/vendor_framework_compatibility_matrix.xml \
+                                              $(DEVICE_PATH)/manifest/asus_framework_matrix.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/manifest/framework_manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_lahaina.xml
+DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
 # Kernel
 KERNEL_LD := LD=ld.lld
