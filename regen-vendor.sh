@@ -1158,6 +1158,23 @@ VENDOR_SKIP_FILES_COMMON=(
     "overlay/WifiResTarget.apk"
     "overlay/aptxalsOverlay.apk"
 
+    # Ozo processing
+    "bin/hw/vendor.ozoaudio.media.c2@1.0-service"
+    "etc/ozosdk.license"
+    "etc/init/vendor.ozoaudio.media.c2@1.0-service.rc"
+    "etc/seccomp_policy/vendor.ozoaudio.media.c2@1.0-default-seccomp_policy"
+    "lib/soundfx/libozoprocessing.so"
+    "lib64/soundfx/libozoprocessing.so"
+    "lib64/libav_ozodecoder.so"
+    "lib/libav_ozoencoder.so"
+    "lib64/libav_ozoencoder.so"
+    "lib64/libcodec2_soft_ozodec.so"
+    "lib64/libcodec2_soft_ozoenc.so"
+    "lib/libozoaudio.so"
+    "lib64/libozoaudio.so"
+    "lib64/libozoc2store.so"
+    "lib64/libozowidening.so"
+
     # Power
     "bin/hw/android.hardware.power-service"
     "etc/init/android.hardware.power-service.rc"
