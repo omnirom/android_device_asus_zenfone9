@@ -36,27 +36,27 @@ TARGET_BOOTANIMATION_SIZE := 1080p
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/asus/zenfone8/device.mk)
+$(call inherit-product, device/asus/zenfone9/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_DEVICE := zenfone8
-PRODUCT_NAME := omni_zenfone8
+PRODUCT_DEVICE := zenfone9
+PRODUCT_NAME := omni_zenfone9
 PRODUCT_BRAND := asus
-PRODUCT_MODEL := ASUS_I006D
+PRODUCT_MODEL := ASUS_AI2202
 PRODUCT_MANUFACTURER := asus
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
-TARGET_DEVICE := WW_I006D
-PRODUCT_SYSTEM_DEVICE := ASUS_I006D
-PRODUCT_SYSTEM_NAME := WW_I006D
+TARGET_DEVICE := WW_AI2202
+PRODUCT_SYSTEM_DEVICE := ASUS_AI2202
+PRODUCT_SYSTEM_NAME := WW_AI2202
 
 OMNI_PRODUCT_PROPERTIES += \
-    ro.build.product=ZS590KS
+    ro.build.product=AI2202
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=ASUS_I006D \
-    PRODUCT_NAME=WW_I006D \
-    TARGET_DEVICE=ZS590KS
+    PRODUCT_DEVICE=ASUS_AI2202 \
+    PRODUCT_NAME=WW_AI2202 \
+    TARGET_DEVICE=AI2202
 
-PLATFORM_SECURITY_PATCH_OVERRIDE := 2022-10-05
+PLATFORM_SECURITY_PATCH_OVERRIDE := 2022-10-01

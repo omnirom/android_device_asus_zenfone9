@@ -2,15 +2,7 @@
     Input:
         compatibility_matrix.xml
 -->
-<compatibility-matrix version="2.0" type="device">
-    <hal format="hidl" optional="false">
-        <name>android.frameworks.schedulerservice</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISchedulingPolicyService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
+<compatibility-matrix version="4.0" type="device">
     <hal format="hidl" optional="false">
         <name>android.frameworks.sensorservice</name>
         <version>1.0</version>
@@ -61,7 +53,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.qccsyshal</name>
-        <version>1.0</version>
+        <version>1.0-1</version>
         <interface>
             <name>IQccsyshal</name>
             <instance>qccsyshal</instance>
@@ -73,6 +65,7 @@
         <interface>
             <name>Isigma_miracast</name>
             <instance>sigmahal</instance>
+            <instance>sigmahal64</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -83,4 +76,10 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <vendor-ndk>
+        <version>32</version>
+    </vendor-ndk>
+    <system-sdk>
+        <version>31</version>
+    </system-sdk>
 </compatibility-matrix>

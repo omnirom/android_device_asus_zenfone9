@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_zenfone8.mk
+    $(LOCAL_DIR)/omni_zenfone9.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_zenfone8-user \
-    omni_zenfone8-userdebug \
-    omni_zenfone8-eng
+    omni_zenfone9-user \
+    omni_zenfone9-userdebug \
+    omni_zenfone9-eng

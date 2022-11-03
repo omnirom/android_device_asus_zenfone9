@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "android.hardware.vibrator.service.sake"
+#define LOG_TAG "android.hardware.vibrator.service.zenfone9"
 
 #include "Vibrator.h"
 

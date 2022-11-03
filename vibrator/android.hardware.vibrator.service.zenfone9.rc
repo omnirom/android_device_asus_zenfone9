@@ -10,7 +10,7 @@ on post-fs
 on property:service.bootanim.exit=0
     write /sys/class/leds/vibrator/boot_vibrator 1
 
-service vendor.sake.vibrator /vendor/bin/hw/android.hardware.vibrator.service.sake
+service vendor.zenfone9.vibrator /vendor/bin/hw/android.hardware.vibrator.service.zenfone9
     class hal
     user system
     group system input

@@ -20,10 +20,10 @@
 set -e
 
 # Required!
-DEVICE=zenfone8
+DEVICE=zenfone9
 VENDOR=asus
 
-INITIAL_COPYRIGHT_YEAR=2021
+INITIAL_COPYRIGHT_YEAR=2022
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -42,7 +42,7 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
 # Copyright headers and guards
-write_headers "zenfone8"
+write_headers "zenfone9"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt

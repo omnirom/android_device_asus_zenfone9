@@ -27,7 +27,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),zenfone8))
+ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),zenfone9))
 
 include $(CLEAR_VARS)
 HELPER_LIBS := libsystemhelper_jni.so

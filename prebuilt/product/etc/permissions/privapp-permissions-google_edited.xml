@@ -11,6 +11,7 @@
     </privapp-permissions>
 
     <privapp-permissions package="com.google.android.projection.gearhead">
+        <permission name="android.permission.ACTIVITY_EMBEDDING"/>
         <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
         <permission name="android.permission.BIND_DIRECTORY_SEARCH"/>
         <permission name="android.permission.CALL_PRIVILEGED"/>

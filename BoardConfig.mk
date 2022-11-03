@@ -18,7 +18,7 @@
 # device-specific aspects (drivers) with a device-agnostic
 # product configuration (apps).
 #
-DEVICE_PATH := device/asus/zenfone8
+DEVICE_PATH := device/asus/zenfone9
 
 BOARD_VENDOR := asus
 
@@ -60,7 +60,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.sake
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := lahaina
+TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
 
 # A/B
@@ -127,7 +127,7 @@ BOARD_EXT4_SHARE_DUP_BLOCKS := true
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/manifest/vendor_framework_compatibility_matrix.xml \
                                               $(DEVICE_PATH)/manifest/asus_framework_matrix.xml
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/manifest/framework_manifest.xml
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_lahaina.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_taro.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
 # Kernel
@@ -296,8 +296,8 @@ BOARD_SUPER_PARTITION_SIZE := 7516192768
 BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
 
 # Platform
-QCOM_HARDWARE_VARIANT := sm8350
-TARGET_BOARD_PLATFORM := lahaina
+QCOM_HARDWARE_VARIANT := sm8450
+TARGET_BOARD_PLATFORM := taro
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno660
 
 # Properties
