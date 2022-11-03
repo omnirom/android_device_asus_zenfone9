@@ -79,8 +79,8 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service
 
 PRODUCT_COPY_FILES += \
@@ -275,8 +275,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor
 
 # Soong namespaces
@@ -300,7 +300,7 @@ PRODUCT_PACKAGES += \
 # Tether offload
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.0.vendor
+    android.hardware.tetheroffload.control@1.1.vendor
 
 # Thermal
 PRODUCT_PACKAGES += \
