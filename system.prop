@@ -1,24 +1,3 @@
-#ABSP++++
-vendor.display.disable_rounded_corner=0
-#vendor.display.enable_rounded_corner=1
-#ABSP++
-# ASUS_BSP Audio Dirac +++
-ro.vendor.dirac.acs.controller=gef
-ro.vendor.dirac.acs.storeSettings=1
-ro.vendor.dirac.acs.ignore_error=1
-ro.vendor.dirac.gef.int.did=0xF,0x313,0x2C4
-ro.vendor.dirac.gef.ext.did=0xA,0x2D,0x14,0x2C7,0x2C9,0x1F7,0x38E,0x3B1,0x1F6,0x136,0x137,0x2CA
-ro.vendor.dirac.gef.int.tid=0x10012D00
-ro.vendor.dirac.gef.int.mid=0x10012DE0
-ro.vendor.dirac.gef.ext.mid=0x10012DE1
-ro.vendor.dirac.gef.system_sound=1
-ro.vendor.dirac.gef.ins.tid=0x10012D02
-ro.vendor.dirac.gef.ins.mid=0x10012DE2
-ro.vendor.dirac.gef.ins.did=0xF,0x313,0x2C4
-ro.vendor.dirac.gef.ins.appt=0x00011131
-ro.vendor.dirac.config=16
-ro.vendor.dirac.acs.rotation=true
-# ASUS_BSP Audio Dirac ---
 ####################################
 # from device/qcom/qssi/system.prop
 ####################################
@@ -63,7 +42,7 @@ media.aac_51_output_enabled=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 #16777215 is decimal sum of supported codecs in AAL
 #codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD MOV MHAS
-vendor.mm.enable.qcom_parser=16711423
+vendor.mm.enable.qcom_parser=16777215
 persist.mm.enable.prefetch=true
 #
 # system props for the data modules
@@ -89,13 +68,14 @@ persist.fuse_sdcard=true
 #System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.aac_frm_ctl.enabled=true
-persist.vendor.service.bt.iotinfo.report.enable=true
+persist.vendor.btstack.enable.twsplus=false
+persist.vendor.btstack.enable.twsplussho=false
+persist.vendor.btstack.twsplus.monosupport=false
 persist.bluetooth.avrcpversion=avrcp16
-persist.vendor.btstack.enable.twsplus=true
-persist.vendor.btstack.enable.twsplussho=true
-# ASUS BSP Bluetooth: disable SWB
-persist.vendor.qcom.bluetooth.enable.swb=false
-persist.vendor.qcom.bluetooth.enable.swbpm=false
+persist.bluetooth.disableinbandringing=false
+# ASUS BSP Bluetooth: enable SWB
+persist.vendor.qcom.bluetooth.enable.swb=true
+persist.vendor.qcom.bluetooth.enable.swbpm=true
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
@@ -142,7 +122,13 @@ persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
-#ASUS_BSP: mv to build/make/core/main.mk
+# ASUS_BSP "Enable IOT logging"+++
+persist.vendor.service.bt.iotinfo.report.enable=true
+# ASUS_BSP "Enable IOT logging"---
+#Expose aux camera for below packages
+#vendor.camera.aux.packagelist=org.codeaurora.snapcam
+#Add snapcam in privapp list
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
 # Property for backup NTP Server
@@ -159,12 +145,29 @@ ro.media.recorder-max-base-layer-fps=60
 ro.charger.enable_suspend=1
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
+#Property for default log flag
+persist.vendor.asus.logcat.filenum=20
+persist.vendor.asus.startlog=0
+persist.vendor.sys.downloadmode.enable=0
+persist.logd.size=1048576
+ro.vendor.asus.logcat=1
+ro.logd.kernel=true
+# Disable blur on app launch
+ro.launcher.blur.appLaunch=0
 #ASUS_BSP : Anakin use ACCY generation 5
-ifeq ($(ASUS_BUILD_PROJECT),ZS673KS)
-vendor.asus.accy_gen=5
+ifeq ($(ASUS_BUILD_PROJECT),AI2201)
+vendor.asus.accy.generation=6
 persist.vendor.asus.userfan=0
 endif
-persist.vendor.sys.downloadmode.enable=0
+#ASUS_BSP Add for Dirac sound effect feature
+ro.vendor.dirac.acs.rotation=true
+ro.vendor.dirac.acs.ignore_updates_in_call=true
+ro.vendor.dirac.acs.no_usermsg=true
+ro.vendor.dirac.gef.ins.appt=0x4
+ro.vendor.dirac.gef.int.appt=0x1,0x8,0x10
+ro.vendor.dirac.gef.ext.appt=0x1,0x4,0x8,0x10
+ro.vendor.dirac.gef.ext.did=0x4,0x8,0x80,0x4000,0x4000000
+ro.vendor.dirac.gef.exs.did=0x4,0x8,0x80,0x4000,0x4000000
 ####################################
 # from vendor/ims/data/twinapps/twinapps.prop
 ####################################
@@ -212,6 +215,7 @@ ro.iorapd.enable=false
 dalvik.vm.madvise.vdexfile.size=104857600
 dalvik.vm.madvise.odexfile.size=104857600
 dalvik.vm.madvise.artfile.size=4294967295
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 ####################################
 # from variable PRODUCT_SYSTEM_DEFAULT_PROPERTIES
 ####################################
@@ -221,6 +225,7 @@ ro.config.media_vol_steps=30
 # Auto-added by post_process_props.py
 #persist.sys.usb.config=none
 # end of file
+import /system/build_${ro.boot.country_code}.prop
 
 # Extra Asus
 ro.vendor.qti.va_aosp.support=1
