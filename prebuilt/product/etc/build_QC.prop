@@ -1,0 +1,9 @@
+ro.product.product.brand=Xiaomi
+ro.product.product.device=ZF
+ro.product.product.manufacturer=Xiaomi
+ro.product.product.model=ZF
+ro.product.product.name=WWZF
+ro.product.build.fingerprint=ZF/WWZF/ZF:12/SKQ1.220406.001/32.2050.2050.29:user/release-keys
+ro.com.google.clientidbase=android-asus
+ro.com.google.clientidbase.ms=android-asus
+ro.com.google.lens.oem_camera_package=com.asus.camera
