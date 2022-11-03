@@ -8,8 +8,8 @@
   {
     "remote": "omnirom",
     "repository": "android_device_qcom_sepolicy_vndr",
-    "target_path": "device/qcom/sepolicy_vndr",
-    "revision": "android-13.0"
+    "target_path": "device/qcom/sepolicy_vendor",
+    "revision": "android-13.0-vendor"
   },
   {
     "remote": "omnirom",
