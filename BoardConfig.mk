@@ -311,7 +311,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-10-05
+VENDOR_SECURITY_PATCH := 2022-10-01
 
 # Sepolicy
 include vendor/omni/sepolicy/sepolicy.mk
