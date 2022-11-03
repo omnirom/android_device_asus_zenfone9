@@ -139,7 +139,6 @@ PRODUCT_PACKAGES += \
     libtinyxml2 \
     lights.qcom
 
-$(call inherit-product, hardware/qcom-caf/sm8350/media/product.mk)
 $(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys/display_custom/config/display-product-commonsys.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
@@ -212,11 +211,6 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
