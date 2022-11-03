@@ -22,7 +22,6 @@
 /batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
 
 # Fingerprint
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.asus_lahaina       u:object_r:hal_fingerprint_default_exec:s0
 /data/vendor/goodix/gf_data(/.*)?                                                                          u:object_r:vendor_goodix_data_file:s0
 /dev/goodix_fp                                                                                             u:object_r:fingerprintd_device:s0
 

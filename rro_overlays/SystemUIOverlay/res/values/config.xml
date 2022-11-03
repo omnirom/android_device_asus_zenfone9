@@ -41,18 +41,4 @@
         Z
     </string>
 
-    <color name="config_udfpsColor">#FFFFFFE6</color>
-
-    <!-- HBM type of UDFPS overlay.
-            0 - GLOBAL HBM
-            1 - LOCAL HBM
-    -->
-    <integer name="config_udfps_hbm_type">0</integer>
-
-    <!-- The radius of the enrollment progress bar, in dp -->
-    <integer name="config_udfpsEnrollProgressBar" translatable="false">115</integer>
-
-    <!-- Doze: does the long press sensor need a proximity check? -->
-    <bool name="doze_long_press_proximity_check">true</bool>
-
 </resources>

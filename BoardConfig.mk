@@ -56,9 +56,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
-# Biometrics
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.sake
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
@@ -105,7 +102,6 @@ endif
 # Display
 TARGET_USES_HWC2 := true
 TARGET_SCREEN_DENSITY := 440
-SOONG_CONFIG_qtidisplay_udfps := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
