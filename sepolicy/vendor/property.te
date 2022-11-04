@@ -10,9 +10,6 @@ vendor_internal_prop(vendor_gx_fpd_prop)
 # GPS
 vendor_internal_prop(vendor_gps_prop)
 
-# Health
-system_vendor_config_prop(vendor_health_prop)
-
 # NFC
 vendor_internal_prop(vendor_nfc_prop)
 
