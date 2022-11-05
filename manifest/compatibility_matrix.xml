@@ -76,10 +76,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <vendor-ndk>
-        <version>32</version>
-    </vendor-ndk>
-    <system-sdk>
-        <version>31</version>
-    </system-sdk>
 </compatibility-matrix>
