@@ -8,3 +8,10 @@ prebuilt_hidl_interfaces {
         "vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner",
     ],
 }
+
+prebuilt_hidl_interfaces {
+    name: "hidl_eventprocessor_interface",
+    interfaces: [
+        "vendor.nxp.eventprocessor@1.0::INxpEseEvtProcessor",
+    ],
+}
