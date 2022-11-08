@@ -16,12 +16,13 @@
 
 package org.omnirom.device;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class TileActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class TileActivity extends AppCompatActivity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = new Intent();

@@ -22,7 +22,7 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -39,7 +39,7 @@ import android.util.Log;
 
 import org.omnirom.omnilib.utils.OmniSettings;
 
-public class DozeSettings extends PreferenceFragment  {
+public class DozeSettings extends PreferenceFragmentCompat {
 
     private static final String KEY_WAVE_CHECK = "wave_check";
     private static final String KEY_POCKET_CHECK = "pocket_check";

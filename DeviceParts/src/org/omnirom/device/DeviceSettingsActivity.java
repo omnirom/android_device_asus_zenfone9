@@ -17,38 +17,38 @@
 */
 package org.omnirom.device;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class DeviceSettingsActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-    private DeviceSettings mDeviceSettingsFragment;
-    
+public class DeviceSettingsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.settings_activity);
+        setSupportActionBar(findViewById(R.id.toolbar));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
-        if (fragment == null) {
-            mDeviceSettingsFragment = new DeviceSettings();
-            getFragmentManager().beginTransaction()
-                .add(android.R.id.content, mDeviceSettingsFragment)
-                .commit();
-        } else {
-            mDeviceSettingsFragment = (DeviceSettings) fragment;
-        }
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        getSupportFragmentManager().beginTransaction()
+            .replace(R.id.fragment_container, new DeviceSettings())
+            .commit();
     }
 
     @Override
