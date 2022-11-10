@@ -137,7 +137,7 @@ BOARD_BOOTCONFIG := |
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
 
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
 TARGET_KERNEL_ARCH := arm64
