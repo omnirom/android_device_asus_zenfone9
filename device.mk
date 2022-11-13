@@ -30,6 +30,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
+# Prebuilt Kernel Binary
+TARGET_KERNEL_DIR ?= device/asus/zenfone9-kernel
+LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+
+# Prebuilt Kernel Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := device/asus/zenfone9-kernel/kernel-headers
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
