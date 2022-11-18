@@ -133,12 +133,9 @@ KERNEL_LD := LD=ld.lld AR=llvm-ar
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_CMDLINE := \
-    #video=vfb:640x400 \
-    bpp=32 \
-    memsize=3072000 \
     msm_geni_serial.con_enabled=0
 
-BOARD_BOOTCONFIG := |
+BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
