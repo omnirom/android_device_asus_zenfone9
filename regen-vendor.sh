@@ -730,6 +730,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "factory"
     "odm"
 
+    # Ueventd
+    "ueventd.rc"
+
     # Vibrator
     "bin/hw/vendor.asus.vibrator.vibratorgovern@1.0-service"
     "etc/init/vendor.asus.vibrator.vibratorgovern@1.0-service.rc"

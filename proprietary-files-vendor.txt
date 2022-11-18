@@ -4016,4 +4016,3 @@ vendor/rfs/msm/wpss/readonly/vendor/firmware
 vendor/rfs/msm/wpss/readwrite
 vendor/rfs/msm/wpss/shared
 vendor/rfs/rfs_symlinks
-vendor/ueventd.rc
