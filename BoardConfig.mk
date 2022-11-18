@@ -207,6 +207,7 @@ BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
 
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno660
+TARGET_USES_KERNEL_PLATFORM := true
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
