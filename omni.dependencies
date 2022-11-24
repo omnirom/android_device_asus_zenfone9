@@ -65,5 +65,11 @@
     "repository": "LineageOS/android_vendor_qcom_opensource_power",
     "target_path": "vendor/qcom/opensource/power",
     "revision": "lineage-20.0"
-  }
+   },
+   {
+    "remote": "qcom",
+    "repository": "platform/vendor/qcom-opensource/healthd-ext",
+    "target_path": "vendor/qcom/opensource/healthd-ext",
+    "revision": "88372eed97e98bf8b269cdb882293303ca894f96"
+   }
 ]
