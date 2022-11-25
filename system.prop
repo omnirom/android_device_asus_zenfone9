@@ -225,7 +225,6 @@ ro.config.media_vol_steps=30
 # Auto-added by post_process_props.py
 #persist.sys.usb.config=none
 # end of file
-import /system/build_${ro.boot.country_code}.prop
 
 # Extra Asus
 ro.vendor.qti.va_aosp.support=1
