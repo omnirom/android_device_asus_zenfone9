@@ -255,6 +255,10 @@ PRODUCT_PACKAGES += \
     SecureElement \
     com.android.nfc_extras
 
+# Perf
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.3
+
 # Platform
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
