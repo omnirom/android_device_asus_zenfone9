@@ -670,6 +670,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "overlay/TeleServResOverlayOdm.apk"
     "overlay/WifiResTarget.apk"
     "overlay/aptxalsOverlay.apk"
+    "overlay/FrameworksResTarget_Vendor.apk"
+    "overlay/WifiResTarget_spf.apk"
 
     # Ozo processing
     "bin/hw/vendor.ozoaudio.media.c2@1.0-service"

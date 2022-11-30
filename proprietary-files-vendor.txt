@@ -3,8 +3,6 @@
 -vendor/app/IWlanService/IWlanService.apk
 -vendor/app/TimeService/TimeService.apk
 -vendor/app/powermodule_java/powermodule_java.apk
--vendor/overlay/FrameworksResTarget_Vendor.apk
--vendor/overlay/WifiResTarget_spf.apk
 vendor/app/CACertService/oat/arm64/CACertService.odex
 vendor/app/CACertService/oat/arm64/CACertService.vdex
 vendor/app/CneApp/lib/arm64/libvndfwk_detect_jni.qti_vendor.so
