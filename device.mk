@@ -223,8 +223,15 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
+    libOmxCore \
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
+    libmm-omxcore \
     libstagefright_softomx.vendor \
-    libstagefrighthw
+    libstagefrighthw \
+    libplatformconfig
+
+$(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
 
 # Net
 PRODUCT_PACKAGES += \
