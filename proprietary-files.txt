@@ -250,6 +250,10 @@ system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 -system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
+# VNDK
+system_ext/lib64/libvndfwk_detect_jni.qti.so
+system_ext/lib64/libvndfwk_detect_jni.qti_system.so
+
 # Wlan
 -system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
 system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
