@@ -19,7 +19,6 @@ package org.omnirom.device;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -29,6 +28,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
