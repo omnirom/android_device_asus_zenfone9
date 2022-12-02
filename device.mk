@@ -107,23 +107,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects_AI2202.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
-# Authsecret
-PRODUCT_PACKAGES += \
-    android.hardware.authsecret@1.0.vendor
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor
-
-#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
-#PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
-
-#PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
-
-#PRODUCT_PACKAGES += BluetoothExt
-#PRODUCT_PACKAGES += libbluetooth_qti
-#PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
-
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \
@@ -148,7 +131,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V1-ndk_platform.vendor \
+    android.hardware.graphics.common-V2-ndk_platform.vendor \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     libion \
@@ -165,7 +148,6 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
@@ -181,15 +163,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
-
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss.measurement_corrections@1.1.vendor \
-    android.hardware.gnss.visibility_control@1.0.vendor \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.gnss-V1-ndk_platform.vendor
 
 # Health
 PRODUCT_PACKAGES += \
@@ -202,6 +178,10 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0.vendor \
     libhwbinder.vendor
 
+# Identity
+PRODUCT_PACKAGES += \
+    android.hardware.identity-V3-ndk_platform.vendor
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.idc:system/usr/idc/fts_ts.idc \
@@ -210,13 +190,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
-# Keymaster
+# Keymint
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
+    android.hardware.security.keymint-V1-ndk_platform.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti
+    android.hardware.lights-service.qti \
+    android.hardware.light-V1-ndk_platform.vendor
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -240,18 +221,8 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
 
-# Net
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
-# Neural Network
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
-
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor \
-    android.hardware.secure_element@1.2.vendor \
     NfcNci \
     Tag \
     SecureElement \
@@ -294,12 +265,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom \
     $(LOCAL_PATH)/ramdisk/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
 
-# RIL
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.6.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -321,19 +286,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     tcmiface
 
-# Tether offload
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload.config@1.0.vendor \
-    android.hardware.tetheroffload.control@1.1.vendor
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0.vendor
-
-# TrustedUI
-PRODUCT_PACKAGES += \
-    android.hidl.memory.block@1.0.vendor
-
 # Update engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -346,10 +298,6 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \

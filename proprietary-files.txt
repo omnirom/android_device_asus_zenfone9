@@ -125,18 +125,29 @@ system_ext/etc/hdr_config/wnr_on/wnr_params.txt
 -system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
 -system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
 -system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar
 system_ext/lib64/com.quicinc.cne.api@1.0.so
 system_ext/lib64/com.quicinc.cne.api@1.1.so
 system_ext/lib64/com.quicinc.cne.constants@1.0.so
 system_ext/lib64/com.quicinc.cne.constants@2.0.so
 system_ext/lib64/com.quicinc.cne.constants@2.1.so
+system_ext/lib64/com.quicinc.cne.server@1.0.so
+system_ext/lib64/com.quicinc.cne.server@2.0.so
+system_ext/lib64/com.quicinc.cne.server@2.1.so
+system_ext/lib64/com.quicinc.cne.server@2.2.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.2.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.3.so
 
 # Device
 -system_ext/app/DeviceInfo/DeviceInfo.apk
--product/app/DeviceStatisticsService/DeviceStatisticsService.apk
+-system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
 
 # Display
 product/etc/permissions/com.qti.snapdragon.sdk.display.xml
@@ -169,36 +180,9 @@ system_ext/lib64/libdpmtcm.so
 
 # Gallery
 -priv-app/AsusGallery/AsusGallery.apk
-priv-app/AsusGallery/lib/arm64/libarcsoft_beautyshot.so
-priv-app/AsusGallery/lib/arm64/libarcsoft_undistort.so
-priv-app/AsusGallery/lib/arm64/libblur.so
-priv-app/AsusGallery/lib/arm64/libc++_shared.so
-priv-app/AsusGallery/lib/arm64/libcvface_api.so
-priv-app/AsusGallery/lib/arm64/libgif.so
-priv-app/AsusGallery/lib/arm64/libgvr.so
-priv-app/AsusGallery/lib/arm64/libjni_cvface_api.so
-priv-app/AsusGallery/lib/arm64/libjni_face_effect.so
-priv-app/AsusGallery/lib/arm64/libjni_filter_show.so
-priv-app/AsusGallery/lib/arm64/libjni_wide_angle_undistort.so
-priv-app/AsusGallery/lib/arm64/libmpbase.so
-priv-app/AsusGallery/lib/arm64/libopencv_java4.so
-priv-app/AsusGallery/lib/arm64/libpanorenderer.so
-priv-app/AsusGallery/lib/arm64/libpano_video_renderer.so
-priv-app/AsusGallery/lib/arm64/librs.blur.so
-priv-app/AsusGallery/lib/arm64/librs.convolve3x3.so
-priv-app/AsusGallery/lib/arm64/librs.grad.so
-priv-app/AsusGallery/lib/arm64/librs.grey.so
-priv-app/AsusGallery/lib/arm64/librs.saturation.so
-priv-app/AsusGallery/lib/arm64/librs.vignette.so
-priv-app/AsusGallery/lib/arm64/librsjni.so
-priv-app/AsusGallery/lib/arm64/librsjni_androidx.so
-priv-app/AsusGallery/lib/arm64/libRSSupport.so
-priv-app/AsusGallery/lib/arm64/libtensorflowlite_jni.so
-priv-app/AsusGallery/lib/arm64/libtensorflow_inference.so
 
 # GalleryBurst
 -priv-app/AsusGalleryBurst/AsusGalleryBurst.apk
-priv-app/AsusGalleryBurst/lib/arm64/libgifencoder.so
 
 # GalleryBurst Video Editor
 etc/videoeditor/Charming.mfim
@@ -256,4 +240,6 @@ system_ext/lib64/libvndfwk_detect_jni.qti_system.so
 
 # Wlan
 -system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.iwlan-V1.1-java.jar
 system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.iwlan@1.1.so

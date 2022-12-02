@@ -116,7 +116,6 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 
 # IOP
 system_ext/lib64/vendor.qti.hardware.iop@2.0.so
-system_ext/lib64/vendor.qti.hardware.perf@2.0.so
 
 system_ext/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
@@ -125,4 +124,4 @@ system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # System Helper
 system_ext/lib64/vendor.qti.hardware.embmssl@1.0.so
-system_ext/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so
+system_ext/lib64/vendor.qti.hardware.embmssl@1.1.so
