@@ -13,7 +13,6 @@ ro.surface_flinger.supports_background_blur=0
 # from variable PRODUCT_PROPERTY_OVERRIDES
 ####################################
 ro.soc.manufacturer=QTI
-ro.control_privapp_permissions=enforce
 vendor.gatekeeper.disable_spu=true
 persist.vendor.qcomsysd.enabled=0
 persist.vendor.radio.data_ltd_sys_ind=1
