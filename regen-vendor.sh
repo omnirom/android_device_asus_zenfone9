@@ -430,6 +430,11 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/yes"
     "bin/zcat"
 
+    # Biometrics
+    "bin/hw/android.hardware.biometrics.face@1.0-service.face"
+    "etc/init/android.hardware.biometrics.face@1.0-service.face.rc"
+    "lib64/android.hardware.biometrics.face-V1-ndk_platform.so"
+
     # Bootctrl
     "lib/hw/android.hardware.boot@1.0-impl-1.2-qti.so"
     "lib/libboot_control_qti.so"
