@@ -13,6 +13,7 @@ system_ext/etc/permissions/audiosphere.xml
 
 # Camera
 -priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
+lib64/libxditk_LightArt.so
 
 system_ext/etc/hdr_config/ans_off/ans_config.txt
 system_ext/etc/hdr_config/ans_on/ans_config.txt
