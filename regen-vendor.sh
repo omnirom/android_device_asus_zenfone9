@@ -675,9 +675,12 @@ VENDOR_SKIP_FILES_COMMON=(
 
     # Ozo processing
     "bin/hw/vendor.ozoaudio.media.c2@1.0-service"
+    "bin/hw/vendor.ozoaudio.notify@1.0-service"
     "etc/ozosdk.license"
+    "etc/init/ozonotify-1.0-service.rc"
     "etc/init/vendor.ozoaudio.media.c2@1.0-service.rc"
     "etc/seccomp_policy/vendor.ozoaudio.media.c2@1.0-default-seccomp_policy"
+    "etc/vintf/manifest/ozonotify-1.0.xml"
     "lib/soundfx/libozoprocessing.so"
     "lib64/soundfx/libozoprocessing.so"
     "lib64/libav_ozodecoder.so"
@@ -689,6 +692,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libozoaudio.so"
     "lib64/libozoc2store.so"
     "lib64/libozowidening.so"
+    "lib/com.android.ozoaudio.notify@1.0.so"
+    "lib/libozoaudioutils.so"
+    "lib/libozocapability.so"
 
     # Power
     "bin/hw/android.hardware.power-service"
