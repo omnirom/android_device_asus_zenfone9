@@ -669,6 +669,13 @@ VENDOR_SKIP_FILES_COMMON=(
     #"lib/hw/memtrack.default.so"
     "lib64/hw/android.hardware.memtrack@1.0-impl.so"
     #"lib64/hw/memtrack.default.so"
+    "bin/hw/vendor.asus.wifi.rttutil@1.0-service"
+    "bin/hw/vendor.ims.asusgeneralhidl@1.0-service"
+    "etc/init/vendor.asus.wifi.rttutil@1.0-service.rc"
+    "etc/init/vendor.ims.asusgeneralhidl@1.0-service.rc"
+    "lib64/vendor.ims.asusgeneralhidl@1.0.so"
+    "lib64/vendor.asus.wifi.netutil@1.0.so"
+    "lib64/vendor.asus.wifi.rttutil@1.0.so"
 
     # Overlays
     "overlay/FrameworksResTarget.apk"
@@ -825,6 +832,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libqtivibratoreffect.so"
     "lib/hw/vibrator.default.so"
     "lib64/hw/vibrator.default.so"
+    "lib/libvibrator.so"
+    "lib64/libvibrator.so"
 
     # Wifi
     "bin/hw/android.hardware.wifi@1.0-service"
