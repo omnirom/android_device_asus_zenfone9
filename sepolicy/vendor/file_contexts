@@ -45,6 +45,3 @@
 /(vendor|system/vendor)/bin/magnetometer_accessory2_installed.sh                               u:object_r:ASensorsService_exec:s0
 /(vendor|system/vendor)/bin/proximity_report_status.sh                                         u:object_r:ASensorsService_exec:s0
 /(vendor|system/vendor)/bin/sensors_factory_init.sh                                            u:object_r:ASensorsService_exec:s0
-
-# Vibrator
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator\.service\.zenfone9                          u:object_r:hal_vibrator_default_exec:s0
