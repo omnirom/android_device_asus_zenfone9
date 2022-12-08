@@ -15,10 +15,10 @@ persist.rild.nitz_short_ons_0=
 persist.rild.nitz_short_ons_1=
 persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
-ril.subscription.types=RUIM,RUIM
+ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 # Set network mode to (NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA, NR_LTE_TDSCDMA_CDMA_EVDO_GSM_WCDMA) for 8+8 mode device on DSDS mode
-#ro.telephony.default_network=33,33
+ro.telephony.default_network=33,33
 dalvik.vm.heapsize=36m
 dalvik.vm.dex2oat64.enabled=true
 dev.pm.dyn_samplingrate=1
@@ -68,9 +68,6 @@ persist.fuse_sdcard=true
 #System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.aac_frm_ctl.enabled=true
-persist.vendor.btstack.enable.twsplus=false
-persist.vendor.btstack.enable.twsplussho=false
-persist.vendor.btstack.twsplus.monosupport=false
 persist.bluetooth.avrcpversion=avrcp16
 persist.bluetooth.disableinbandringing=false
 # ASUS BSP Bluetooth: enable SWB
@@ -116,6 +113,7 @@ ro.hwui.text_small_cache_width=1024
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
+debug.hwui.skia_atrace_enabled=false
 config.disable_rtt=true
 #Bringup properties
 persist.sys.force_sw_gles=1
@@ -154,11 +152,6 @@ ro.vendor.asus.logcat=1
 ro.logd.kernel=true
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
-#ASUS_BSP : Anakin use ACCY generation 5
-ifeq ($(ASUS_BUILD_PROJECT),AI2201)
-vendor.asus.accy.generation=6
-persist.vendor.asus.userfan=0
-endif
 #ASUS_BSP Add for Dirac sound effect feature
 ro.vendor.dirac.acs.rotation=true
 ro.vendor.dirac.acs.ignore_updates_in_call=true
@@ -182,6 +175,25 @@ ro.vendor.build.asus.sku=WW
 ####################################
 debug.atrace.tags.enableflags=0
 persist.traced.enable=1
+log.tag.CCodec=I
+log.tag.MediaCodec=I
+log.tag.MediaPlayerService=I
+log.tag.CCodecBufferChannel=I
+log.tag.MediaCodecSource=I
+log.tag.NuPlayerRenderer=I
+log.tag.NuPlayerDecoder=I
+log.tag.NuPlayer=I
+log.tag.MPEG4Writer=I
+log.tag.CCodecBuffers=I
+log.tag.CCodecConfig=I
+log.tag.MediaCodecList=I
+log.tag.FrameDecoder=I
+log.tag.MediaMetadataRetriever=I
+log.tag.MediaCodecsXmlParser=I
+log.tag.NuPlayerDriver=I
+log.tag.StagefrightRecorder=I
+log.tag.GenericSource=I
+log.tag.GraphicBufferSource=I
 dalvik.vm.image-dex2oat-Xms=64m
 dalvik.vm.image-dex2oat-Xmx=64m
 dalvik.vm.dex2oat-Xms=64m
@@ -206,12 +218,10 @@ pm.dexopt.ab-ota=speed-profile
 pm.dexopt.inactive=verify
 pm.dexopt.cmdline=verify
 pm.dexopt.shared=speed
-dalvik.vm.dex2oat-updatable-bcp-packages-file=/system/etc/updatable-bcp-packages.txt
 dalvik.vm.dex2oat-resolve-startup-strings=true
 dalvik.vm.dex2oat-max-image-block-size=524288
 dalvik.vm.minidebuginfo=true
 dalvik.vm.dex2oat-minidebuginfo=true
-ro.iorapd.enable=false
 dalvik.vm.madvise.vdexfile.size=104857600
 dalvik.vm.madvise.odexfile.size=104857600
 dalvik.vm.madvise.artfile.size=4294967295
@@ -222,8 +232,6 @@ persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 ro.config.vc_call_vol_default=3
 ro.config.media_vol_default=15
 ro.config.media_vol_steps=30
-# Auto-added by post_process_props.py
-#persist.sys.usb.config=none
 # end of file
 
 # Extra Asus

@@ -4,6 +4,15 @@ audio.sys.routing.latency=0
 audio.offload.min.duration.secs=30
 audio.sys.offload.pstimeout.secs=3
 ro.com.google.lens.oem_camera_package=com.asus.camera
+ro.com.google.ime.height_ratio=1.2
+persist.sys.godoverlay.enable=1
+persist.sys.fpsctrl.enable=1
+persist.sys.autofps.mode=2
+persist.sys.notchui.enable=1
+persist.sys.thermal_policy_update=1
+ro.surface_flinger.set_idle_timer_ms=1500
+ro.surface_flinger.enable_frame_rate_override=1
+debug.sf.frame_rate_multiple_threshold=120
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12

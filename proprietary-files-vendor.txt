@@ -138,9 +138,7 @@ vendor/bin/hw/qconfigservice
 vendor/bin/hw/qcrilNrd
 vendor/bin/hw/qvrservice
 vendor/bin/hw/sxrservice
-vendor/bin/hw/vendor.asus.wifi.rttutil@1.0-service
 vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/hw/vendor.ims.asusgeneralhidl@1.0-service
 vendor/bin/hw/vendor.pixelworks.hardware.display.iris-service
 vendor/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64
@@ -552,10 +550,8 @@ vendor/etc/init/slad-v2.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/sxrd.rc
 vendor/etc/init/trusteduilistener.rc
-vendor/etc/init/vendor.asus.wifi.rttutil@1.0-service.rc
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.dpmd.rc
-vendor/etc/init/vendor.ims.asusgeneralhidl@1.0-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.display.iris-service.rc
 vendor/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
@@ -2423,7 +2419,6 @@ vendor/lib/libtrustedapploader.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/libubifocus.so
 vendor/lib/libvendorscenariopoweroptfeature.so
-vendor/lib/libvibrator.so
 vendor/lib/libvideooptfeature.so
 vendor/lib/libvideotxr.so
 vendor/lib/libvideoutils.so
@@ -3626,7 +3621,6 @@ vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/libubifocus.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/libvendorscenariopoweroptfeature.so
-vendor/lib64/libvibrator.so
 vendor/lib64/libvideooptfeature.so
 vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
@@ -3710,8 +3704,6 @@ vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/soundfx/libvolumelistener.so
 vendor/lib64/style.cng
-vendor/lib64/vendor.asus.wifi.netutil@1.0.so
-vendor/lib64/vendor.asus.wifi.rttutil@1.0.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
@@ -3721,7 +3713,6 @@ vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.color@1.6.so
 vendor/lib64/vendor.display.color@1.7.so
 vendor/lib64/vendor.display.postproc@1.0.so
-vendor/lib64/vendor.ims.asusgeneralhidl@1.0.so
 vendor/lib64/vendor.libdpmctmgr.so
 vendor/lib64/vendor.libdpmfdmgr.so
 vendor/lib64/vendor.libdpmframework.so
