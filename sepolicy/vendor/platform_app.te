@@ -1,2 +1,5 @@
-allow platform_app vendor_camera_prop:file { getattr map open read };
-allow platform_app vendor_asus_build_prop:file { getattr map open read };
+get_prop(platform_app, vendor_asus_prop)
+
+get_prop(platform_app, vendor_camera_prop)
+
+allow platform_app ois_device:chr_file rw_file_perms;

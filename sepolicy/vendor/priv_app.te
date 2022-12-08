@@ -1,0 +1,3 @@
+get_prop(priv_app, vendor_asus_prop)
+
+allow priv_app ois_device:chr_file rw_file_perms;

@@ -3,3 +3,7 @@ type asus_block_device, dev_type;
 
 # Fingerprint
 type fingerprintd_device, dev_type;
+
+# Asus Sensor
+type sensor_device, dev_type;
+type ois_device, dev_type;

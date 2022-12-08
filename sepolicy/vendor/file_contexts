@@ -11,29 +11,40 @@
 /(vendor|system/vendor)/lib(64)?/libxditk_ditBSP_JNI\.so                                           u:object_r:same_process_hal_file:s0
 
 # Display (Pixelworks)
-/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service           u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service    u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/irisConfig                                                       u:object_r:iris_config_exec:s0
+/sys/devices/virtual/extcon-asus/battery/name                                                  u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/battery_id/state                                              u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/usb_connector/state                                           u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/quick_charging/state                                          u:object_r:vendor_sysfs_graphics:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service             u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service      u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/irisConfig                                                         u:object_r:iris_config_exec:s0
 
 # Files in rootfs
-/ADF(/.*)?                                                                                         u:object_r:demoapp_file:s0
-/APD(/.*)?                                                                                         u:object_r:demoapp_file:s0
-/asdf(/.*)?                                                                                        u:object_r:log_file:s0
-/batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
+/ADF(/.*)?                                                                                     u:object_r:demoapp_file:s0
+/APD(/.*)?                                                                                     u:object_r:demoapp_file:s0
+/asdf(/.*)?                                                                                    u:object_r:log_file:s0
+/batinfo(/.*)?                                                                                 u:object_r:bat_file:s0
 
 # Fingerprint
-/data/vendor/goodix/gf_data(/.*)?                                                                          u:object_r:vendor_goodix_data_file:s0
-/dev/goodix_fp                                                                                             u:object_r:fingerprintd_device:s0
+/data/vendor/goodix/gf_data(/.*)?                                                              u:object_r:vendor_goodix_data_file:s0
+/dev/goodix_fp                                                                                 u:object_r:fingerprintd_device:s0
 
 # NFC
-/dev/pn553                                                                                         u:object_r:nfc_device:s0
+/dev/pn553                                                                                     u:object_r:nfc_device:s0
 
 # Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-qti                                u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-qti                            u:object_r:hal_power_default_exec:s0
 
 # Sensors
-/dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
-/dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0
+/dev/asusLightSensor                                                                           u:object_r:sensor_device:s0
+/dev/asusProxSensor                                                                            u:object_r:sensor_device:s0
+/dev/OIS                                                                                       u:object_r:ois_device:s0
+/(vendor|system/vendor)/bin/asus_native_sensor                                                 u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory_installed.sh                                u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory_removed.sh                                  u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory2_installed.sh                               u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/proximity_report_status.sh                                         u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/sensors_factory_init.sh                                            u:object_r:ASensorsService_exec:s0
 
 # Vibrator
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator\.service\.zenfone9                          u:object_r:hal_vibrator_default_exec:s0

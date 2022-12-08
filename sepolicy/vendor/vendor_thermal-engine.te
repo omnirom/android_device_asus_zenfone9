@@ -1,7 +1,8 @@
 get_prop(vendor_thermal-engine, vendor_camera_prop)
-set_prop(vendor_thermal-engine, vendor_thermal_prop)
 
-get_prop(vendor_thermal-engine, vendor_asus_camera_prop)
-set_prop(vendor_thermal-engine, vendor_asus_camera_prop)
+get_prop(vendor_thermal-engine, vendor_asus_prop)
+set_prop(vendor_thermal-engine, vendor_asus_prop)
 
 allow vendor_thermal-engine self:capability { fowner fsetid kill };
+
+allow vendor_thermal-engine vendor_sysfs_asuslib:file rw_file_perms;
