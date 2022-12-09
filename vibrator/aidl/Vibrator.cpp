@@ -483,6 +483,22 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
 
     ALOGD("Vibrator perform effect %d", effect);
 
+    if((effect < Effect::CLICK) || (effect == Effect::RINGTONE_1) || (effect == Effect::RINGTONE_2) ||
+                                   (effect == Effect::RINGTONE_3) || (effect == Effect::RINGTONE_4) || (effect == Effect::RINGTONE_5)){
+        ALOGD("SZ Vibrator perform effect %d", effect);
+        ret = ff.playEffect((static_cast<int>(effect)), es, &playLengthMs);
+        ALOGD("Vibrator perform %d", ret);
+        if (callback != nullptr) {
+            std::thread([=] {
+                ALOGD("SZ Starting perform on another thread");
+                usleep(playLengthMs * 1000);
+                ALOGD("SZ Notifying perform complete");
+                callback->onComplete();
+            }).detach();
+        }
+        *_aidl_return = playLengthMs;
+    }
+
     if (effect < Effect::CLICK ||
             effect > Effect::HEAVY_CLICK)
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
