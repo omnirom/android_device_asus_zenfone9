@@ -27,10 +27,10 @@
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">ZS590KS</string>
+    <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
 
     <!-- MMS user agent profile URL -->
-    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprofile.asus.com/uaprof/ASUS-ZS590KS.xml</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
 
     <!-- True if camera app should be pinned via Pinner Service -->
     <bool name="config_pinnerCameraApp">true</bool>
