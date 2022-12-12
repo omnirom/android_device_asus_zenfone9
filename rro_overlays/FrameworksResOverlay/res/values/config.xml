@@ -433,7 +433,7 @@
 
     <!-- Height of the status bar in landscape. The height should be
          Max((status bar content height + waterfall top size), top cutout size) -->
-    <dimen name="status_bar_height_landscape">28.0dip</dimen>
+    <dimen name="status_bar_height_landscape">56.0dip</dimen>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
