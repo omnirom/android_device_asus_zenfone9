@@ -229,15 +229,6 @@ service touch_ver /vendor/bin/sh  /vendor/bin/touch_ver.sh
     disabled
 # Touch ---
 
-#zram++++
-service asus_zram /system/vendor/bin/sh /vendor/bin/init.asus.zram.sh
-    user root
-    group root
-    disabled
-    seclabel u:r:savelogmtp:s0
-    oneshot
-#zram----
-
 ###-----------------------------------------------###
 #                ALL ASUS service (end)
 # 
@@ -535,15 +526,6 @@ on property:sys.asusconfigupdater.game_perf_para_cdn_8_version.csv=*
    setprop vendor.asusconfigupdater.game_perf_para_cdn_8_version.csv   ${sys.asusconfigupdater.game_perf_para_cdn_8_version.csv}
 on property:sys.asusconfigupdater.game_perf_para_cdn_9_version.csv=*
    setprop vendor.asusconfigupdater.game_perf_para_cdn_9_version.csv   ${sys.asusconfigupdater.game_perf_para_cdn_9_version.csv}
-
-on property:sys.boot_completed=1
-    start asus_zram
-
-on property:persist.vendor.zram.enable=*
-    start asus_zram
-
-on property:vendor.init.zram.enable=*
-    setprop persist.vendor.zram.enable ${vendor.init.zram.enable}
 
 on property:vendor.drm.keystatus=1
     setprop vendor.debug.drm.keystatus 1

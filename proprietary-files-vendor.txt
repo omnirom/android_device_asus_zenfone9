@@ -14,7 +14,6 @@ vendor/app/TimeService/oat/arm64/TimeService.odex
 vendor/app/TimeService/oat/arm64/TimeService.vdex
 vendor/app/powermodule_java/oat/arm64/powermodule_java.odex
 vendor/app/powermodule_java/oat/arm64/powermodule_java.vdex
-vendor/bin/ASUSEvtlog
 vendor/bin/ATFWD-daemon
 vendor/bin/BackupCalibrationData
 vendor/bin/CameraModule
@@ -38,7 +37,6 @@ vendor/bin/KillMediaserver
 vendor/bin/KmInstallKeybox
 vendor/bin/NfcFelica.sh
 vendor/bin/PalTest
-vendor/bin/PhoneInfoTest
 vendor/bin/PktRspTest
 vendor/bin/QMESA_64
 vendor/bin/RestoreCalibrationData
@@ -53,7 +51,6 @@ vendor/bin/agmcap
 vendor/bin/agmcompressplay
 vendor/bin/agmplay
 vendor/bin/asus_native_sensor
-vendor/bin/asuslogcat
 vendor/bin/athdiag
 vendor/bin/audioadsprpcd
 vendor/bin/audioflacapp
@@ -170,7 +167,6 @@ vendor/bin/hw/vendor.qti.spu@1.1-service
 vendor/bin/hw/vendor.qti.spu@2.0-service
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
-vendor/bin/init.asus.zram.sh
 vendor/bin/init.class_main.sh
 vendor/bin/init.crda.sh
 vendor/bin/init.kernel.post_boot-cape.sh
@@ -313,7 +309,6 @@ vendor/bin/vendor.qti.hardware.soter@1.0-provision
 vendor/bin/vendor.qti.qspmhal@1.0-service
 vendor/bin/vendor_cmd_tool
 vendor/bin/vendor_modprobe.sh
-vendor/bin/vendor_savelogs.sh
 vendor/bin/vga_status
 vendor/bin/vmmgr
 vendor/bin/vppservice
@@ -467,7 +462,6 @@ vendor/etc/gpfspath_oem_config.xml
 vendor/etc/gps.conf
 vendor/etc/init.asus.nfc.JP.rc
 vendor/etc/init.qti.fm.sh
-vendor/etc/init/ASUSEvtlog.rc
 vendor/etc/init/android.hardware.audio.service_64.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc

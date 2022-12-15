@@ -558,10 +558,15 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/vintf/manifest/android.hardware.lights-qti.xml"
     
     # Logs
+    "bin/ASUSEvtlog"
+    "etc/init/ASUSEvtlog.rc"
+    "bin/asuslogcat"
     "bin/init.asus.checkdatalog.sh"
     "bin/init.asus.checklogsize.sh"
     "bin/init.asus.kernelmessage.sh"
-    "bin/init.asus.piq.sh"
+    "bin/init.asus.zram.sh"
+    "bin/PhoneInfoTest"
+    "bin/vendor_savelogs.sh"
 
     # Manifest
     "etc/vintf/manifest_cape.xml"
