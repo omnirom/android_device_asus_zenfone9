@@ -114,7 +114,6 @@ vendor/bin/hal_proxy_daemon
 vendor/bin/hdcp1prov
 vendor/bin/hdcp2p2prov
 vendor/bin/hw/android.hardware.audio.service_64
-vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hw/android.hardware.drm@1.4-service.clearkey
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
@@ -470,7 +469,6 @@ vendor/etc/init.asus.nfc.JP.rc
 vendor/etc/init.qti.fm.sh
 vendor/etc/init/ASUSEvtlog.rc
 vendor/etc/init/android.hardware.audio.service_64.rc
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc
 vendor/etc/init/android.hardware.drm@1.4-service.clearkey.rc
@@ -1261,7 +1259,6 @@ vendor/etc/thermal_atd.conf
 vendor/etc/usb_audio_policy_configuration.xml
 vendor/etc/usb_compositions.conf
 vendor/etc/usecaseKvManager.xml
--vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml
 -vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 -vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
 -vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
@@ -2771,8 +2768,6 @@ vendor/lib64/android.hardware.atrace@1.0.so
 vendor/lib64/android.hardware.authsecret@1.0.so
 vendor/lib64/android.hardware.automotive.vehicle@2.0-manager-lib.so
 vendor/lib64/android.hardware.automotive.vehicle@2.0.so
-vendor/lib64/android.hardware.biometrics.common-V1-ndk_platform.so
-vendor/lib64/android.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/android.hardware.bluetooth.audio@2.0.so
 vendor/lib64/android.hardware.bluetooth.audio@2.1.so
 vendor/lib64/android.hardware.bluetooth@1.0.so

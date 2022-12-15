@@ -434,6 +434,11 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/hw/android.hardware.biometrics.face@1.0-service.face"
     "etc/init/android.hardware.biometrics.face@1.0-service.face.rc"
     "lib64/android.hardware.biometrics.face-V1-ndk_platform.so"
+    "bin/hw/android.hardware.biometrics.fingerprint@2.1-service"
+    "etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc"
+    "etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml"
+    "lib64/android.hardware.biometrics.common-V1-ndk_platform.so"
+    "lib64/android.hardware.biometrics.fingerprint@2.1.so"
 
     # Bootctrl
     "lib/hw/android.hardware.boot@1.0-impl-1.2-qti.so"
@@ -902,7 +907,6 @@ as_module "etc/vintf/manifest/vendor.pixelworks.hardware.display.iris-service.xm
 as_module "etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.diag.hal.service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml"
-as_module "etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service.xml"
 as_module "etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml"
 as_module "etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml"
 as_module "etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml"
