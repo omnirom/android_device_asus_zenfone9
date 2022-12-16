@@ -28,6 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Prebuilt Kernel Binary
+TARGET_KERNEL_VERSION := 5.10
 TARGET_KERNEL_DIR ?= device/asus/zenfone9-kernel
 LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
 PRODUCT_COPY_FILES += \
@@ -301,6 +302,10 @@ PRODUCT_HOST_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
+
+# USB
+TARGET_HAS_DIAG_ROUTER := true
+$(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
 
 # Vendor service manager
 PRODUCT_PACKAGES += \

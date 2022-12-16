@@ -78,5 +78,11 @@
     "repository": "platform/vendor/qcom-opensource/healthd-ext",
     "target_path": "vendor/qcom/opensource/healthd-ext",
     "revision": "88372eed97e98bf8b269cdb882293303ca894f96"
+   },
+   {
+     "remote": "gitlab",
+     "repository": "android_vendor_qcom_opensource_usb",
+     "target_path": "vendor/qcom/opensource/usb",
+     "revision": "android-13.0"
    }
 ]
