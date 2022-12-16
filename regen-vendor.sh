@@ -827,6 +827,22 @@ VENDOR_SKIP_FILES_COMMON=(
     # Ueventd
     "ueventd.rc"
 
+    # Usb
+    "bin/init.qcom.usb.sh"
+    "bin/hw/android.hardware.usb.gadget@1.1-service-qti"
+    "bin/hw/android.hardware.usb@1.2-service-qti"
+    "etc/init/hw/init.qcom.usb.rc"
+    "etc/usb_compositions.conf"
+    "etc/init/android.hardware.usb.gadget@1.1-service-qti.rc"
+    "etc/init/android.hardware.usb@1.2-service-qti.rc"
+    "etc/vintf/manifest/android.hardware.usb.gadget@1.1-service.xml"
+    "etc/vintf/manifest/android.hardware.usb@1.2-service.xml"
+    "lib64/android.hardware.usb.gadget@1.0.so"
+    "lib64/android.hardware.usb.gadget@1.1.so"
+    "lib64/android.hardware.usb@1.0.so"
+    "lib64/android.hardware.usb@1.1.so"
+    "lib64/android.hardware.usb@1.2.so"
+
     # Vibrator
     "bin/hw/vendor.asus.vibrator.vibratorgovern@1.0-service"
     "etc/init/vendor.asus.vibrator.vibratorgovern@1.0-service.rc"

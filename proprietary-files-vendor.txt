@@ -127,8 +127,6 @@ vendor/bin/hw/android.hardware.secure_element@1.2-service
 vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/bin/hw/android.hardware.sensors@2.1-service.multihal
 vendor/bin/hw/android.hardware.thermal@2.0-service.qti-v2
-vendor/bin/hw/android.hardware.usb.gadget@1.1-service-qti
-vendor/bin/hw/android.hardware.usb@1.2-service-qti
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/qcrilNrd
@@ -182,7 +180,6 @@ vendor/bin/init.qcom.post_boot.sh
 vendor/bin/init.qcom.sdio.sh
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/init.qcom.sh
-vendor/bin/init.qcom.usb.sh
 vendor/bin/init.qti.display_boot.sh
 vendor/bin/init.qti.ese.strongbox.sh
 vendor/bin/init.qti.kernel.debug-cape.sh
@@ -478,8 +475,6 @@ vendor/etc/init/android.hardware.secure_element@1.2-service.rc
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/init/android.hardware.sensors@2.1-service-multihal.rc
 vendor/etc/init/android.hardware.thermal@2.0-service.qti-v2.rc
-vendor/etc/init/android.hardware.usb.gadget@1.1-service-qti.rc
-vendor/etc/init/android.hardware.usb@1.2-service-qti.rc
 vendor/etc/init/bat_bs.rc
 vendor/etc/init/bat_percent.rc
 vendor/etc/init/bat_safety.rc
@@ -492,7 +487,6 @@ vendor/etc/init/dataqti.rc
 vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/feature_enabler_client.rc
 vendor/etc/init/hw/init.qcom.factory.rc
-vendor/etc/init/hw/init.qcom.usb.rc
 vendor/etc/init/hw/init.qti.kernel.rc
 vendor/etc/init/hw/init.qti.ufs.rc
 vendor/etc/init/ims_rtp_daemon.rc
@@ -1251,7 +1245,6 @@ vendor/etc/telephony_packages.xml
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal_atd.conf
 vendor/etc/usb_audio_policy_configuration.xml
-vendor/etc/usb_compositions.conf
 vendor/etc/usecaseKvManager.xml
 -vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 -vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
@@ -1260,8 +1253,6 @@ vendor/etc/usecaseKvManager.xml
 -vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
 -vendor/etc/vintf/manifest/android.hardware.sensors@2.1-multihal.xml
 -vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml
--vendor/etc/vintf/manifest/android.hardware.usb.gadget@1.1-service.xml
--vendor/etc/vintf/manifest/android.hardware.usb@1.2-service.xml
 -vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 -vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 -vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
@@ -2840,11 +2831,6 @@ vendor/lib64/android.hardware.tetheroffload.control@1.0.so
 vendor/lib64/android.hardware.tetheroffload.control@1.1.so
 vendor/lib64/android.hardware.thermal@1.0.so
 vendor/lib64/android.hardware.thermal@2.0.so
-vendor/lib64/android.hardware.usb.gadget@1.0.so
-vendor/lib64/android.hardware.usb.gadget@1.1.so
-vendor/lib64/android.hardware.usb@1.0.so
-vendor/lib64/android.hardware.usb@1.1.so
-vendor/lib64/android.hardware.usb@1.2.so
 vendor/lib64/android.hardware.wifi.hostapd@1.0.so
 vendor/lib64/android.hardware.wifi.hostapd@1.1.so
 vendor/lib64/android.hardware.wifi.hostapd@1.2.so
