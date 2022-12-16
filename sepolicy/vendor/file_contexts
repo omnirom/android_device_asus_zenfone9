@@ -34,6 +34,3 @@
 # Sensors
 /dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
 /dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0
-
-# Vibrator
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator\.service\.zenfone9                          u:object_r:hal_vibrator_default_exec:s0
