@@ -1,0 +1,11 @@
+type asus_touch, domain;
+type asus_touch_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(asus_touch)
+
+get_prop(asus_touch, exported_system_prop)
+get_prop(asus_touch, vendor_asus_prop)
+get_prop(asus_touch, vendor_default_prop)
+
+allow asus_touch vendor_sysfs_touch:file rw_file_perms;

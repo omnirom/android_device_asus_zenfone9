@@ -1,0 +1,14 @@
+type asus_fingerprint, domain;
+type asus_fingerprint_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(asus_fingerprint)
+
+get_prop(asus_fingerprint, vendor_gx_fpd_prop)
+set_prop(asus_fingerprint, vendor_gx_fpd_prop)
+
+allow asus_fingerprint property_socket:sock_file write;
+allow asus_fingerprint vendor_shell_exec:file entrypoint;
+allow asus_fingerprint vendor_toolbox_exec:file { execute_no_trans entrypoint };
+allow asus_fingerprint mnt_vendor_file:dir search;
+allow asus_fingerprint mnt_vendor_file:file r_file_perms;

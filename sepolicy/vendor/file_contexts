@@ -6,31 +6,65 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/asdf                                                u:object_r:asdf_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/batinfo                                             u:object_r:asus_block_device:s0
 
+# Audio
+/(vendor|system/vendor)/bin/dongle                                                                 u:object_r:zf_dongle_exec:s0
+
+# Battery
+/(vendor|system/vendor)/bin/bat_bs                                                                 u:object_r:batinfo_exec:s0
+/(vendor|system/vendor)/bin/bat_sd_bs                                                              u:object_r:batinfo_exec:s0
+/(vendor|system/vendor)/bin/bat_safety                                                             u:object_r:batinfo_exec:s0
+/(vendor|system/vendor)/bin/bat_percent                                                            u:object_r:batinfo_exec:s0
+/(vendor|system/vendor)/bin/bat_sd_percent                                                         u:object_r:batinfo_exec:s0
+
 # Camera
+/(vendor|system/vendor)/lib(64)?/DataSet/ispDB/ParameterDB\.db                                     u:object_r:vendor_public_lib_file:s0
 /(vendor|system/vendor)/lib(64)?/libipebpsstriping\.so                                             u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libxditk_ditBSP_JNI\.so                                           u:object_r:same_process_hal_file:s0
 
 # Display (Pixelworks)
-/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service           u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service    u:object_r:hal_graphics_composer_default_exec:s0
-/(vendor|system/vendor)/bin/irisConfig                                                       u:object_r:iris_config_exec:s0
+/sys/devices/virtual/extcon-asus/battery/name                                                  u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/battery_id/state                                              u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/usb_connector/state                                           u:object_r:vendor_sysfs_graphics:s0
+/sys/devices/virtual/extcon-asus/quick_charging/state                                          u:object_r:vendor_sysfs_graphics:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service             u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service      u:object_r:hal_graphics_composer_default_exec:s0
+/(vendor|system/vendor)/bin/irisConfig                                                         u:object_r:iris_config_exec:s0
 
 # Files in rootfs
-/ADF(/.*)?                                                                                         u:object_r:demoapp_file:s0
-/APD(/.*)?                                                                                         u:object_r:demoapp_file:s0
-/asdf(/.*)?                                                                                        u:object_r:log_file:s0
-/batinfo(/.*)?                                                                                     u:object_r:bat_file:s0
+/ADF(/.*)?                                                                                     u:object_r:demoapp_file:s0
+/APD(/.*)?                                                                                     u:object_r:demoapp_file:s0
+/asdf(/.*)?                                                                                    u:object_r:log_file:s0
+/batinfo(/.*)?                                                                                 u:object_r:bat_file:s0
 
 # Fingerprint
-/data/vendor/goodix/gf_data(/.*)?                                                                          u:object_r:vendor_goodix_data_file:s0
-/dev/goodix_fp                                                                                             u:object_r:fingerprintd_device:s0
+/data/vendor/goodix/gf_data(/.*)?                                                              u:object_r:vendor_goodix_data_file:s0
+/dev/goodix_fp                                                                                 u:object_r:fingerprintd_device:s0
+/(vendor|system/vendor)/bin/cali_check                                                         u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/cali_shipping_check                                                u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/fp_cali_mv                                                         u:object_r:asus_fingerprint_exec:s0
+/(vendor|system/vendor)/bin/gf_ver.sh                                                          u:object_r:asus_fingerprint_exec:s0
 
 # NFC
-/dev/pn553                                                                                         u:object_r:nfc_device:s0
+/dev/pn553                                                                                     u:object_r:nfc_device:s0
 
 # Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-qti                                u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power-service-qti                            u:object_r:hal_power_default_exec:s0
 
 # Sensors
-/dev/asus2ndAccelSensor                                                                            u:object_r:sensors_device:s0
-/dev/asus2ndGyroSensor                                                                             u:object_r:sensors_device:s0
+/dev/asusLightSensor                                                                           u:object_r:sensor_device:s0
+/dev/asusProxSensor                                                                            u:object_r:sensor_device:s0
+/dev/OIS                                                                                       u:object_r:ois_device:s0
+/(vendor|system/vendor)/bin/asus_native_sensor                                                 u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory_installed.sh                                u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory_removed.sh                                  u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/magnetometer_accessory2_installed.sh                               u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/proximity_report_status.sh                                         u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/sensors_factory_init.sh                                            u:object_r:ASensorsService_exec:s0
+/(vendor|system/vendor)/bin/ssr_setup                                                          u:object_r:vendor_ssr_setup_exec:s0
+
+# Storage
+/(vendor|system/vendor)/bin/ufs_info.sh                                                        u:object_r:vendor_asus_storage_exec:s0
+/(vendor|system/vendor)/bin/ddr_info.sh                                                        u:object_r:vendor_asus_storage_exec:s0
+
+# Touch
+/(vendor|system/vendor)/bin/touch_ver.sh                                                       u:object_r:asus_touch_exec:s0

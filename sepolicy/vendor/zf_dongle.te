@@ -1,0 +1,25 @@
+type zf_dongle, domain;
+type zf_dongle_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(zf_dongle)
+
+r_dir_file(zf_dongle, mnt_vendor_file)
+
+r_dir_file(zf_dongle, sysfs)
+allow zf_dongle sysfs:lnk_file read;
+allow zf_dongle sysfs:file rw_file_perms;
+
+allow zf_dongle vendor_file:system module_load;
+allow zf_dongle vendor_file:file execute_no_trans;
+
+r_dir_file(zf_dongle, vendor_data_file)
+allow zf_dongle vendor_data_file:file rw_file_perms;
+
+r_dir_file(zf_dongle, usb_device)
+allow zf_dongle usb_device:chr_file rw_file_perms;
+
+r_dir_file(zf_dongle, vendor_sysfs_usb_node)
+allow zf_dongle vendor_sysfs_usb_node:file rw_file_perms;
+
+allow zf_dongle self:qipcrtr_socket create_socket_perms_no_ioctl;

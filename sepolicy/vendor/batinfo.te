@@ -1,0 +1,9 @@
+type batinfo, domain;
+type batinfo_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(batinfo)
+
+allow batinfo proc_batinfo:file rw_file_perms;
+allow batinfo bat_file:dir rw_dir_perms;
+allow batinfo bat_file:file rw_file_perms;

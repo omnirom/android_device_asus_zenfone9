@@ -2,5 +2,21 @@ allow vendor_qti_init_shell kmsg_device:chr_file w_file_perms;
 allow vendor_qti_init_shell proc_cmdline:file r_file_perms;
 allow vendor_qti_init_shell proc_page_cluster:file w_file_perms;
 allow vendor_qti_init_shell vendor_file:file execute_no_trans;
-get_prop(vendor_qti_init_shell, vendor_asus_camera_prop)
 set_prop(vendor_qti_init_shell, ctl_start_prop)
+
+set_prop(vendor_qti_init_shell, vendor_asus_prop)
+
+get_prop(vendor_qti_init_shell, vendor_asus_storage_prop)
+set_prop(vendor_qti_init_shell, vendor_asus_storage_prop)
+get_prop(vendor_qti_init_shell, vendor_asus_storage_prop_2)
+set_prop(vendor_qti_init_shell, vendor_asus_storage_prop_2)
+
+get_prop(vendor_qti_init_shell, vendor_asus_zram_prop)
+set_prop(vendor_qti_init_shell, vendor_asus_zram_prop)
+
+get_prop(vendor_qti_init_shell, vendor_ssr_prop)
+allow vendor_qti_init_shell vendor_ssr_prop:property_service set;
+
+allow vendor_qti_init_shell configfs:dir setattr;
+allow vendor_qti_init_shell vendor_sysfs_qdss_dev:file w_file_perms;
+

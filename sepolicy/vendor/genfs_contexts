@@ -1,10 +1,15 @@
-# Camera
-genfscon proc /driver/dualcam_cali                                                              u:object_r:vendor_proc_camera:s0
-genfscon proc /driver/ois_af_state                                                              u:object_r:vendor_proc_camera:s0
-genfscon proc /driver/ois_i2c_rw                                                                u:object_r:vendor_proc_camera:s0
+# Battery
+genfscon proc /Batt_Cycle_Count/bat_bs_wr                                                       u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/bat_percent_wr                                                  u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/bat_safety_wr                                                   u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/bat_sd_bs_wr                                                    u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/bat_sd_percent_wr                                               u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/batt_safety                                                     u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/batt_safety_csc                                                 u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/condition_value                                                 u:object_r:proc_batinfo:s0
+genfscon proc /Batt_Cycle_Count/cycle_count                                                     u:object_r:proc_batinfo:s0
 
 # Display
-genfscon proc /globalHbm                                                                        u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/swipeup                                                                   u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/gesture_type                                                              u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/glove                                                                     u:object_r:vendor_proc_graphics:s0
@@ -14,27 +19,17 @@ genfscon proc /lcd_brightness                                                   
 genfscon proc /lcd_unique_id                                                                    u:object_r:asus_display_proc_exec:s0
 genfscon proc /hbm_mode                                                                         u:object_r:asus_display_proc_exec:s0
 
-genfscon sysfs /class/drm/fod_touched                                                           u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /class/drm/hdr_mode                                                              u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/virtual/extcon-asus/                                                    u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /class/extcon-asus/                                                              u:object_r:vendor_sysfs_graphics:s0
 
 # EVT
 genfscon proc /asusevtlog                                                                       u:object_r:vendor_proc_evt:s0
 
-# Fingerprint
-genfscon proc /driver/fp_xy                                                                     u:object_r:vendor_proc_fingerprint:s0
-
-# Performance
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable                               u:object_r:vendor_sysfs_msm_perf:s0
-
-# Sensors
-genfscon sysfs /class/icm206xx                                                                  u:object_r:vendor_sysfs_sensors:s0
-genfscon sysfs /devices/virtual/sensors                                                         u:object_r:vendor_sysfs_sensors:s0
-
 # Thermal
-genfscon sysfs /class/asuslib/set_virtualthermal                                                u:object_r:sysfs_thermal:s0
+genfscon sysfs /class/asuslib/set_virtualthermal                                                u:object_r:vendor_sysfs_asuslib:s0
 
-# Vibrator
-genfscon sysfs /devices/platform/soc/998000.i2c/i2c-2/2-005a                                    u:object_r:sysfs_vibrator:s0
+# Touch
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_fw_version                     u:object_r:vendor_sysfs_touch:s0
 
 # Wakeup
 genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys6/wakeup                                                             u:object_r:sysfs_wakeup:s0
@@ -61,6 +56,7 @@ genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys9/wakeup  
 genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca6490/subsys10/wakeup                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pm8350b@3:qcom,amoled/wakeup          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc@6100/rtc/rtc0/wakeup    u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:goodix_gf3626@0/wakeup                                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/wakeup                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/wakeup                                                                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys3/wakeup                                                               u:object_r:sysfs_wakeup:s0

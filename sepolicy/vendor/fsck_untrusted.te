@@ -1,0 +1,2 @@
+allow fsck_untrusted vendor_sysfs_usb_node:dir search;
+allow fsck_untrusted vendor_sysfs_usb_node:file r_file_perms;

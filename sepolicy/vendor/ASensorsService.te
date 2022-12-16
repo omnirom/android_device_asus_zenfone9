@@ -1,0 +1,34 @@
+type ASensorsService, domain;
+type ASensorsService_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(ASensorsService)
+
+get_prop(ASensorsService, hwservicemanager_prop)
+
+get_prop(ASensorsService, vendor_alsp_prop)
+set_prop(ASensorsService, vendor_alsp_prop)
+
+get_prop(ASensorsService, vendor_asus_prop)
+set_prop(ASensorsService, vendor_asus_prop)
+
+get_prop(ASensorsService, vendor_mag_prop)
+set_prop(ASensorsService, vendor_mag_prop)
+
+allow ASensorsService init:unix_stream_socket connectto;
+
+allow ASensorsService input_device:chr_file {ioctl read open };
+allow ASensorsService input_device:dir { read open search };
+
+allow ASensorsService mnt_vendor_file:file r_file_perms;
+
+allow ASensorsService property_socket:sock_file write;
+
+allow ASensorsService self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow ASensorsService sensor_device:chr_file rw_file_perms;
+allow ASensorsService sysfs:file rw_file_perms;
+
+allow ASensorsService unlabeled:file r_file_perms;
+allow ASensorsService unlabeled:dir search;
+
+allow ASensorsService vendor_toolbox_exec:file execute_no_trans;

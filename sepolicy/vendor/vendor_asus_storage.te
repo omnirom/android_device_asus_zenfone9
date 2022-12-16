@@ -1,0 +1,12 @@
+type vendor_asus_storage, domain, mlstrustedsubject;
+type vendor_asus_storage_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(vendor_asus_storage)
+
+allow vendor_asus_storage property_socket:sock_file write;
+
+get_prop(vendor_asus_storage, vendor_asus_storage_prop)
+set_prop(vendor_asus_storage, vendor_asus_storage_prop)
+get_prop(vendor_asus_storage, vendor_asus_storage_prop_2)
+set_prop(vendor_asus_storage, vendor_asus_storage_prop_2)

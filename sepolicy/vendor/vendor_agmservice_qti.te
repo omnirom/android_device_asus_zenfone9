@@ -1,0 +1,8 @@
+allow vendor_agmservice_qti mnt_vendor_file:dir search;
+allow vendor_agmservice_qti mnt_vendor_file:file r_file_perms;
+
+allow vendor_agmservice_qti vendor_sysfs_adsp_ssr:file rw_file_perms;
+
+allow vendor_agmservice_qti debugfs:dir { read write open };
+allow vendor_agmservice_qti sysfs:dir read;
+

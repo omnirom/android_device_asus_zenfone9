@@ -1,60 +1,74 @@
+# Asus
+ro.vendor.build.asus.               u:object_r:vendor_asus_prop:s0
+
 # Audio
-vendor.use.audio.eu.parameters    u:object_r:vendor_audio_prop:s0
+vendor.use.audio.eu.parameters      u:object_r:vendor_audio_prop:s0
 
 # Camera
-ro.vendor.build.asus.           u:object_r:vendor_asus_build_prop:s0
-ro.vendor.camera.sound.forced   u:object_r:vendor_asus_camera_prop:s0
-ro.vendor.config.versatility    u:object_r:vendor_asus_camera_prop:s0
-vendor.asus.dis_flash_light     u:object_r:vendor_asus_camera_prop:s0
-vendor.camera.                  u:object_r:vendor_asus_camera_prop:s0
-vendor.camera.set.apk.          u:object_r:vendor_asus_camera_prop:s0
+ro.vendor.camera.                   u:object_r:vendor_camera_prop:s0
+vendor.camera.                      u:object_r:vendor_camera_prop:s0
+vendor.camera.disableubwc           u:object_r:vendor_set_camera_prop:s0
+vendor.camera.set.apk.usingname     u:object_r:vendor_set_camera_prop:s0
+vendor.camera.set.apk.activity      u:object_r:vendor_set_camera_prop:s0
+vendor.asus.dis_flash_light         u:object_r:vendor_set_camera_prop:s0
 
 # DRM
-vendor.drm.keystatus        u:object_r:vendor_display_prop:s0
+vendor.drm.keystatus                u:object_r:vendor_display_prop:s0
 
 # Fingerprint
-vendor.goodix.                      u:object_r:vendor_gx_fpd_prop:s0
+vendor.goodix.sensor.status         u:object_r:vendor_asus_prop:s0
+
+ro.hardware.fp_position             u:object_r:vendor_gx_fpd_prop:s0
+ro.hardware.fp_shape                u:object_r:vendor_gx_fpd_prop:s0
+vendor.fp.cali.factory.check        u:object_r:vendor_gx_fpd_prop:s0
+vendor.fp.cali.ready                u:object_r:vendor_gx_fpd_prop:s0
 vendor.fp.version.driver            u:object_r:vendor_gx_fpd_prop:s0
 vendor.gf.debug.dump_data           u:object_r:vendor_gx_fpd_prop:s0
 vendor.gf.debug.whitebox.enabled    u:object_r:vendor_gx_fpd_prop:s0
-vendor.fp.cali.factory.check        u:object_r:vendor_gx_fpd_prop:s0
-vendor.fp.cali.ready                u:object_r:vendor_gx_fpd_prop:s0
-ro.hardware.fp_position             u:object_r:vendor_gx_fpd_prop:s0
-ro.hardware.fp_shape                u:object_r:vendor_gx_fpd_prop:s0
-persist.vendor.asus.fp.wakeup       u:object_r:vendor_gx_fpd_prop:s0
-vendor.fp.cali.shipping.check       u:object_r:vendor_gx_fpd_prop:s0
-vendor.screen.rotation              u:object_r:vendor_gx_fpd_prop:s0
-vendor.asus.touch_control_          u:object_r:vendor_gx_fpd_prop:s0
-
+vendor.goodix.service.ready         u:object_r:vendor_gx_fpd_prop:s0
+vendor.goodix.version.pack          u:object_r:vendor_gx_fpd_prop:s0
+vendor.goodix.sensor.id             u:object_r:vendor_gx_fpd_prop:s0
 
 # GPS
-persist.vendor.asus.agps.    u:object_r:vendor_gps_prop:s0
-persist.vendor.asus.gps.     u:object_r:vendor_gps_prop:s0
-vendor.gps.                  u:object_r:vendor_gps_prop:s0
-
-# NFC
-persist.vendor.nfc.                 u:object_r:vendor_nfc_prop:s0
+persist.vendor.asus.agps.           u:object_r:vendor_gps_prop:s0
+persist.vendor.asus.gps.            u:object_r:vendor_gps_prop:s0
+vendor.gps.                         u:object_r:vendor_gps_prop:s0
 
 # RIL
+vendor.asus.tel.antenna             u:object_r:vendor_asus_prop:s0
 ro.vendor.csc.modemhash             u:object_r:vendor_radio_prop:s0
 vendor.asus.operator.iso-country    u:object_r:vendor_radio_prop:s0
 
 # Sensors
-persist.vendor.asus.gyrosensor2calibx       u:object_r:vendor_sensors_prop:s0
-persist.vendor.asus.gyrosensor2caliby       u:object_r:vendor_sensors_prop:s0
-persist.vendor.asus.gyrosensor2calibz       u:object_r:vendor_sensors_prop:s0
-persist.vendor.asus.gyrosensor2calibtime    u:object_r:vendor_sensors_prop:s0
-vendor.proximity.                           u:object_r:vendor_sensors_prop:s0
+vendor.asus.mag.accessory           u:object_r:vendor_mag_prop:s0
+vendor.light.                       u:object_r:vendor_alsp_prop:s0
+vendor.proximity.                   u:object_r:vendor_alsp_prop:s0
+
+# Storage
+persist.vendor.asus.exfatck.timeout           u:object_r:vendor_asus_storage_prop_2:s0
+ro.vendor.atd.memvendor                       u:object_r:vendor_asus_storage_prop:s0
+ro.vendor.atd.datafmt                         u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.ddr_info                          u:object_r:vendor_asus_storage_prop_2:s0
+vendor.asus.update.storage.status             u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.storage.primary.status            u:object_r:vendor_asus_storage_prop_2:s0
+vendor.asus.storage.primary.type              u:object_r:vendor_asus_storage_prop_2:s0
+vendor.asus.storage.primary.size              u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.storage.primary.health            u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.storage.primary.healthtypeA       u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.storage.primary.healthtypeB       u:object_r:vendor_asus_storage_prop:s0
+vendor.asus.storage.primary.ufs_info          u:object_r:vendor_asus_storage_prop_2:s0
+vendor.asus.storage.primary.vendor            u:object_r:vendor_asus_storage_prop:s0
 
 # Thermal
-vendor.asus.virtualtherm                    u:object_r:vendor_thermal_prop:s0
-vendor.asus.thermal_config_id               u:object_r:vendor_thermal_prop:s0
-vendor.asus.thermalfan                      u:object_r:vendor_thermal_prop:s0
-vendor.thermal.                             u:object_r:vendor_thermal_prop:s0
-vendor.thermal_                             u:object_r:vendor_thermal_prop:s0
-persist.vendor.asus.thermal.config          u:object_r:vendor_thermal_prop:s0
+vendor.thermal.                     u:object_r:vendor_asus_prop:s0
+vendor.asus.thermal.speuser         u:object_r:vendor_asus_prop:s0
+vendor.asus.thermal.cdn_load        u:object_r:vendor_asus_prop:s0
+
+# Usb
+persist.vendor.asus.usb.diag        u:object_r:vendor_asus_usb_prop:s0
+vendor.asus.usb.diag                u:object_r:vendor_asus_usb_prop:s0
+vendor.asus.usb.fullspeed           u:object_r:vendor_asus_usb_prop:s0
 
 # ZRAM
-persist.vendor.zram    u:object_r:vendor_mpctl_prop:s0
-vendor.asus.zram       u:object_r:vendor_mpctl_prop:s0
-vendor.zram.           u:object_r:vendor_mpctl_prop:s0
+persist.vendor.zram.disksize        u:object_r:vendor_asus_zram_prop:s0
+vendor.init.zram.enable             u:object_r:vendor_asus_zram_prop:s0

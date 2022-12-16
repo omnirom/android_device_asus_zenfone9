@@ -1,4 +1,10 @@
-set_prop(hal_sensors_default, vendor_sensors_prop)
+get_prop(hal_sensors_default, vendor_asus_prop)
+set_prop(hal_sensors_default, vendor_asus_prop)
 
-allow hal_sensors_default sensors_device:chr_file rw_file_perms;
+get_prop(hal_sensors_default, vendor_alsp_prop)
+set_prop(hal_sensors_default, vendor_alsp_prop)
+
+set_prop(hal_sensors_default, vendor_mag_prop)
+
+allow hal_sensors_default sensor_device:chr_file rw_file_perms;
 allow hal_sensors_default vendor_sysfs_sensors:chr_file rw_file_perms;

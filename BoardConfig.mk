@@ -234,7 +234,6 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 include vendor/omni/sepolicy/sepolicy.mk
 include device/qcom/sepolicy_vendor/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # VNDK
 NEED_AIDL_NDK_PLATFORM_BACKEND := true
