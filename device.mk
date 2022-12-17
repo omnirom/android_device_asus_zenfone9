@@ -139,8 +139,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V2-ndk_platform.vendor \
     libion \
-    libtinyxml2 \
-    lights.qcom
+    libtinyxml2
 
 $(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
@@ -197,11 +196,6 @@ PRODUCT_COPY_FILES += \
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.lights-service.qti \
-    android.hardware.light-V1-ndk_platform.vendor
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
