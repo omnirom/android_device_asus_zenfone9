@@ -197,6 +197,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor
 
+# Lights
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.lights.service
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     LiveWallpapers \

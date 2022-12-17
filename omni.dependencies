@@ -84,5 +84,11 @@
      "repository": "android_vendor_qcom_opensource_usb",
      "target_path": "vendor/qcom/opensource/usb",
      "revision": "android-13.0"
+   },
+   {
+    "remote": "gitlab",
+    "repository": "android_vendor_qcom_opensource_lights",
+    "target_path": "vendor/qcom/opensource/lights",
+    "revision": "android-13.0"
    }
 ]
