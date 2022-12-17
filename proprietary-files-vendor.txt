@@ -146,7 +146,6 @@ vendor/bin/hw/vendor.qti.hardware.display.demura-service
 vendor/bin/hw/vendor.qti.hardware.eid@1.0-service
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
-vendor/bin/hw/vendor.qti.hardware.lights.service
 vendor/bin/hw/vendor.qti.hardware.limits@1.1-service
 vendor/bin/hw/vendor.qti.hardware.memtrack-service
 vendor/bin/hw/vendor.qti.hardware.perf-hal-service
@@ -556,7 +555,6 @@ vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.eid@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
-vendor/etc/init/vendor.qti.hardware.lights.service.rc
 vendor/etc/init/vendor.qti.hardware.limits-service.rc
 vendor/etc/init/vendor.qti.hardware.perf-hal-service.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
@@ -1271,7 +1269,6 @@ vendor/etc/usecaseKvManager.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.display.demura-service.xml
--vendor/etc/vintf/manifest/vendor.qti.hardware.lights.service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.limits-service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.perf.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml

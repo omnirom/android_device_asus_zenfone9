@@ -556,7 +556,10 @@ VENDOR_SKIP_FILES_COMMON=(
     "bin/hw/android.hardware.lights-service.qti"
     "etc/init/android.hardware.lights-qti.rc"
     "etc/vintf/manifest/android.hardware.lights-qti.xml"
-    
+    "bin/hw/vendor.qti.hardware.lights.service"
+    "etc/init/vendor.qti.hardware.lights.service.rc"
+    "etc/vintf/manifest/vendor.qti.hardware.lights.service.xml"
+
     # Logs
     "bin/ASUSEvtlog"
     "etc/init/ASUSEvtlog.rc"
@@ -949,7 +952,6 @@ as_module "etc/vintf/manifest/vendor.qti.gnss-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.display.demura-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.lights.service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.limits-service.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.perf.xml"
 as_module "etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml"
