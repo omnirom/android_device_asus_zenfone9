@@ -66,5 +66,8 @@
 /(vendor|system/vendor)/bin/ufs_info.sh                                                        u:object_r:vendor_asus_storage_exec:s0
 /(vendor|system/vendor)/bin/ddr_info.sh                                                        u:object_r:vendor_asus_storage_exec:s0
 
+# Toolbox
+/(vendor|system/vendor)/bin/ecompass_accessory_removed                                         u:object_r:vendor_toolbox_exec:s0
+
 # Touch
 /(vendor|system/vendor)/bin/touch_ver.sh                                                       u:object_r:asus_touch_exec:s0
