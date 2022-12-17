@@ -1,6 +1,27 @@
 # Asus
 ro.vendor.build.asus.               u:object_r:vendor_asus_prop:s0
 
+# Asus Sp
+persist.vendor.asus.fota.status            u:object_r:vendor_asus_sp_system_prop:s0
+persist.vendor.asus.setupwizard_country    u:object_r:vendor_asus_sp_system_prop:s0
+vendor.asus.autofota                       u:object_r:vendor_asus_sp_system_prop:s0
+vendor.asus.fota.                          u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.poweroffalarm_support       u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.logupload                   u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.asus.beta                        u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.CID                       u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.idcode                    u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.versatility               u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.config.revenuecountry            u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.confidentiality                  u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.product.carrier                  u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.tc.qkey                          u:object_r:vendor_asus_sp_system_prop:s0
+ro.vendor.udid                             u:object_r:vendor_asus_sp_system_prop:s0
+
+vendor.x-rr.                               u:object_r:vendor_asus_sp_prop:s0
+vendor.asus.update.mediaflag               u:object_r:vendor_asus_sp_prop:s0
+vendor.asus.fota.group                     u:object_r:vendor_asus_sp_prop:s0
+
 # Audio
 vendor.use.audio.eu.parameters      u:object_r:vendor_audio_prop:s0
 

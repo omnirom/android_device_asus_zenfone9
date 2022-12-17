@@ -6,6 +6,9 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/asdf                                                u:object_r:asdf_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/batinfo                                             u:object_r:asus_block_device:s0
 
+# Asus Sp
+/(vendor|system/vendor)/bin/sp                                                                     u:object_r:asus_sp_exec:s0
+
 # Audio
 /(vendor|system/vendor)/bin/dongle                                                                 u:object_r:zf_dongle_exec:s0
 

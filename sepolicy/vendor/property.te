@@ -1,4 +1,6 @@
 # Asus Prop
+system_public_prop(vendor_asus_sp_system_prop)
+vendor_internal_prop(vendor_asus_sp_prop)
 vendor_public_prop(vendor_asus_prop);
 
 # Camera

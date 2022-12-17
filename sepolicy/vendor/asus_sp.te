@@ -1,0 +1,23 @@
+# Policy for Asus SP HAL service
+type asus_sp, domain;
+type asus_sp_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(asus_sp)
+
+allow asus_sp mnt_vendor_file:dir search;
+allow asus_sp mnt_vendor_file:file r_file_perms;
+
+allow asus_sp proc_cmdline:file { open read };
+allow asus_sp proc_meminfo:file { open read };
+
+get_prop(asus_sp, build_prop)
+
+get_prop(asus_sp, vendor_asus_prop)
+set_prop(asus_sp, vendor_asus_prop)
+
+get_prop(asus_sp, vendor_asus_sp_prop)
+set_prop(asus_sp, vendor_asus_sp_prop)
+
+get_prop(asus_sp, vendor_asus_sp_system_prop)
+set_prop(asus_sp, vendor_asus_sp_system_prop)

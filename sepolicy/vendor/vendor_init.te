@@ -20,3 +20,9 @@ get_prop(vendor_init, vendor_asus_storage_prop_2)
 set_prop(vendor_init, vendor_asus_storage_prop_2)
 
 get_prop(vendor_init, vendor_set_camera_prop)
+
+get_prop(vendor_init, vendor_asus_sp_prop)
+set_prop(vendor_init, vendor_asus_sp_prop)
+
+get_prop(vendor_init, vendor_asus_sp_system_prop)
+set_prop(vendor_init, vendor_asus_sp_system_prop)
