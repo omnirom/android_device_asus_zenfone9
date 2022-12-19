@@ -1,5 +1,6 @@
 # Asus
 ro.vendor.build.asus.               u:object_r:vendor_asus_prop:s0
+ro.vendor.memsize                   u:object_r:vendor_asus_prop:s0
 
 # Asus Sp
 persist.vendor.asus.fota.status            u:object_r:vendor_asus_sp_system_prop:s0
@@ -57,8 +58,16 @@ vendor.gps.                         u:object_r:vendor_gps_prop:s0
 
 # RIL
 vendor.asus.tel.antenna             u:object_r:vendor_asus_prop:s0
+persist.vendor.asus.isoktocall.qc   u:object_r:vendor_radio_prop:s0
+persist.vendor.odm.tel.             u:object_r:vendor_radio_prop:s0
+ro.vendor.asus.network.types        u:object_r:vendor_radio_prop:s0
+ro.vendor.asus.phone.               u:object_r:vendor_radio_prop:s0
 ro.vendor.csc.modemhash             u:object_r:vendor_radio_prop:s0
+ro.vendor.odm.tel.                  u:object_r:vendor_radio_prop:s0
 vendor.asus.operator.iso-country    u:object_r:vendor_radio_prop:s0
+vendor.odm.dbg.                     u:object_r:vendor_radio_prop:s0
+vendor.odm.tel.                     u:object_r:vendor_radio_prop:s0
+vendor.telephony.default_network    u:object_r:vendor_radio_prop:s0
 
 # Sensors
 vendor.asus.mag.accessory           u:object_r:vendor_mag_prop:s0
