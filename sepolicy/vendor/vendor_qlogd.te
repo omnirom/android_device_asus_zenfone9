@@ -1,2 +1,4 @@
 allow vendor_qlogd mnt_user_file:lnk_file read;
 allow vendor_qlogd mnt_user_file:dir search;
+
+allow vendor_qlogd fuse:dir search;
