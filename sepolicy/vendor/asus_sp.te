@@ -12,6 +12,7 @@ allow asus_sp proc_cmdline:file { open read };
 allow asus_sp proc_meminfo:file { open read };
 
 get_prop(asus_sp, build_prop)
+get_prop(asus_sp, system_boot_reason_prop)
 
 get_prop(asus_sp, vendor_asus_prop)
 set_prop(asus_sp, vendor_asus_prop)
@@ -21,3 +22,6 @@ set_prop(asus_sp, vendor_asus_sp_prop)
 
 get_prop(asus_sp, vendor_asus_sp_system_prop)
 set_prop(asus_sp, vendor_asus_sp_system_prop)
+
+allow asus_sp property_socket:sock_file write;
+allow asus_sp block_device:dir search;

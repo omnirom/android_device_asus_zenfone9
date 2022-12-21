@@ -6,3 +6,6 @@ allow init {
 
 allow init vendor_proc_graphics:file { rw_file_perms setattr };
 allow init vendor_file:file { execute };
+
+allow init asus_sp_exec:file r_file_perms;
+allow init asus_sp:process transition;
