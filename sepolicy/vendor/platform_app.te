@@ -8,3 +8,5 @@ get_prop(platform_app, vendor_set_camera_prop)
 set_prop(platform_app, vendor_set_camera_prop)
 
 get_prop(platform_app, vendor_asus_sp_system_prop)
+
+get_prop(platform_app, vendor_tencent_prop)

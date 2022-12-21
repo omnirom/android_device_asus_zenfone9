@@ -5,3 +5,6 @@ set_prop(rild, vendor_radio_prop)
 allow rild vendor_proc_evt:file rw_file_perms;
 
 get_prop(rild, vendor_asus_sp_system_prop)
+
+get_prop(rild, vendor_tencent_prop)
+set_prop(rild, vendor_tencent_prop)

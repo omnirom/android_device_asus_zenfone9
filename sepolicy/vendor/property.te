@@ -12,6 +12,9 @@ vendor_internal_prop(vendor_gx_fpd_prop)
 # GPS
 vendor_internal_prop(vendor_gps_prop)
 
+# Telephony
+vendor_restricted_prop(vendor_tencent_prop);
+
 # Sensors
 vendor_restricted_prop(vendor_alsp_prop);
 vendor_restricted_prop(vendor_mag_prop);

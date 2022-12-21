@@ -68,6 +68,8 @@ vendor.asus.operator.iso-country    u:object_r:vendor_radio_prop:s0
 vendor.odm.dbg.                     u:object_r:vendor_radio_prop:s0
 vendor.odm.tel.                     u:object_r:vendor_radio_prop:s0
 vendor.telephony.default_network    u:object_r:vendor_radio_prop:s0
+vendor.tel.sw.hash1                 u:object_r:vendor_tencent_prop:s0
+vendor.tel.sw.hash2                 u:object_r:vendor_tencent_prop:s0
 
 # Sensors
 vendor.asus.mag.accessory           u:object_r:vendor_mag_prop:s0
