@@ -159,7 +159,6 @@ vendor/bin/hw/vendor.qti.hardware.trustedui@1.0-service-qti
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
-vendor/bin/hw/vendor.qti.sla.service@1.0-service
 vendor/bin/hw/vendor.qti.spu@1.1-service
 vendor/bin/hw/vendor.qti.spu@2.0-service
 vendor/bin/ims_rtp_daemon
@@ -280,7 +279,6 @@ vendor/bin/sensors_factory_init.sh
 vendor/bin/sh
 vendor/bin/shsusrd
 vendor/bin/sigma_dut
-vendor/bin/slad-v2
 vendor/bin/slim_daemon
 vendor/bin/sp
 vendor/bin/spectraltool
@@ -531,7 +529,6 @@ vendor/etc/init/qttestservice.rc
 vendor/etc/init/qvrd_vndr.rc
 vendor/etc/init/rttutild.rc
 vendor/etc/init/shsusrd.rc
-vendor/etc/init/slad-v2.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/sxrd.rc
 vendor/etc/init/trusteduilistener.rc
@@ -570,7 +567,6 @@ vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
 vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
-vendor/etc/init/vendor.qti.sla.service@1.0-service.rc
 vendor/etc/init/vendor.qti.tftp.rc
 vendor/etc/init/vendor.sensors.qesdk.rc
 vendor/etc/init/vendor.sensors.qti.rc
@@ -1232,9 +1228,6 @@ vendor/etc/sensors/config/waipio_tmd2755_1.json
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensors_list.txt
 vendor/etc/sensors/sns_reg_config
-vendor/etc/sla/slad.conf
-vendor/etc/sla/slmAppUseCase.conf
-vendor/etc/sla/slm_supported_list.xml
 vendor/etc/smomo_setting.xml
 vendor/etc/snapdragon_color_libs_config.xml
 vendor/etc/ssg/ta_config.json
@@ -1960,7 +1953,6 @@ vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
-vendor/lib/hw/vendor.qti.sla.service@1.0-impl.so
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib/lib-imscommon.so
 vendor/lib/lib-imsdpl.so
@@ -2732,7 +2724,6 @@ vendor/lib/vendor.qti.mstatservice@1.0.so
 vendor/lib/vendor.qti.qesdsys-V1-ndk_platform.so
 vendor/lib/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib/vendor.qti.qspmhal@1.0.so
-vendor/lib/vendor.qti.sla.service@1.0.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/DataSet/arch/DIT_List.cfg
 vendor/lib64/DataSet/cl/AlignMapping.bin
@@ -3074,7 +3065,6 @@ vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.wifidisplaysession@1.0-impl.so
-vendor/lib64/hw/vendor.qti.sla.service@1.0-impl.so
 vendor/lib64/hw/vulkan.adreno.so
 vendor/lib64/lib-imscommon.so
 vendor/lib64/lib-imsdpl.so
@@ -3896,7 +3886,6 @@ vendor/lib64/vendor.qti.qesdhal@1.1.so
 vendor/lib64/vendor.qti.qesdsys-V1-ndk_platform.so
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib64/vendor.qti.qspmhal@1.0.so
-vendor/lib64/vendor.qti.sla.service@1.0.so
 vendor/lib64/vendor.qti.spu@1.0.so
 vendor/lib64/vendor.qti.spu@1.1.so
 vendor/lib64/vendor.qti.spu@2.0.so

@@ -823,6 +823,19 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/selinux/vendor_sepolicy.cil"
     "etc/selinux/selinux_denial_metadata"
 
+    # Sla
+    "bin/hw/vendor.qti.sla.service@1.0-service"
+    "bin/slad-v2"
+    "etc/init/slad-v2.rc"
+    "etc/init/vendor.qti.sla.service@1.0-service.rc"
+    "etc/sla/slad.conf"
+    "etc/sla/slmAppUseCase.conf"
+    "etc/sla/slm_supported_list.xml"
+    "lib/hw/vendor.qti.sla.service@1.0-impl.so"
+    "lib64/hw/vendor.qti.sla.service@1.0-impl.so"
+    "lib/vendor.qti.sla.service@1.0.so"
+    "lib64/vendor.qti.sla.service@1.0.so"
+
     # Symlink
     "factory"
     "odm"

@@ -883,12 +883,6 @@ on property:ro.vendor.config.versatility=*
 on property:persist.logd.config.versatility=*
     restart vendor.sar_setting
 
-on property:vendor.sla.enabled=*
-    setprop log.sla.enabled ${vendor.sla.enabled}
-
-on property:log.sla.enabled=*
-    restart vendor.sar_setting
-
 on property:vendor.wlan.softap.driver.status=*
     setprop log.wlan.softap.driver.status ${vendor.wlan.softap.driver.status}
 
