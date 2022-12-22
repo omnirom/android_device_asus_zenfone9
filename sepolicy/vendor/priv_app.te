@@ -7,3 +7,5 @@ get_prop(priv_app, vendor_set_camera_prop)
 get_prop(priv_app, vendor_asus_sp_system_prop)
 
 get_prop(priv_app, vendor_tencent_prop)
+
+allow priv_app system_lib_file:file { read getattr lock open };
