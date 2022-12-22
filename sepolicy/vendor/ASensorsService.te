@@ -32,3 +32,5 @@ allow ASensorsService unlabeled:file r_file_perms;
 allow ASensorsService unlabeled:dir search;
 
 allow ASensorsService vendor_toolbox_exec:file execute_no_trans;
+
+get_prop(ASensorsService, vendor_sensors_debug_prop)
