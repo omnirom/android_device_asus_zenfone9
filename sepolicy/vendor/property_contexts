@@ -19,6 +19,8 @@ ro.vendor.product.carrier                  u:object_r:vendor_asus_sp_system_prop
 ro.vendor.tc.qkey                          u:object_r:vendor_asus_sp_system_prop:s0
 ro.vendor.udid                             u:object_r:vendor_asus_sp_system_prop:s0
 
+vendor.x-rr.vendor.isn                     u:object_r:vendor_asus_prop:s0
+vendor.x-rr.vendor.asus.serialno           u:object_r:vendor_asus_prop:s0
 vendor.x-rr.                               u:object_r:vendor_asus_sp_prop:s0
 vendor.asus.update.mediaflag               u:object_r:vendor_asus_sp_prop:s0
 vendor.asus.fota.group                     u:object_r:vendor_asus_sp_prop:s0
