@@ -42,6 +42,7 @@ genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys8/wakeup            
 genfscon sysfs /devices/platform/soc/4080000.qcom,mss/wakeup                                                                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/subsys7/wakeup                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/5c00000.qcom,ssc/wakeup                                                                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-2/2-0029/wakeup                                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-4/4-0028/wakeup                                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/890000.qcom,qup_uart/wakeup                                                                    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/894000.i2c/i2c-6/6-0068/wakeup                                                                 u:object_r:sysfs_wakeup:s0
