@@ -14,4 +14,5 @@ allow hal_camera_default vendor_file:file lock;
 
 allow hal_camera_default proc:file rw_file_perms;
 
+allow hal_camera_default system_lib_file:file { read getattr lock open };
 allow hal_camera_default vendor_public_lib_file:file lock;
