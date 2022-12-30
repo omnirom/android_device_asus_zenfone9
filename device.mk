@@ -213,6 +213,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor \
+    libgui_vendor \
     libOmxCore \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \

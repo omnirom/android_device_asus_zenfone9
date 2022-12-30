@@ -689,6 +689,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/vendor.ims.asusgeneralhidl@1.0.so"
     "lib64/vendor.asus.wifi.netutil@1.0.so"
     "lib64/vendor.asus.wifi.rttutil@1.0.so"
+    "lib/libgui_vendor.so"
+    "lib64/libgui_vendor.so"
 
     # Overlays
     "overlay/FrameworksResTarget.apk"
