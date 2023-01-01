@@ -19,6 +19,12 @@
     "revision": "android-13.0-sm8450"
   },
   {
+    "remote": "github",
+    "repository": "android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/sm8450/display",
+    "revision": "android-13.0-sm8450"
+  },
+  {
     "remote": "omnirom",
     "repository": "android_hardware_qcom_wlan",
     "target_path": "hardware/qcom-caf/wlan",
@@ -51,21 +57,15 @@
    },
    {
      "remote": "gitlab",
-     "repository": "android_vendor_qcom_opensource_display",
-     "target_path": "vendor/qcom/opensource/display",
-     "revision": "android-13.0"
-   },
-   {
-     "remote": "gitlab",
      "repository": "android_vendor_qcom_opensource_display-commonsys",
      "target_path": "vendor/qcom/opensource/commonsys/display",
-     "revision": "android-13.0"
+     "revision": "android-12.0"
    },
    {
      "remote": "gitlab",
      "repository": "android_vendor_qcom_opensource_display-commonsys-intf",
      "target_path": "vendor/qcom/opensource/commonsys-intf/display",
-     "revision": "android-13.0"
+     "revision": "android-12.0"
    },
    {
     "remote": "github",
