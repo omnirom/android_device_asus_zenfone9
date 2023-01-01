@@ -32,10 +32,10 @@ TARGET_KERNEL_VERSION := 5.10
 TARGET_KERNEL_DIR ?= device/asus/zenfone9-kernel
 LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_KERNEL):kernel
 
 # Prebuilt Kernel Headers
-PRODUCT_VENDOR_KERNEL_HEADERS ?= device/asus/zenfone9-kernel/kernel-headers
+TARGET_BOARD_KERNEL_HEADERS ?= device/asus/zenfone9-kernel/kernel-headers
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -138,11 +138,35 @@ PRODUCT_PACKAGES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V2-ndk_platform.vendor \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    android.hardware.graphics.mapper-impl-qti-display.xml \
+    vendor.qti.hardware.display.mapper@4.0.vendor \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.allocator-service.rc \
+    vendor.qti.hardware.display.allocator-service.xml \
     libion \
-    libtinyxml2
+    libtinyxml2 \
+    libsdmcore \
+    libsdmutils \
+    libqdutils \
+    libqdMetaData \
+    libqdMetaData.system \
+    libdisplayconfig \
+    libgralloc.qti \
+    libdisplayconfig.qti \
+    libdisplayconfig.vendor \
+    libdisplayconfig.qti.vendor \
+    libqservice \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.config.vendor \
+    init.qti.display_boot.sh \
+    init.qti.display_boot.rc \
+    libfilefinder \
+    vendor.qti.hardware.display.demura-service.rc \
+    vendor.qti.hardware.display.demura-service.xml \
+    vendor.qti.hardware.display.demura-service
 
-$(call inherit-product, vendor/qcom/opensource/display/config/display-product-vendor.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
+$(call inherit-product, vendor/qcom/opensource/display/config/display-product-commonsys.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
 $(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
 
@@ -270,10 +294,7 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    vendor/qcom/opensource/display \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/commonsys-intf/display
+    $(LOCAL_PATH)
 
 # Systemhelper
 PRODUCT_PACKAGES += \

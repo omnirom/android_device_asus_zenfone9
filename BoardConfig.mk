@@ -22,6 +22,16 @@ DEVICE_PATH := device/asus/zenfone9
 
 BOARD_VENDOR := asus
 
+# Add qtidisplay to soong config namespaces
+SOONG_CONFIG_NAMESPACES += qtidisplay
+
+# Add supported variables to qtidisplay config
+SOONG_CONFIG_qtidisplay += \
+    default \
+    displayconfig_enabled \
+    drmpp \
+    gralloc4
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -103,7 +113,28 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_USES_DRM_PP := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_HWC2 := true
+TARGET_USES_QCOM_DISPLAY_BSP := true
+TARGET_USES_COLOR_METADATA := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
+TARGET_HAS_HDR_DISPLAY := true
+TARGET_USES_DISPLAY_RENDER_INTENTS := true
+TARGET_USE_COLOR_MANAGEMENT := true
+SF_WCG_COMPOSITION_DATA_SPACE := 143261696
+TARGET_USES_QTI_MAPPER_2_0 := true
+TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1 := true
+TARGET_USES_GRALLOC4 := true
+TARGET_SCREEN_DENSITY := 440
+
+SOONG_CONFIG_qtidisplay_displayconfig_enabled := true
+SOONG_CONFIG_qtidisplay_drmpp := true
+SOONG_CONFIG_qtidisplay_default := true
+SOONG_CONFIG_qtidisplay_gralloc4 := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
