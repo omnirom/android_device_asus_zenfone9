@@ -103,7 +103,9 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
-TARGET_USES_HWC2 := true
+TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := true
+SOONG_CONFIG_qtidisplay_displayconfig_enabled := true
+SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
