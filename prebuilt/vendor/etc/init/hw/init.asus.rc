@@ -86,7 +86,7 @@ on post-fs-data
 # --- ASUS_BSP : adb enable property
 
 # +++ ASUS_BSP : add persist.asus.serialno for CSCMMI
-    setprop persist.asus.serialno ${ro.boot.serialno}
+#   setprop persist.asus.serialno ${ro.boot.serialno}
 # --- ASUS_BSP : add persist.asus.serialno for CSCMMI
 
 # +++ ASUS_BSP : NFC

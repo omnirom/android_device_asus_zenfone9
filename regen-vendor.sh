@@ -720,8 +720,11 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libozoc2store.so"
     "lib64/libozowidening.so"
     "lib/com.android.ozoaudio.notify@1.0.so"
+    "lib64/com.android.ozoaudio.notify@1.0.so"
     "lib/libozoaudioutils.so"
     "lib/libozocapability.so"
+    "lib64/libozoaudioutils.so"
+    "lib64/libozocapability.so"
 
     # Power
     "bin/hw/android.hardware.power-service"
