@@ -24,14 +24,13 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<compatibility-matrix version="4.0" type="framework">
+<compatibility-matrix version="5.0" type="framework">
     <hal format="hidl" optional="true">
         <name>android.hardware.automotive.evs</name>
         <version>1.1</version>
         <interface>
             <name>IEvsEnumerator</name>
             <instance>default</instance>
-            <instance>hw/1</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -47,6 +46,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl" optional="true">
         <name>android.hardware.media.c2</name>
         <version>1.0</version>
+        <version>1.2</version>
         <interface>
             <name>IComponentStore</name>
             <instance>default</instance>
@@ -105,6 +105,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <interface>
             <name>ISupplicant</name>
             <instance>default</instance>
+            <instance>wigigp2p</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -112,14 +113,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0-6</version>
         <interface>
             <name>IWifi</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>com.android.ozoaudio.notify</name>
-        <version>1.0</version>
-        <interface>
-            <name>IOzoNotify</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -211,42 +204,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
-        <version>2.1</version>
-        <interface>
-            <name>IGoodixFingerprintDaemon</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.ims.asusgeneralhidl</name>
-        <version>1.0</version>
-        <interface>
-            <name>IAsusGeneralHIDLE</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.nxp.eventprocessor</name>
-        <version>1.0</version>
-        <interface>
-            <name>INxpEseEvtProcessor</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.nxp.nxpese</name>
-        <version>1.0</version>
-        <interface>
-            <name>INxpEse</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.nxp.nxpnfc</name>
+        <name>vendor.nxp.hardware.nfc</name>
+        <version>1.0-1</version>
         <version>2.0</version>
         <interface>
-            <name>INxpNfc</name>
+            <name>INqNfc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -255,22 +217,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>INxpNfcLegacy</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.pixelworks.hardware.display</name>
-        <version>1.1</version>
-        <interface>
-            <name>IIris</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.pixelworks.hardware.feature</name>
-        <version>1.0</version>
-        <interface>
-            <name>IIrisFeature</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -285,9 +231,17 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl" optional="true">
         <name>vendor.qti.data.factory</name>
         <version>1.0</version>
-        <version>2.0-5</version>
+        <version>2.0-7</version>
         <interface>
             <name>IFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.data.txpwrservice</name>
+        <version>1-2</version>
+        <interface>
+            <name>ITxPwrService</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -296,14 +250,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <version>1.0</version>
         <interface>
             <name>Idiag</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.dvr</name>
-        <version>1.0</version>
-        <interface>
-            <name>IDvrDisplay</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -390,6 +336,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.bttpi</name>
+        <version>1-2</version>
+        <interface>
+            <name>IBtTpi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.cacert</name>
         <version>1.0</version>
@@ -400,7 +354,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.camera.aon</name>
-        <version>1.0-1</version>
+        <version>1.0-3</version>
         <interface>
             <name>IAONService</name>
             <instance>aoncameraservice</instance>
@@ -552,10 +506,26 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.embmssl</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IEmbms</name>
+            <instance>embmsslServer0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.factory</name>
         <version>1.0-1</version>
         <interface>
             <name>IFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.fingerprint</name>
+        <version>1.0</version>
+        <interface>
+            <name>IQtiExtendedFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -609,7 +579,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.limits</name>
-        <version>1.0-1</version>
+        <version>1.0-2</version>
         <interface>
             <name>ILimits</name>
             <instance>default</instance>
@@ -751,6 +721,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>slot2</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.atcmdfwd</name>
+        <interface>
+            <name>IAtCmdFwd</name>
+            <instance>AtCmdFwdAidl</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.ims</name>
         <version>1.0-8</version>
@@ -762,7 +739,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.radio.ims</name>
-        <version>1-6</version>
+        <version>1-7</version>
         <interface>
             <name>IImsRadio</name>
             <instance>imsradio0</instance>
@@ -777,9 +754,16 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>deviceinfo</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.internal.deviceinfo</name>
+        <interface>
+            <name>IDeviceInfo</name>
+            <instance>deviceinfo</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.lpa</name>
-        <version>1.0-2</version>
+        <version>1.0-3</version>
         <interface>
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
@@ -789,6 +773,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.radio.qcrilhook</name>
         <version>1.0</version>
+        <interface>
+            <name>IQtiOemHook</name>
+            <instance>oemhook0</instance>
+            <instance>oemhook1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.qcrilhook</name>
         <interface>
             <name>IQtiOemHook</name>
             <instance>oemhook0</instance>
@@ -807,11 +799,19 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.qti.hardware.radio.qtiradio</name>
-        <version>1-5</version>
+        <version>1-8</version>
         <interface>
             <name>IQtiRadioStable</name>
             <instance>slot1</instance>
             <instance>slot2</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.qtiradioconfig</name>
+        <version>1-2</version>
+        <interface>
+            <name>IQtiRadioConfig</name>
+            <instance>default</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -1056,7 +1056,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl" optional="true">
         <name>vendor.qti.ims.factory</name>
         <version>1.0-1</version>
-        <version>2.0-1</version>
+        <version>2.0-2</version>
         <interface>
             <name>IImsFactory</name>
             <instance>default</instance>
@@ -1065,6 +1065,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <hal format="hidl" optional="true">
         <name>vendor.qti.imsrtpservice</name>
         <version>3.0</version>
+        <version>3.1</version>
         <interface>
             <name>IRTPService</name>
             <instance>imsrtpservice</instance>
@@ -1079,26 +1080,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.qesdhal</name>
-        <version>1.0-1</version>
-        <interface>
-            <name>IQesdhal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.qspmhal</name>
         <version>1.0</version>
         <interface>
             <name>IQspmhal</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.sla.service</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISlaService</name>
             <instance>default</instance>
         </interface>
     </hal>

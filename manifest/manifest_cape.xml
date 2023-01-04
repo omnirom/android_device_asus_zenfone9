@@ -1,10 +1,10 @@
 <!--
     Input:
-        manifest_taro.xml
-        netutil.xml
-        rttutil.xml
-        asus_hostapd.xml
-        sla.xml
+        manifest_cape.xml
+        netutil_cape.xml
+        rttutil_cape.xml
+        asus_hostapd_cape.xml
+        sla_cape.xml
         glovemode.xml
         zenmotion.xml
         asusgeneral.xml
@@ -197,6 +197,36 @@
         <fqname>@2.3::IUceService/com.qualcomm.qti.uceservice</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.asus.wifi.hostapd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAsusHostapd</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IAsusHostapd/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.asus.wifi.netutil</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IWifiNetUtil</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.1::IWifiNetUtil/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.asus.wifi.rttutil</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IWifiRttUtil</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IWifiRttUtil/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.goodix.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
@@ -215,6 +245,26 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IAsusGeneralHIDLE/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.ims.glovemode</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGloveMode</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IGloveMode/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.ims.zenmotion</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IZenMotion</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IZenMotion/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
@@ -419,6 +469,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.1::IFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.fm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFmHci</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IFmHci/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.iop</name>
