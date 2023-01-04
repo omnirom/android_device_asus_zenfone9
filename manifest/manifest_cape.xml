@@ -1,10 +1,10 @@
 <!--
     Input:
-        manifest_taro.xml
-        netutil.xml
-        rttutil.xml
-        asus_hostapd.xml
-        sla.xml
+        manifest_cape.xml
+        netutil_cape.xml
+        rttutil_cape.xml
+        asus_hostapd_cape.xml
+        sla_cape.xml
         glovemode.xml
         zenmotion.xml
         asusgeneral.xml
@@ -205,16 +205,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@2.1::IGoodixFingerprintDaemon/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.ims.asusgeneralhidl</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAsusGeneralHIDLE</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IAsusGeneralHIDLE/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
@@ -419,6 +409,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.1::IFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.qti.hardware.fm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFmHci</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IFmHci/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.iop</name>
