@@ -1,17 +1,5 @@
 <manifest version="1.0" type="framework">
     <hal format="hidl">
-        <name>vendor.qti.hardware.sigma_miracast</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>Isigma_miracast</name>
-            <instance>sigmahal</instance>
-            <instance>sigmahal64</instance>
-        </interface>
-        <fqname>@1.0::Isigma_miracast/sigmahal</fqname>
-        <fqname>@1.0::Isigma_miracast/sigmahal64</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.systemhelper</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

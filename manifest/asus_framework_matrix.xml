@@ -1,4 +1,4 @@
-<compatibility-matrix version="4.0" type="framework">
+<compatibility-matrix version="5.0" type="framework">
     <hal format="hidl">
         <name>vendor.goodix.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
@@ -38,6 +38,14 @@
         <version>1.0</version>
         <interface>
             <name>ISlaService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.qesdhal</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IQesdhal</name>
             <instance>default</instance>
         </interface>
     </hal>

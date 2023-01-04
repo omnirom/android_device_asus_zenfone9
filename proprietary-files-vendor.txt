@@ -82,6 +82,7 @@ vendor/bin/dit_af_cali
 vendor/bin/dit_cali
 vendor/bin/dit_cali_golden
 vendor/bin/ditbsp
+vendor/bin/dongle
 vendor/bin/dpmQmiMgr
 vendor/bin/dspservice
 vendor/bin/dualcam_default_cali.bin
@@ -3579,6 +3580,7 @@ vendor/lib64/libtracker_6dof_impl.so
 vendor/lib64/libtrustedapploader.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/libubifocus.so
+vendor/lib64/libusb.so
 vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/libvendorscenariopoweroptfeature.so
 vendor/lib64/libvideooptfeature.so
