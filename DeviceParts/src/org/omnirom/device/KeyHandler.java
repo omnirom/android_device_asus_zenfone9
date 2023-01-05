@@ -106,7 +106,6 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final String CLIENT_PACKAGE_NAME = "com.asus.camera";
     private static final String CLIENT_PACKAGE_PATH = "/data/misc/omni/client_package_name";
-    private static final String VENDOR_PROPERTY_ACTIVITY = "vendor.camera.set.apk.activity";
     private static final String VENDOR_PROPERTY_USINGNAME = "vendor.camera.set.apk.usingname";
 
     private static final int[] sSupportedGestures = new int[]{
@@ -632,7 +631,6 @@ public class KeyHandler implements DeviceKeyHandler {
             String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
             if (event == FileObserver.MODIFY) {
                 Log.d(TAG, "client_package" + file + " and " + pkgName);
-                SystemProperties.set(VENDOR_PROPERTY_ACTIVITY, pkgName);
                 SystemProperties.set(VENDOR_PROPERTY_USINGNAME, pkgName);
             }
         }
