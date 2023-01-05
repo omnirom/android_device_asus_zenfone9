@@ -1,4 +1,5 @@
 get_prop(vendor_thermal-engine, vendor_camera_prop)
+set_prop(vendor_thermal-engine, vendor_camera_prop)
 
 get_prop(vendor_thermal-engine, vendor_asus_prop)
 set_prop(vendor_thermal-engine, vendor_asus_prop)
