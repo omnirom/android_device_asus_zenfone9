@@ -191,8 +191,7 @@ system_ext/lib64/libdpmframework.so
 system_ext/lib64/libdpmtcm.so
 -system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
-# Gallery
--priv-app/AsusGallery/AsusGallery.apk
+# Gallery (moved to Gitlab)
 
 # GalleryBurst
 -priv-app/AsusGalleryBurst/AsusGalleryBurst.apk

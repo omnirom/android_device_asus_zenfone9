@@ -509,6 +509,7 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/vendor.display.config@1.8.so"
     "lib64/vendor.display.config@1.9.so"
     "lib64/vendor.display.config@2.0.so"
+    "lib64/libQnnGpu.so"
 
     # fstab
     "etc/fstab.qcom"
