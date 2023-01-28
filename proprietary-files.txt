@@ -12,7 +12,7 @@ system_ext/etc/permissions/audiosphere.xml
 -system_ext/framework/audiosphere.jar
 
 # Camera
--priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
+-priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2|54BCCAB3D0DD2839164E746D7976DACD8B823FAA
 lib64/DataSet/arch/DIT_List.cfg
 lib64/DataSet/cl/AlignMapping.bin
 lib64/DataSet/cl/lightart.bin
