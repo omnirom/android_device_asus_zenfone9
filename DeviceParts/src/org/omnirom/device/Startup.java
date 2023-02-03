@@ -59,6 +59,7 @@ public class Startup extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent bootintent) {
         maybeImportOldSettings(context);
         restoreAfterUserSwitch(context);
+        context.startService(new Intent(context, AsusSensorService.class));
     }
 
     public static void restoreAfterUserSwitch(Context context) {
