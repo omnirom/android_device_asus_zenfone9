@@ -762,7 +762,6 @@ vendor/etc/permissions/android.software.verified_boot.xml
 vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/etc/permissions/com.android.nfc_extras.xml
 vendor/etc/permissions/com.nxp.mifare.xml
-vendor/etc/permissions/handheld_core_hardware.xml
 vendor/etc/permissions/noRil/apq_excluded_telephony_features.xml
 vendor/etc/permissions/sku_diwali/android.hardware.strongbox_keystore.xml
 vendor/etc/permissions/vendor-qti-hardware-sensorscalibrate.xml

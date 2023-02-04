@@ -797,6 +797,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libozoaudioutils.so"
     "lib64/libozocapability.so"
 
+    # Permissions
+    "etc/permissions/handheld_core_hardware.xml"
+
     # Power
     "bin/hw/android.hardware.power-service"
     "etc/init/android.hardware.power-service.rc"
