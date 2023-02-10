@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Camera
+PRODUCT_PACKAGES += \
+    Aperture
+
 # Charger images
 PRODUCT_PACKAGES += \
     omni_charger_res_images \
