@@ -33,4 +33,6 @@ allow ASensorsService unlabeled:dir search;
 
 allow ASensorsService vendor_toolbox_exec:file execute_no_trans;
 
+userdebug_or_eng(`
 get_prop(ASensorsService, vendor_sensors_debug_prop)
+')
