@@ -1,0 +1,2 @@
+get_prop(vendor_subsystem_ramdump, vendor_ssr_prop)
+set_prop(vendor_subsystem_ramdump, vendor_ssr_prop)
