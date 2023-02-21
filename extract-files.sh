@@ -67,6 +67,9 @@ function blob_fixup() {
         "${PATCHELF}" --remove-needed "libhidlbase.so" "${2}"
         sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
         ;;
+    vendor/lib64/libQnnGpu.so)
+        "${CM_ROOT}"/prebuilts/clang/host/linux-x86/clang-r450784d/bin/llvm-strip "${2}"
+        ;;
     esac
 }
 
