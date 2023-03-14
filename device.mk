@@ -44,7 +44,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     vendor/omni/overlay/CarrierConfig
 
 PRODUCT_PACKAGES += \
-    aptxalsOverlay \
     FrameworksResOverlay \
     FrameworksResVendor \
     SettingsProviderOverlay \
