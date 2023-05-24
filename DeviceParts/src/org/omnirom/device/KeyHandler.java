@@ -387,6 +387,20 @@ public class KeyHandler implements DeviceKeyHandler {
                 return intent;
             }
         }
+        switch (event.getScanCode()) {
+            case KEY_GESTURE_PAUSE:
+                if (DEBUG) Log.i(TAG, "Music Play/Pause");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
+                break;
+            case KEY_GESTURE_FORWARD:
+                if (DEBUG) Log.i(TAG, "Music Next");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_NEXT);
+                break;
+            case KEY_GESTURE_REWIND:
+                if (DEBUG) Log.i(TAG, "Music Previous");
+                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
+                break;
+        }
         return null;
     }
 
@@ -564,18 +578,6 @@ public class KeyHandler implements DeviceKeyHandler {
             case KEY_GESTURE_Z:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
                     GestureSettings.DEVICE_GESTURE_MAPPING_5, UserHandle.USER_CURRENT);
-            case  KEY_GESTURE_PAUSE:
-                if (DEBUG) Log.i(TAG, "Music Play/Pause");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
-                break;
-            case KEY_GESTURE_FORWARD:
-                if (DEBUG) Log.i(TAG, "Music Next");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_NEXT);
-                break;
-            case KEY_GESTURE_REWIND:
-                if (DEBUG) Log.i(TAG, "Music Previous");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
-                break;
         }
         return null;
     }
