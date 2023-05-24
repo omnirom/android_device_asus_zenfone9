@@ -320,6 +320,10 @@ public class KeyHandler implements DeviceKeyHandler {
                     mContext.startActivity(intent);
             }
         }
+        boolean value2 = getGestureValueForMusicCode(fpcode);
+        if (value2 && !mDispOn){
+            isFpgesture = true;
+        }
         return isFpgesture;
     }
 
@@ -564,20 +568,36 @@ public class KeyHandler implements DeviceKeyHandler {
             case KEY_GESTURE_Z:
                 return Settings.System.getStringForUser(mContext.getContentResolver(),
                     GestureSettings.DEVICE_GESTURE_MAPPING_5, UserHandle.USER_CURRENT);
-            case  KEY_GESTURE_PAUSE:
-                if (DEBUG) Log.i(TAG, "Music Play/Pause");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
-                break;
-            case KEY_GESTURE_FORWARD:
-                if (DEBUG) Log.i(TAG, "Music Next");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_NEXT);
-                break;
-            case KEY_GESTURE_REWIND:
-                if (DEBUG) Log.i(TAG, "Music Previous");
-                OmniUtils.sendKeycode(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
-                break;
         }
         return null;
+    }
+    
+    private boolean getGestureValueForMusicCode(int scanCode) {
+        switch(scanCode) {
+            case KEY_GESTURE_PAUSE:
+                if (DEBUG) Log.i(TAG, "Music Play/Pause");
+                    mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+                    OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+                    dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE);
+                return true;
+            case KEY_GESTURE_FORWARD:
+                if (DEBUG) Log.i(TAG, "Music Next");
+                if (isMusicActive()) {
+                    mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+                    OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+                    dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_NEXT);
+                }
+                return true;
+            case KEY_GESTURE_REWIND:
+                if (DEBUG) Log.i(TAG, "Music Previous");
+                if (isMusicActive()) {
+                    mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
+                    OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
+                    dispatchMediaKeyWithWakeLockToAudioService(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
+                }
+                return true;
+        }
+        return false;
     }
 
     private String getGestureValueForFPScanCode(int scanCode, long eventTime) {
