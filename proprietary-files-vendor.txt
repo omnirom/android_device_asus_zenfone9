@@ -824,8 +824,8 @@ vendor/etc/qvr/qvrservice_config.txt
 vendor/etc/qxdm/ChgPD.cfg
 vendor/etc/qxdm/DIAG_GEN9_GPS.cfg
 vendor/etc/qxdm/DIAG_GEN9_GPS_SAP.cfg
-vendor/etc/qxdm/DIAG_R28_Voice_test_only.cfg
-vendor/etc/qxdm/PS_GeneralTest_513102.cfg
+vendor/etc/qxdm/PS_GeneralTest_514300.cfg
+vendor/etc/qxdm/R29_VoiceTest_Only.cfg
 vendor/etc/qxdm/SNS.cfg
 vendor/etc/qxdm/spf_audio.cfg
 vendor/etc/r_submix_audio_policy_configuration.xml
