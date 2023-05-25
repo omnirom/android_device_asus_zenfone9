@@ -164,7 +164,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private SensorEventListener mProximitySensor = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
-            mProxyIsNear = event.values[0] == 1;
+            mProxyIsNear = getCustomProxiIsNear(event);
 
             if (DEBUG_SENSOR) Log.i(TAG, "mProxyIsNear = " + mProxyIsNear + " mProxyWasNear = " + mProxyWasNear);
             if (mUseWaveCheck || mUsePocketCheck) {
@@ -279,7 +279,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mTiltSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
-        mPocketSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        mPocketSensor = getSensor(mSensorManager, getCustomProxiSensor());
         IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         systemStateFilter.addAction(Intent.ACTION_USER_SWITCHED);
@@ -430,9 +430,11 @@ public class KeyHandler implements DeviceKeyHandler {
     private void onDisplayOn() {
         if (DEBUG) Log.i(TAG, "Display on");
         if (enableProxiSensor()) {
+            if (DEBUG_SENSOR) Log.i(TAG, "Unregister proxi sensor");
             mSensorManager.unregisterListener(mProximitySensor, mPocketSensor);
         }
         if (mUseTiltCheck) {
+            if (DEBUG_SENSOR) Log.i(TAG, "Unregister tilt sensor");
             mSensorManager.unregisterListener(mTiltSensorListener, mTiltSensor);
         }
         if ((mClientObserver == null) && (isASUSCameraAvail)) {
@@ -452,11 +454,13 @@ public class KeyHandler implements DeviceKeyHandler {
         if (DEBUG) Log.i(TAG, "Display off");
         if (enableProxiSensor()) {
             mProxyWasNear = false;
+            if (DEBUG_SENSOR) Log.i(TAG, "Register proxi sensor ");
             mSensorManager.registerListener(mProximitySensor, mPocketSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
             mProxySensorTimestamp = SystemClock.elapsedRealtime();
         }
         if (mUseTiltCheck) {
+            if (DEBUG_SENSOR) Log.i(TAG, "Register tilt sensor ");
             mSensorManager.registerListener(mTiltSensorListener, mTiltSensor,
                     SensorManager.SENSOR_DELAY_NORMAL);
         }
@@ -634,6 +638,16 @@ public class KeyHandler implements DeviceKeyHandler {
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean getCustomProxiIsNear(SensorEvent event) {
+        return event.values[0] < mPocketSensor.getMaximumRange();
+    }
+
+    @Override
+    public String getCustomProxiSensor() {
+        return "android.sensor.proximity2";
     }
 
     IStatusBarService getStatusBarService() {
