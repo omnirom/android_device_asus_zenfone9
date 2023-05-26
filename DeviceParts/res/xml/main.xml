@@ -16,6 +16,21 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
+        android:key="audio_category"
+        android:title="@string/audio_title">
+
+    <Preference
+        android:key="audiowizard_entry"
+        android:title="@string/audio_title"
+        android:summary="@string/audio_summary"
+        android:persistent="false" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.asus.audiowizard"
+                android:targetClass="com.asus.audiowizard.MainActivity"/>
+    </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="key_gesture_category"
         android:title="@string/category_gestures_title">
 

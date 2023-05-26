@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -54,7 +55,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
     public static final String FPS = "fps";
 
+    private static final String KEY_AUDIOWIZARD = "audiowizard_entry";
+    private static final String PACKAGE_NAME = "com.asus.audiowizard";
+    private static final String SETTINGS_KEY_AUDIO_SUMMARY_KEY = "settings_key_audio_wizard_summary";
+
     private static ListPreference mFrameModeRate;
+    private static Preference mWizard;
     private static TwoStatePreference mGloveModeSwitch;
 
     private static final String SURFACE_FLINGER_SERVICE_KEY = "SurfaceFlinger";
@@ -80,6 +86,10 @@ public class DeviceSettings extends PreferenceFragment implements
         mGloveModeSwitch.setChecked(GloveModeSwitch.isCurrentlyEnabled(this.getContext()));
         mGloveModeSwitch.setOnPreferenceChangeListener(new GloveModeSwitch(getContext()));
 
+        mWizard = (Preference) findPreference(KEY_AUDIOWIZARD);
+        mWizard.setEnabled(isEnable());
+        mWizard.setOnPreferenceChangeListener(this);
+        updateState();
     }
 
     @Override
@@ -95,6 +105,9 @@ public class DeviceSettings extends PreferenceFragment implements
             mFrameModeRate.setSummary(mFrameModeRate.getEntries()[index]);
             changeFps(getContext(), value);
             Settings.System.putInt(getContext().getContentResolver(), FPS, value);
+        }
+        if (preference == mWizard) {
+            updateState();
         }
         return true;
     }
@@ -115,5 +128,28 @@ public class DeviceSettings extends PreferenceFragment implements
                // intentional no-op
         }
             Settings.System.putInt(context.getContentResolver(), FPS, fps);
+    }
+
+    private void updateState() {
+        String summaryString = getSummaryString();
+        if (!TextUtils.isEmpty(summaryString)) {
+            mWizard.setSummary(summaryString);
+        } else {
+            mWizard.setSummary("");
+        }
+    }
+
+    private boolean isEnable() {
+        try {
+            boolean UIenable = getContext().getPackageManager().getApplicationInfo(PACKAGE_NAME, 0).enabled;
+            return UIenable;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    private String getSummaryString() {
+        return Settings.System.getString(getContext().getContentResolver(), SETTINGS_KEY_AUDIO_SUMMARY_KEY);
     }
 }

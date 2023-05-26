@@ -78,6 +78,11 @@
     <string name="refresh_rate_title">Refresh rate</string>
     <string name="summary_placeholder"> </string>
 
+    <!-- AudioWizard -->
+    <string name="audio_title">Audio Settings</string>
+    <string name="audio_summary">Audio Settings of the device</string>
+    <string name="audiowizard_entry_title">AudioWizard</string>
+
     <!-- Volume panel QS tile -->
     <string name="volume_mode">Sound</string>
     <string name="vibrate_mode">Vibrate</string>

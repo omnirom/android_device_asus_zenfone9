@@ -28,6 +28,11 @@ vendor.asus.fota.group                     u:object_r:vendor_asus_sp_prop:s0
 # Audio
 vendor.use.audio.eu.parameters      u:object_r:vendor_audio_prop:s0
 
+# Audio (Dirac)
+persist.vendor.dirac.    u:object_r:vendor_asus_prop:s0
+ro.vendor.dirac.         u:object_r:vendor_asus_prop:s0
+vendor.dirac.            u:object_r:vendor_asus_prop:s0
+
 # Camera
 ro.vendor.camera.                   u:object_r:vendor_camera_prop:s0
 vendor.camera.                      u:object_r:vendor_camera_prop:s0

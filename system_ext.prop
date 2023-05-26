@@ -5,3 +5,13 @@ telephony.active_modems.max_count=2
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.omnirom.snap,com.googlecamera.wichaya,com.asus.camera
 persist.vendor.camera.privapp.list=com.asus.camera
+
+# ASUS_BSP Add for Dirac sound effect feature
+ro.vendor.dirac.acs.rotation=true
+ro.vendor.dirac.acs.ignore_updates_in_call=true
+ro.vendor.dirac.acs.no_usermsg=true
+ro.vendor.dirac.gef.ins.appt=0x4
+ro.vendor.dirac.gef.int.appt=0x1,0x8,0x10
+ro.vendor.dirac.gef.ext.appt=0x1,0x4,0x8,0x10
+ro.vendor.dirac.gef.ext.did=0x4,0x8,0x80,0x4000,0x4000000
+ro.vendor.dirac.gef.exs.did=0x4,0x8,0x80,0x4000,0x4000000

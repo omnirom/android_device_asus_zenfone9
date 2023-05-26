@@ -3,6 +3,8 @@
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
+-priv-app/AudioWizardView/AudioWizardView.apk
+-priv-app/DiracAudioControlService/DiracAudioControlService.apk
 system_ext/etc/cdma_call_conf.xml
 
 # Bluetooth
