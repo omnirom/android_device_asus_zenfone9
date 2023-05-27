@@ -95,6 +95,7 @@ public class KeyHandler implements DeviceKeyHandler {
     private static final int KEY_GESTURE_V = 47;
     private static final int KEY_GESTURE_W = 17;
     private static final int KEY_GESTURE_Z = 44;
+    private static final int KEY_GESTURE_FP = 832;
     private static final int KEY_SWIPEUP_GESTURE = 103;
 
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
@@ -131,7 +132,8 @@ public class KeyHandler implements DeviceKeyHandler {
         KEY_GESTURE_Z,
         KEY_GESTURE_PAUSE,
         KEY_GESTURE_FORWARD,
-        KEY_GESTURE_REWIND
+        KEY_GESTURE_REWIND,
+        KEY_GESTURE_FP
     };
 
     protected final Context mContext;
