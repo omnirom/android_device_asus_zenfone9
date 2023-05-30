@@ -30,9 +30,14 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>softap0</item>
-        <item>wlan0</item>
-        <item>wigig0</item>
+        <item>wlan\\d</item>
+        <item>softap\\d</item>
+        <item>ap_br_wlan\\d</item>
+        <item>ap_br_softap\\d</item>
+        <item>wifi_br\\d</item>
+        <item>ap_br_\\d</item>
+        <item>ap\\d</item>
+        <item>ap_br_ap\\d</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
