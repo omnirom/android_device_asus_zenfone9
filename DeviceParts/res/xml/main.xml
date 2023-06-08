@@ -14,6 +14,11 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="key_gesture_category"
+        android:title="@string/category_gestures_title">
+
     <Preference
         android:key="gesture_category"
         android:title="@string/category_gestures_title"
@@ -23,7 +28,11 @@
                 android:targetPackage="org.omnirom.device"
                 android:targetClass="org.omnirom.device.GestureSettingsActivity" />
     </Preference>
+    </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="key_doze_category"
+        android:title="@string/doze_category_title">
     <Preference
         android:key="doze_category"
         android:title="@string/doze_category_title"
@@ -33,6 +42,7 @@
                 android:targetPackage="org.omnirom.device"
                 android:targetClass="org.omnirom.device.DozeSettingsActivity" />
     </Preference>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="frame_mode_main"
