@@ -659,4 +659,18 @@
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
 
+    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
+     Note: this value is temporary and is expected to be queried directly
+     from the HAL in the future. -->
+    <array name="config_sfps_sensor_props" translatable="false">
+        <item>@array/config_sfps_sensor_props_0</item>
+    </array>
+
+    <array name="config_sfps_sensor_props_0" translatable="false">
+        <item>local:4630947220766978690</item>
+        <item>1046</item>
+        <item>1210</item>
+        <item>115</item>
+    </array>
+
 </resources>
