@@ -768,6 +768,13 @@ VENDOR_SKIP_FILES_COMMON=(
     "etc/vintf/manifest_taro.xml"
 
     # Media
+    "etc/media_codecs_google_audio.xml"
+    "etc/media_codecs_google_c2.xml"
+    "etc/media_codecs_google_c2_audio.xml"
+    "etc/media_codecs_google_c2_video.xml"
+    "etc/media_codecs_google_telephony.xml"
+    "etc/media_codecs_google_video.xml"
+    "etc/media_codecs_google_video_le.xml"
     "bin/hw/android.hardware.cas@1.2-service"
     "etc/init/android.hardware.cas@1.2-service.rc"
     "etc/vintf/manifest/android.hardware.cas@1.2-service.xml"
