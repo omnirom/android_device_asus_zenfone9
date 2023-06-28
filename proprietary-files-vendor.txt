@@ -1926,7 +1926,6 @@ vendor/lib/libasn1crt.so
 vendor/lib/libasn1crtx.so
 vendor/lib/libats.so
 vendor/lib/libaudio_log_utils.so
-vendor/lib/libavservices_minijail.so
 vendor/lib/libbacklight-calib.so
 vendor/lib/libbase64.so
 vendor/lib/libbatching.so
