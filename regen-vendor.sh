@@ -50,6 +50,7 @@ VENDOR_SKIP_FILES_COMMON=(
 
     # Audio
     "etc/a2dp_audio_policy_configuration.xml"
+    "etc/default_volume_tables.xml"
     "etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb"
     "etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp"
     "etc/acdbdata/IDP_UPD_diwali/IDP_UPD_diwali_acdb_cal.acdb"
