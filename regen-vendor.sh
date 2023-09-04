@@ -1115,6 +1115,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib/libxtwifi_server_protocol_uri_v3.so"
     "lib64/libxtwifi_server_protocol.so"
     "lib64/libxtwifi_server_protocol_uri_v3.so"
+    "bin/rttutild"
+    "etc/init/rttutild.rc"
 
 )
 ALL_SKIP_FILES=("${VENDOR_SKIP_FILES_COMMON[@]}" "${VENDOR_SKIP_FILES_DEVICE[@]}")

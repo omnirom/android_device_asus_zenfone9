@@ -264,7 +264,6 @@ vendor/bin/qvrservicetest64
 vendor/bin/refresh_mbn
 vendor/bin/rmt_storage
 vendor/bin/rtcwake
-vendor/bin/rttutild
 vendor/bin/sar-vendor-cmd.xml
 vendor/bin/sec_nvm
 vendor/bin/sensors-qesdk
@@ -519,7 +518,6 @@ vendor/etc/init/qmipriod.rc
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/qttestservice.rc
 vendor/etc/init/qvrd_vndr.rc
-vendor/etc/init/rttutild.rc
 vendor/etc/init/shsusrd.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/sxrd.rc
