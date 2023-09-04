@@ -594,6 +594,8 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libsdedrm.so"
     "lib64/libsdmcore.so"
     "lib64/libsdmutils.so"
+    "lib/libsdmextension.so"
+    #"lib64/libsdmextension.so" moved to proprietary-files.txt to pin it
 
     # Display (PixelWorks)
     "bin/hw/vendor.pixelworks.hardware.display.iris-service"
