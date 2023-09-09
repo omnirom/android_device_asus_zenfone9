@@ -74,10 +74,10 @@
      "revision": "android-12.0"
    },
    {
-    "remote": "github",
-    "repository": "LineageOS/android_vendor_qcom_opensource_power",
+    "remote": "gitlab",
+    "repository": "android_vendor_qcom_opensource_power",
     "target_path": "vendor/qcom/opensource/power",
-    "revision": "lineage-20.0"
+    "revision": "android-13.0"
    },
    {
     "remote": "qcom",
