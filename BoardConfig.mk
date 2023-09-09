@@ -23,8 +23,6 @@ DEVICE_PATH := device/asus/zenfone9
 BOARD_VENDOR := asus
 
 # A/B
-AB_OTA_UPDATER := true
-
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
