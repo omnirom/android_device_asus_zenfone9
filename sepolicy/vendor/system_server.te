@@ -9,3 +9,6 @@ get_prop(system_server, vendor_alsp_prop)
 
 get_prop(system_server, vendor_set_camera_prop)
 set_prop(system_server, vendor_set_camera_prop)
+
+allow system_server hal_display_iris_hwservice:hwservice_manager find;
+hal_client_domain(system_server, hal_display_iris)

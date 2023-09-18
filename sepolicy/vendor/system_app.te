@@ -16,3 +16,5 @@ get_prop(system_app, vendor_asus_sp_system_prop)
 set_prop(system_app, vendor_asus_sp_system_prop)
 
 get_prop(system_app, vendor_tencent_prop)
+
+hal_client_domain(system_app, hal_display_iris)
