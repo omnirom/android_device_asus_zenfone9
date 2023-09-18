@@ -18,3 +18,6 @@ set_prop(system_app, vendor_asus_sp_system_prop)
 get_prop(system_app, vendor_tencent_prop)
 
 hal_client_domain(system_app, hal_display_iris)
+
+#Allow AsusVisualMaster to read sysfs asus_fod/hdr_mode node
+allow system_app vendor_sysfs_graphics:file r_file_perms;
