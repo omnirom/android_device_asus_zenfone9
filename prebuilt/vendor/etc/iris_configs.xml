@@ -6,7 +6,7 @@ Pixelworks Inc. Company Confidential Strictly Private-->
 <GoldenFwPath>/vendor/etc</GoldenFwPath>
 <CalibratedFwPath>/mnt/vendor/persist/display</CalibratedFwPath>
 
-<SoftIrisHDR10Enabled>true</SoftIrisHDR10Enabled>
+<SoftIrisHDR10Enabled>false</SoftIrisHDR10Enabled>
 
 <!--Pixelworks dimming function-->
 <PxlwDimmingEnabled>false</PxlwDimmingEnabled>
