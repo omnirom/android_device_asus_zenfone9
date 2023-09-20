@@ -187,13 +187,6 @@ service wifimacsh /vendor/bin/sh /vendor/bin/WifiMac.sh
     oneshot
     disabled
 
-service WifiSARPower /vendor/bin/sh /vendor/bin/WifiSARPower.sh
-    class core
-    user root
-    group root
-    oneshot
-    disabled
-
 # ASUS_BSP+ dynamic change default network
 service vendor.country /vendor/bin/sh /vendor/bin/country.sh
     class main
@@ -292,20 +285,8 @@ on property:persist.vendor.asus.cnelog=1
 on property:persist.vendor.asus.cnelog=0
     setprop persist.vendor.cne.logging.qxdm 4242
 
-on property:log.asus.sar.audio=*
-    restart WifiSARPower
-
-on property:wlan.driver.status=*
-    restart WifiSARPower
-
-on property:vendor.wlan.softap.driver.status=*
-    restart WifiSARPower
-
 on property:log.ril.tel.mobiledata=*
     setprop vendor.ril.tel.mobiledata ${sys.ril.tel.mobiledata}
-
-on property:vendor.ril.tel.mobiledata=*
-    restart WifiSARPower
 
 # ASUS_BSP --- WIFI
 
