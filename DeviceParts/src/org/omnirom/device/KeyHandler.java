@@ -671,7 +671,7 @@ public class KeyHandler implements DeviceKeyHandler {
         public void onEvent(int event, String file) {
             String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
             if (event == FileObserver.MODIFY) {
-                Log.d(TAG, "client_package" + file + " and " + pkgName);
+                Log.d(TAG, "Camera name in use = " + pkgName);
                 SystemProperties.set(VENDOR_PROPERTY_USINGNAME, pkgName);
             }
         }
