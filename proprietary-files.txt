@@ -62,6 +62,7 @@ system_ext/lib64/libsystemhelper_jni.so
 product/etc/permissions/com.qti.snapdragon.sdk.display.xml
 -product/framework/com.qti.snapdragon.sdk.display.jar
 -system_ext/app/colorservice/colorservice.apk
+system_ext/lib64/libOpenCL_system.so
 system_ext/lib64/libsdm-disp-apis.qti.so
 system_ext/lib64/libsd_sdk_display.qti.so
 system_ext/lib64/vendor.display.color@1.0.so
