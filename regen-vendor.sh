@@ -515,7 +515,6 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/vendor.display.config@1.8.so"
     "lib64/vendor.display.config@1.9.so"
     "lib64/vendor.display.config@2.0.so"
-    "lib64/libQnnGpu.so"
     "lib/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so"
     "lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so"
     "lib/vendor.qti.hardware.display.allocator@1.0.so"

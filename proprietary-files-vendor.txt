@@ -2934,6 +2934,7 @@ vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libQTEEConnector_listener.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/libQcelp13SwCodec.so
+vendor/lib64/libQnnGpu.so
 vendor/lib64/libQnnHtp.so
 vendor/lib64/libQnnHtpPrepare.so
 vendor/lib64/libQnnHtpV69Stub.so
