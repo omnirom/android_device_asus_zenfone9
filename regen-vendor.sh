@@ -463,6 +463,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "odm_dlkm/etc/NOTICE.xml.gz"
     "odm_dlkm/etc/build.prop"
 
+    # Camera
+    "etc/camera/camxoverridesettings.txt"
+
     # config.fs
     "etc/fs_config_dirs"
     "etc/fs_config_files"
