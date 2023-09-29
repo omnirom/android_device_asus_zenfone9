@@ -343,7 +343,6 @@ vendor/etc/audio/DAVINCI/resourcemanager_davinci.xml
 vendor/etc/audio/DAVINCI/usecaseKvManager_davinci.xml
 vendor/etc/batching.conf
 vendor/etc/camera/camera_cdn.csv
-vendor/etc/camera/camxoverridesettings.txt
 vendor/etc/camera/vidhance_calibration
 vendor/etc/card-defs.xml
 vendor/etc/charger_fw_fstab.qti
