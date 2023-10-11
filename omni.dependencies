@@ -3,13 +3,13 @@
     "remote": "omnirom",
     "repository": "android_device_qcom_caf-sepolicy",
     "target_path": "device/qcom/sepolicy",
-    "revision": "android-13.0"
+    "revision": "android-14.0"
   },
   {
     "remote": "omnirom",
     "repository": "android_device_qcom_sepolicy_vndr",
     "target_path": "device/qcom/sepolicy_vendor",
-    "revision": "android-13.0-vendor"
+    "revision": "android-14.0-vendor"
   },
   {
     "remote": "github",
@@ -22,20 +22,20 @@
     "remote": "github",
     "repository": "android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8450/display",
-    "revision": "android-13.0-sm8450"
+    "revision": "android-14.0-sm8450"
   },
   {
     "remote": "omnirom",
     "repository": "android_hardware_qcom_wlan",
     "target_path": "hardware/qcom-caf/wlan",
     "override": "platform/hardware/qcom/wlan",
-    "revision": "android-13.0-caf"
+    "revision": "android-14.0-caf"
    },
    {
     "remote": "omnirom",
     "repository": "android_packages_apps_Aperture",
     "target_path": "packages/apps/Aperture",
-    "revision": "android-13.0"
+    "revision": "android-14.0"
    },
    {
     "remote": "github",
@@ -89,7 +89,7 @@
      "remote": "gitlab",
      "repository": "android_vendor_qcom_opensource_usb",
      "target_path": "vendor/qcom/opensource/usb",
-     "revision": "android-13.0"
+     "revision": "android-14.0"
    },
    {
     "remote": "gitlab",
