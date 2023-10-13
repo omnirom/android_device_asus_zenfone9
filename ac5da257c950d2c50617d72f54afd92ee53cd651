@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a22c5672_316939e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002322
+      },
+      "writtenOn": "2023-10-13T13:52:18Z",
+      "side": 1,
+      "message": "for ref\nhttps://github.com/omnirom/android_build_soong/commit/b5f6d9ea511a6515637de0c4aaaf3859061f07cb",
+      "revId": "ac5da257c950d2c50617d72f54afd92ee53cd651",
+      "serverId": "56841c99-7c94-43d4-bf0b-cb4707e66d55"
+    }
+  ]
+}
