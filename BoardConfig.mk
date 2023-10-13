@@ -146,7 +146,7 @@ BOARD_BOOTCONFIG := \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
 
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
@@ -203,7 +203,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # BOARD_SUPER_PARTITION_SIZE - 4
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 
-BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
+#BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
 
 # Platform
 QCOM_HARDWARE_VARIANT := sm8450
@@ -235,10 +235,10 @@ BOOT_SECURITY_PATCH := 2023-06-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # Sepolicy
-include vendor/omni/sepolicy/sepolicy.mk
-include device/qcom/sepolicy_vendor/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+#include vendor/omni/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy_vendor/SEPolicy.mk
+#BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+#SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 
 # VNDK
 NEED_AIDL_NDK_PLATFORM_BACKEND := true
