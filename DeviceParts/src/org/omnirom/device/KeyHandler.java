@@ -17,7 +17,6 @@
 */
 package org.omnirom.device;
 
-import static android.view.WindowManager.TAKE_SCREENSHOT_FULLSCREEN;
 import static android.view.WindowManager.ScreenshotSource.SCREENSHOT_GLOBAL_ACTIONS;
 
 import android.app.ActivityManagerNative;
@@ -550,7 +549,7 @@ public class KeyHandler implements DeviceKeyHandler {
         } else if (value.equals(AppSelectListPreference.SCREENSHOT_ENTRY)) {
             final ScreenshotHelper screenshotHelper = new ScreenshotHelper(mContext);
             mHandler.postDelayed(() -> {
-                screenshotHelper.takeScreenshot(TAKE_SCREENSHOT_FULLSCREEN, SCREENSHOT_GLOBAL_ACTIONS,
+                screenshotHelper.takeScreenshot(SCREENSHOT_GLOBAL_ACTIONS,
                     mHandler, null);
             }, 1000);
             OmniVibe.performHapticFeedbackLw(HapticFeedbackConstants.LONG_PRESS, false, mContext);
