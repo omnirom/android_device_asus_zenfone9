@@ -1,8 +1,0 @@
-ro.product.system.brand=Xiaomi
-ro.product.system.device=ZF
-ro.product.system.manufacturer=Xiaomi
-ro.product.system.model=ZF
-ro.product.system.name=WWZF
-ro.system.build.fingerprint=ZF/WWZF/ZF:12/SKQ1.220406.001/32.2050.2050.29:user/release-keys
-ro.build.product=ZF
-ifeq ($(ZF_BUILD_PROJECT),AI2201)
