@@ -37,6 +37,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
 
+import org.omnirom.omnilib.utils.OmniSettings;
+
 public class DozeSettings extends PreferenceFragment  {
 
     private static final String KEY_WAVE_CHECK = "wave_check";
@@ -92,7 +94,7 @@ public class DozeSettings extends PreferenceFragment  {
 
     private void getDozeSettings() {
         String value = Settings.System.getString(getContext().getContentResolver(),
-                    Settings.System.OMNI_DEVICE_FEATURE_SETTINGS);
+                    OmniSettings.OMNI_DEVICE_FEATURE_SETTINGS);
         if (!TextUtils.isEmpty(value)) {
             String[] parts = value.split(":");
             mUseWaveCheck = Boolean.valueOf(parts[0]);
@@ -103,7 +105,7 @@ public class DozeSettings extends PreferenceFragment  {
 
     private void setDozeSettings() {
         String newValue = String.valueOf(mUseWaveCheck) + ":" + String.valueOf(mUsePocketCheck) + ":" + String.valueOf(mUseTiltCheck);
-        Settings.System.putString(getContext().getContentResolver(), Settings.System.OMNI_DEVICE_FEATURE_SETTINGS, newValue);
+        Settings.System.putString(getContext().getContentResolver(), OmniSettings.OMNI_DEVICE_FEATURE_SETTINGS, newValue);
     }
 
     private boolean isAmbientDisplayEnabled() {
