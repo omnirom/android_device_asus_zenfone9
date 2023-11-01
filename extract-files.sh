@@ -67,8 +67,11 @@ function blob_fixup() {
         "${PATCHELF}" --remove-needed "libhidlbase.so" "${2}"
         sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
         ;;
+    vendor/bin/hw/android.hardware.security.keymint-service-qti)
+        "${PATCHELF}" --add-needed android.hardware.security.rkp-V1-ndk.so "${2}"
+        ;;
     vendor/lib64/libQnnGpu.so)
-        "${CM_ROOT}"/prebuilts/clang/host/linux-x86/clang-r450784d/bin/llvm-strip "${2}"
+        "${CM_ROOT}"/prebuilts/clang/host/linux-x86/clang-r487747c/bin/llvm-strip "${2}"
         ;;
     esac
 }
