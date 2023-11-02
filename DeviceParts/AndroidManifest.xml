@@ -11,9 +11,6 @@
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
-    <uses-sdk
-        android:minSdkVersion="26"
-        android:targetSdkVersion="26" />
     <application
         android:icon="@drawable/ic_launcher"
         android:label="@string/advanced_settings"
@@ -62,7 +59,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name="org.omnirom.device.Startup" >
+        <receiver android:name="org.omnirom.device.Startup" 
+            android:exported="false">
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -71,7 +69,8 @@
             android:name="org.omnirom.device.GloveModeTileService"
             android:icon="@drawable/ic_glove_tile"
             android:label="@string/glove_mode_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="false">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -81,7 +80,8 @@
             android:name="org.omnirom.device.VolumeTile"
             android:icon="@drawable/ic_volume_ringer"
             android:label="@string/volume_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -90,7 +90,8 @@
             android:name="org.omnirom.device.FrameRateTileService"
             android:icon="@drawable/ic_refresh_rate"
             android:label="@string/refresh_rate_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="false">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
