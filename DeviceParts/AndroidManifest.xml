@@ -70,7 +70,7 @@
             android:icon="@drawable/ic_glove_tile"
             android:label="@string/glove_mode_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -81,7 +81,7 @@
             android:icon="@drawable/ic_volume_ringer"
             android:label="@string/volume_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -91,7 +91,7 @@
             android:icon="@drawable/ic_refresh_rate"
             android:label="@string/refresh_rate_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
