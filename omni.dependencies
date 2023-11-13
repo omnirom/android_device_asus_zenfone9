@@ -97,10 +97,10 @@
     "revision": "android-13.0"
    },
    {
-    "remote": "qcom",
-    "repository": "platform/vendor/qcom-opensource/healthd-ext",
+    "remote": "github",
+    "repository": "LineageOS/android_vendor_qcom_opensource_healthd-ext",
     "target_path": "vendor/qcom/opensource/healthd-ext",
-    "revision": "88372eed97e98bf8b269cdb882293303ca894f96"
+    "revision": "lineage-23.0"
    },
    {
      "remote": "gitlab",
