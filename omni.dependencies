@@ -12,6 +12,13 @@
     "revision": "android-14.0-vendor"
   },
   {
+    "remote": "omnirom",
+    "repository": "android_external_tinycompress",
+    "target_path": "external/tinycompress",
+    "override": "platform/external/tinycompress",
+    "revision": "android-14.0"
+   },
+  {
     "remote": "github",
     "repository": "micky387/android_hardware_qcom_media",
     "target_path": "hardware/qcom-caf/sm8450/media",
