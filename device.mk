@@ -30,13 +30,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Prebuilt Kernel Binary
 TARGET_KERNEL_VERSION := 5.10
-TARGET_KERNEL_DIR ?= device/asus/zenfone9-kernel
-LOCAL_KERNEL := $(TARGET_KERNEL_DIR)/Image
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
-# Prebuilt Kernel Headers
-TARGET_BOARD_KERNEL_HEADERS ?= device/asus/zenfone9-kernel/kernel-headers
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
