@@ -247,7 +247,6 @@ qcom-pon.ko
 qti_battery_charger.ko
 asus_battery_charger_AI2202.ko
 qti_battery_charge_notify.ko
-ktop.ko
 qcom-spmi-temp-alarm.ko
 qti-adc-tm.ko
 qti_qmi_sensor_v2.ko

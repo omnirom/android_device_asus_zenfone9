@@ -82,7 +82,6 @@ lpass_cdc_rx_macro_dlkm.ko
 sensors_ssc.ko
 dwc3-msm.ko
 qrtr-smd.ko
-ktop.ko
 audio_prm_dlkm.ko
 qce50.ko
 qcom-i2c-pmic.ko
