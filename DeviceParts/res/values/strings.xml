@@ -20,7 +20,7 @@
     <string name="vib_strength_title_head">Strength</string>
     <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
     <string name="vib_test">Test</string>
-    <string name="advanced_settings">Advanced</string>
+    <string name="advanced_settings">DeviceParts</string>
     <string name="graphics_title">Graphics</string>
     <string name="screen_title">Screen Sensitivity</string>
     <string name="glove_mode_summary">Increase touch sensitivity when wearing gloves</string>
