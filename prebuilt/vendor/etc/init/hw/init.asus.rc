@@ -222,6 +222,15 @@ service touch_ver /vendor/bin/sh  /vendor/bin/touch_ver.sh
     disabled
 # Touch ---
 
+#for audio
+service dongle /vendor/bin/dongle
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:zf_dongle:s0
+#for audio
+
 ###-----------------------------------------------###
 #                ALL ASUS service (end)
 # 
@@ -458,6 +467,14 @@ on property:vendor.asus.touch.resize=1
    write /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_xy_resize 1
 # Touch ---
 
+# Fingerprint +++
+on property:sys.boot_completed=1
+   setprop vendor.screen.turning-off 0
+
+on property:vendor.screen.turning-off=*
+   setprop vendor.screen.turningoff	${vendor.screen.turning-off}
+# Fingerprint ---
+
 # ASUS_BSP +++ set btsnoop_status property
 on property:persist.bluetooth.btsnooplogmode=filtered
 setprop debug.bluetooth.btsnoop_status start
@@ -513,6 +530,15 @@ on property:vendor.drm.keystatus=-1
 # ASUS_BSP Proximity: add command for double tap
 on property:vendor.proximity.get_status=1
 	start service_get_pstatus
+
+#for audio+++
+on property:vendor.audio.dongle=true
+    start dongle
+#for audio---
+
+on property:sys.boot_completed=1
+    rm /mnt/vendor/persist/data/pfm/licenses/qwes_platform_license.pfm.inst
+
 ###-----------------------------------------------###
 #              ALL ASUS on property (end)
 # 

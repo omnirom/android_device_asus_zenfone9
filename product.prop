@@ -14,7 +14,6 @@ persist.sys.autofps.mode=2
 persist.sys.notchui.enable=1
 persist.sys.thermal_policy_update=1
 ro.surface_flinger.set_idle_timer_ms=1500
-ro.surface_flinger.enable_frame_rate_override=1
 debug.sf.frame_rate_multiple_threshold=120
 
 # Bluetooth

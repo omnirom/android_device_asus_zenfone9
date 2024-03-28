@@ -68,11 +68,24 @@ persist.fuse_sdcard=true
 #System props for BT
 ro.bluetooth.library_name=libbluetooth_qti.so
 persist.vendor.btstack.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aptxadaptiver2_2_support=true
+persist.vendor.btstack.enable.twsplus=false
+persist.vendor.btstack.enable.twsplussho=false
+persist.vendor.btstack.twsplus.monosupport=false
 persist.bluetooth.avrcpversion=avrcp16
+# ASUS_BSP "Enable IOT logging"+++
+persist.vendor.service.bt.iotinfo.report.enable=true
+# ASUS_BSP "Enable IOT logging"---
+#Enable inband ringing
 persist.bluetooth.disableinbandringing=false
 # ASUS BSP Bluetooth: enable SWB
 persist.vendor.qcom.bluetooth.enable.swb=true
 persist.vendor.qcom.bluetooth.enable.swbpm=true
+# ASUS_BSP "Enable BQR"+++
+persist.bluetooth.bqr.event_mask=262238
+persist.bluetooth.bqr.min_interval_ms=60000
+persist.bluetooth.bqr.choppy_threshold=3,3
+# ASUS_BSP "Enable BQR"---
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
@@ -88,7 +101,7 @@ persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 #property to enable HWC for VDS
-debug.sf.enable_hwc_vds=1
+debug.sf.enable_hwc_vds=0
 #property to latch unsignaled buffer
 debug.sf.latch_unsignaled=1
 # enable tunnel encoding for amrwb
@@ -120,9 +133,6 @@ persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
-# ASUS_BSP "Enable IOT logging"+++
-persist.vendor.service.bt.iotinfo.report.enable=true
-# ASUS_BSP "Enable IOT logging"---
 #Expose aux camera for below packages
 #vendor.camera.aux.packagelist=org.codeaurora.snapcam
 #Add snapcam in privapp list
@@ -166,31 +176,11 @@ ro.vendor.build.asus.sku=WW
 ####################################
 debug.atrace.tags.enableflags=0
 persist.traced.enable=1
-log.tag.CCodec=I
-log.tag.MediaCodec=I
-log.tag.MediaPlayerService=I
-log.tag.CCodecBufferChannel=I
-log.tag.MediaCodecSource=I
-log.tag.NuPlayerRenderer=I
-log.tag.NuPlayerDecoder=I
-log.tag.NuPlayer=I
-log.tag.MPEG4Writer=I
-log.tag.CCodecBuffers=I
-log.tag.CCodecConfig=I
-log.tag.MediaCodecList=I
-log.tag.FrameDecoder=I
-log.tag.MediaMetadataRetriever=I
-log.tag.MediaCodecsXmlParser=I
-log.tag.NuPlayerDriver=I
-log.tag.StagefrightRecorder=I
-log.tag.GenericSource=I
-log.tag.GraphicBufferSource=I
 dalvik.vm.image-dex2oat-Xms=64m
 dalvik.vm.image-dex2oat-Xmx=64m
 dalvik.vm.dex2oat-Xms=64m
 dalvik.vm.dex2oat-Xmx=512m
 dalvik.vm.usejit=true
-dalvik.vm.usejitprofiles=true
 dalvik.vm.dexopt.secondary=true
 dalvik.vm.dexopt.thermal-cutoff=2
 dalvik.vm.appimageformat=lz4
@@ -198,6 +188,7 @@ ro.dalvik.vm.native.bridge=0
 pm.dexopt.first-boot=verify
 pm.dexopt.boot-after-ota=verify
 pm.dexopt.post-boot=extract
+pm.dexopt.boot-after-mainline-update=verify
 pm.dexopt.install=speed-profile
 pm.dexopt.install-fast=skip
 pm.dexopt.install-bulk=speed-profile
@@ -216,6 +207,12 @@ dalvik.vm.dex2oat-minidebuginfo=true
 dalvik.vm.madvise.vdexfile.size=104857600
 dalvik.vm.madvise.odexfile.size=104857600
 dalvik.vm.madvise.artfile.size=4294967295
+dalvik.vm.usap_pool_enabled=false
+dalvik.vm.usap_refill_threshold=1
+dalvik.vm.usap_pool_size_max=3
+dalvik.vm.usap_pool_size_min=1
+dalvik.vm.usap_pool_refill_delay_ms=3000
+dalvik.vm.useartservice=true
 persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 ####################################
 # from variable PRODUCT_SYSTEM_DEFAULT_PROPERTIES

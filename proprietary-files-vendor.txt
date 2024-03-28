@@ -42,6 +42,7 @@ vendor/bin/QMESA_64
 vendor/bin/RestoreCalibrationData
 vendor/bin/SkuInfo
 vendor/bin/StoreKeybox
+vendor/bin/TAClient
 vendor/bin/TrustedUISampleTest
 vendor/bin/WiFiMaxPower
 vendor/bin/[
@@ -51,6 +52,7 @@ vendor/bin/agmcap
 vendor/bin/agmcompressplay
 vendor/bin/agmplay
 vendor/bin/asus_native_sensor
+vendor/bin/asuskey_wv_install
 vendor/bin/athdiag
 vendor/bin/audioadsprpcd
 vendor/bin/audioflacapp
@@ -399,7 +401,6 @@ vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_w
 vendor/etc/display/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.json
 vendor/etc/display/thermallevel_to_fps.xml
 vendor/etc/dpm_vndr/vendor.dpm.conf
-vendor/etc/ecc_list.json
 vendor/etc/eva/facedetection/model3.dat
 vendor/etc/excluded-input-devices.xml
 vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted
@@ -450,8 +451,8 @@ vendor/etc/init/android.hardware.identity-service-qti.rc
 vendor/etc/init/android.hardware.keymaster@4.1-javacard.service.rc
 vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
 vendor/etc/init/android.hardware.neuralnetworks-shim-service-qti.rc
-vendor/etc/init/android.hardware.nfc@1.2-service.rc
-vendor/etc/init/android.hardware.secure_element@1.2-service.rc
+vendor/etc/init/android.hardware.nfc_snxxx@1.2-service.rc
+vendor/etc/init/android.hardware.secure_element_snxxx@1.2-service.rc
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/init/android.hardware.sensors@2.1-service-multihal.rc
 vendor/etc/init/android.hardware.thermal@2.0-service.qti-v2.rc
@@ -511,6 +512,7 @@ vendor/etc/init/qvrd_vndr.rc
 vendor/etc/init/shsusrd.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/sxrd.rc
+vendor/etc/init/taclient.rc
 vendor/etc/init/trusteduilistener.rc
 vendor/etc/init/vendor.display.color@1.0-service.rc
 vendor/etc/init/vendor.dpmd.rc
@@ -682,6 +684,7 @@ vendor/etc/qcril_database/upgrade/config/6.0_config.sql
 vendor/etc/qcril_database/upgrade/config/7.0_config.sql
 vendor/etc/qcril_database/upgrade/config/8.0_config.sql
 vendor/etc/qcril_database/upgrade/config/9.0_config.sql
+vendor/etc/qcril_database/upgrade/config/90.0_config.sql
 vendor/etc/qcril_database/upgrade/other/0_initial_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/10_version_update_ecc_table.sql
 vendor/etc/qcril_database/upgrade/other/11_version_update_ecc_table.sql
@@ -693,6 +696,7 @@ vendor/etc/qcril_database/upgrade/other/5_version_update_ecc_table_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/6_version_change_property_table_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/7_version_update_ecc_table_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/8_version_update_ecc_table.sql
+vendor/etc/qcril_database/upgrade/other/90_version_update_ecc_table.sql
 vendor/etc/qcril_database/upgrade/other/9_version_update_ecc_table.sql
 vendor/etc/qguard.json
 vendor/etc/qvr/cfg/339/0/65536/mtp855.txt
@@ -1258,6 +1262,17 @@ vendor/firmware/cdsp.b16
 vendor/firmware/cdsp.b17
 vendor/firmware/cdsp.mbn
 vendor/firmware/cdsp.mdt
+vendor/firmware/drmtestapp64.b00
+vendor/firmware/drmtestapp64.b01
+vendor/firmware/drmtestapp64.b02
+vendor/firmware/drmtestapp64.b03
+vendor/firmware/drmtestapp64.b04
+vendor/firmware/drmtestapp64.b05
+vendor/firmware/drmtestapp64.b06
+vendor/firmware/drmtestapp64.b07
+vendor/firmware/drmtestapp64.b08
+vendor/firmware/drmtestapp64.mbn
+vendor/firmware/drmtestapp64.mdt
 vendor/firmware/dxhdcp2.b00
 vendor/firmware/dxhdcp2.b01
 vendor/firmware/dxhdcp2.b02
@@ -1582,9 +1597,6 @@ vendor/lib/android.hardware.keymaster@3.0.so
 vendor/lib/android.hardware.keymaster@4.0.so
 vendor/lib/android.hardware.keymaster@4.1.so
 vendor/lib/android.hardware.media.c2@1.0.so
-vendor/lib/android.hardware.nfc@1.0.so
-vendor/lib/android.hardware.nfc@1.1.so
-vendor/lib/android.hardware.nfc@1.2.so
 vendor/lib/android.hardware.radio.config@1.0.so
 vendor/lib/android.hardware.radio.config@1.1.so
 vendor/lib/android.hardware.radio.config@1.2.so
@@ -1787,10 +1799,7 @@ vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/ese_client.so
-vendor/lib/ese_spi_nxp.so
 vendor/lib/ftm_fm_lib.so
-vendor/lib/hal_libnfc.so
 vendor/lib/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
@@ -2268,7 +2277,6 @@ vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/modules
-vendor/lib/nfc_nci_nxp.so
 vendor/lib/qcrilInterfaces.so
 vendor/lib/qcrilMarshal.so
 vendor/lib/qcrilNrQmiModule.so
@@ -2394,10 +2402,6 @@ vendor/lib/vendor.libdpmfdmgr.so
 vendor/lib/vendor.libdpmframework.so
 vendor/lib/vendor.libdpmtcm.so
 vendor/lib/vendor.libmwqemiptablemgr.so
-vendor/lib/vendor.nxp.eventprocessor@1.0.so
-vendor/lib/vendor.nxp.nxpese@1.0.so
-vendor/lib/vendor.nxp.nxpnfc@2.0.so
-vendor/lib/vendor.nxp.nxpnfclegacy@1.0.so
 vendor/lib/vendor.qti.data.factory@2.0.so
 vendor/lib/vendor.qti.data.factory@2.1.so
 vendor/lib/vendor.qti.data.factory@2.2.so
@@ -2840,10 +2844,8 @@ vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/ese_client.so
-vendor/lib64/ese_spi_nxp.so
+vendor/lib64/ese_spi_nxp_snxxx.so
 vendor/lib64/ftm_fm_lib.so
-vendor/lib64/hal_libnfc.so
 vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
@@ -2880,6 +2882,7 @@ vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vulkan.adreno.so
+vendor/lib64/jcos_client.so
 vendor/lib64/lib-imscommon.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
@@ -3024,7 +3027,7 @@ vendor/lib64/libdataitems.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdiagjni.so
 vendor/lib64/libdigital-dimming.so
-vendor/lib64/libdiracgefwrapper.so
+vendor/lib64/libdirac.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
@@ -3402,7 +3405,7 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/libz_stable.so
 vendor/lib64/ls_client.so
 vendor/lib64/mediadrm/libwvdrmengine.so
-vendor/lib64/nfc_nci_nxp.so
+vendor/lib64/nfc_nci_nxp_snxxx.so
 vendor/lib64/qcrilInterfaces.so
 vendor/lib64/qcrilMarshal.so
 vendor/lib64/qcrilNrQmiModule.so
@@ -3412,6 +3415,7 @@ vendor/lib64/qti.video.utils.videobufferlayout.so
 vendor/lib64/qtiPeripheralMgr.so
 vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
+vendor/lib64/se_extn_client.so
 vendor/lib64/sensors.ssc.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libaudiopreprocessing.so
@@ -3444,10 +3448,8 @@ vendor/lib64/vendor.libdpmfdmgr.so
 vendor/lib64/vendor.libdpmframework.so
 vendor/lib64/vendor.libdpmtcm.so
 vendor/lib64/vendor.libmwqemiptablemgr.so
-vendor/lib64/vendor.nxp.eventprocessor@1.0.so
 vendor/lib64/vendor.nxp.nxpese@1.0.so
 vendor/lib64/vendor.nxp.nxpnfc@2.0.so
-vendor/lib64/vendor.nxp.nxpnfclegacy@1.0.so
 vendor/lib64/vendor.qti.data.factory@2.0.so
 vendor/lib64/vendor.qti.data.factory@2.1.so
 vendor/lib64/vendor.qti.data.factory@2.2.so
