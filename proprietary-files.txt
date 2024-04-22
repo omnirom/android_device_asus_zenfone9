@@ -3,8 +3,8 @@
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio
--priv-app/AudioWizardView/AudioWizardView.apk
--priv-app/DiracAudioControlService/DiracAudioControlService.apk
+-system/priv-app/AudioWizardView/AudioWizardView.apk
+-system/priv-app/DiracAudioControlService/DiracAudioControlService.apk
 system_ext/etc/cdma_call_conf.xml
 
 # Bluetooth
@@ -12,18 +12,18 @@ system_ext/etc/permissions/audiosphere.xml
 -system_ext/framework/audiosphere.jar
 
 # Camera
-lib64/DataSet/arch/DIT_List.cfg
-lib64/DataSet/cl/AlignMapping.bin
-lib64/DataSet/cl/lightart.bin
-lib64/DataSet/ditSCidGen/msgchk.db
-lib64/DataSet/ispDB/ParameterDB.db
-lib64/libxditk_DIT_Manager.so
-lib64/libxditk_ISP.so
-lib64/libxditk_arch.so
-lib64/libxditk_ditArchLIB.so
-lib64/libxditk_ditBSP.so
-lib64/libxditk_ditBSP_JNI.so
-lib64/libxditk_LightArt.so
+system/lib64/DataSet/arch/DIT_List.cfg
+system/lib64/DataSet/cl/AlignMapping.bin
+system/lib64/DataSet/cl/lightart.bin
+system/lib64/DataSet/ditSCidGen/msgchk.db
+system/lib64/DataSet/ispDB/ParameterDB.db
+system/lib64/libxditk_DIT_Manager.so
+system/lib64/libxditk_ISP.so
+system/lib64/libxditk_arch.so
+system/lib64/libxditk_ditArchLIB.so
+system/lib64/libxditk_ditBSP.so
+system/lib64/libxditk_ditBSP_JNI.so
+system/lib64/libxditk_LightArt.so
 
 # CNE
 -system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
@@ -73,7 +73,7 @@ system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/libsdmextension.so|F80E85481D8F2CE991E4CCBA3958A575B39ECE09
 
 # DPM
--framework/tcmclient.jar
+-system/framework/tcmclient.jar
 system_ext/bin/dpmd
 system_ext/etc/dpm/dpm.conf
 system_ext/etc/init/dpmd.rc
@@ -113,8 +113,8 @@ system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # Power
--framework/QPerformance.jar
--framework/UxPerformance.jar
+-system/framework/QPerformance.jar
+-system/framework/UxPerformance.jar
 
 # Telephony
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
