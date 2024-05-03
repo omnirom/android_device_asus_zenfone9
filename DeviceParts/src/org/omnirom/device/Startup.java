@@ -48,6 +48,8 @@ public class Startup extends BroadcastReceiver {
         boolean imported = Settings.System.getInt(context.getContentResolver(), "omni_device_setting_imported", 0) != 0;
         if (!imported) {
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+            boolean gameEnabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GAME_SWITCH, false);
+            Settings.System.putInt(context.getContentResolver(), GameModeSwitch.SETTINGS_KEY, gameEnabled ? 1 : 0);
             boolean enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_GLOVE_SWITCH, false);
             Settings.System.putInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, enabled ? 1 : 0);
 
@@ -137,6 +139,11 @@ public class Startup extends BroadcastReceiver {
             return;
         } else {
         restore(getGestureFile(GestureSettings.OFFSCREEN_PATH), valueExtra);
+        }
+
+        boolean enabledGame = Settings.System.getInt(context.getContentResolver(), GameModeSwitch.SETTINGS_KEY, 0) != 0;
+        if (enabledGame) {
+            restore(GameModeSwitch.getFile(), enabledGame);
         }
 
         boolean enabledGlove = Settings.System.getInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, 0) != 0;
