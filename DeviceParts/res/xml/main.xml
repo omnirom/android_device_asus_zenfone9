@@ -71,6 +71,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="game_mode"
+        android:title="@string/game_title">
+        <SwitchPreference
+            android:key="game_refresh_rate"
+            android:summary="@string/game_mode_summary"
+            android:title="@string/game_mode_title"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="screen"
         android:title="@string/screen_title">
         <SwitchPreference
