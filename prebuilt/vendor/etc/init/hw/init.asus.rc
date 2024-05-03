@@ -449,11 +449,6 @@ on property:vendor.audio.in_call=1
 on property:vendor.audio.in_call=0
    write /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_phone_state 0
 
-on property:vendor.asus.gamingtype=1
-   write /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_game_mode 1
-on property:vendor.asus.gamingtype=0
-   write /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_game_mode 0
-
 on property:vendor.screen.rotation=0
    write /sys/devices/platform/soc/990000.i2c/i2c-0/0-0038/fts_rotation_mode 0
 on property:vendor.screen.rotation=90

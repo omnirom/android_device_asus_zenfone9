@@ -23,6 +23,9 @@
     <string name="advanced_settings">DeviceParts</string>
     <string name="graphics_title">Graphics</string>
     <string name="screen_title">Screen Sensitivity</string>
+    <string name="game_title">Touch Screen Sensitivity</string>
+    <string name="game_mode_title">Game mode</string>
+    <string name="game_mode_summary">Increase the touchscreen rate to 240Hz</string>
     <string name="glove_mode_summary">Increase touch sensitivity when wearing gloves</string>
     <string name="glove_mode_title">Glove mode</string>
     <string name="proxi_summary_head">Check proximity sensor for handling fingerprint sensor</string>

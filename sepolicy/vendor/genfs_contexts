@@ -11,6 +11,7 @@ genfscon proc /Batt_Cycle_Count/cycle_count                                     
 
 # Display
 genfscon proc /driver/swipeup                                                                   u:object_r:vendor_proc_graphics:s0
+genfscon proc /driver/gaming_mode                                                               u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/gesture_type                                                              u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/glove                                                                     u:object_r:vendor_proc_graphics:s0
 genfscon proc /driver/dclick                                                                    u:object_r:vendor_proc_graphics:s0
