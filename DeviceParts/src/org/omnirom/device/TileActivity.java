@@ -28,6 +28,7 @@ public class TileActivity extends AppCompatActivity {
         Intent intent = new Intent();
         String className = ((ComponentName) getIntent().getParcelableExtra("android.intent.extra.COMPONENT_NAME")).getClassName();
         if (className.equals("org.omnirom.device.FrameRateTileService") ||
+                className.equals("org.omnirom.device.GameTileService") ||
                 className.equals("org.omnirom.device.GloveModeTileService")) {
             intent.setPackage("org.omnirom.device");
             intent.setAction("org.omnirom.device.DEVICE_SETTING_PAGE");

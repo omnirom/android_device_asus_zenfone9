@@ -21,6 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.SystemProperties;
 import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -137,6 +138,11 @@ public class Startup extends BroadcastReceiver {
             return;
         } else {
         restore(getGestureFile(GestureSettings.OFFSCREEN_PATH), valueExtra);
+        }
+
+        // Game touch Sensitivity
+        if (DeviceSettings.isGameEnabled(context)) {
+            SystemProperties.set(DeviceSettings.GAMING_PROP, "1");
         }
 
         boolean enabledGlove = Settings.System.getInt(context.getContentResolver(), GloveModeSwitch.SETTINGS_KEY, 0) != 0;
