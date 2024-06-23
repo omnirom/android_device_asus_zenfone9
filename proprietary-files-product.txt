@@ -100,8 +100,8 @@ system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so
-system_ext/lib64/libimscamera_jni.so
-system_ext/lib64/libimsmedia_jni.so
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvt.so
