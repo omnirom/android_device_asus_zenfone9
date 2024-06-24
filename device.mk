@@ -96,7 +96,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.media.audio.common.types-V1-cpp
+    android.media.audio.common.types-V1-cpp \
+    libaudioroute.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml \
@@ -104,6 +105,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_effects.xml \
     $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml
+
+# Battery
+PRODUCT_PACKAGES += \
+    libsysutils.vendor
 
 # Biometric
 PRODUCT_PACKAGES += \
@@ -121,7 +126,8 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
-    Aperture
+    Aperture \
+    libexif.vendor
 
 # Charger images
 PRODUCT_PACKAGES += \
@@ -231,9 +237,14 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefright_softomx.vendor \
     libstagefrighthw \
-    libplatformconfig
+    libplatformconfig \
+    libsqlite.vendor
 
 $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
+
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-V1-ndk_platform.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -307,6 +318,9 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti-telephony-utils-prd \
     qti_telephony_utils_prd.xml \
+    libcurl.vendor \
+    libjsoncpp.vendor \
+    libsqlite.vendor \
     tcmiface
 
 # Update engine
@@ -325,6 +339,9 @@ PRODUCT_PACKAGES_DEBUG += \
 # USB
 TARGET_HAS_DIAG_ROUTER := true
 $(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
+
+PRODUCT_PACKAGES += \
+    libusbhost.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
