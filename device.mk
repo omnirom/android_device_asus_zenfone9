@@ -246,6 +246,10 @@ $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-V1-ndk_platform.vendor
 
+# Mount Point symlink
+PRODUCT_PACKAGES += \
+    mnt_point_factory_symlink
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
