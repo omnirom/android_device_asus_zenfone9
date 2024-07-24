@@ -1368,9 +1368,6 @@ vendor/firmware/widevine.b07
 vendor/firmware/widevine.b08
 vendor/firmware/widevine.mbn
 vendor/firmware/widevine.mdt
-vendor/firmware/wlan/qca_cld/qca6490/COUNTRY
-vendor/firmware/wlan/qca_cld/qca6490/WCNSS_qcom_cfg.ini
-vendor/firmware/wlan/qca_cld/qca6490/wlan_mac.bin
 vendor/firmware/wlanmdsp.otaupdate
 vendor/firmware_waipio/CAMERA_ICP.b00
 vendor/firmware_waipio/CAMERA_ICP.b01

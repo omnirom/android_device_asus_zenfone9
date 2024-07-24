@@ -1147,6 +1147,9 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/libxtwifi_server_protocol_uri_v3.so"
     "bin/rttutild"
     "etc/init/rttutild.rc"
+    "firmware/wlan/qca_cld/qca6490/COUNTRY"
+    "firmware/wlan/qca_cld/qca6490/WCNSS_qcom_cfg.ini"
+    "firmware/wlan/qca_cld/qca6490/wlan_mac.bin"
 
     # WifiDisplay
     "bin/wfdhdcphalservice"
