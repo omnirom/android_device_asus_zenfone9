@@ -97,7 +97,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.media.audio.common.types-V1-cpp \
-    libaudioroute.vendor \
     libhapticgenerator
 
 PRODUCT_COPY_FILES += \
@@ -106,10 +105,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_effects.xml \
     $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml
-
-# Battery
-PRODUCT_PACKAGES += \
-    libsysutils.vendor
 
 # Biometric
 PRODUCT_PACKAGES += \
@@ -123,11 +118,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
-
-# Camera
-PRODUCT_PACKAGES += \
-    android.frameworks.sensorservice@1.0.vendor \
-    libexif.vendor
 
 # Charger images
 PRODUCT_PACKAGES += \
@@ -144,8 +134,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V1-ndk.vendor \
-    android.hardware.graphics.common-V2-ndk.vendor \
     libion \
     libtinyxml2 \
     vendor.qti.hardware.memtrack-service
@@ -153,13 +141,8 @@ PRODUCT_PACKAGES += \
 -include hardware/qcom-caf/sm8450/display/config/display-board.mk
 -include hardware/qcom-caf/sm8450/display/config/display-product.mk
 
-$(call inherit-product, vendor/qcom/opensource/commonsys/display/config/display-product-commonsys.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk)
-$(call inherit-product, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
-
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
 # fastbootd
@@ -175,11 +158,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss-V1-ndk_platform.vendor \
-    libprocessgroup.vendor
-
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-qti \
@@ -188,17 +166,6 @@ PRODUCT_PACKAGES += \
 # Health for charing control
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
-    libhwbinder.vendor
-
-# Identity
-PRODUCT_PACKAGES += \
-    android.hardware.identity-V3-ndk_platform.vendor
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.idc:system/usr/idc/fts_ts.idc \
@@ -206,13 +173,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.kl:system/usr/keylayout/fts_ts.kl \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
-
-# Keymint
-PRODUCT_PACKAGES += \
-    android.hardware.security.keymint-V1-ndk_platform.vendor \
-    android.hardware.security.secureclock-V1-ndk_platform.vendor \
-    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
-    android.hardware.security.rkp-V1-ndk.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -227,18 +187,10 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
-    libavservices_minijail_vendor \
-    libgui_vendor \
     libOmxCore \
-    libcodec2_hidl@1.0.vendor \
-    libcodec2_vndk.vendor \
     libmm-omxcore \
-    libstagefright_softomx.vendor \
     libstagefrighthw \
-    libplatformconfig \
-    libsqlite.vendor \
-    libstagefright_softomx_plugin.vendor
+    libplatformconfig
 
 $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
 
@@ -271,7 +223,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti
 
 # Prebuilt
@@ -287,9 +238,7 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # QMI
 PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor \
     libqti_vndfwk_detect_vendor \
-    libvndfwk_detect_jni.qti.vendor \
     libvndfwk_detect_jni.qti_vendor
 
 # Ramdisk
@@ -333,9 +282,6 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti-telephony-utils-prd \
     qti_telephony_utils_prd.xml \
-    libcurl.vendor \
-    libjsoncpp.vendor \
-    libsqlite.vendor \
     tcmiface
 
 # Update engine
@@ -355,9 +301,6 @@ PRODUCT_PACKAGES_DEBUG += \
 TARGET_HAS_DIAG_ROUTER := true
 $(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
 
-PRODUCT_PACKAGES += \
-    libusbhost.vendor
-
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
@@ -366,18 +309,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
 
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libhidlbase-v32.vendor \
-    libhidlbase_shim \
-    android.hardware.common-V2-ndk_platform.vendor \
-    android.hardware.keymaster-V3-ndk_platform.vendor \
-    android.hardware.neuralnetworks-V1-ndk_platform.vendor
-
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi.hostapd@1.0.vendor \
     android.hardware.wifi-service \
     hostapd \
     libwifi-hal-qcom \
