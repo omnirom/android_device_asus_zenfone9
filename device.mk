@@ -185,15 +185,6 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
-# Media
-PRODUCT_PACKAGES += \
-    libOmxCore \
-    libmm-omxcore \
-    libstagefrighthw \
-    libplatformconfig
-
-$(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
-
 # Mount Point symlink
 PRODUCT_PACKAGES += \
     mnt_point_factory_symlink \

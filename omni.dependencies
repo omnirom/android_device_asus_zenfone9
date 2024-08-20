@@ -32,12 +32,6 @@
   },
   {
     "remote": "github",
-    "repository": "micky387/android_hardware_qcom_media",
-    "target_path": "hardware/qcom-caf/sm8450/media",
-    "revision": "android-13.0-sm8450"
-  },
-  {
-    "remote": "github",
     "repository": "android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8450/display",
     "revision": "android-14.0-sm8450"
