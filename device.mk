@@ -238,7 +238,8 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx.vendor \
     libstagefrighthw \
     libplatformconfig \
-    libsqlite.vendor
+    libsqlite.vendor \
+    libstagefright_softomx_plugin.vendor
 
 $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
 
