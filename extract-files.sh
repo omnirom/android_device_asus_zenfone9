@@ -73,6 +73,9 @@ function blob_fixup() {
     vendor/lib64/libQnnGpu.so)
         "${CM_ROOT}"/prebuilts/clang/host/linux-x86/clang-r487747c/bin/llvm-strip "${2}"
         ;;
+    vendor/bin/vendor.dpmd)
+        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        ;;
     esac
 }
 
