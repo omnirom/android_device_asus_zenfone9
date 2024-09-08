@@ -44,7 +44,6 @@ vendor/bin/agmplay
 vendor/bin/asus_native_sensor
 vendor/bin/athdiag
 vendor/bin/audioadsprpcd
-vendor/bin/audioflacapp
 vendor/bin/bat_bs
 vendor/bin/bat_percent
 vendor/bin/bat_safety
@@ -1386,13 +1385,10 @@ vendor/lib/lib-imsxml.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpsl.so
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
 vendor/lib/libCB.so
 vendor/lib/libEvrcSwCodec.so
 vendor/lib/libFace3DTA.so
 vendor/lib/libFace3D_hlos.so
-vendor/lib/libFlacSwDec.so
 vendor/lib/libGPQTEEC_vendor.so
 vendor/lib/libGPTEE_vendor.so
 vendor/lib/libGPreqcancel.so
@@ -1471,7 +1467,6 @@ vendor/lib/libdiagjni.so
 vendor/lib/libdpmqmihal.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
-vendor/lib/libdsd2pcm.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libeai_fixed_32.so
@@ -2202,14 +2197,11 @@ vendor/lib64/lib-imsxml.so
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
 vendor/lib64/libCB.so
 vendor/lib64/libDspIOProxy_stub.so
 vendor/lib64/libEvrcSwCodec.so
 vendor/lib64/libFace3DTA.so
 vendor/lib64/libFace3D_hlos.so
-vendor/lib64/libFlacSwDec.so
 vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libGPreqcancel.so
@@ -2335,7 +2327,6 @@ vendor/lib64/libdpmqmihal.so
 vendor/lib64/libdpps.so|d8e9cc561a3ab706697880975413db23bb41640c
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
-vendor/lib64/libdsd2pcm.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libeai_fixed.so

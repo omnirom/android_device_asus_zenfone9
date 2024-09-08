@@ -86,7 +86,6 @@ ro.vendor.audio.sdk.ssr=false
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.safx.pbe.enabled=false
 vendor.audio.parser.ip.buffer.size=262144
-vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 ro.bluetooth.a2dp_offload.supported=true
