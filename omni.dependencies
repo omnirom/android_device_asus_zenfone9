@@ -3,13 +3,13 @@
     "remote": "omnirom",
     "repository": "android_device_qcom_caf-sepolicy",
     "target_path": "device/qcom/sepolicy",
-    "revision": "android-14.0"
+    "revision": "android-15"
   },
   {
     "remote": "omnirom",
     "repository": "android_device_qcom_sepolicy_vndr",
     "target_path": "device/qcom/sepolicy_vendor",
-    "revision": "android-14.0-vendor"
+    "revision": "android-15-vendor"
   },
   {
     "remote": "omnirom",
@@ -35,13 +35,13 @@
     "remote": "omnirom",
     "repository": "android_hardware_qcom_wlan",
     "target_path": "hardware/qcom-caf/wlan",
-    "revision": "android-14.0-caf"
+    "revision": "android-15-caf"
    },
    {
     "remote": "omnirom",
     "repository": "android_packages_apps_Aperture",
     "target_path": "packages/apps/Aperture",
-    "revision": "android-14.0"
+    "revision": "android-15"
    },
    {
     "remote": "github",
