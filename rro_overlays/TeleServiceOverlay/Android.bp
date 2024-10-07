@@ -16,5 +16,6 @@
 
 runtime_resource_overlay {
     name: "TeleServiceOverlay",
+    theme: "TeleServiceOverlay",
     vendor: true,
 }
