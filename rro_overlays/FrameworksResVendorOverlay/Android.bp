@@ -15,7 +15,7 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResVendor",
-    theme: "FrameworksResVendor",
+    name: "FrameworksResVendorOverlay",
+    theme: "FrameworksResVendorOverlay",
     vendor: true,
 }
