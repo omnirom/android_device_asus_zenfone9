@@ -29,9 +29,4 @@
         android:summary="@string/tilt_check_summary"
         android:title="@string/tilt_check_title"
         android:persistent="false" />
-    <Preference
-        android:key="footer"
-        android:summary="@string/ambient_display_enable"
-        android:persistent="false"
-        android:icon="@drawable/ic_info_outline_24dp" />
 </PreferenceScreen>

@@ -44,7 +44,6 @@ public class DozeSettings extends PreferenceFragmentCompat {
     private static final String KEY_WAVE_CHECK = "wave_check";
     private static final String KEY_POCKET_CHECK = "pocket_check";
     private static final String KEY_TILT_CHECK = "tilt_check";
-    private static final String KEY_FOOTER = "footer";
 
     private boolean mUseTiltCheck;
     private boolean mUseWaveCheck;
@@ -86,10 +85,6 @@ public class DozeSettings extends PreferenceFragmentCompat {
                 return true;
             }
         });
-        Preference footer = findPreference(KEY_FOOTER);
-        if (isAmbientDisplayEnabled()) {
-            getPreferenceScreen().removePreference(footer);
-        }
     }
 
     private void getDozeSettings() {
@@ -106,9 +101,5 @@ public class DozeSettings extends PreferenceFragmentCompat {
     private void setDozeSettings() {
         String newValue = String.valueOf(mUseWaveCheck) + ":" + String.valueOf(mUsePocketCheck) + ":" + String.valueOf(mUseTiltCheck);
         Settings.System.putString(getContext().getContentResolver(), OmniSettings.OMNI_DEVICE_FEATURE_SETTINGS, newValue);
-    }
-
-    private boolean isAmbientDisplayEnabled() {
-        return Settings.Secure.getInt(getContext().getContentResolver(), Settings.Secure.DOZE_ENABLED, 1) == 1;
     }
 }

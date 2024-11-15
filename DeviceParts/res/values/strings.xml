@@ -73,7 +73,6 @@
     <string name="tilt_check_title">Pick up</string>
     <string name="pocket_check_summary">Pulse notifications on removal from pocket</string>
     <string name="pocket_check_title">Pocket</string>
-    <string name="ambient_display_enable">Ambient display must be enabled in display settings</string>
     <string name="wake_entry">Wakeup</string>
     <string name="swipe_up_to_wake_up_title">Swipe up to wake up</string>
     <string name="swipe_up_to_wake_up_summary">Swipe up on the screen to wake up your device from idle mode</string>
