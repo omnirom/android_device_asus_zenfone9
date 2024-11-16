@@ -277,14 +277,14 @@ public class KeyHandler implements DeviceKeyHandler {
         mContext = context;
         mDispOn = true;
         mEventHandler = new EventHandler();
-        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        mPowerManager = mContext.getSystemService(PowerManager.class);
         mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "GestureWakeLock");
         mSettingsObserver = new SettingsObserver(mHandler);
         mSettingsObserver.observe();
-        mNoMan = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
-        mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
-        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+        mNoMan = mContext.getSystemService(NotificationManager.class);
+        mAudioManager = mContext.getSystemService(AudioManager.class);
+        mSensorManager = mContext.getSystemService(SensorManager.class);
         mTiltSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
         mPocketSensor = getSensor(mSensorManager, getCustomProxiSensor());
         IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
