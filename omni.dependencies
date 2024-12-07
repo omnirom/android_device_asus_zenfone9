@@ -22,7 +22,6 @@
     "remote": "github",
     "repository": "micky387/android_hardware_qcom_media",
     "target_path": "hardware/qcom-caf/sm8450/media",
-    "override": "platform/hardware/qcom/media",
     "revision": "android-13.0-sm8450"
   },
   {
