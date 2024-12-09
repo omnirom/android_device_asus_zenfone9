@@ -175,7 +175,8 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss-V1-ndk_platform.vendor
+    android.hardware.gnss-V1-ndk_platform.vendor \
+    libprocessgroup.vendor
 
 # Health
 PRODUCT_PACKAGES += \
