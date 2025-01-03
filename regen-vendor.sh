@@ -466,6 +466,9 @@ VENDOR_SKIP_FILES_COMMON=(
     # Camera
     "etc/camera/camxoverridesettings.txt"
 
+    # CNE
+    "app/CneApp/lib/arm64/libvndfwk_detect_jni.qti_vendor.so"
+
     # config.fs
     "etc/fs_config_dirs"
     "etc/fs_config_files"
@@ -1168,6 +1171,7 @@ VENDOR_SKIP_FILES_COMMON=(
     "lib64/vendor.qti.hardware.wifi.supplicant@2.0.so"
     "lib64/vendor.qti.hardware.wifi.supplicant@2.1.so"
     "lib64/vendor.qti.hardware.wifi.supplicant@2.2.so"
+    "firmware/wlanmdsp.otaupdate"
 
     # WifiDisplay
     "bin/wfdhdcphalservice"
@@ -1226,39 +1230,6 @@ _output_file=$2
 function presign() {
     sed -i "s|vendor/$1$|vendor/$1;PRESIGNED|g" $_output_file
 }
-function as_module() {
-    sed -i "s|vendor/$1$|-vendor/$1|g" $_output_file
-}
 function add_on() {
     sed -i "s|vendor/$1$|vendor/$1:vendor_dlkm/$1|g" $_output_file
 }
-
-as_module "etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml"
-as_module "etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml"
-as_module "etc/vintf/manifest/android.hardware.usb@1.2-service.xml"
-as_module "etc/vintf/manifest/c2_manifest_vendor.xml"
-as_module "etc/vintf/manifest/vendor.qti.diag.hal.service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml"
-as_module "etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml"
-as_module "etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml"
-as_module "etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml"
-as_module "etc/vintf/manifest/android.hardware.sensors@2.1-multihal.xml"
-as_module "etc/vintf/manifest/android.hardware.usb.gadget@1.1-service.xml"
-as_module "etc/vintf/manifest/c2_manifest_vendor_audio.xml"
-as_module "etc/vintf/manifest/dataconnection-saidl.xml"
-as_module "etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml"
-as_module "etc/vintf/manifest/manifest_lahaina_identity.xml"
-as_module "etc/vintf/manifest/manifest_non_qmaa.xml"
-as_module "etc/vintf/manifest/manifest_non_qmaa_extn.xml"
-as_module "etc/vintf/manifest/memtrack_qti.xml"
-as_module "etc/vintf/manifest/ozonotify-1.0.xml"
-as_module "etc/vintf/manifest/qtiradio-saidl.xml"
-as_module "etc/vintf/manifest/vendor.qti.gnss-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.limits-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.perf.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.qconfig@1.0-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.qxr-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.radio.ims.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml"
-as_module "etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml"
