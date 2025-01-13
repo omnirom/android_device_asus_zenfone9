@@ -40,6 +40,9 @@ subsystem mem_buf_vm
     devname uevent_devpath
     dirname /dev/mem_buf_vm
 
+# Charger
+/sys/class/asuslib charging_suspend_en 0660 system system
+
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
 /dev/mhi_*_pipe_4         0660   system     system
