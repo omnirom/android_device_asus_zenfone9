@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Add common definitions for Qualcomm
-$(call inherit-product, vendor/omni/qcom/common.mk)
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
