@@ -19,11 +19,11 @@ system/lib64/DataSet/ditSCidGen/msgchk.db
 system/lib64/DataSet/ispDB/ParameterDB.db
 system/lib64/libxditk_DIT_Manager.so
 system/lib64/libxditk_ISP.so
+system/lib64/libxditk_LightArt.so
 system/lib64/libxditk_arch.so
 system/lib64/libxditk_ditArchLIB.so
 system/lib64/libxditk_ditBSP.so
 system/lib64/libxditk_ditBSP_JNI.so
-system/lib64/libxditk_LightArt.so
 
 # CNE
 -system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
@@ -61,8 +61,8 @@ system_ext/lib64/libsystemhelper_jni.so
 product/etc/permissions/com.qti.snapdragon.sdk.display.xml
 -product/framework/com.qti.snapdragon.sdk.display.jar
 -system_ext/app/colorservice/colorservice.apk
-system_ext/lib64/libsdm-disp-apis.qti.so
 system_ext/lib64/libsd_sdk_display.qti.so
+system_ext/lib64/libsdm-disp-apis.qti.so
 system_ext/lib64/vendor.display.color@1.0.so
 system_ext/lib64/vendor.display.color@1.1.so
 system_ext/lib64/vendor.display.color@1.2.so
@@ -91,8 +91,8 @@ system_ext/lib64/libdpmtcm.so
 # GPS
 system_ext/etc/permissions/com.qti.location.sdk.xml
 system_ext/etc/permissions/com.qualcomm.location.xml
-system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 system_ext/etc/permissions/com.qualcomm.qti.izattools.xml
+system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 -system_ext/framework/com.qti.location.sdk.jar
 -system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk|768cab025cf8427b349a8358ca86a964fe8803ee
 
@@ -106,10 +106,10 @@ system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/bin/sigma_miracasthalservice
 system_ext/bin/sigma_miracasthalservice64
 system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
+system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
+system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
 system_ext/lib64/libmiracastsystem.so
 system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
-system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
-system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # Power
@@ -118,13 +118,13 @@ system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 
 # Telephony
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
+-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
-system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
-system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
+system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 -system_ext/framework/qcrilhook.jar
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 -system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
 # VNDK
