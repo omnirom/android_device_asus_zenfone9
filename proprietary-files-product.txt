@@ -10,22 +10,18 @@ system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
 system_ext/lib64/libQSEEComAPI_system.so
 
 # QTI Telephony
--system_ext/app/DynamicDDSService/DynamicDDSService.apk
 -product/app/uimgbaservice/uimgbaservice.apk
-system_ext/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
 product/etc/permissions/UimGba.xml
 product/etc/permissions/UimGbaManager.xml
 -product/framework/uimgbalibrary.jar
 -product/framework/uimgbamanagerlibrary.jar
+-system_ext/app/DynamicDDSService/DynamicDDSService.apk
+system_ext/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
 
 # ROG 5
--system_ext/framework/qti-telephony-common.jar|07B2B91F5D547C5B5E0752F0F5534321BC93A2C1
 product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
 product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml:system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
--system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.connection-V1.1-java.jar
--system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
--system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.1-java.jar
+-system_ext/framework/qti-telephony-common.jar|07B2B91F5D547C5B5E0752F0F5534321BC93A2C1
 -system_ext/framework/vendor.qti.data.factory-V1.0-java.jar
 -system_ext/framework/vendor.qti.data.factory-V2.0-java.jar
 -system_ext/framework/vendor.qti.data.factory-V2.1-java.jar
@@ -36,14 +32,14 @@ product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml:system
 -system_ext/framework/vendor.qti.data.factory-V2.6-java.jar
 -system_ext/framework/vendor.qti.data.factory-V2.7-java.jar
 -system_ext/framework/vendor.qti.data.slm-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.connection-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.1-java.jar
 -system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 -system_ext/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 -system_ext/framework/vendor.qti.latency-V2.0-java.jar
 -system_ext/framework/vendor.qti.voiceprint-V1.0-java.jar
-system_ext/lib64/vendor.qti.hardware.data.connection@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.connection@1.1.so
-system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 system_ext/lib64/vendor.qti.data.factory@1.0.so
 system_ext/lib64/vendor.qti.data.factory@2.0.so
 system_ext/lib64/vendor.qti.data.factory@2.1.so
@@ -53,6 +49,10 @@ system_ext/lib64/vendor.qti.data.factory@2.4.so
 system_ext/lib64/vendor.qti.data.factory@2.5.so
 system_ext/lib64/vendor.qti.data.factory@2.6.so
 system_ext/lib64/vendor.qti.data.factory@2.7.so
+system_ext/lib64/vendor.qti.hardware.data.connection@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.connection@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 system_ext/lib64/vendor.qti.hardware.data.latency@1.0.so
 system_ext/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so
 system_ext/lib64/vendor.qti.hardware.radio.qtiradio@2.0.so
@@ -75,8 +75,11 @@ system_ext/lib64/vendor.qti.latency@2.2.so
 system_ext/lib64/vendor.qti.voiceprint@1.0.so
 
 # IMS
--system_ext/priv-app/ims/ims.apk
-system_ext/lib64/libdiag_system.so
+product/etc/permissions/UimService.xml
+-product/framework/uimservicelibrary.jar
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
+system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 -system_ext/framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 -system_ext/framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
 -system_ext/framework/com.qualcomm.qti.imscmservice-V2.2-java.jar
@@ -91,21 +94,20 @@ system_ext/lib64/libdiag_system.so
 -system_ext/framework/vendor.qti.ims.rcsconfig-V1.1-java.jar
 -system_ext/framework/vendor.qti.ims.rcsconfig-V2.0-java.jar
 -system_ext/framework/vendor.qti.ims.rcsconfig-V2.1-java.jar
-system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
-system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
-system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.2-java.xml
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.2.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.0.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.1.so
 system_ext/lib64/com.qualcomm.qti.uceservice@2.2.so
+system_ext/lib64/lib-imsvideocodec.so
+system_ext/lib64/lib-imsvt.so
+system_ext/lib64/lib-imsvtextutils.so
+system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
-system_ext/lib64/lib-imsvideocodec.so
-system_ext/lib64/lib-imsvtextutils.so
-system_ext/lib64/lib-imsvt.so
-system_ext/lib64/lib-imsvtutils.so
+system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.diaghal@1.0.so
 system_ext/lib64/vendor.qti.hardware.radio.am@1.0.so
 system_ext/lib64/vendor.qti.hardware.radio.ims@1.0.so
@@ -133,11 +135,9 @@ system_ext/lib64/vendor.qti.ims.rcsconfig@1.0.so
 system_ext/lib64/vendor.qti.ims.rcsconfig@1.1.so
 system_ext/lib64/vendor.qti.ims.rcsconfig@2.0.so
 system_ext/lib64/vendor.qti.ims.rcsconfig@2.1.so
-system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
--product/framework/uimservicelibrary.jar
-product/etc/permissions/UimService.xml
+-system_ext/priv-app/ims/ims.apk
 
 # IOP
 system_ext/lib64/vendor.qti.hardware.iop@2.0.so
