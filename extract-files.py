@@ -56,6 +56,7 @@ module = ExtractUtilsModule(
     'asus',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
+    check_elf=False,
 )
 
 module.add_proprietary_file('proprietary-files-product.txt')
