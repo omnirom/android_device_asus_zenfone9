@@ -97,7 +97,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.media.audio.common.types-V1-cpp \
-    libaudioroute.vendor
+    libaudioroute.vendor \
+    libhapticgenerator
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml \
@@ -144,7 +145,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V2-ndk_platform.vendor \
+    android.hardware.graphics.common-V1-ndk.vendor \
+    android.hardware.graphics.common-V2-ndk.vendor \
     libion \
     libtinyxml2
 
@@ -208,7 +210,6 @@ PRODUCT_COPY_FILES += \
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
-    android.hardware.security.secureclock-V1-ndk_platform.vendor \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
     android.hardware.security.rkp-V1-ndk.vendor
 
@@ -246,11 +247,7 @@ PRODUCT_PACKAGES += \
 
 # Mount Point symlink
 PRODUCT_PACKAGES += \
-    mnt_point_factory_symlink \
-    vendor_asusfw_mountpoint \
-    vendor_bt_firmware_mountpoint \
-    vendor_xrom_mountpoint \
-    vendor_firmware_mnt_mountpoint
+    mnt_point_factory_symlink
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -286,13 +283,6 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-
-# QMI
-PRODUCT_PACKAGES += \
-    libqti_vndfwk_detect.vendor \
-    libqti_vndfwk_detect_vendor \
-    libvndfwk_detect_jni.qti.vendor \
-    libvndfwk_detect_jni.qti_vendor
 
 # Ramdisk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
@@ -363,15 +353,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libhidlbase-v32.vendor \
-    libhidlbase_shim \
-    android.hardware.common-V2-ndk_platform.vendor \
-    android.hardware.keymaster-V3-ndk_platform.vendor \
-    android.hardware.memtrack-V1-ndk_platform.vendor \
-    android.hardware.neuralnetworks-V1-ndk_platform.vendor
 
 # Wifi
 PRODUCT_PACKAGES += \
