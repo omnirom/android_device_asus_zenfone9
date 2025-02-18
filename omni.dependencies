@@ -18,7 +18,13 @@
     "override": "platform/external/tinycompress",
     "revision": "android-14.0"
    },
-     {
+    {
+     "remote": "gitlab",
+     "repository": "android_hardware_omni_compat",
+     "target_path": "hardware/omni/compat",
+     "revision": "android-15"
+   },
+    {
     "remote": "omnirom",
     "repository": "android_hardware_qcom_bootctrl",
     "target_path": "hardware/qcom/bootctrl",

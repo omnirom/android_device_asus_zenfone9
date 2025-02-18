@@ -17,59 +17,9 @@ system/lib64/DataSet/cl/AlignMapping.bin
 system/lib64/DataSet/cl/lightart.bin
 system/lib64/DataSet/ditSCidGen/msgchk.db
 system/lib64/DataSet/ispDB/ParameterDB.db
-system/lib64/libxditk_DIT_Manager.so
-system/lib64/libxditk_ISP.so
-system/lib64/libxditk_LightArt.so
-system/lib64/libxditk_arch.so
-system/lib64/libxditk_ditArchLIB.so
-system/lib64/libxditk_ditBSP.so
-system/lib64/libxditk_ditBSP_JNI.so
-
-# CNE
-system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
-system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
-system_ext/framework/com.quicinc.cne.constants-V1.0-java.jar
-system_ext/framework/com.quicinc.cne.constants-V2.0-java.jar
-system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.0-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar
-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar
-system_ext/lib64/com.quicinc.cne.api@1.0.so
-system_ext/lib64/com.quicinc.cne.api@1.1.so
-system_ext/lib64/com.quicinc.cne.constants@1.0.so
-system_ext/lib64/com.quicinc.cne.constants@2.0.so
-system_ext/lib64/com.quicinc.cne.constants@2.1.so
-system_ext/lib64/com.quicinc.cne.server@1.0.so
-system_ext/lib64/com.quicinc.cne.server@2.0.so
-system_ext/lib64/com.quicinc.cne.server@2.1.so
-system_ext/lib64/com.quicinc.cne.server@2.2.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.1.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.2.so
-system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.3.so
-
-# Device
-system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
-system_ext/lib64/libsystemhelper_jni.so
+system/lib64/libxditk_LightArt.so:vendor/lib64/libxditk_LightArt.so
 
 # Display
-product/etc/permissions/com.qti.snapdragon.sdk.display.xml
-product/framework/com.qti.snapdragon.sdk.display.jar
-system_ext/app/colorservice/colorservice.apk
-system_ext/lib64/libsd_sdk_display.qti.so
-system_ext/lib64/libsdm-disp-apis.qti.so
-system_ext/lib64/vendor.display.color@1.0.so
-system_ext/lib64/vendor.display.color@1.1.so
-system_ext/lib64/vendor.display.color@1.2.so
-system_ext/lib64/vendor.display.color@1.3.so
-system_ext/lib64/vendor.display.postproc@1.0.so
-system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-
 vendor/lib64/libsdmextension.so|f80e85481d8f2ce991e4ccba3958a575b39ece09
 
 # DPM
@@ -102,15 +52,6 @@ product/priv-app/HotwordEnrollmentXGoogleHEXAGON_NARROWBAND/HotwordEnrollmentXGo
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
-# MirarCast
-system_ext/bin/sigma_miracasthalservice
-system_ext/bin/sigma_miracasthalservice64
-system_ext/etc/init/com.qualcomm.qti.sigma_miracast@1.0-service.rc
-system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
-system_ext/lib64/libmiracastsystem.so
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
-
 # Power
 system/framework/QPerformance.jar
 system/framework/UxPerformance.jar
@@ -125,13 +66,3 @@ system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 system_ext/framework/qcrilhook.jar
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-
-# VNDK
-system_ext/lib64/libvndfwk_detect_jni.qti.so
-system_ext/lib64/libvndfwk_detect_jni.qti_system.so
-
-# Wlan
-system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
-system_ext/framework/vendor.qti.hardware.data.iwlan-V1.1-java.jar
-system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.iwlan@1.1.so
