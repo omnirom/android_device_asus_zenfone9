@@ -97,7 +97,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.media.audio.common.types-V1-cpp \
-    libaudioroute.vendor
+    libaudioroute.vendor \
+    libhapticgenerator
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml \
@@ -144,7 +145,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.common-V2-ndk_platform.vendor \
+    android.hardware.graphics.common-V1-ndk.vendor \
+    android.hardware.graphics.common-V2-ndk.vendor \
     libion \
     libtinyxml2
 
@@ -363,6 +365,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
+
 
 # VNDK
 PRODUCT_PACKAGES += \
