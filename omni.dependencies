@@ -27,8 +27,8 @@
     {
     "remote": "omnirom",
     "repository": "android_hardware_qcom_bootctrl",
-    "target_path": "hardware/qcom/bootctrl",
-    "revision": "android-15"
+    "target_path": "hardware/qcom-caf/bootctrl",
+    "revision": "android-16-caf"
   },
   {
     "remote": "github",
