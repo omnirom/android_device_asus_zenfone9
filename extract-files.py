@@ -36,7 +36,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('xml version="2.0"', 'xml version="1.0"'),
      'vendor/bin/vendor.dpmd': blob_fixup()
          .add_needed('libhidlbase_shim.so'),
-     'vendor/bin/hw/android.hardware.security.keymint-service-qti': blob_fixup()
+    ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
+     'vendor/lib64/libqtikeymint.so'): blob_fixup()
         .add_needed('android.hardware.security.rkp-V1-ndk.so'),
     ('vendor/etc/media_codecs_cape.xml', 'vendor/etc/media_codecs_cape_vendor.xml'): blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video|vendor_audio).*\n', ''),
@@ -46,6 +47,9 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('gettid: 1'),
     'vendor/lib64/libQnnGpu.so': blob_fixup()
         .strip_debug_sections(),
+    ('vendor/lib/libcamximageformatutils.so',
+     'vendor/lib64/libcamximageformatutils.so'): blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
     'vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so': blob_fixup()
         .remove_needed('libhidltransport.so')
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
