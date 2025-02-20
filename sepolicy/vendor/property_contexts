@@ -43,6 +43,7 @@ vendor.asus.dis_flash_light         u:object_r:vendor_set_camera_prop:s0
 
 # DRM
 vendor.drm.keystatus                u:object_r:vendor_display_prop:s0
+vendor.debug.drm.keystatus        u:object_r:vendor_asus_prop:s0
 
 # Fingerprint
 vendor.goodix.sensor.status         u:object_r:vendor_asus_prop:s0
