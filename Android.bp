@@ -36,3 +36,15 @@ install_symlink {
     installed_location: "firmware/wlan/qca_cld/qca6490/WCNSS_qcom_cfg.ini",
     symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
 }
+
+mkdir {
+    name: "vendor_asusfw_mountpoint",
+    dir: "asusfw",
+    vendor: true,
+}
+
+mkdir {
+    name: "vendor_xrom_mountpoint",
+    dir: "xrom",
+    vendor: true,
+}
