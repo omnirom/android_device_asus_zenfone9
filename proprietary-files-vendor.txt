@@ -1,5 +1,5 @@
 vendor/app/CACertService/CACertService.apk
-vendor/app/CneApp/CneApp.apk
+vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_vendor_symlink
 vendor/app/IWlanService/IWlanService.apk
 vendor/app/TimeService/TimeService.apk
 vendor/app/powermodule_java/powermodule_java.apk
@@ -2141,8 +2141,6 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqti-utils.so
-vendor/lib/libqti_vndfwk_detect.so
-vendor/lib/libqti_vndfwk_detect_vendor.so
 vendor/lib/libqtigefar.so
 vendor/lib/libqtiidentitycredential.so
 vendor/lib/libqtikeymaster4.so
@@ -2236,8 +2234,6 @@ vendor/lib/libvidhance_noise_reduction.so
 vendor/lib/libvidhance_stabilizer.so
 vendor/lib/libvidhance_stabilizer_g4.so
 vendor/lib/libvmmem.so
-vendor/lib/libvndfwk_detect_jni.qti.so
-vendor/lib/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib/libvorbisidec.so
 vendor/lib/libvppclient.so
 vendor/lib/libvppcommon.so
@@ -3237,8 +3233,6 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
-vendor/lib64/libqti_vndfwk_detect.so
-vendor/lib64/libqti_vndfwk_detect_vendor.so
 vendor/lib64/libqtigefar.so
 vendor/lib64/libqtiidentitycredential.so
 vendor/lib64/libqtikeymaster4.so
@@ -3351,8 +3345,6 @@ vendor/lib64/libvidhance_noise_reduction.so
 vendor/lib64/libvidhance_stabilizer.so
 vendor/lib64/libvidhance_stabilizer_g4.so
 vendor/lib64/libvmmem.so
-vendor/lib64/libvndfwk_detect_jni.qti.so
-vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libvppclient.so
 vendor/lib64/libvppcommon.so
 vendor/lib64/libvpphcp.so

@@ -60,6 +60,12 @@
     "target_path": "device/asus/zenfone9-kernel",
     "revision": "android-14.0"
    },
+   {
+    "remote": "github",
+    "repository": "LineageOS/android_vendor_qcom_opensource_core-utils-vendor",
+    "target_path": "vendor/qcom/opensource/core-utils-vendor",
+    "revision": "lineage-22.1"
+   },
   {
      "remote": "omnirom",
      "repository": "android_vendor_codeaurora_telephony",
