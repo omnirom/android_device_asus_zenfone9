@@ -34,8 +34,10 @@ blob_fixups: blob_fixups_user_type = {
      'system_ext/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml'): blob_fixup()
         .regex_replace('system/product', 'system_ext')
         .regex_replace('xml version="2.0"', 'xml version="1.0"'),
-     'vendor/bin/vendor.dpmd': blob_fixup()
-         .add_needed('libhidlbase_shim.so'),
+     ('vendor/bin/vendor.dpmd',
+      'vendor/bin/hw/android.hardware.audio.service_64',
+      'vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service'): blob_fixup()
+        .add_needed('libhidlbase_shim.so'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
      'vendor/lib64/libqtikeymint.so'): blob_fixup()
         .add_needed('android.hardware.security.rkp-V1-ndk.so'),
