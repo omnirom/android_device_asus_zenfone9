@@ -126,7 +126,6 @@ vendor/bin/hw/vendor.qti.hardware.eid@1.0-service
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/bin/hw/vendor.qti.hardware.limits@1.1-service
-vendor/bin/hw/vendor.qti.hardware.memtrack-service
 vendor/bin/hw/vendor.qti.hardware.perf-hal-service
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
@@ -467,7 +466,6 @@ vendor/etc/init/ipa_fws.rc
 vendor/etc/init/ipacm-diag.rc
 vendor/etc/init/ipacm.rc
 vendor/etc/init/loc-launcher.rc
-vendor/etc/init/memtrack_qti.rc
 vendor/etc/init/modemManager.rc
 vendor/etc/init/mstatdaemon.rc
 vendor/etc/init/mutualex.rc
@@ -1119,7 +1117,6 @@ vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
 vendor/etc/vintf/manifest/manifest_lahaina_identity.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
-vendor/etc/vintf/manifest/memtrack_qti.xml
 vendor/etc/vintf/manifest/qtiradio-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss-service.xml

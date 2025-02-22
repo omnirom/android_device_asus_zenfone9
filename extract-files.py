@@ -45,8 +45,6 @@ blob_fixups: blob_fixups_user_type = {
       'vendor/bin/hw/android.hardware.audio.service_64',
       'vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service'): blob_fixup()
         .add_needed('libhidlbase_shim.so'),
-    'vendor/bin/hw/vendor.qti.hardware.memtrack-service': blob_fixup()
-        .replace_needed('android.hardware.memtrack-V1-ndk_platform.so', 'android.hardware.memtrack-V1-ndk.so'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
      'vendor/lib/libqtikeymint.so',
      'vendor/lib64/libqtikeymint.so'): blob_fixup()

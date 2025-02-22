@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V1-ndk.vendor \
     android.hardware.graphics.common-V2-ndk.vendor \
     libion \
-    libtinyxml2
+    libtinyxml2 \
+    vendor.qti.hardware.memtrack-service
 
 -include hardware/qcom-caf/sm8450/display/config/display-board.mk
 -include hardware/qcom-caf/sm8450/display/config/display-product.mk
@@ -241,10 +242,6 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor
 
 $(call inherit-product, hardware/qcom-caf/sm8450/media/product.mk)
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack-V1-ndk_platform.vendor
 
 # Mount Point symlink
 PRODUCT_PACKAGES += \
@@ -373,7 +370,6 @@ PRODUCT_PACKAGES += \
     libhidlbase_shim \
     android.hardware.common-V2-ndk_platform.vendor \
     android.hardware.keymaster-V3-ndk_platform.vendor \
-    android.hardware.memtrack-V1-ndk_platform.vendor \
     android.hardware.neuralnetworks-V1-ndk_platform.vendor
 
 # Wifi
