@@ -310,6 +310,10 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/display \
     vendor/qcom/opensource/commonsys-intf/display
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.multihal
+
 # Systemhelper
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0

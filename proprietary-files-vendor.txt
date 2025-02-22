@@ -109,7 +109,6 @@ vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti
 vendor/bin/hw/android.hardware.nfc@1.2-service
 vendor/bin/hw/android.hardware.secure_element@1.2-service
 vendor/bin/hw/android.hardware.security.keymint-service-qti
-vendor/bin/hw/android.hardware.sensors@2.1-service.multihal
 vendor/bin/hw/android.hardware.thermal@2.0-service.qti-v2
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/qconfigservice
@@ -429,7 +428,6 @@ vendor/etc/init/android.hardware.neuralnetworks-shim-service-qti.rc
 vendor/etc/init/android.hardware.nfc_snxxx@1.2-service.rc
 vendor/etc/init/android.hardware.secure_element_snxxx@1.2-service.rc
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
-vendor/etc/init/android.hardware.sensors@2.1-service-multihal.rc
 vendor/etc/init/android.hardware.thermal@2.0-service.qti-v2.rc
 vendor/etc/init/bat_bs.rc
 vendor/etc/init/bat_percent.rc
@@ -1107,7 +1105,6 @@ vendor/etc/vintf/manifest/android.hardware.gnss-aidl-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
-vendor/etc/vintf/manifest/android.hardware.sensors@2.1-multihal.xml
 vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
