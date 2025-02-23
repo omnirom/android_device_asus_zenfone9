@@ -1,0 +1,13 @@
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -54,8 +54,8 @@
+     <uses-permission android:name="com.asus.launcher.permission.APPLOCK_DB_ACCESS"/>
+     <uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS"/>
+     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+-    <uses-permission android:maxSdkVersion="33" android:name="android.permission.READ_MEDIA_IMAGES"/>
+-    <uses-permission android:maxSdkVersion="33" android:name="android.permission.READ_MEDIA_VIDEO"/>
++    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
++    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+     <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+     <uses-permission android:name="com.asus.permission.READ_SOCIALNETWORK_DATA"/>

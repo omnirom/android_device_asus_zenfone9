@@ -49,12 +49,6 @@
     "revision": "android-15-caf"
    },
    {
-    "remote": "omnirom",
-    "repository": "android_packages_apps_Aperture",
-    "target_path": "packages/apps/Aperture",
-    "revision": "android-15"
-   },
-   {
     "remote": "github",
     "repository": "asus-development/android_device_asus_zenfone9-kernel",
     "target_path": "device/asus/zenfone9-kernel",

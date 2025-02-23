@@ -34,6 +34,12 @@ lib_fixups: lib_fixups_user_type = {
         'com.qualcomm.qti.dpm.api@1.0',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.imsrtpservice@3.0',
+        'libxditk_DIT_Manager',
+        'libxditk_ISP',
+        'libxditk_arch',
+        'libxditk_ditArchLIB',
+        'libxditk_ditBSP',
+        'libxditk_ditBSP_JNI',
     ): lib_fixup_vendor_suffix,
     (
         'libwpa_client',
@@ -41,7 +47,13 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-     ('vendor/bin/vendor.dpmd',
+    ('system/lib64/libxditk_ISP.so',
+     'system/lib64/libxditk_LightArt.so',
+     'system/lib64/libxditk_ditArchLIB.so'): blob_fixup()
+        .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
+    'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
+        .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
+    ('vendor/bin/vendor.dpmd',
       'vendor/bin/hw/android.hardware.audio.service_64',
       'vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service'): blob_fixup()
         .add_needed('libhidlbase_shim.so'),
