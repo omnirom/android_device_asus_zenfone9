@@ -94,6 +94,8 @@ TARGET_CAMERA_NEEDS_CLIENT_INFO := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # Display
+TARGET_GRALLOC_HANDLE_HAS_CUSTOM_CONTENT_MD_RESERVED_SIZE := false
+TARGET_GRALLOC_HANDLE_HAS_RESERVED_SIZE := false
 TARGET_SCREEN_DENSITY := 440
 SOONG_CONFIG_qtidisplay_displayconfig_enabled := true
 SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
