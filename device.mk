@@ -254,9 +254,7 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/commonsys-intf/display
+    $(LOCAL_PATH)
 
 # Sensors
 PRODUCT_PACKAGES += \
