@@ -1,0 +1,19 @@
+--- a/smali/com/qualcomm/location/osagent/OsAgent.smali
++++ b/smali/com/qualcomm/location/osagent/OsAgent.smali
+@@ -3546,15 +3546,10 @@
+     .line 334
+     iget-object v3, p0, Lcom/qualcomm/location/osagent/OsAgent;->mSubscriptionMgr:Landroid/telephony/SubscriptionManager;
+
+-    .line 335
+-    invoke-virtual {v2}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;->getHandlerExecutor()Lcom/android/internal/telephony/util/HandlerExecutor;
+-
+-    move-result-object v2
+-
+     iget-object v4, p0, Lcom/qualcomm/location/osagent/OsAgent;->mSubscriptionsChangedListener:Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;
+
+     .line 334
+-    invoke-virtual {v3, v2, v4}, Landroid/telephony/SubscriptionManager;->addOnSubscriptionsChangedListener(Ljava/util/concurrent/Executor;Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)V
++    invoke-virtual {v3, v4}, Landroid/telephony/SubscriptionManager;->addOnSubscriptionsChangedListener(Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;)V
+
+     .line 339
+     :cond_1

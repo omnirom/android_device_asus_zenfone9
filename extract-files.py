@@ -54,6 +54,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
+    'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
+        .apktool_patch('blob-patches/com.qualcomm.location.patch', '-r'),
     ('vendor/bin/vendor.dpmd',
       'vendor/bin/hw/android.hardware.audio.service_64',
       'vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service'): blob_fixup()
