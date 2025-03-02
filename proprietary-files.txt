@@ -170,7 +170,7 @@ system_ext/etc/permissions/com.qualcomm.location.xml
 system_ext/etc/permissions/com.qualcomm.qti.izattools.xml
 system_ext/etc/permissions/privapp-permissions-com.qualcomm.location.xml
 system_ext/framework/com.qti.location.sdk.jar
-system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk|768cab025cf8427b349a8358ca86a964fe8803ee
+system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk
 
 # HotwordEnrollment
 product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_NARROWBAND/HotwordEnrollmentOKGoogleHEXAGON_NARROWBAND.apk;PRESIGNED
