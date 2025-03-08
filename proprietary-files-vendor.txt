@@ -174,7 +174,7 @@ vendor/bin/lightsensor_get_adc
 vendor/bin/lightsensor_get_lux
 vendor/bin/loadalgo
 vendor/bin/loc_launcher
-vendor/bin/lowi-server;DISABLE_CHECKELF
+vendor/bin/lowi-server
 vendor/bin/lowirpcd
 vendor/bin/lsensor_status
 vendor/bin/magnetometer_accessory2_installed.sh
@@ -189,7 +189,7 @@ vendor/bin/modemManager
 vendor/bin/mount_apd.sh
 vendor/bin/msm_irqbalance
 vendor/bin/mstatdaemon
-vendor/bin/mutualex;DISABLE_CHECKELF
+vendor/bin/mutualex
 vendor/bin/myftm
 vendor/bin/netmgrd
 vendor/bin/netutild_V1.1
@@ -1461,7 +1461,7 @@ vendor/lib/libcert_parse.wpa_s.so
 vendor/lib/libchiarcutils.so
 vendor/lib/libchilog.so
 vendor/lib/libcld80211.so
-vendor/lib/libcne.so;DISABLE_CHECKELF
+vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcnelog.so
 vendor/lib/libcneoplookup.so
@@ -1541,7 +1541,7 @@ vendor/lib/liblowi_wifihal.so
 vendor/lib/liblqe.so
 vendor/lib/liblx-ar_util.so
 vendor/lib/liblx-osal.so
-vendor/lib/libmasc.so;DISABLE_CHECKELF
+vendor/lib/libmasc.so
 vendor/lib/libmcs.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libmdsprpc.so
@@ -2356,7 +2356,7 @@ vendor/lib64/libcert_parse.wpa_s.so
 vendor/lib64/libchiarcutils.so
 vendor/lib64/libchilog.so
 vendor/lib64/libcld80211.so
-vendor/lib64/libcne.so;DISABLE_CHECKELF
+vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcnelog.so
 vendor/lib64/libcneoplookup.so
@@ -2462,7 +2462,7 @@ vendor/lib64/liblowi_wifihal.so
 vendor/lib64/liblqe.so
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
-vendor/lib64/libmasc.so;DISABLE_CHECKELF
+vendor/lib64/libmasc.so
 vendor/lib64/libmcs.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdmdetect.so
