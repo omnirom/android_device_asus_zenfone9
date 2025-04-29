@@ -113,9 +113,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/manifest/framework_manifest.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_cape.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_zenfone9
-
 # Kernel
 BOARD_USES_DT := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
