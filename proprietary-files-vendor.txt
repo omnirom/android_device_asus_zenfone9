@@ -1770,7 +1770,6 @@ vendor/lib/libagmclient.so
 vendor/lib/libagmmixer.so
 vendor/lib/libaidenoiser.so
 vendor/lib/libaidenoiserv2.so
-vendor/lib/libalsautils.so
 vendor/lib/libar-acdb.so
 vendor/lib/libar-gpr.so
 vendor/lib/libar-gsl.so
@@ -2688,7 +2687,6 @@ vendor/lib64/libagmclient.so
 vendor/lib64/libagmmixer.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libaidenoiserv2.so
-vendor/lib64/libalsautils.so
 vendor/lib64/libapengine.so
 vendor/lib64/libappclassifier.so
 vendor/lib64/libar-acdb.so
