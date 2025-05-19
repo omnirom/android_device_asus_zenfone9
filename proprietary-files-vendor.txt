@@ -2310,7 +2310,7 @@ vendor/lib64/libar-pal.so
 vendor/lib64/libarcsoft_beautyshot.so
 vendor/lib64/libarcsoft_bokehplus_video.so
 vendor/lib64/libarcsoft_face_detection.so
-vendor/lib64/libarcsoft_portrait_super_night_raw.so;DISABLE_CHECKELF
+vendor/lib64/libarcsoft_portrait_super_night_raw.so
 vendor/lib64/libarcsoft_qnnhtp.so
 vendor/lib64/libarcsoft_scbokeh_video.so
 vendor/lib64/libarcsoft_super_night_raw.so
@@ -2725,12 +2725,12 @@ vendor/lib64/libwapi_cert.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libwvhidl.so
-vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_arch.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditArchLIB.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditBSP.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libxditk_ditBSP_JNI.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_arch.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditArchLIB.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP_JNI.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/ls_client.so
