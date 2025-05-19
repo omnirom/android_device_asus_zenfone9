@@ -13,19 +13,7 @@ system_ext/framework/audiosphere.jar
 
 # Camera
 system/priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
-system/lib64/DataSet/arch/DIT_List.cfg
-system/lib64/DataSet/cl/AlignMapping.bin
-system/lib64/DataSet/cl/lightart.bin
-system/lib64/DataSet/ditSCidGen/msgchk.db
-system/lib64/DataSet/ispDB/ParameterDB.db
-system/lib64/libxditk_LightArt.so:vendor/lib64/libxditk_LightArt_vendor.so;FIX_SONAME
-system/lib64/libxditk_DIT_Manager.so
-system/lib64/libxditk_ISP.so
-system/lib64/libxditk_LightArt.so
-system/lib64/libxditk_arch.so
-system/lib64/libxditk_ditArchLIB.so
-system/lib64/libxditk_ditBSP.so
-system/lib64/libxditk_ditBSP_JNI.so
+system/lib64/libxditk_LightArt.so:vendor/lib64/libxditk_LightArt.so
 
 system_ext/etc/hdr_config/selfie_ls/RPP_OutputCompressor_config.txt
 system_ext/etc/hdr_config/selfie_ls/RPP_InputCompressor_config.txt
