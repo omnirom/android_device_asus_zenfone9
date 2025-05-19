@@ -56,6 +56,8 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/AsusCamera.patch', '-s'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
+    'system/priv-app/AsusGalleryBurst/AsusGalleryBurst.apk': blob_fixup()
+        .apktool_patch('blob-patches/AsusGalleryBurst.patch', '-s'),
     'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
         .apktool_patch('blob-patches/com.qualcomm.location.patch'),
     ('vendor/bin/vendor.dpmd',
