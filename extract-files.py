@@ -52,6 +52,8 @@ blob_fixups: blob_fixups_user_type = {
      'system/lib64/libxditk_LightArt.so',
      'system/lib64/libxditk_ditArchLIB.so'): blob_fixup()
         .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
+    'system/priv-app/AsusCamera/AsusCamera.apk': blob_fixup()
+        .apktool_patch('blob-patches/AsusCamera.patch', '-s'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
     'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
