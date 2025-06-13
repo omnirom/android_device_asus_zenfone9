@@ -1434,7 +1434,6 @@ vendor/lib/libar-acdb.so
 vendor/lib/libar-gpr.so
 vendor/lib/libar-gsl.so
 vendor/lib/libar-pal.so
-vendor/lib/libarcsoft_low_light_shot.so:vendor/lib64/libarcsoft_low_light_shot.so
 vendor/lib/libasn1cper.so
 vendor/lib/libasn1crt.so
 vendor/lib/libasn1crtx.so
