@@ -16,6 +16,14 @@ system/etc/permissions/asus.software.zenui.xml
 system/etc/permissions/asus.software.zenui.ten.xml
 system/priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
 system/lib64/libxditk_LightArt.so:vendor/lib64/libxditk_LightArt.so
+system/lib64/libarcsoft_high_dynamic_range_v5.so:vendor/lib64/libarcsoft_high_dynamic_range_v5.so
+system/lib64/libarcsoft_superresolution.so:vendor/lib64/libarcsoft_superresolution.so
+system/lib64/libarcsoft_rer.so:vendor/lib64/libarcsoft_rer.so
+system/lib64/libarcsoft_mf_superresolution.so:vendor/lib64/libarcsoft_mf_superresolution.so
+system/lib64/libarcsoft_bokehplus_image_rear.so:vendor/lib64/libarcsoft_bokehplus_image_rear.so
+system/lib64/libarcsoft_fringe_remove.so:vendor/lib64/libarcsoft_fringe_remove.so
+system/lib64/libarcsoft_scbokeh_image.so:vendor/lib64/libarcsoft_scbokeh_image.so
+system/lib64/libarcsoft_low_light_shot.so:vendor/lib64/libarcsoft_low_light_shot.so
 
 # Display
 vendor/lib64/libsdmextension.so|f80e85481d8f2ce991e4ccba3958a575b39ece09
