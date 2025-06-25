@@ -22,10 +22,10 @@ genfscon proc /lcd_brightness                                                   
 genfscon proc /lcd_unique_id                                                                    u:object_r:asus_display_proc_exec:s0
 genfscon proc /hbm_mode                                                                         u:object_r:asus_display_proc_exec:s0
 
-genfscon sysfs /devices/virtual/extcon-asus/                                                    u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/virtual/extcon-asus(/.*)?                                                    u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /class/asus_fod/hdr_mode                                                         u:object_r:vendor_sysfs_graphics:s0
 genfscon sysfs /class/asus_fod/hbm_mode                                                         u:object_r:vendor_sysfs_graphics:s0
-genfscon sysfs /class/extcon-asus/                                                              u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /class/extcon-asus(/.*)?                                                               u:object_r:vendor_sysfs_graphics:s0
 
 # EVT
 genfscon proc /asusevtlog                                                                       u:object_r:vendor_proc_evt:s0
