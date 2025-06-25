@@ -16,6 +16,28 @@ prebuilt_hidl_interfaces {
     ],
 }
 
+prebuilt_hidl_interfaces {
+    name: "hidl_AGMIPC_interface",
+    interfaces: [
+        "vendor.qti.hardware.AGMIPC@1.0::IAGM",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_qti_limits_interface",
+    interfaces: [
+        "vendor.qti.hardware.limits@1.0::ILimits",
+        "vendor.qti.hardware.limits@1.1::ILimits",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_wificfr_interface",
+    interfaces: [
+        "vendor.qti.hardware.wifi.wificfr@1.0::IWificfr",
+    ],
+}
+
 install_symlink {
     name: "mnt_point_factory_symlink",
     vendor: true,
