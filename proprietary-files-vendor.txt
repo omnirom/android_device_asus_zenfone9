@@ -1331,7 +1331,6 @@ vendor/gpu/kbc/unified_ksqs.bin
 vendor/lib/android.automotive.watchdog-V2-ndk_platform.so
 vendor/lib/android.hardware.automotive.vehicle@2.0-manager-lib.so
 vendor/lib/btaudio_offload_if.so
-vendor/lib/com.dsi.ant@1.0.so
 vendor/lib/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/com.qualcomm.qti.imscmservice@2.0.so
@@ -2137,7 +2136,6 @@ vendor/lib64/camx.provider@2.5-external.so
 vendor/lib64/camx.provider@2.5-legacy.so
 vendor/lib64/camx.provider@2.6-legacy.so
 vendor/lib64/camx.provider@2.7-legacy.so
-vendor/lib64/com.dsi.ant@1.0.so
 vendor/lib64/com.qti.chiusecaseselector.so
 vendor/lib64/com.qti.feature2.anchorsync.so
 vendor/lib64/com.qti.feature2.arcrawpro.so

@@ -81,7 +81,7 @@ PRODUCT_COPY_FILES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService-Soong
 
 # Api
 BOARD_SHIPPING_API_LEVEL := 31
