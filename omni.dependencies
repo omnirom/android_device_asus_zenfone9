@@ -3,13 +3,13 @@
     "remote": "omnirom",
     "repository": "android_device_qcom_caf-sepolicy",
     "target_path": "device/qcom/sepolicy",
-    "revision": "android-15"
+    "revision": "android-16"
   },
   {
     "remote": "omnirom",
     "repository": "android_device_qcom_sepolicy_vndr",
     "target_path": "device/qcom/sepolicy_vendor",
-    "revision": "android-15-vendor"
+    "revision": "android-16-vendor"
   },
   {
     "remote": "omnirom",
