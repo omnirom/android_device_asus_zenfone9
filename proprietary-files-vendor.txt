@@ -95,7 +95,6 @@ vendor/bin/gsensor_calibration_data
 vendor/bin/gyro_calibration_data
 vendor/bin/hdcp1prov
 vendor/bin/hdcp2p2prov
-vendor/bin/hw/android.hardware.audio.service_64
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -406,7 +405,6 @@ vendor/etc/gpfspath_oem_config.xml
 vendor/etc/gps.conf
 vendor/etc/init.asus.nfc.JP.rc
 vendor/etc/init.qti.fm.sh
-vendor/etc/init/android.hardware.audio.service_64.rc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
