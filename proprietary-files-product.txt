@@ -10,6 +10,7 @@ product/etc/permissions/UimGba.xml
 product/etc/permissions/UimGbaManager.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimgbamanagerlibrary.jar
+product/framework/uimservicelibrary.jar
 system_ext/app/DynamicDDSService/DynamicDDSService.apk
 system_ext/etc/permissions/embms-noship_product_privapp_permissions_qti.xml
 
