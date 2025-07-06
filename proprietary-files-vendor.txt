@@ -2010,7 +2010,6 @@ vendor/lib64/DataSet/ispDB/ParameterDB.db
 vendor/lib64/android.automotive.watchdog-V2-ndk_platform.so
 vendor/lib64/android.hardware.automotive.vehicle@2.0-manager-lib.so
 vendor/lib64/btaudio_offload_if.so
-vendor/lib64/camera.device@1.0-impl.so
 vendor/lib64/camera/com.qti.eeprom.gt24p128c2csli_imx766_d_eeprom.so
 vendor/lib64/camera/com.qti.eeprom.gt24p128c2csli_imx766_eeprom.so
 vendor/lib64/camera/com.qti.eeprom.irs2381c_polar.so
@@ -2323,7 +2322,6 @@ vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libcacertclient.so
-vendor/lib64/libcamera2ndk_vendor.so
 vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libcamxcommonutils.so
