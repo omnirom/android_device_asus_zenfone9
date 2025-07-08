@@ -33,6 +33,13 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
+        'libxditk_DIT_Manager',
+        'libxditk_ISP',
+        'libxditk_arch',
+        'libxditk_ditArchLIB',
+        'libxditk_ditBSP',
+        'libxditk_ditBSP_JNI',
+        "libxditk_LightArt",
         'vendor.qti.diaghal@1.0',
         'vendor.qti.imsrtpservice@3.0',
     ): lib_fixup_vendor_suffix,
@@ -41,6 +48,10 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    ('system/lib64/libxditk_ISP.so',
+     'system/lib64/libxditk_LightArt.so',
+     'system/lib64/libxditk_ditArchLIB.so'): blob_fixup()
+        .replace_needed('libOpenCL.so', 'libOpenCL_system.so'),
     'system/priv-app/AsusCamera/AsusCamera.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusCamera.patch'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
