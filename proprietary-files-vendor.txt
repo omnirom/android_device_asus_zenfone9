@@ -2252,6 +2252,8 @@ vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libMapService.so
+# Move and rename to system this libOpenCL to prevent the missing variants (32) for libxditk_ISP, libxditk_LightArt and libxditk_ditArchLIB libs
+vendor/lib64/libOpenCL.so:system/lib64/libOpenCL_system.so;FIX_SONAME
 vendor/lib64/libOpenCL.so
 vendor/lib64/libQ6MSFR_manager_stub.so
 vendor/lib64/libQSEEComAPI.so
@@ -2715,12 +2717,12 @@ vendor/lib64/libwapi_cert.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libwvhidl.so
-vendor/lib64/libxditk_DIT_Manager.so
-vendor/lib64/libxditk_ISP.so
-vendor/lib64/libxditk_arch.so
-vendor/lib64/libxditk_ditArchLIB.so
-vendor/lib64/libxditk_ditBSP.so
-vendor/lib64/libxditk_ditBSP_JNI.so
+vendor/lib64/libxditk_DIT_Manager.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ISP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_arch.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditArchLIB.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libxditk_ditBSP_JNI.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/ls_client.so
