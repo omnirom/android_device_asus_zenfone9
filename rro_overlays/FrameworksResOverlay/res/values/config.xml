@@ -516,14 +516,6 @@
         <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
     </integer-array>
 
-    <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
-         when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
-         where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
-         and Strength as defined in Authenticators.java -->
-    <string-array name="config_biometric_sensors" translatable="false" >
-        <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
-    </string-array>
-
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
          If no value is found for the rat-name in use, the system default will be applied.
@@ -638,20 +630,6 @@
 
     <!-- Enable system navigation keys. -->
     <bool name="config_supportSystemNavigationKeys">true</bool>
-
-    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
-     Note: this value is temporary and is expected to be queried directly
-     from the HAL in the future. -->
-    <array name="config_sfps_sensor_props" translatable="false">
-        <item>@array/config_sfps_sensor_props_0</item>
-    </array>
-
-    <array name="config_sfps_sensor_props_0" translatable="false">
-        <item>local:4630947220766978690</item> <!--item>displayId</item-->
-        <item>1080</item> <!--item>sensorLocationX</item-->
-        <item>1070</item> <!--item>sensorLocationY</item-->
-        <item>125</item> <!--item>sensorRadius</item-->
-    </array>
 
     <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
          we only enabled it while the device has ability of mixed color spaces composition -->
