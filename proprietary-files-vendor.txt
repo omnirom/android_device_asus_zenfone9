@@ -1914,7 +1914,6 @@ vendor/lib/vendor.qti.hardware.dpmservice@1.0.so
 vendor/lib/vendor.qti.hardware.dpmservice@1.1.so
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib/vendor.qti.hardware.eid@1.0.so
-vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib/vendor.qti.hardware.iop@1.0.so
 vendor/lib/vendor.qti.hardware.iop@2.0.so
 vendor/lib/vendor.qti.hardware.mwqemadapter@1.0.so
@@ -2819,7 +2818,6 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.1-adapter-helper.so
 vendor/lib64/vendor.qti.hardware.embmssl@1.1.so
 vendor/lib64/vendor.qti.hardware.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.factory@1.1.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
