@@ -22,7 +22,7 @@
      "remote": "gitlab",
      "repository": "android_hardware_omni_compat",
      "target_path": "hardware/omni/compat",
-     "revision": "android-15"
+     "revision": "android-16"
    },
     {
     "remote": "omnirom",
@@ -58,13 +58,13 @@
      "remote": "omnirom",
      "repository": "android_vendor_codeaurora_telephony",
      "target_path": "vendor/codeaurora/telephony",
-     "revision": "android-14.0"
+     "revision": "android-16"
    },
    {
      "remote": "omnirom",
      "repository": "android_vendor_qcom_opensource_interfaces",
      "target_path": "vendor/qcom/opensource/interfaces",
-     "revision": "android-15"
+     "revision": "android-16"
    },
    {
      "remote": "gitlab",
