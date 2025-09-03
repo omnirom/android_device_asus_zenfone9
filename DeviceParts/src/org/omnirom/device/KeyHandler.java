@@ -84,7 +84,7 @@ public class KeyHandler implements DeviceKeyHandler {
     protected static final int GESTURE_REQUEST = 1;
     private static final int GESTURE_WAKELOCK_DURATION = 2000;
 
-    private static final int KEY_DOUBLE_TAP = 143;
+    private static final int KEY_DOUBLE_TAP = 116;
     private static final int KEY_HOME = 102;
     private static final int KEY_BACK = 158;
     private static final int KEY_RECENTS = 580;
