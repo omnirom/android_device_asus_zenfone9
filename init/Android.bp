@@ -1,0 +1,14 @@
+cc_library_static {
+    name: "libinit_zenfone9",
+
+    include_dirs: [
+        "system/core/init",
+    ],
+    static_libs: ["libbase"],
+    cflags: [
+        "-Wall",
+    ],
+    srcs: ["init_zenfone9.cpp"],
+    recovery_available: true,
+    ramdisk_available: true,
+}
