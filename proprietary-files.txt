@@ -11,6 +11,7 @@ system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 
 # Camera
+system/etc/permissions/asus.software.smartgallery.xml
 system/etc/permissions/asus.software.zenui.xml
 system/etc/permissions/asus.software.zenui.ten.xml
 system/priv-app/AsusCamera/AsusCamera.apk;OVERRIDES=Camera2
