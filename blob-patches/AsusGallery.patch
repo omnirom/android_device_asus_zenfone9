@@ -1,5 +1,18 @@
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
+@@ -17,9 +17,9 @@
+     <permission android:name="com.asus.gallery.permission.GALLERY_PROVIDER" android:protectionLevel="privileged|signature"/>
+     <permission android:name="com.asus.gallery.filtershow.permission.READ" android:protectionLevel="signature"/>
+     <permission android:name="com.asus.gallery.filtershow.permission.WRITE" android:protectionLevel="signature"/>
+-    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.READ_USER_PROFILE" android:protectionLevel="signatureOrSystem"/>
+-    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.WRITE_USER_FACE" android:protectionLevel="signatureOrSystem"/>
+-    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.WRITE_USER_EMAIL" android:protectionLevel="signatureOrSystem"/>
++    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.READ_USER_PROFILE" android:protectionLevel="privileged|signature"/>
++    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.WRITE_USER_FACE" android:protectionLevel="privileged|signature"/>
++    <permission android:name="com.asus.gallery.provider.UserProfileProvider.permission.WRITE_USER_EMAIL" android:protectionLevel="privileged|signature"/>
+     <permission android:name="com.asus.gallery.provider.stamp.permission.READ_STAMP_PROVIDER" android:protectionLevel="privileged|signature"/>
+     <permission android:name="com.asus.gallery.provider.stamp.permission.WRITE_STAMP_PROVIDER" android:protectionLevel="privileged|signature"/>
+     <permission android:name="com.asus.gallery.receiver.userprofile.permission.SEND_OOBE_COMPLETED" android:protectionLevel="privileged|signature"/>
 @@ -54,8 +54,8 @@
      <uses-permission android:name="com.asus.launcher.permission.APPLOCK_DB_ACCESS"/>
      <uses-permission android:name="android.permission.LOCAL_MAC_ADDRESS"/>
