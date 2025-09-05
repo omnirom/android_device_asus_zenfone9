@@ -48,6 +48,7 @@ system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 system/priv-app/AsusGallery/AsusGallery.apk
 
 # GalleryBurst
+system/etc/permissions/asus.software.marketapp.xml
 system/priv-app/AsusGalleryBurst/AsusGalleryBurst.apk
 
 # GalleryBurst Video Editor
