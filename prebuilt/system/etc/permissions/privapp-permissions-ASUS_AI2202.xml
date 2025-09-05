@@ -3,7 +3,7 @@
     <privapp-permissions package="com.asus.camera">
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
-        <permission name="com.asus.permission.HARDWARE_PROPERTIES"/>
+        <permission name="android.permission.DEVICE_POWER"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.asus.ephotoburst">
