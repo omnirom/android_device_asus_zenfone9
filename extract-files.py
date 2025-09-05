@@ -45,6 +45,8 @@ blob_fixups: blob_fixups_user_type = {
         .apktool_patch('blob-patches/AsusCamera.patch', '-s'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
+    'system/priv-app/AsusGalleryBurst/AsusGalleryBurst.apk': blob_fixup()
+        .apktool_patch('blob-patches/AsusGalleryBurst.patch', '-s'),
     'system/priv-app/AudioWizardView/AudioWizardView.apk': blob_fixup()
         .apktool_patch('blob-patches/AudioWizardView.patch'),
     'system_ext/priv-app/com.qualcomm.location/com.qualcomm.location.apk': blob_fixup()
