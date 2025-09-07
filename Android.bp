@@ -70,3 +70,15 @@ mkdir {
     dir: "xrom",
     vendor: true,
 }
+
+mkdir {
+    name: "vendor_asus_cam_almalence",
+    dir: "lib64/DataSet/Almalence",
+    vendor: true,
+}
+
+mkdir {
+    name: "vendor_asus_cam_ditscidgen",
+    dir: "lib64/DataSet/ditSCidGen",
+    vendor: true,
+}
