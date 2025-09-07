@@ -17,3 +17,16 @@
      <uses-permission android:name="android.permission.VIBRATE"/>
      <uses-permission android:name="com.asus.gallery.provider.stamp.permission.READ_STAMP_PROVIDER"/>
      <uses-permission android:name="com.asus.gallery.provider.stamp.permission.WRITE_STAMP_PROVIDER"/>
+diff --git a/smali/m4/b.smali b/smali/m4/b.smali
+index 34949a5..d0d4e67 100644
+--- a/smali/m4/b.smali
++++ b/smali/m4/b.smali
+@@ -235,7 +235,7 @@
+ 
+     move-result v2
+ 
+-    const-string v3, "/system/lib"
++    const-string v3, "/vendor/lib64"
+ 
+     invoke-virtual {v0, v2, v3}, Lhg/a;->e(ILjava/lang/String;)V
+
