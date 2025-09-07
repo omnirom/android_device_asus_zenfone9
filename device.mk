@@ -188,6 +188,8 @@ PRODUCT_PACKAGES += \
     mnt_point_factory_symlink \
     vendor_asusfw_mountpoint \
     vendor_bt_firmware_mountpoint \
+    vendor_asus_cam_almalence \
+    vendor_asus_cam_ditscidgen \
     vendor_xrom_mountpoint \
     vendor_firmware_mnt_mountpoint
 
