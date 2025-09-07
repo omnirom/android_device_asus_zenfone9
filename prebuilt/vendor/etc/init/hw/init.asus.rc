@@ -384,6 +384,8 @@ on property:sys.boot_completed=1
     chmod 0755 /data/vendor/camera/dualcam_cali.bin
     copy /proc/driver/dualcam_cali /data/vendor/camera/dualcam_cali
     chmod 0755 /data/vendor/camera/dualcam_cali
+    copy /data/vendor/camera/dualcam_cali /data/vendor/camera/dualcam_cali.bin
+    chmod 0755 /data/vendor/camera/dualcam_cali.bin
 
 on property:vendor.camera.set.apk.usingname=*
 	setprop vendor.camera.apk.usingname   ${vendor.camera.set.apk.usingname}
