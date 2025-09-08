@@ -161,6 +161,11 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 
+$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/asuslib/smartchg_slow_charging)
+$(call soong_config_set,lineage_health,fast_charge_value_none,10)
+$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,18)
+$(call soong_config_set,lineage_health,fast_charge_value_super_fast_charge,0)
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fts_ts.idc:system/usr/idc/fts_ts.idc \
