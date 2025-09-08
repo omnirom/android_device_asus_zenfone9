@@ -10,6 +10,7 @@ genfscon proc /Batt_Cycle_Count/condition_value                                 
 genfscon proc /Batt_Cycle_Count/cycle_count                                                     u:object_r:proc_batinfo:s0
 
 genfscon sysfs /class/asuslib/charging_suspend_en                                            u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /class/asuslib/smartchg_slow_charging                                      u:object_r:vendor_sysfs_battery_supply:s0
 
 # Display
 genfscon proc /driver/swipeup                                                                   u:object_r:vendor_proc_graphics:s0
