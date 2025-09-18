@@ -58,7 +58,7 @@ PRODUCT_SYSTEM_NAME := WW_AI2202
 
 
 PRODUCT_BUILD_PROP_OVERRIDES := \
-    BuildFingerprint=asus/WW_AI2202/ASUS_AI2202:14/UKQ1.230924.001/34.0304.2004.87:user/release-keys \
+    BuildFingerprint=asus/WW_AI2202/ASUS_AI2202:14/UKQ1.230924.001/34.0304.2004.145:user/release-keys \
     DeviceName=$(PRODUCT_SYSTEM_DEVICE) \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME) \
     SystemDevice=$(PRODUCT_SYSTEM_DEVICE) \

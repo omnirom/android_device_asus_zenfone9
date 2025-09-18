@@ -110,5 +110,7 @@ vendor.asus.usb.diag                u:object_r:vendor_asus_usb_prop:s0
 vendor.asus.usb.fullspeed           u:object_r:vendor_asus_usb_prop:s0
 
 # ZRAM
+persist.vendor.asus.expandmem.enable    u:object_r:vendor_asus_zram_prop:s0
 persist.vendor.zram.disksize        u:object_r:vendor_asus_zram_prop:s0
+vendor.asus.zram_setting             u:object_r:vendor_asus_zram_prop:s0
 vendor.init.zram.enable             u:object_r:vendor_asus_zram_prop:s0

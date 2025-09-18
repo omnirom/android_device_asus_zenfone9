@@ -138,6 +138,7 @@ vendor/bin/hw/vendor.qti.spu@1.1-service
 vendor/bin/hw/vendor.qti.spu@2.0-service
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
+vendor/bin/init.asus.zram.sh
 vendor/bin/init.class_main.sh
 vendor/bin/init.crda.sh
 vendor/bin/init.kernel.post_boot-cape.sh

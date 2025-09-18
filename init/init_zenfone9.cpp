@@ -175,9 +175,9 @@ static void set_fingerprint()
     LOG(INFO) << name;
 
     // These should be the only things to change for OTA updates
-    build_asus = "34.0304.2004.87";
+    build_asus = "34.0304.2004.145";
     build_id = "UKQ1.230924.001";
-    build_number = "34.0304.2004.87";
+    build_number = "34.0304.2004.145";
 
     // Create the correct stock props based on the above values
     desc << name << "-user 14 " << build_id << " " << build_number << " release-keys";
