@@ -33,3 +33,4 @@ pdafHWEnable=0
 #debugDataSizeAF=200000
 enableDMEbasedMCTF=TRUE
 halBufferMgrMode=0
+overrideForceSensorMode=4
