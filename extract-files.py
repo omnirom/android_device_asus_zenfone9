@@ -21,7 +21,6 @@ from extract_utils.main import (
 
 namespace_imports = [
     'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/display',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
 ]
