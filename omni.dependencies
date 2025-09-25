@@ -48,6 +48,12 @@
     "target_path": "device/asus/zenfone9-kernel",
     "revision": "android-16"
    },
+    {
+    "remote": "github",
+    "repository": "LineageOS/android_packages_apps_Aperture",
+    "target_path": "packages/apps/Aperture",
+    "revision": "lineage-23.0"
+   },
    {
     "remote": "github",
     "repository": "LineageOS/android_vendor_qcom_opensource_core-utils-vendor",
