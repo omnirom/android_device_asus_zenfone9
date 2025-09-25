@@ -40,8 +40,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system/priv-app/AsusCamera/AsusCamera.apk': blob_fixup()
-        .apktool_patch('blob-patches/AsusCamera.patch', '-s'),
     'system/priv-app/AsusGallery/AsusGallery.apk': blob_fixup()
         .apktool_patch('blob-patches/AsusGallery.patch', '-s'),
     'system/priv-app/AudioWizardView/AudioWizardView.apk': blob_fixup()
