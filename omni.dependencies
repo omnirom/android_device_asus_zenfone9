@@ -16,7 +16,7 @@
     "repository": "android_external_tinycompress",
     "target_path": "external/tinycompress",
     "override": "platform/external/tinycompress",
-    "revision": "android-14.0"
+    "revision": "android-16"
    },
     {
      "remote": "gitlab",
