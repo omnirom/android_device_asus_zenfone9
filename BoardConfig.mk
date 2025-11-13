@@ -95,6 +95,11 @@ SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# DTB / DTBO
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
+TARGET_NEEDS_DTBOIMAGE := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
@@ -114,13 +119,13 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest/manifest_cape.xml
 DEVICE_MATRIX_FILE += $(DEVICE_PATH)/manifest/compatibility_matrix.xml
 
 # Kernel
-BOARD_USES_DT := true
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-BOARD_PREBUILT_DTBIMAGE_DIR := $(TARGET_KERNEL_DIR)/dtb
-BOARD_PREBUILT_DTBOIMAGE := $(TARGET_KERNEL_DIR)/dtbo.img
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-TARGET_NO_KERNEL := false
-TARGET_NO_KERNEL_OVERRIDE := true
+TARGET_KERNEL_SOURCE := kernel/asus/sm8450
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/AI2202_perf.config \
+    vendor/omni.config
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -138,11 +143,56 @@ BOARD_RAMDISK_USE_LZ4 := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 # Kernel Modules
-KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)/modules
-KERNEL_MODULES := $(wildcard $(KERNEL_MODULE_DIR)/*.ko)
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_MODULE_DIR)/vendor_dlkm.modules.blocklist
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_MODULE_DIR)/vendor_dlkm.modules.load))
-BOARD_VENDOR_KERNEL_MODULES := $(KERNEL_MODULES)
+KERNEL_MODULES_DIR := $(DEVICE_PATH)/modules
+PREBUILT_KERNEL_MODULES := $(wildcard $(KERNEL_MODULES_DIR)/*.ko)
+
+first_stage_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.vendor_boot))
+second_stage_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.vendor_dlkm))
+recovery_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.recovery))
+
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(first_stage_modules)
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(recovery_modules)
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(second_stage_modules) $(recovery_modules)
+BOARD_VENDOR_KERNEL_MODULES := $(PREBUILT_KERNEL_MODULES)
+
+BOOT_KERNEL_MODULES += $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.waipio
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    TARGET_BUILD_VARIANT=user \
+    ASUS_BUILD_PROJECT=AI2202 \
+    ASUS_AI2202_AUDIO=y \
+    ASUS_AI2202_CAMERA=y \
+    ASUS_AI2202_DISPLAY=y \
+    ASUS_FTM=y \
+    ASUS_FTM_AUDIO=y \
+    ASUS_FTM_BUILD=y \
+    BUILD_VENDOR_DLKM=y \
+    ASUS_GKI_BUILD=y
+
+KERNEL_LTO := none
+
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/asus/sm8450-modules
+TARGET_KERNEL_EXT_MODULES := \
+    qcom/opensource/mmrm-driver \
+    qcom/opensource/audio-kernel \
+    qcom/opensource/camera-kernel \
+    qcom/opensource/cvp-kernel \
+    qcom/opensource/dataipa/drivers/platform/msm \
+    qcom/opensource/datarmnet/core \
+    qcom/opensource/datarmnet-ext/aps \
+    qcom/opensource/datarmnet-ext/offload \
+    qcom/opensource/datarmnet-ext/shs \
+    qcom/opensource/datarmnet-ext/perf \
+    qcom/opensource/datarmnet-ext/perf_tether \
+    qcom/opensource/datarmnet-ext/sch \
+    qcom/opensource/datarmnet-ext/wlan \
+    qcom/opensource/display-drivers/msm \
+    qcom/opensource/eva-kernel \
+    qcom/opensource/video-driver \
+    qcom/opensource/wlan/qcacld-3.0/.qca6490
 
 # NFC
 TARGET_USES_NQ_NFC := true
@@ -164,7 +214,6 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
-BOARD_KERNEL_BINARIES := kernel
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
@@ -193,7 +242,6 @@ BOARD_ROOT_EXTRA_FOLDERS += ADF APD asdf batinfo
 
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno660
-TARGET_USES_KERNEL_PLATFORM := true
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
@@ -209,11 +257,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/ramdisk/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 150
 BOARD_USES_FULL_RECOVERY_IMAGE := true
-
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_MODULE_DIR)/modules.load.recovery))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_MODULE_DIR)/, $(notdir $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_MODULE_DIR)/vendor_dlkm.modules.blocklist
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_MODULE_DIR)/vendor_boot.modules.load))
 
 # Security patch level
 BOOT_SECURITY_PATCH := 2024-07-05
