@@ -19,7 +19,8 @@ pci-msm-drv.ko
 btpower.ko
 qcom_pil_info.ko
 coresight-replicator.ko
-ssusb-redriver-nb7vpq904m.ko
+nb7vpq904m.ko
+redriver.ko
 qdss_bridge.ko
 stm_ftrace.ko
 i2c-msm-geni.ko
@@ -136,7 +137,7 @@ gh_mem_notifier.ko
 qcom-vadc-common.ko
 adsp_loader_dlkm.ko
 repeater-i2c-eusb2.ko
-qti_battery_charger.ko
+qti_battery_charger_main.ko
 swr_dlkm.ko
 radio-i2c-rtc6226-qca.ko
 qti_qmi_sensor_v2.ko
@@ -269,14 +270,13 @@ phy-msm-ssusb-qmp.ko
 phy-qcom-ufs-qmp-v3.ko
 pmic_glink.ko
 qcom_logbuf_vendor_hooks.ko
-hdcp_qseecom.ko
+hdcp.ko
 plh_scmi.ko
 heap_mem_ext_v01.ko
 rmnet_wlan.ko
 f_fs_ipc_log.ko
 pinctrl_lpi_dlkm.ko
 rmnet_ctl.ko
-mmrm_test_module.ko
 memlat.ko
 slimbus.ko
 boot_stats.ko

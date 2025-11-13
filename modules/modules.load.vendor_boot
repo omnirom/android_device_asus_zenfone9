@@ -52,7 +52,6 @@ qti-fixed-regulator.ko
 reboot-mode.ko
 msm_geni_serial.ko
 msm_rtb.ko
-ns.ko
 nvmem_qcom-spmi-sdam.ko
 phy-generic.ko
 phy-qcom-ufs.ko
