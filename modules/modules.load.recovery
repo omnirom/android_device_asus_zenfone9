@@ -51,7 +51,6 @@ qti-fixed-regulator.ko
 reboot-mode.ko
 msm_geni_serial.ko
 msm_rtb.ko
-ns.ko
 nvmem_qcom-spmi-sdam.ko
 phy-generic.ko
 phy-qcom-ufs.ko
@@ -191,7 +190,7 @@ lt9611uxc.ko
 msm_kgsl.ko
 zram.ko
 expandmem.ko
-hdcp_qseecom.ko
+hdcp.ko
 qseecom-mod.ko
 qcom-i2c-pmic.ko
 sg.ko
@@ -214,7 +213,8 @@ phy-msm-snps-eusb2.ko
 dwc3-msm.ko
 ehset.ko
 lvstest.ko
-ssusb-redriver-nb7vpq904m.ko
+nb7vpq904m.ko
+redriver.ko
 usb_f_diag.ko
 usb_f_qdss.ko
 usb_f_ccid.ko
@@ -242,7 +242,7 @@ qcom_ipc_lite.ko
 synx-driver.ko
 radio-i2c-rtc6226-qca.ko
 qcom-pon.ko
-qti_battery_charger.ko
+qti_battery_charger_main.ko
 asus_battery_charger_AI2202.ko
 qti_battery_charge_notify.ko
 ktop.ko
