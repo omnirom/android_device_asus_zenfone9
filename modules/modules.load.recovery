@@ -5,7 +5,6 @@ clk-rpmh.ko
 gcc-waipio.ko
 icc-rpmh.ko
 qcom_ipcc.ko
-qcom_ipc_logging.ko
 qcom-pdc.ko
 qcom_tsens.ko
 rpmh-regulator.ko
@@ -22,7 +21,6 @@ cqhci.ko
 crypto-qti-common.ko
 crypto-qti-hwkm.ko
 dcvs_fp.ko
-debug-regulator.ko
 dispcc-diwali.ko
 dispcc-waipio.ko
 gcc-diwali.ko
@@ -79,7 +77,6 @@ qcom-scm.ko
 qnoc-diwali.ko
 qnoc-qos.ko
 qrtr.ko
-qti-regmap-debugfs.ko
 regmap-spmi.ko
 rtc-pm8xxx.ko
 secure_buffer.ko
@@ -127,7 +124,6 @@ videocc-diwali.ko
 bam_dma.ko
 gpi.ko
 pci-edma.ko
-qcom_cpuss_sleep_stats.ko
 mdt_loader.ko
 cdsp-loader.ko
 qcom_ramdump.ko
@@ -154,7 +150,6 @@ glink_pkt.ko
 glink_probe.ko
 pmic_glink.ko
 qti_battery_debug.ko
-charger-ulog-glink.ko
 altmode-glink.ko
 pmic-pon-log.ko
 msm_performance.ko
@@ -169,7 +164,6 @@ qcom_soc_wdt.ko
 sys_pm_vx.ko
 msm_ext_display.ko
 icnss2.ko
-rimps_log.ko
 plh_scmi.ko
 gplaf_scmi.ko
 qdss_bridge.ko
@@ -185,7 +179,6 @@ hvc_gunyah.ko
 msm_rng.ko
 frpc-adsprpc.ko
 rdbg.ko
-qcom_iommu_debug.ko
 lt9611uxc.ko
 msm_kgsl.ko
 zram.ko
@@ -220,7 +213,6 @@ usb_f_qdss.ko
 usb_f_ccid.ko
 usb_f_cdev.ko
 usb_f_gsi.ko
-f_fs_ipc_log.ko
 ucsi_glink.ko
 repeater.ko
 repeater-i2c-eusb2.ko
@@ -296,7 +288,6 @@ gh_virtio_backend.ko
 qcom-spmi-adc5.ko
 qcom-vadc-common.ko
 nvmem_qfprom.ko
-icc-test.ko
 qnoc-parrot.ko
 sensors_vcnl36866.ko
 slimbus.ko

@@ -66,7 +66,6 @@ camcc-diwali.ko
 audpkt_ion_dlkm.ko
 qcom_esoc.ko
 coresight-dummy.ko
-charger-ulog-glink.ko
 mbhc_dlkm.ko
 mhi_dev_dtr.ko
 qmi_helpers.ko
@@ -179,7 +178,6 @@ lpass_cdc_wsa2_macro_dlkm.ko
 sdpm_clk.ko
 qcom-cpufreq-hw-debug.ko
 lzo-rle.ko
-rimps_log.ko
 rmnet_aps.ko
 pinctrl-spmi-mpp.ko
 rmnet_sch.ko
@@ -188,7 +186,6 @@ audio_prm_dlkm.ko
 bcl_soc.ko
 cnss2.ko
 rproc_qcom_common.ko
-icc-test.ko
 msm_show_epoch.ko
 qpnp-amoled-regulator.ko
 ehset.ko
@@ -231,7 +228,6 @@ adsp_sleepmon.ko
 gsim.ko
 q6_dlkm.ko
 coresight-tpda.ko
-qcom_iommu_debug.ko
 sg.ko
 msm_sharedmem.ko
 gf3626_spi.ko
@@ -244,7 +240,6 @@ qcom_q6v5.ko
 leds-qti-flash.ko
 hall_sensor_3nd.ko
 mhi_dev_netdev.ko
-qcom_cpuss_sleep_stats.ko
 wcd937x_slave_dlkm.ko
 fsa4480-i2c.ko
 mhi_cntrl_qcom.ko
@@ -271,7 +266,6 @@ hdcp.ko
 plh_scmi.ko
 heap_mem_ext_v01.ko
 rmnet_wlan.ko
-f_fs_ipc_log.ko
 pinctrl_lpi_dlkm.ko
 rmnet_ctl.ko
 memlat.ko
