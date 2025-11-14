@@ -124,6 +124,7 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_KERNEL_SOURCE := kernel/asus/sm8450
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
+    vendor/waipio_GKI.config \
     vendor/AI2202_perf.config \
     vendor/debugfs.config \
     vendor/omni.config
