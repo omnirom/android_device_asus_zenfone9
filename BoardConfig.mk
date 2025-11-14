@@ -125,6 +125,7 @@ TARGET_KERNEL_SOURCE := kernel/asus/sm8450
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/AI2202_perf.config \
+    vendor/debugfs.config \
     vendor/omni.config
 
 BOARD_BOOT_HEADER_VERSION := 4
