@@ -271,3 +271,5 @@ rmnet_ctl.ko
 memlat.ko
 slimbus.ko
 boot_stats.ko
+shared_rail_scmi.ko
+shared_rail_vendor.ko

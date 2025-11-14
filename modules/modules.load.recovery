@@ -319,3 +319,5 @@ qrtr-mhi.ko
 qrtr-gunyah.ko
 msm_drm.ko
 msm-mmrm.ko
+shared_rail_scmi.ko
+shared_rail_vendor.ko
