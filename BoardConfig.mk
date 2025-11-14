@@ -148,14 +148,15 @@ PREBUILT_KERNEL_MODULES := $(wildcard $(KERNEL_MODULES_DIR)/*.ko)
 
 first_stage_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.vendor_boot))
 second_stage_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.vendor_dlkm))
+second_stage_modules_extra := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.extra.vendor_dlkm))
 recovery_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.recovery))
 
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(first_stage_modules)
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(recovery_modules)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(second_stage_modules) $(recovery_modules)
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(second_stage_modules) $(second_stage_modules_extra) $(recovery_modules)
 BOARD_VENDOR_KERNEL_MODULES := $(PREBUILT_KERNEL_MODULES)
 
-BOOT_KERNEL_MODULES += $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
+BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.waipio
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)

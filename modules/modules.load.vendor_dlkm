@@ -46,7 +46,6 @@ stm_console.ko
 panel_event_notifier.ko
 coresight.ko
 msm-cvp.ko
-tntfs.ko
 qcom-spmi-adc5.ko
 cnss_utils.ko
 hall_sensor_2nd.ko
@@ -58,7 +57,6 @@ cdsp-loader.ko
 lzo.ko
 debugcc-waipio.ko
 debugcc-diwali.ko
-texfat.ko
 qcom_q6v5_pas.ko
 spi-msm-geni.ko
 phy-qcom-ufs-qmp-v4-lahaina.ko
@@ -142,7 +140,6 @@ swr_dlkm.ko
 radio-i2c-rtc6226-qca.ko
 qti_qmi_sensor_v2.ko
 wcd938x_dlkm.ko
-tfs_linux.ko
 coresight-remote-etm.ko
 qti_battery_charge_notify.ko
 cdsprm.ko
