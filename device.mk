@@ -282,6 +282,7 @@ PRODUCT_HOST_PACKAGES += \
 
 # USB
 TARGET_HAS_DIAG_ROUTER := true
+TARGET_KERNEL_VERSION := 5.10
 $(call inherit-product, vendor/qcom/opensource/usb/vendor_product.mk)
 
 # Vendor service manager
