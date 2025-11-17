@@ -237,7 +237,6 @@ qcom-pon.ko
 qti_battery_charger_main.ko
 asus_battery_charger_AI2202.ko
 qti_battery_charge_notify.ko
-ktop.ko
 qcom-spmi-temp-alarm.ko
 qti-adc-tm.ko
 qti_qmi_sensor_v2.ko
@@ -262,7 +261,6 @@ leds-qti-tri-led.ko
 leds-qpnp-vibrator-ldo.ko
 plh_vendor.ko
 gplaf_vendor.ko
-tz_log.ko
 qce50.ko
 qcedev-mod.ko
 ipa_fmwk.ko

@@ -49,7 +49,6 @@ msm-cvp.ko
 qcom-spmi-adc5.ko
 cnss_utils.ko
 hall_sensor_2nd.ko
-tz_log.ko
 synaptics_dsx.ko
 sdhci-msm.ko
 coresight-tgu.ko
@@ -246,7 +245,6 @@ mhi_cntrl_qcom.ko
 expandmem.ko
 qcom_spss.ko
 soc_sleep_stats.ko
-ktop.ko
 stub_dlkm.ko
 gplaf_vendor.ko
 gplaf_scmi.ko
