@@ -165,8 +165,6 @@ vendor/bin/init.qti.media.sh
 vendor/bin/init.qti.qcv.sh
 vendor/bin/init.qti.touch_boot.sh
 vendor/bin/init.qti.write.sh
-vendor/bin/ipacm
-vendor/bin/ipacm-diag
 vendor/bin/ks
 vendor/bin/lightsensor_calibration_data
 vendor/bin/lightsensor_calibration_start
@@ -289,8 +287,6 @@ vendor/dsp/sdsp/libsysmonquery_skel.so
 vendor/dsp/sdsp/map_SLPI_SHARED_LIBS_waipio.slpi.prodQ.txt
 vendor/dsp/sdsp/map_SSC_SLPI_CORE_USER_waipio.slpi.prodQ.txt
 vendor/dsp/sdsp/map_SSC_SLPI_USER_waipio.slpi.prodQ.txt
-vendor/etc/IPACM_Filter_cfg.xml
-vendor/etc/IPACM_cfg.xml
 vendor/etc/acdbdata/AI2202/AI2202_acdb_cal.acdb
 vendor/etc/acdbdata/AI2202/AI2202_workspaceFileXml.qwsp
 vendor/etc/acdbdata/AI2202_EU/AI2202_EU_acdb_cal.acdb
@@ -449,8 +445,6 @@ vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/init/init_thermal-engine-v2.rc
 vendor/etc/init/ipa_fws.rc
-vendor/etc/init/ipacm-diag.rc
-vendor/etc/init/ipacm.rc
 vendor/etc/init/loc-launcher.rc
 vendor/etc/init/modemManager.rc
 vendor/etc/init/mstatdaemon.rc
@@ -2415,7 +2409,6 @@ vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhme.so
 vendor/lib64/libidl.so
-vendor/lib64/libipanat.so
 vendor/lib64/libipebpsstriping.so
 vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libipebpsstriping480.so
@@ -2496,7 +2489,6 @@ vendor/lib64/libnlnetmgr.so
 vendor/lib64/libnnapi_sl_driver.so
 vendor/lib64/liboemaids_vendor.so
 vendor/lib64/liboemcrypto.so
-vendor/lib64/liboffloadhal.so
 vendor/lib64/libopencv.so
 vendor/lib64/libopencv3a.so
 vendor/lib64/libopenvx.so

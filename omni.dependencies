@@ -72,6 +72,12 @@
     "target_path": "vendor/qcom/opensource/core-utils-vendor",
     "revision": "lineage-22.1"
    },
+   {
+    "remote": "github",
+    "repository": "LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr",
+    "target_path": "hardware/qcom-caf/sm8450/data-ipa-cfg-mgr",
+    "revision": "lineage-23.0-caf-sm8450"
+   },
   {
      "remote": "omnirom",
      "repository": "android_vendor_codeaurora_telephony",
