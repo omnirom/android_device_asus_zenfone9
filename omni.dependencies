@@ -121,10 +121,10 @@
     "revision": "lineage-23.0"
    },
    {
-     "remote": "gitlab",
-     "repository": "android_vendor_qcom_opensource_usb",
+     "remote": "github",
+     "repository": "LineageOS/android_vendor_qcom_opensource_usb",
      "target_path": "vendor/qcom/opensource/usb",
-     "revision": "android-14.0"
+     "revision": "lineage-23.0"
    },
    {
     "remote": "gitlab",
