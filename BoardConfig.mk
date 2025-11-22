@@ -175,8 +175,6 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     BUILD_VENDOR_DLKM=y \
     ASUS_GKI_BUILD=y
 
-KERNEL_LTO := none
-
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/asus/sm8450-modules
 TARGET_KERNEL_EXT_MODULES := \
     qcom/opensource/mmrm-driver \
