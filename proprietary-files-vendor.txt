@@ -684,7 +684,6 @@ vendor/etc/qxdm/R29_VoiceTest_Only.cfg
 vendor/etc/qxdm/SNS.cfg
 vendor/etc/qxdm/spf_audio.cfg
 vendor/etc/r_submix_audio_policy_configuration.xml
-vendor/etc/recovery-resource.dat
 vendor/etc/res/images/charger/18x32.png
 vendor/etc/res/images/charger/Charging_battery_0.png
 vendor/etc/res/images/charger/Charging_battery_0_CN.png
@@ -1642,8 +1641,6 @@ vendor/lib/libqvrservice_ov7251_hvx_tuning.so
 vendor/lib/libqvrservice_ov9282_hvx_tuning.so
 vendor/lib/libqvrservice_v4l_ov7251_hvx_tuning.so
 vendor/lib/librcc.so
-vendor/lib/librecovery_updater.so
-vendor/lib/librecovery_updater_msm.so
 vendor/lib/libreference-ril.so
 vendor/lib/libril-db.so
 vendor/lib/libril-legacy.so
@@ -2575,8 +2572,6 @@ vendor/lib64/libqvrservice_ov9282_hvx_tuning.so
 vendor/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so
 vendor/lib64/librcc.so
 vendor/lib64/librcmask.so
-vendor/lib64/librecovery_updater.so
-vendor/lib64/librecovery_updater_msm.so
 vendor/lib64/libreference-ril.so
 vendor/lib64/libreffeature.so
 vendor/lib64/libril-db.so
