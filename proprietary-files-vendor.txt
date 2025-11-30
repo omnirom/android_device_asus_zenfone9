@@ -1431,7 +1431,6 @@ vendor/lib/libasn1crt.so
 vendor/lib/libasn1crtx.so
 vendor/lib/libats.so
 vendor/lib/libaudio_log_utils.so
-vendor/lib/libbacklight-calib.so
 vendor/lib/libbase64.so
 vendor/lib/libbatching.so
 vendor/lib/libbatterylistener.so
@@ -1465,12 +1464,7 @@ vendor/lib/libcvpcpuRev_skel.so
 vendor/lib/libdataitems.so
 vendor/lib/libdiag.so
 vendor/lib/libdiagjni.so
-vendor/lib/libdigital-dimming.so
-vendor/lib/libdisp-aba.so
-vendor/lib/libdisplayqos.so
-vendor/lib/libdisplayskuutils.so
 vendor/lib/libdpmqmihal.so
-vendor/lib/libdpps.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libdsd2pcm.so
@@ -1486,7 +1480,6 @@ vendor/lib/libfastcrc.so
 vendor/lib/libfastcvdsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libfmpal.so
-vendor/lib/libgame_enhance.so
 vendor/lib/libgdtap.so
 vendor/lib/libgeofencing.so
 vendor/lib/libgnss.so
@@ -1499,9 +1492,6 @@ vendor/lib/libhalide_hexagon_host.so
 vendor/lib/libhdcp1prov.so
 vendor/lib/libhdcp2p2prov.so
 vendor/lib/libhdcpsrm.so
-vendor/lib/libhdr_backlight_adapter.so
-vendor/lib/libhdr_stub.so
-vendor/lib/libhdr_tm.so
 vendor/lib/libidl.so
 vendor/lib/libizat_client_api.so
 vendor/lib/libizat_core.so
@@ -1536,7 +1526,6 @@ vendor/lib/libmasc.so
 vendor/lib/libmcs.so
 vendor/lib/libmdmdetect.so
 vendor/lib/libmdsprpc.so
-vendor/lib/libmemutils.so
 vendor/lib/libmfGhostDetection.so
 vendor/lib/libminkdescriptor.so
 vendor/lib/libminksocket_vendor.so
@@ -1608,9 +1597,6 @@ vendor/lib/libqcrilNrQtiBus.so
 vendor/lib/libqcrilNrQtiMutex.so
 vendor/lib/libqcrildataaidl.so
 vendor/lib/libqcrildatactl.so
-vendor/lib/libqdcm-algo.so
-vendor/lib/libqdcm-json-mode-parser.so
-vendor/lib/libqdcm-mode-parser.so
 vendor/lib/libqdi.so
 vendor/lib/libqdma_file_agent.so
 vendor/lib/libqdp.so
@@ -1632,7 +1618,6 @@ vendor/lib/libqmiservices.so
 vendor/lib/libqppe.so
 vendor/lib/libqrtr.so
 vendor/lib/libqrtrclient.so
-vendor/lib/libqseed3.so
 vendor/lib/libqshcamera.so
 vendor/lib/libqsocket.so
 vendor/lib/libqtbase.so
@@ -1657,7 +1642,6 @@ vendor/lib/libqvrservice_ov7251_hvx_tuning.so
 vendor/lib/libqvrservice_ov9282_hvx_tuning.so
 vendor/lib/libqvrservice_v4l_ov7251_hvx_tuning.so
 vendor/lib/librcc.so
-vendor/lib/librcmask.so
 vendor/lib/librecovery_updater.so
 vendor/lib/librecovery_updater_msm.so
 vendor/lib/libreference-ril.so
@@ -1676,9 +1660,6 @@ vendor/lib/libscveObjectSegmentation.so
 vendor/lib/libscveObjectSegmentation_stub.so
 vendor/lib/libscveObjectTracker.so
 vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libsdm-color.so
-vendor/lib/libsdm-colormgr-algo.so
-vendor/lib/libsdm-disp-vndapis.so
 vendor/lib/libsdsprpc.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libsensorcal.so
@@ -1690,9 +1671,6 @@ vendor/lib/libsi.so
 vendor/lib/libskewknob.so
 vendor/lib/libslimclient.so
 vendor/lib/libsmemlog.so
-vendor/lib/libsnapdragoncolor-manager.so
-vendor/lib/libsnapdragoncolor-pxlw.so
-vendor/lib/libsnapdragoncolor-qdcm.so
 vendor/lib/libsndcardparser.so
 vendor/lib/libsns_device_mode_stub.so
 vendor/lib/libsns_direct_channel_stub.so
@@ -1714,12 +1692,10 @@ vendor/lib/libsynx.so
 vendor/lib/libsys_info_cache.so
 vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib/libsystem_health_mon.so
-vendor/lib/libtestutils.so
 vendor/lib/libthermalclient.so
 vendor/lib/libthreadutils.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libtinycompress.so
-vendor/lib/libtinyxml2_1.so
 vendor/lib/libtrustedapploader.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/libvendorscenariopoweroptfeature.so
@@ -1856,15 +1832,6 @@ vendor/lib/soundfx/libreverbwrapper.so
 vendor/lib/soundfx/libshoebox.so
 vendor/lib/soundfx/libvisualizer.so
 vendor/lib/soundfx/libvolumelistener.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
-vendor/lib/vendor.display.color@1.3.so
-vendor/lib/vendor.display.color@1.4.so
-vendor/lib/vendor.display.color@1.5.so
-vendor/lib/vendor.display.color@1.6.so
-vendor/lib/vendor.display.color@1.7.so
-vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib/vendor.qti.data.factory@2.0.so
 vendor/lib/vendor.qti.data.factory@2.1.so
 vendor/lib/vendor.qti.data.factory@2.2.so
