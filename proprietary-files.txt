@@ -23,9 +23,6 @@ system/lib64/libarcsoft_fringe_remove.so:vendor/lib64/libarcsoft_fringe_remove.s
 system/lib64/libarcsoft_scbokeh_image.so:vendor/lib64/libarcsoft_scbokeh_image.so
 system/lib64/libarcsoft_low_light_shot.so:vendor/lib64/libarcsoft_low_light_shot.so
 
-# Display
-vendor/lib64/libsdmextension.so|f80e85481d8f2ce991e4ccba3958a575b39ece09
-
 # DPM
 system/framework/tcmclient.jar
 system_ext/bin/dpmd
