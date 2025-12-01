@@ -2613,7 +2613,6 @@ vendor/lib64/libskewknob.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libsmemlog.so
 vendor/lib64/libsnapdragoncolor-manager.so|72291478bd56bada0fc3df3617e765b28ef54f66
-vendor/lib64/libsnapdragoncolor-pxlw.so
 vendor/lib64/libsnapdragoncolor-qdcm.so|9f0bc72290618324e95cd9f4eca6987a6733bd06
 vendor/lib64/libsndcardparser.so
 vendor/lib64/libsns_api.so

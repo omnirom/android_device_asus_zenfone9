@@ -89,6 +89,8 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/etc/seccomp_policy/modemManager.policy',
      'vendor/etc/seccomp_policy/sensors-qesdk.policy'): blob_fixup()
         .add_line_if_missing('gettid: 1'),
+    ('vendor/etc/snapdragon_color_libs_config.xml'): blob_fixup()
+        .regex_replace('libsnapdragoncolor-pxlw.so', 'libsnapdragoncolor-qdcm.so'),
     'vendor/lib64/libQnnGpu.so': blob_fixup()
         .strip_debug_sections(),
     ('vendor/lib/libcamximageformatutils.so',
