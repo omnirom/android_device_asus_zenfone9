@@ -34,7 +34,7 @@
     "remote": "github",
     "repository": "android_hardware_qcom_display",
     "target_path": "hardware/qcom-caf/sm8450/display",
-    "revision": "android-14.0-sm8450"
+    "revision": "android-16.0-sm8450"
   },
   {
     "remote": "omnirom",
