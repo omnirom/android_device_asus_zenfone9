@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture
 
-$(call soong_config_set,camera,camera_needs_client_info,true)
+$(call soong_config_set_bool,camera,camera_needs_client_info,true)
 
 # Charger images
 PRODUCT_PACKAGES += \
