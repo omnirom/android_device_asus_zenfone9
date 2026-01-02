@@ -151,7 +151,7 @@ recovery_modules := $(strip $(shell cat $(KERNEL_MODULES_DIR)/modules.load.recov
 
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(first_stage_modules)
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(recovery_modules)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(second_stage_modules) $(second_stage_modules_extra) $(recovery_modules)
+BOARD_VENDOR_KERNEL_MODULES_LOAD_BUILTIN := $(second_stage_modules) $(second_stage_modules_extra) $(recovery_modules)
 BOARD_VENDOR_KERNEL_MODULES := $(PREBUILT_KERNEL_MODULES)
 
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
