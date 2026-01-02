@@ -102,7 +102,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libhidlbase_shim.so'),
-    ('vendor/lib64/ese_spi_nxp_snxxx.so',
+    ('vendor/bin/qguard',
+     'vendor/lib64/ese_spi_nxp_snxxx.so',
      'vendor/lib64/nfc_nci_nxp_snxxx.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
 }  # fmt: skip
