@@ -1445,7 +1445,6 @@ vendor/lib/libcdsprpc.so
 vendor/lib/libcert_parse.wpa_s.so
 vendor/lib/libchiarcutils.so
 vendor/lib/libchilog.so
-vendor/lib/libcld80211.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcnelog.so
@@ -2298,7 +2297,6 @@ vendor/lib64/libcdsprpc.so
 vendor/lib64/libcert_parse.wpa_s.so
 vendor/lib64/libchiarcutils.so
 vendor/lib64/libchilog.so
-vendor/lib64/libcld80211.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcnelog.so
