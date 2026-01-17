@@ -30,6 +30,18 @@
     "target_path": "hardware/qcom-caf/bootctrl",
     "revision": "android-16-caf"
   },
+   {
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/sm8250/display",
+    "revision": "android-16-sm8250"
+   },
+  {
+    "remote": "omnirom",
+    "repository": "android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/sm8350/display",
+    "revision": "android-16-sm8350"
+  },
   {
     "remote": "github",
     "repository": "android_hardware_qcom_display",
